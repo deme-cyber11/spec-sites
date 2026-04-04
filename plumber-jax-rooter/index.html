@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rooter Express of Jax LLC - Jacksonville Plumber & Drain Services</title>
-  <meta name="description" content="Experienced and reliable plumbers in Jacksonville, FL. Offering drain cleaning, water heater repair, emergency services & more. Call for a free estimate!">
+  <title>Rooter Express of Jax LLC | Jacksonville Plumber</title>
+  <meta name="description" content="Your local Jacksonville plumber for fast, reliable drain cleaning, water heaters, leak detection, and emergency services. Call Rooter Express of Jax LLC today!">
   <meta name="robots" content="noindex, nofollow">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -255,22 +255,17 @@
       overflow: hidden;
       min-height: 220px;
       cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-size 0.4s ease;
     }
     .bento-featured {
       grid-column: span 2;
       min-height: 300px;
     }
-    .bento-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 0.4s ease;
-    }
-    .bento-card:hover img {
-      transform: scale(1.06);
+    .bento-card:hover {
+      background-size: 106%;
     }
     .bento-overlay {
       position: absolute;
@@ -390,6 +385,10 @@
       margin-top: 4px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+    }
+    /* Desktop: stats row uses absolute positioning to float over image */
+    .authority-stats-row {
+      position: static;
     }
     .fs-1 { top: -20px; right: -20px; }
     .fs-2 { bottom: 40px; left: -24px; }
@@ -691,6 +690,40 @@
       .nav-links { display: none; }
     }
 
+    @media (max-width: 768px) {
+      /* Authority section: stack properly, no overlapping floats */
+      .authority-visual {
+        position: relative;
+        order: -1;
+      }
+      .authority-img {
+        height: 180px;
+        border-radius: 12px;
+      }
+      /* Convert floating stat cards to inline row */
+      .floating-stat {
+        position: static;
+        display: inline-block;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        min-width: auto;
+        padding: 12px 16px;
+        text-align: center;
+      }
+      .floating-stat .fs-number { font-size: 1.35rem; }
+      .floating-stat .fs-label { font-size: 0.65rem; }
+      .authority-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .authority-stats-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
     @media (max-width: 640px) {
       .hero { min-height: 520px; padding-top: 80px; padding-bottom: 80px; }
       .hero h1 { font-size: clamp(1.75rem, 8vw, 2.75rem); }
@@ -734,8 +767,8 @@
             <strong>5.0 stars</strong> &middot; 122 Google Reviews
           </div>
         </div>
-      <h1>Jacksonville's Trusted Plumbing & Drain Experts</h1>
-      <p class="hero-sub">When your pipes act up, we're the reliable Jacksonville plumbers ready to solve your problems, fast.</p>
+      <h1>Jacksonville's Trusted Plumbing Experts</h1>
+      <p class="hero-sub">Rooter Express of Jax LLC is your local go-to for fast, reliable plumbing solutions.</p>
       <div class="hero-actions">
         <a href="tel:+19049091763" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -755,11 +788,11 @@
         </div>
         <div class="trust-badge">
           <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <span>Serving Jacksonville homes and businesses for over a decade</span>
+          <span>Serving Jacksonville communities with pride</span>
         </div>
         <div class="trust-badge">
           <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-          <span>Fast, same-day appointments available</span>
+          <span>Upfront, honest pricing</span>
         </div>
   </div>
 
@@ -773,46 +806,40 @@
       </div>
       <div class="bento-grid reveal">
         
-        <div class="bento-card bento-featured">
-          <img src="https://images.unsplash.com/photo-WpOkR-GnKYo?auto=format&fit=crop&w=900&q=80" alt="Pipe repair work" loading="lazy">
+        <div class="bento-card bento-featured" role="img" aria-label="Pipe repair work" style="background-image:url('https://source.unsplash.com/900x603/?plumber,pipe+repair');">
           <div class="bento-overlay">
             <h3>Drain Cleaning</h3>
-            <p>Clear clogs and restore flow quickly.</p>
+            <p>Clearing stubborn clogs for smooth flow.</p>
           </div>
         </div>
-        <div class="bento-card bento-featured">
-          <img src="https://images.unsplash.com/photo-EAKSTBx-G3Y?auto=format&fit=crop&w=900&q=80" alt="Water heater installation" loading="lazy">
+        <div class="bento-card bento-featured" role="img" aria-label="Water heater installation" style="background-image:url('https://source.unsplash.com/900x603/?water+heater,plumbing');">
           <div class="bento-overlay">
             <h3>Water Heater Repair</h3>
-            <p>Get hot water back reliably.</p>
+            <p>Hot water solutions, fast.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-w6X7XaolqA0?auto=format&fit=crop&w=600&q=80" alt="Drain cleaning service" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Drain cleaning service" style="background-image:url('https://source.unsplash.com/600x402/?drain+cleaning,plumber');">
           <div class="bento-overlay">
-            <h3>Leak Detection & Repair</h3>
-            <p>Stop hidden leaks before they cause damage.</p>
+            <h3>Sewer Line Repair</h3>
+            <p>Restoring proper function to your system.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-jG1z5o7NCq4?auto=format&fit=crop&w=600&q=80" alt="Bathroom plumbing fixture" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Bathroom plumbing fixture" style="background-image:url('https://source.unsplash.com/600x402/?bathroom,plumbing+fixture');">
           <div class="bento-overlay">
-            <h3>Toilet & Faucet Repair</h3>
-            <p>Fix issues and prevent water waste.</p>
+            <h3>Leak Detection</h3>
+            <p>Pinpointing and fixing hidden leaks.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-5Mlu8RVJyZk?auto=format&fit=crop&w=600&q=80" alt="Kitchen sink plumbing" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Kitchen sink plumbing" style="background-image:url('https://source.unsplash.com/600x402/?kitchen+sink,plumbing');">
           <div class="bento-overlay">
-            <h3>Sewer Line Services</h3>
-            <p>Address main line blockages and repairs.</p>
+            <h3>Fixture Installation</h3>
+            <p>Professional installation of sinks, toilets, and more.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-FV_PxCqJOZY?auto=format&fit=crop&w=600&q=80" alt="Leak repair close-up" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Leak repair close-up" style="background-image:url('https://source.unsplash.com/600x402/?leak+repair,wrench');">
           <div class="bento-overlay">
             <h3>Emergency Plumbing</h3>
-            <p>24/7 response for urgent plumbing crises.</p>
+            <p>24/7 service for urgent issues.</p>
           </div>
         </div>
       </div>
@@ -824,8 +851,8 @@
     <div class="container">
       <div class="authority-grid">
         <div class="authority-copy reveal">
-          <h2>Why Jax Chooses Rooter Express</h2>
-          <p>We're your neighbors, dedicated to providing honest, skilled plumbing services right here in Jacksonville.  Skip the runaround with fair pricing and work you can depend on.</p>
+          <h2>Your Local Plumbing Choice</h2>
+          <p>We're your neighbors in Jacksonville, dedicated to providing honest, dependable plumbing services.  Unlike larger operations, we focus on personalized service and getting the job done right the first time, ensuring your home's plumbing runs smoothly.</p>
           <ul class="authority-points">
             
               <li>
@@ -834,15 +861,15 @@
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Prompt service, no overtime fees</span>
+                <span>Prompt, same-day service available</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Satisfaction guaranteed on every job</span>
+                <span>Guaranteed quality workmanship</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Transparent, upfront pricing</span>
+                <span>Clear, upfront pricing</span>
               </li>
           </ul>
           <a href="tel:+19049091763" class="authority-cta">
@@ -851,18 +878,20 @@
           </a>
         </div>
         <div class="authority-visual reveal">
-          <img src="https://images.unsplash.com/photo-WpOkR-GnKYo?auto=format&fit=crop&w=700&q=80" alt="Professional plumber work in Jacksonville" class="authority-img" loading="lazy">
-          <div class="floating-stat fs-1">
-            <div class="fs-number">⭐ 5.0</div>
-            <div class="fs-label">Google Rating</div>
-          </div>
-          <div class="floating-stat fs-2">
-            <div class="fs-number">122+</div>
-            <div class="fs-label">Happy Customers</div>
-          </div>
-          <div class="floating-stat fs-3">
-            <div class="fs-number">24/7</div>
-            <div class="fs-label">Available</div>
+          <img src="https://source.unsplash.com/700x469/?plumber,pipe+repair" alt="Professional plumber work in Jacksonville" class="authority-img" loading="lazy">
+          <div class="authority-stats-row">
+            <div class="floating-stat fs-1">
+              <div class="fs-number">⭐ 5.0</div>
+              <div class="fs-label">Google Rating</div>
+            </div>
+            <div class="floating-stat fs-2">
+              <div class="fs-number">122+</div>
+              <div class="fs-label">Happy Customers</div>
+            </div>
+            <div class="floating-stat fs-3">
+              <div class="fs-number">24/7</div>
+              <div class="fs-label">Available</div>
+            </div>
           </div>
         </div>
       </div>
@@ -883,19 +912,19 @@
           <div class="process-number">01</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
           <h3>Call Us</h3>
-          <p>Reach out to us anytime, and we'll schedule your plumbing service with ease.</p>
+          <p>Reach out to our friendly team to discuss your plumbing needs and schedule an appointment.</p>
         </div>
         <div class="process-card">
           <div class="process-number">02</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 14l2 2 4-4"/></svg></div>
           <h3>Free Estimate</h3>
-          <p>We'll inspect the issue and provide a clear, no-obligation quote before we begin.</p>
+          <p>We'll inspect the issue and provide a clear, no-obligation quote before any work begins.</p>
         </div>
         <div class="process-card">
           <div class="process-number">03</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
           <h3>Job Done Right</h3>
-          <p>Our team completes the work efficiently and leaves your space clean and tidy.</p>
+          <p>Our skilled plumbers will efficiently complete the repair or installation, leaving your space clean and tidy.</p>
         </div>
       </div>
     </div>
@@ -921,16 +950,16 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">Rooter Express of Jax LLC</div>
-        <p class="footer-tagline">Your Jacksonville plumbing solution. Fast, fair, reliable.</p>
+        <p class="footer-tagline">Fast, reliable plumbing for Jacksonville.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
           <li>Drain Cleaning</li>
             <li>Water Heater Repair</li>
-            <li>Leak Detection & Repair</li>
-            <li>Toilet & Faucet Repair</li>
-            <li>Sewer Line Services</li>
+            <li>Sewer Line Repair</li>
+            <li>Leak Detection</li>
+            <li>Fixture Installation</li>
             
         </ul>
       </div>
