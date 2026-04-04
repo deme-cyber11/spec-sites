@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capovilla Plumbing | Jacksonville FL | Expert Service</title>
+  <meta name="description" content="Your local Jacksonville plumbers. Offering reliable leak detection, water heater repair, drain cleaning, and more. Call Capovilla Plumbing today!">
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', Inter, system-ui, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.7;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── Demo Banner ── */
+    .demo-banner {
+      background: #fbbf24;
+      color: #1c1917;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #0f172a;
+      padding: 16px clamp(20px, 5vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: #2563eb;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-cta {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(rgba(15,23,42,0.60), rgba(15,23,42,0.60)), url('hero.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
+    }
+    .hero-content {
+      max-width: 680px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.6);
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: #ffffff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── Review Badge ── */
+    .review-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 18px;
+      border-radius: 40px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .review-stars {
+      color: #fbbf24;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    .review-text {
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+    }
+
+    /* ── Trust Strip ── */
+    .trust-strip {
+      background: #e2e8f0;
+      padding: 24px clamp(20px, 5vw, 80px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 40px;
+      justify-content: center;
+      border-bottom: 1px solid #2563eb22;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #1e293b;
+    }
+    .trust-icon {
+      font-size: 20px;
+    }
+
+    /* ── Section ── */
+    section {
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(40px, 5vw, 64px);
+    }
+    .section-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 12px;
+      
+    }
+    .section-header p {
+      font-size: 18px;
+      color: #64748b;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .accent-line {
+      width: 48px;
+      height: 4px;
+      background: #2563eb;
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── Services ── */
+    .services-section {
+      background: #f1f5f9;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #ffffff;
+      border: 1px solid rgba(37,99,235,0.3);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      border-color: #2563eb;
+    }
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(37,99,235,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+      font-size: 18px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .service-content h3 {
+      font-weight: 700;
+      font-size: 17px;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+    .service-content p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* ── Why Section ── */
+    .why-section {
+      background: #0f172a;
+      color: #ffffff;
+    }
+    .why-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .why-section .section-header h2 {
+      color: #ffffff;
+    }
+    .why-section .section-header p {
+      color: rgba(255,255,255,0.75);
+    }
+    .why-body {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .why-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 24px 32px;
+      text-align: center;
+      min-width: 140px;
+    }
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: #2563eb;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      background: #2563eb;
+      text-align: center;
+      padding: clamp(60px, 8vw, 80px) clamp(20px, 5vw, 80px);
+    }
+    .cta-section h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 12px;
+      
+    }
+    .cta-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      color: #2563eb;
+      padding: 18px 40px;
+      border-radius: 10px;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-phone:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+    .phone-icon { font-size: 24px; }
+    .maps-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+    .maps-link:hover { opacity: 1; }
+
+    /* ── Footer ── */
+    footer {
+      background: #0f172a;
+      padding: 32px clamp(20px, 5vw, 80px);
+      text-align: center;
+    }
+    .footer-biz-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+    .footer-location {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .footer-phone {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 24px;
+    }
+    .footer-demo-notice {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+    }
+    .footer-demo-notice a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .hero { min-height: 480px; }
+      .hero h1 { font-size: clamp(28px, 8vw, 44px); }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+      .trust-strip { flex-direction: column; align-items: flex-start; }
+      .why-stats { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Banner -->
+  <div class="demo-banner">
+    🎯 DEMO SITE — Created for Capovilla Plumbing by Iron Tiger Digital
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="nav-logo">Capovilla Plumbing</a>
+    <a href="tel:+19045550123" class="nav-cta">📞 (904) 555-0123</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      
+        <div class="review-badge">
+          <div class="review-stars">★★★★☆</div>
+          <div class="review-text">
+            <strong>4.8 stars</strong> &middot; 8 Google Reviews
+          </div>
+        </div>
+      <h1>Jacksonville's Trusted Plumbing Solutions, Fast.</h1>
+      <p class="hero-sub">When water issues strike in Jacksonville, count on Capovilla Plumbing for reliable, local expertise you can trust.</p>
+      <div class="hero-actions">
+        <a href="tel:+19045550123" class="btn-primary">📞 Call (904) 555-0123</a>
+        <a href="#services" class="btn-secondary">See Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    
+        <div class="trust-badge">
+          <span class="trust-icon">🛡️</span>
+          <span>Licensed & Insured in Florida</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">📍</span>
+          <span>Serving Jacksonville Families for Over a Decade</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">⚡</span>
+          <span>Upfront Pricing, No Hidden Fees</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span>Emergency Services Available 24/7</span>
+        </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Professional plumber services built for Jacksonville homeowners and businesses.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="services-grid">
+      
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <div class="service-content">
+            <h3>Leak Detection & Repair</h3>
+            <p>Find and fix hidden leaks efficiently.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <div class="service-content">
+            <h3>Water Heater Service</h3>
+            <p>Expert installation, repair, and maintenance.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <div class="service-content">
+            <h3>Drain Cleaning</h3>
+            <p>Clear clogs and restore proper drainage.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <div class="service-content">
+            <h3>Pipe Repair & Replacement</h3>
+            <p>Durable solutions for all pipe needs.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <div class="service-content">
+            <h3>Fixture Installation</h3>
+            <p>Professional installation of sinks, toilets, and more.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="why-section" id="about">
+    <div class="why-inner">
+      <div class="section-header">
+        <h2>Your Jacksonville Neighbor.</h2>
+        <div class="accent-line" style="background: #2563eb;"></div>
+      </div>
+      <p class="why-body">We're not just plumbers; we're your neighbors in Jacksonville.  Capovilla Plumbing offers honest assessments and gets the job done right the first time, treating your home with the same care as our own.  Experience the difference local dedication makes.</p>
+      <div class="why-stats">
+        <div class="stat-box">
+          <div class="stat-number">⭐ 4.8</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">Local</div>
+          <div class="stat-label">Jacksonville, FL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <h2>Ready to Get Started?</h2>
+    <p>Call us today for a free estimate. No obligation, no pressure — just honest plumber service in Jacksonville.</p>
+    <a href="tel:+19045550123" class="cta-phone">
+      <span class="phone-icon">📞</span>
+      (904) 555-0123
+    </a>
+    
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-biz-name">Capovilla Plumbing</div>
+    <div class="footer-location">Plumber · Jacksonville, FL</div>
+    <a href="tel:+19045550123" class="footer-phone">(904) 555-0123</a>
+    <div class="footer-demo-notice">
+      This is a demo website created by <strong>Iron Tiger Digital</strong>.<br>
+      Contact us to activate it with your own domain and lead generation setup.<br>
+      <a href="https://irontigerdigital.com" target="_blank" rel="noopener">irontigerdigital.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
