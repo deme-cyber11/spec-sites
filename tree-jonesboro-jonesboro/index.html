@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jonesboro Tree Service LLC - Expert Tree Care in Jonesboro, AR</title>
-  <meta name="description" content="Your local, trusted source for tree trimming, removal, stump grinding, and emergency tree services in Jonesboro, AR. Get a free estimate!">
+  <title>Jonesboro Tree Service LLC | Expert Tree Care in Jonesboro, AR</title>
+  <meta name="description" content="Jonesboro Tree Service LLC offers professional tree trimming, removal, stump grinding, and emergency services in Jonesboro, AR. Get a free estimate!">
   <meta name="robots" content="noindex, nofollow">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -255,22 +255,17 @@
       overflow: hidden;
       min-height: 220px;
       cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-size 0.4s ease;
     }
     .bento-featured {
       grid-column: span 2;
       min-height: 300px;
     }
-    .bento-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 0.4s ease;
-    }
-    .bento-card:hover img {
-      transform: scale(1.06);
+    .bento-card:hover {
+      background-size: 106%;
     }
     .bento-overlay {
       position: absolute;
@@ -390,6 +385,10 @@
       margin-top: 4px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+    }
+    /* Desktop: stats row uses absolute positioning to float over image */
+    .authority-stats-row {
+      position: static;
     }
     .fs-1 { top: -20px; right: -20px; }
     .fs-2 { bottom: 40px; left: -24px; }
@@ -691,6 +690,40 @@
       .nav-links { display: none; }
     }
 
+    @media (max-width: 768px) {
+      /* Authority section: stack properly, no overlapping floats */
+      .authority-visual {
+        position: relative;
+        order: -1;
+      }
+      .authority-img {
+        height: 180px;
+        border-radius: 12px;
+      }
+      /* Convert floating stat cards to inline row */
+      .floating-stat {
+        position: static;
+        display: inline-block;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        min-width: auto;
+        padding: 12px 16px;
+        text-align: center;
+      }
+      .floating-stat .fs-number { font-size: 1.35rem; }
+      .floating-stat .fs-label { font-size: 0.65rem; }
+      .authority-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .authority-stats-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
     @media (max-width: 640px) {
       .hero { min-height: 520px; padding-top: 80px; padding-bottom: 80px; }
       .hero h1 { font-size: clamp(1.75rem, 8vw, 2.75rem); }
@@ -734,8 +767,8 @@
             <strong>4.9 stars</strong> &middot; 62 Google Reviews
           </div>
         </div>
-      <h1>Jonesboro's Trusted Tree Care Pros</h1>
-      <p class="hero-sub">We're your local, reliable team for all your tree needs, keeping Jonesboro beautiful and safe.</p>
+      <h1>Jonesboro's Trusted Tree Care Experts</h1>
+      <p class="hero-sub">We're your local, reliable choice for all your tree maintenance and removal needs in Jonesboro, AR.</p>
       <div class="hero-actions">
         <a href="tel:+18708192299" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -751,15 +784,15 @@
     
         <div class="trust-badge">
           <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <span>Licensed and Insured Arborists in Arkansas</span>
+          <span>Licensed & Insured in Arkansas</span>
         </div>
         <div class="trust-badge">
           <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <span>Proudly Serving Jonesboro for Over 15 Years</span>
+          <span>Serving Jonesboro & surrounding areas for over a decade</span>
         </div>
         <div class="trust-badge">
           <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-          <span>Customer Satisfaction is Our Top Priority</span>
+          <span>Certified Arborist on staff</span>
         </div>
   </div>
 
@@ -773,46 +806,40 @@
       </div>
       <div class="bento-grid reveal">
         
-        <div class="bento-card bento-featured">
-          <img src="https://images.unsplash.com/photo-oB1mqkdDiU0?auto=format&fit=crop&w=900&q=80" alt="Tree trimming arborist" loading="lazy">
+        <div class="bento-card bento-featured" role="img" aria-label="Tree trimming arborist" style="background-image:url('https://source.unsplash.com/900x603/?tree+trimming,arborist');">
           <div class="bento-overlay">
             <h3>Tree Trimming</h3>
-            <p>Enhancing health, safety, and aesthetics of your trees.</p>
+            <p>Keep your trees healthy and shaped for beauty and safety.</p>
           </div>
         </div>
-        <div class="bento-card bento-featured">
-          <img src="https://images.unsplash.com/photo-YdGRiwBqA-0?auto=format&fit=crop&w=900&q=80" alt="Stump removal equipment" loading="lazy">
+        <div class="bento-card bento-featured" role="img" aria-label="Stump removal equipment" style="background-image:url('https://source.unsplash.com/900x603/?stump+removal,tree+service');">
           <div class="bento-overlay">
             <h3>Tree Removal</h3>
-            <p>Safe and efficient removal of hazardous or unwanted trees.</p>
+            <p>Safely eliminate hazardous or unwanted trees from your property.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-Hb6uWq0i4MI?auto=format&fit=crop&w=600&q=80" alt="Professional chainsaw work" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Professional chainsaw work" style="background-image:url('https://source.unsplash.com/600x402/?chainsaw,tree+cutting');">
           <div class="bento-overlay">
             <h3>Stump Grinding</h3>
-            <p>Eliminating unsightly stumps to reclaim your yard space.</p>
+            <p>Efficiently remove unsightly stumps and reclaim your yard space.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-G2MsMVT-Aqo?auto=format&fit=crop&w=600&q=80" alt="Pruned tree canopy" loading="lazy">
-          <div class="bento-overlay">
-            <h3>Lot Clearing</h3>
-            <p>Preparing land for construction or landscaping with speed.</p>
-          </div>
-        </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-sp-p7uuT0tw?auto=format&fit=crop&w=600&q=80" alt="Tree care crew" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Pruned tree canopy" style="background-image:url('https://source.unsplash.com/600x402/?tree+canopy,pruning');">
           <div class="bento-overlay">
             <h3>Emergency Tree Service</h3>
-            <p>Quick response for storm damage and urgent needs.</p>
+            <p>Fast response for storm damage and urgent tree issues.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <img src="https://images.unsplash.com/photo-DKix6Un55mY?auto=format&fit=crop&w=600&q=80" alt="Large tree felling" loading="lazy">
+        <div class="bento-card" role="img" aria-label="Tree care crew" style="background-image:url('https://source.unsplash.com/600x402/?tree+crew,landscaping');">
           <div class="bento-overlay">
             <h3>Arborist Consultations</h3>
-            <p>Expert advice for tree health and management plans.</p>
+            <p>Expert advice for tree health, care, and preservation.</p>
+          </div>
+        </div>
+        <div class="bento-card" role="img" aria-label="Large tree felling" style="background-image:url('https://source.unsplash.com/600x402/?tree+felling,logging');">
+          <div class="bento-overlay">
+            <h3>Lot Clearing</h3>
+            <p>Prepare your land with professional tree and brush removal.</p>
           </div>
         </div>
       </div>
@@ -824,25 +851,25 @@
     <div class="container">
       <div class="authority-grid">
         <div class="authority-copy reveal">
-          <h2>Your Local Tree Experts</h2>
-          <p>Jonesboro Tree Service LLC is deeply rooted in our community, offering genuine care for your trees. We understand the local landscape and prioritize your property's safety and beauty above all else.</p>
+          <h2>Your Neighborly Tree Pros</h2>
+          <p>At Jonesboro Tree Service LLC, we understand the importance of healthy, beautiful trees for our community. We treat every property with the care it deserves, offering personalized service that goes beyond just cutting branches.</p>
           <ul class="authority-points">
             
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Experienced, Certified Arborists on Staff</span>
+                <span>Experienced, local tree technicians</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Free, Transparent Estimates Provided</span>
+                <span>Prompt, reliable scheduling</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Prompt and Reliable Service Guaranteed</span>
+                <span>Satisfaction guaranteed on all work</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Thorough Cleanup After Every Job</span>
+                <span>Clear, upfront pricing</span>
               </li>
           </ul>
           <a href="tel:+18708192299" class="authority-cta">
@@ -851,18 +878,20 @@
           </a>
         </div>
         <div class="authority-visual reveal">
-          <img src="https://images.unsplash.com/photo-oB1mqkdDiU0?auto=format&fit=crop&w=700&q=80" alt="Professional tree service work in Jonesboro" class="authority-img" loading="lazy">
-          <div class="floating-stat fs-1">
-            <div class="fs-number">⭐ 4.9</div>
-            <div class="fs-label">Google Rating</div>
-          </div>
-          <div class="floating-stat fs-2">
-            <div class="fs-number">62+</div>
-            <div class="fs-label">Happy Customers</div>
-          </div>
-          <div class="floating-stat fs-3">
-            <div class="fs-number">24/7</div>
-            <div class="fs-label">Available</div>
+          <img src="https://source.unsplash.com/700x469/?tree+trimming,arborist" alt="Professional tree service work in Jonesboro" class="authority-img" loading="lazy">
+          <div class="authority-stats-row">
+            <div class="floating-stat fs-1">
+              <div class="fs-number">⭐ 4.9</div>
+              <div class="fs-label">Google Rating</div>
+            </div>
+            <div class="floating-stat fs-2">
+              <div class="fs-number">62+</div>
+              <div class="fs-label">Happy Customers</div>
+            </div>
+            <div class="floating-stat fs-3">
+              <div class="fs-number">24/7</div>
+              <div class="fs-label">Available</div>
+            </div>
           </div>
         </div>
       </div>
@@ -882,20 +911,20 @@
         <div class="process-card">
           <div class="process-number">01</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <h3>Get In Touch</h3>
-          <p>Call us today for a friendly conversation about your tree service needs.</p>
+          <h3>Give Us a Call</h3>
+          <p>Contact us easily to discuss your tree needs and set up a convenient time.</p>
         </div>
         <div class="process-card">
           <div class="process-number">02</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 14l2 2 4-4"/></svg></div>
-          <h3>Schedule Free Estimate</h3>
-          <p>We'll visit your property to assess the work and provide a no-obligation quote.</p>
+          <h3>Receive Your Free Estimate</h3>
+          <p>We'll provide a thorough, no-obligation assessment and quote for your project.</p>
         </div>
         <div class="process-card">
           <div class="process-number">03</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
-          <h3>We Deliver Excellence</h3>
-          <p>Our skilled team performs the work safely and efficiently, leaving your property clean.</p>
+          <h3>We Handle the Rest</h3>
+          <p>Our team works efficiently and cleanly, leaving your property looking its best.</p>
         </div>
       </div>
     </div>
@@ -912,7 +941,7 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         (870) 819-2299
       </a>
-      <a href="https://www.google.com/maps/place/Jonesboro+Tree+Service+LLC" target="_blank" rel="noopener" class="maps-link-cta">📍 View on Google Maps</a>
+      <a href="https://maps.google.com/" target="_blank" rel="noopener" class="maps-link-cta">📍 View on Google Maps</a>
     </div>
   </section>
 
@@ -921,7 +950,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">Jonesboro Tree Service LLC</div>
-        <p class="footer-tagline">Jonesboro's Choice for Quality Tree Care.</p>
+        <p class="footer-tagline">Jonesboro Tree Service: Healthy Trees, Happy Homeowners.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -929,8 +958,8 @@
           <li>Tree Trimming</li>
             <li>Tree Removal</li>
             <li>Stump Grinding</li>
-            <li>Lot Clearing</li>
             <li>Emergency Tree Service</li>
+            <li>Arborist Consultations</li>
             
         </ul>
       </div>
@@ -939,7 +968,7 @@
         <ul>
           <li><a href="tel:+18708192299">(870) 819-2299</a></li>
           <li>Jonesboro, AR</li>
-          <li><a href="https://www.google.com/maps/place/Jonesboro+Tree+Service+LLC" target="_blank" rel="noopener">Google Maps</a></li>
+          <li><a href="https://maps.google.com/" target="_blank" rel="noopener">Google Maps</a></li>
         </ul>
       </div>
     </div>
