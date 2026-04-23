@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Email Preview — Goebel Custom Pools (Day 1)</title>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --accent: #0891b2;
+    --accent-hover: #0e7490;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 16px;
+    background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .preview-tag {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .preview-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .email {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .email-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: #fafbfc;
+  }
+  .subject {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .meta-text { flex: 1; min-width: 0; }
+  .from { font-weight: 600; color: var(--text); }
+  .from-email { color: var(--muted); font-weight: 400; }
+  .to { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .date { color: var(--muted); font-size: 13px; white-space: nowrap; }
+
+  .email-body {
+    padding: 28px 32px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .email-body p { margin: 0 0 16px; }
+  .email-body ul { margin: 0 0 16px; padding-left: 22px; }
+  .email-body li { margin-bottom: 6px; }
+  .email-body strong { color: var(--text); }
+  .email-body a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .email-body a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  .demo-cta {
+    display: block;
+    margin: 22px 0;
+    padding: 14px 20px;
+    background: #f0fdfa;
+    border: 1px solid #ccfbf1;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .demo-cta a { color: var(--accent); }
+
+  .signature {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .signature .name { color: var(--text); font-weight: 600; }
+
+  .specs {
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .specs h3 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .specs dl { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; }
+  .specs dt { font-weight: 600; color: var(--text); }
+  .specs dd { margin: 0; }
+
+  @media (max-width: 560px) {
+    .email-body { padding: 20px 18px; }
+    .email-header { padding: 16px 18px; }
+    .subject { font-size: 17px; }
+    .specs dl { grid-template-columns: 1fr; }
+    .specs dt { margin-top: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="preview-tag">EMAIL PREVIEW — NOT SENT</span>
+  <p class="preview-note">Josh Braun "Poke the Bear" framework, Day 1 of outbound sequence. Target: Damon Goebel, Goebel Custom Pools (San Antonio, TX).</p>
+
+  <div class="email">
+    <div class="email-header">
+      <h1 class="subject">Goebel Custom Pools</h1>
+      <div class="meta-row">
+        <div class="avatar">CD</div>
+        <div class="meta-text">
+          <div><span class="from">Costa Demetral</span> <span class="from-email">&lt;costa@irontigerdigital.com&gt;</span></div>
+          <div class="to">to Damon Goebel &lt;damon@goebelcustompools.com&gt;</div>
+        </div>
+        <div class="date">Day 1</div>
+      </div>
+    </div>
+
+    <div class="email-body">
+      <p>Hey Damon,</p>
+
+      <p>Looked through a handful of pool builders in San Antonio this week and Goebel stood out — 5.0 on HomeAdvisor, A+ with the BBB, 15 years in. That kind of reputation doesn't happen by accident.</p>
+
+      <p>Which is why what I'm about to say might sting a little.</p>
+
+      <p>Your current site is a placeholder template. It's not ranking for "San Antonio pool resurfacing," it's not converting the people who <em>do</em> land on it, and it's doing none of the work a 15-year reputation deserves. For most pool builders that's a rounding error. For you, it's the difference between owning the SA market and splitting it with shops who are half as good but twice as visible online.</p>
+
+      <p>Two numbers worth sitting with:</p>
+      <ul>
+        <li><strong>47%</strong> of home-service calls come in after hours (AgentZap, 2026)</li>
+        <li><strong>85%</strong> of callers who hit voicemail never try the same business twice (Housecall Pro)</li>
+      </ul>
+
+      <p>For a pool job at your ticket size, every missed call is somewhere between $300 and $1,200 gone — before you even get to the resurfacing and new-build work that walks because the website couldn't close it.</p>
+
+      <p>So I built you a rough cut of what it <em>could</em> look like. 100% you, 100% San Antonio, built in a day:</p>
+
+      <div class="demo-cta">
+        → <a href="https://demo.irontigerdigital.com/pool-sa-goebel/" target="_blank" rel="noopener">demo.irontigerdigital.com/pool-sa-goebel</a>
+      </div>
+
+      <p>The second half of this is an AI voice agent we've been training — picks up every call, qualifies the lead, books the estimate, texts you the details. Same script an email would run, except it actually talks to them at 9 PM on a Saturday.</p>
+
+      <p>Have you ever thought about what San Antonio pool season would look like if your site and your phone were both firing on every cylinder?</p>
+
+      <p>Would it be crazy to grab 10 minutes this week so I can walk you through it?</p>
+
+      <div class="signature">
+        <div class="name">— Costa</div>
+        <div>Iron Tiger Digital</div>
+        <div>(512) XXX-XXXX · costa@irontigerdigital.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="specs">
+    <h3>Draft Specs</h3>
+    <dl>
+      <dt>Framework</dt><dd>Josh Braun "Poke the Bear" — Day 1</dd>
+      <dt>Subject line</dt><dd>"Goebel Custom Pools" (Braun default; no hook)</dd>
+      <dt>Word count</dt><dd>~220 words</dd>
+      <dt>Structure</dt><dd>Butter up → Poke → Quantify → Demo → Sarah tease → Low-commit close</dd>
+      <dt>Status</dt><dd>DRAFT — awaiting approval before send</dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>
