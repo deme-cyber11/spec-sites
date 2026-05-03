@@ -9,15 +9,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* ══════════════════════════════════════════════════════════════
-       v2.5 — Full page quality spec site
+       v2.6 — Maroon/pink palette to match American Septic logo
        ══════════════════════════════════════════════════════════════ */
+
+    :root {
+      --maroon: #8B1A1A;
+      --maroon-deep: #5C1010;
+      --maroon-hover: #A52828;
+      --pink-bg: #FBE9E9;
+      --pink-soft: #F5D0D0;
+      --pink-tint: #FFF5F5;
+    }
 
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', Inter, system-ui, -apple-system, sans-serif;
-      color: #0f172a;
+      color: #1c0808;
       background: #ffffff;
       line-height: 1.7;
       font-size: 1rem;
@@ -49,27 +58,34 @@
 
     /* ── §1 Nav ── */
     .site-nav {
-      background: #0c4a6e;
-      padding: 16px clamp(20px, 5vw, 60px);
+      background: var(--pink-bg);
+      padding: 14px clamp(20px, 5vw, 60px);
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: relative;
       z-index: auto;
       transition: background 0.3s, backdrop-filter 0.3s;
+      border-bottom: 1px solid rgba(139, 26, 26, 0.12);
     }
     .site-nav.scrolled {
-      background: rgba(15,23,42,0.85);
+      background: rgba(251, 233, 233, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
     .nav-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
-      letter-spacing: -0.02em;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-logo-text {
+      display: none;
     }
     .nav-links {
       display: flex;
@@ -77,15 +93,15 @@
       gap: 28px;
     }
     .nav-link {
-      color: rgba(255,255,255,0.7);
+      color: var(--maroon-deep);
       text-decoration: none;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.2s;
     }
-    .nav-link:hover { color: #ffffff; }
+    .nav-link:hover { color: var(--maroon); }
     .nav-cta {
-      background: #0369a1;
+      background: var(--maroon);
       color: #ffffff;
       padding: 10px 20px;
       border-radius: 6px;
@@ -95,14 +111,14 @@
       white-space: nowrap;
       transition: background 0.2s, transform 0.15s;
     }
-    .nav-cta:hover { background: #0284c7; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--maroon-hover); transform: translateY(-1px); }
 
     /* ── §2 Hero ── */
     .hero {
       min-height: 600px;
       display: flex;
       align-items: center;
-      background-image: linear-gradient(rgba(12,74,110,0.65), rgba(12,74,110,0.65)), url('hero.jpg');
+      background-image: linear-gradient(rgba(92,16,16,0.72), rgba(92,16,16,0.72)), url('hero.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -121,11 +137,10 @@
       line-height: 1.08;
       margin-bottom: 20px;
       letter-spacing: -0.02em;
-      
     }
     .hero-sub {
       font-size: clamp(1rem, 2vw, 1.25rem);
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.92);
       margin-bottom: 36px;
       max-width: 520px;
       line-height: 1.6;
@@ -137,7 +152,7 @@
       align-items: center;
     }
     .btn-primary {
-      background: #0369a1;
+      background: var(--maroon);
       color: #ffffff;
       padding: 16px 32px;
       border-radius: 8px;
@@ -151,9 +166,9 @@
       white-space: nowrap;
     }
     .btn-primary:hover {
-      background: #0284c7;
+      background: var(--maroon-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px #0369a144;
+      box-shadow: 0 8px 25px rgba(139,26,26,0.4);
     }
     .btn-secondary {
       border: 2px solid rgba(255,255,255,0.5);
@@ -183,11 +198,11 @@
       -webkit-backdrop-filter: blur(8px);
     }
     .review-stars { color: #fbbf24; font-size: 18px; letter-spacing: 1px; }
-    .review-text { color: rgba(255,255,255,0.9); font-size: 14px; }
+    .review-text { color: rgba(255,255,255,0.95); font-size: 14px; }
 
     /* ── §3 Trust Strip ── */
     .trust-strip {
-      background: #e0f2fe;
+      background: var(--pink-bg);
       padding: 28px clamp(20px, 5vw, 80px);
       display: flex;
       flex-wrap: wrap;
@@ -200,10 +215,10 @@
       gap: 10px;
       font-weight: 600;
       font-size: 15px;
-      color: #0f172a;
+      color: var(--maroon-deep);
     }
     .trust-icon {
-      color: #0369a1;
+      color: var(--maroon);
       display: flex;
       align-items: center;
     }
@@ -220,31 +235,28 @@
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(1.75rem, 4vw, 3rem);
       font-weight: 800;
-      color: #0f172a;
+      color: var(--maroon-deep);
       margin-bottom: 12px;
       letter-spacing: -0.02em;
-      
     }
     .section-header p {
       font-size: 1.125rem;
-      color: #475569;
+      color: #6b3a3a;
       max-width: 540px;
       margin: 0 auto;
     }
     .section-header--light h2 { color: #fef9f0; }
-    .section-header--light p { color: rgba(255,255,255,0.7); }
+    .section-header--light p { color: rgba(255,255,255,0.78); }
     .accent-line {
       width: 48px;
       height: 4px;
-      background: #0369a1;
+      background: var(--maroon);
       margin: 16px auto 0;
       border-radius: 2px;
     }
 
     /* ── §4 Services — Bento Grid ── */
-    .services-section {
-      background: #ffffff;
-    }
+    .services-section { background: #ffffff; }
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -263,20 +275,15 @@
       background-repeat: no-repeat;
       transition: background-size 0.4s ease;
     }
-    .bento-featured {
-      grid-column: span 2;
-      min-height: 300px;
-    }
-    .bento-card:hover {
-      background-size: 106%;
-    }
+    .bento-featured { grid-column: span 2; min-height: 300px; }
+    .bento-card:hover { background-size: 106%; }
     .bento-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
       padding: 24px;
-      background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 50%, transparent 100%);
+      background: linear-gradient(0deg, rgba(48,8,8,0.85) 0%, rgba(48,8,8,0.4) 50%, transparent 100%);
       z-index: 2;
       display: flex;
       flex-direction: column;
@@ -293,14 +300,12 @@
     }
     .bento-overlay p {
       font-size: 0.875rem;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.85);
       line-height: 1.5;
     }
 
-    /* ── §5 Authority / Why Us — Split Layout ── */
-    .authority-section {
-      background: #f0f9ff;
-    }
+    /* ── §5 Authority / Why Us ── */
+    .authority-section { background: var(--pink-tint); }
     .authority-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -313,14 +318,13 @@
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 800;
-      color: #0f172a;
+      color: var(--maroon-deep);
       margin-bottom: 20px;
       letter-spacing: -0.02em;
-      
     }
     .authority-copy > p {
       font-size: 1.125rem;
-      color: #475569;
+      color: #6b3a3a;
       line-height: 1.8;
       margin-bottom: 32px;
     }
@@ -336,7 +340,7 @@
       gap: 12px;
       font-size: 1rem;
       font-weight: 500;
-      color: #0f172a;
+      color: var(--maroon-deep);
     }
     .authority-points svg { flex-shrink: 0; }
     .authority-cta {
@@ -344,7 +348,7 @@
       align-items: center;
       gap: 8px;
       margin-top: 32px;
-      background: #0369a1;
+      background: var(--maroon);
       color: #ffffff;
       padding: 14px 28px;
       border-radius: 8px;
@@ -353,10 +357,8 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
     }
-    .authority-cta:hover { background: #0284c7; transform: translateY(-2px); }
-    .authority-visual {
-      position: relative;
-    }
+    .authority-cta:hover { background: var(--maroon-hover); transform: translateY(-2px); }
+    .authority-visual { position: relative; }
     .authority-img {
       border-radius: 16px;
       width: 100%;
@@ -365,42 +367,37 @@
     }
     .floating-stat {
       position: absolute;
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(0,0,0,0.08);
+      border: 1px solid rgba(139,26,26,0.15);
       border-radius: 14px;
       padding: 16px 22px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 32px rgba(92,16,16,0.18);
       min-width: 130px;
     }
     .floating-stat .fs-number {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.75rem;
       font-weight: 900;
-      color: #0369a1;
+      color: var(--maroon);
       line-height: 1;
     }
     .floating-stat .fs-label {
       font-size: 0.75rem;
-      color: #475569;
+      color: #6b3a3a;
       font-weight: 600;
       margin-top: 4px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    /* Desktop: stats row uses absolute positioning to float over image */
-    .authority-stats-row {
-      position: static;
-    }
+    .authority-stats-row { position: static; }
     .fs-1 { top: -20px; right: -20px; }
     .fs-2 { bottom: 40px; left: -24px; }
     .fs-3 { bottom: -16px; right: 40px; }
 
-    /* ── §6 Process / How It Works ── */
-    .process-section {
-      background: #0c4a6e;
-    }
+    /* ── §6 Process ── */
+    .process-section { background: var(--maroon-deep); }
     .process-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -410,7 +407,7 @@
     }
     .process-card {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 16px;
       padding: 36px 28px;
       text-align: center;
@@ -418,13 +415,13 @@
     }
     .process-card:hover {
       background: rgba(255,255,255,0.08);
-      border-color: #0369a166;
+      border-color: rgba(245, 208, 208, 0.5);
     }
     .process-number {
       font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #0369a1, #0284c7);
+      background: linear-gradient(135deg, #f5d0d0, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -432,7 +429,7 @@
       margin-bottom: 16px;
     }
     .process-icon {
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.55);
       margin-bottom: 16px;
       display: flex;
       justify-content: center;
@@ -447,14 +444,313 @@
     }
     .process-card p {
       font-size: 0.9375rem;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.75);
       line-height: 1.7;
     }
 
-    /* ── §7 Testimonials ── */
-    .testimonials-section {
-      background: #0c4a6e;
+    /* ── §SOCIAL — Previews Gallery ── */
+    .social-section {
+      background: var(--pink-bg);
     }
+    .social-pitch-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(40px, 5vw, 64px);
+      max-width: 1200px;
+      margin: 0 auto clamp(40px, 5vw, 64px);
+      align-items: center;
+    }
+    .social-pitch-copy h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--maroon-deep);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .social-pitch-copy > p {
+      font-size: 1.0625rem;
+      color: #6b3a3a;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .social-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .social-stat {
+      background: #ffffff;
+      border: 1px solid rgba(139,26,26,0.12);
+      border-radius: 12px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .social-stat .ss-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--maroon);
+      line-height: 1;
+    }
+    .social-stat .ss-label {
+      font-size: 0.78rem;
+      color: #6b3a3a;
+      font-weight: 600;
+      margin-top: 6px;
+      letter-spacing: 0.02em;
+    }
+    .social-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .social-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.97rem;
+      color: var(--maroon-deep);
+      line-height: 1.55;
+    }
+    .social-benefits svg { flex-shrink: 0; margin-top: 4px; }
+
+    /* Social previews — phone-style mockups */
+    .social-mockup-stack {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .mockup {
+      flex: 1;
+      max-width: 280px;
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 20px 50px rgba(92,16,16,0.18), 0 0 0 1px rgba(139,26,26,0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .mockup:hover { transform: translateY(-4px); }
+
+    /* IG mockup */
+    .mockup-ig .ig-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-bottom: 1px solid #efefef;
+    }
+    .mockup-ig .ig-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: #262626;
+    }
+    .mockup-ig .ig-dots { color: #999; font-size: 18px; letter-spacing: 1px; }
+    .mockup-ig .ig-bio {
+      padding: 14px 16px 12px;
+    }
+    .mockup-ig .ig-avatar-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .mockup-ig .ig-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--pink-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid var(--maroon);
+    }
+    .mockup-ig .ig-avatar img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+    .mockup-ig .ig-stats {
+      display: flex;
+      gap: 14px;
+      flex: 1;
+      font-size: 12px;
+      color: #262626;
+    }
+    .mockup-ig .ig-stats div { text-align: center; }
+    .mockup-ig .ig-stats strong { display: block; font-size: 14px; }
+    .mockup-ig .ig-name {
+      font-weight: 700;
+      font-size: 13px;
+      color: #262626;
+      margin-bottom: 2px;
+    }
+    .mockup-ig .ig-handle {
+      font-size: 12px;
+      color: #8e8e8e;
+      margin-bottom: 8px;
+    }
+    .mockup-ig .ig-tagline {
+      font-size: 12.5px;
+      color: #262626;
+      line-height: 1.45;
+    }
+    .mockup-ig .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .mockup-ig .ig-grid > div {
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* FB mockup */
+    .mockup-fb .fb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #ffffff;
+      border-bottom: 1px solid #e4e6eb;
+    }
+    .mockup-fb .fb-logo {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #1877F2;
+      letter-spacing: -0.5px;
+    }
+    .mockup-fb .fb-search {
+      font-size: 16px;
+      color: #65676b;
+    }
+    .mockup-fb .fb-cover {
+      height: 92px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .mockup-fb .fb-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(92,16,16,0.4) 100%);
+    }
+    .mockup-fb .fb-page-info {
+      padding: 0 14px 12px;
+      position: relative;
+      margin-top: -28px;
+    }
+    .mockup-fb .fb-page-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 4px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .mockup-fb .fb-page-avatar img { width: 100%; height: 100%; object-fit: contain; }
+    .mockup-fb .fb-page-name {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #050505;
+      margin-top: 8px;
+    }
+    .mockup-fb .fb-page-meta {
+      font-size: 12px;
+      color: #65676b;
+      margin-top: 2px;
+    }
+    .mockup-fb .fb-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .mockup-fb .fb-btn {
+      flex: 1;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .mockup-fb .fb-btn-primary {
+      background: #1877F2;
+      color: #ffffff;
+    }
+    .mockup-fb .fb-btn-secondary {
+      background: #e4e6eb;
+      color: #050505;
+    }
+    .mockup-fb .fb-post {
+      border-top: 8px solid #f0f2f5;
+      padding: 12px 14px 10px;
+    }
+    .mockup-fb .fb-post-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .mockup-fb .fb-post-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--pink-soft);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px;
+    }
+    .mockup-fb .fb-post-avatar img { width: 100%; height: 100%; object-fit: contain; }
+    .mockup-fb .fb-post-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #050505;
+    }
+    .mockup-fb .fb-post-time {
+      font-size: 10.5px;
+      color: #65676b;
+    }
+    .mockup-fb .fb-post-text {
+      font-size: 12.5px;
+      color: #050505;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .mockup-fb .fb-post-img {
+      height: 110px;
+      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 8px;
+    }
+    .mockup-fb .fb-post-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #65676b;
+      padding-top: 6px;
+      border-top: 1px solid #e4e6eb;
+    }
+
+    /* ── §7 Testimonials ── */
+    .testimonials-section { background: var(--maroon-deep); }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -464,7 +760,7 @@
     }
     .testimonial-card {
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 16px;
       padding: 32px;
     }
@@ -476,7 +772,7 @@
     }
     .testimonial-card p {
       font-size: 1rem;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.9);
       line-height: 1.7;
       font-style: italic;
     }
@@ -490,7 +786,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: #0369a1;
+      background: var(--maroon);
       color: #ffffff;
       display: flex;
       align-items: center;
@@ -500,13 +796,13 @@
     }
     .testimonial-source span {
       font-size: 0.8125rem;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.6);
       font-weight: 600;
     }
 
     /* ── §8 CTA Gradient ── */
     .cta-section {
-      background: linear-gradient(135deg, #0369a1, #0284c7);
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
       text-align: center;
       padding: clamp(64px, 8vw, 96px) clamp(20px, 5vw, 80px);
     }
@@ -517,11 +813,10 @@
       color: #ffffff;
       margin-bottom: 12px;
       letter-spacing: -0.02em;
-      
     }
     .cta-section .cta-urgency {
       font-size: 1.125rem;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.92);
       margin-bottom: 36px;
       max-width: 500px;
       margin-left: auto;
@@ -532,7 +827,7 @@
       align-items: center;
       gap: 12px;
       background: #ffffff;
-      color: #0369a1;
+      color: var(--maroon-deep);
       padding: 20px 44px;
       border-radius: 12px;
       font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -545,16 +840,6 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 40px rgba(0,0,0,0.25);
     }
-    .maps-link-cta {
-      display: inline-block;
-      margin-top: 20px;
-      color: rgba(255,255,255,0.85);
-      font-size: 14px;
-      text-decoration: none;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-    .maps-link-cta:hover { opacity: 1; }
     .cta-dual {
       display: grid;
       grid-template-columns: 1fr;
@@ -568,10 +853,10 @@
     }
     .cta-form {
       background: rgba(255,255,255,0.96);
-      color: #0c0a09;
+      color: #1c0808;
       padding: 28px 24px;
       border-radius: 14px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.22);
       text-align: left;
       display: flex;
       flex-direction: column;
@@ -589,7 +874,7 @@
       font-family: inherit;
       font-size: 1rem;
       padding: 10px 12px;
-      border: 1px solid #d6d3d1;
+      border: 1px solid #e5d3d3;
       border-radius: 8px;
       background: #ffffff;
       color: inherit;
@@ -598,13 +883,13 @@
     }
     .cta-form textarea { resize: vertical; min-height: 72px; }
     .cta-form input:focus, .cta-form textarea:focus {
-      outline: 2px solid #0369a1;
+      outline: 2px solid var(--maroon);
       outline-offset: 1px;
       border-color: transparent;
     }
     .cta-form-submit {
       margin-top: 4px;
-      background: #0369a1;
+      background: var(--maroon);
       color: #ffffff;
       border: none;
       padding: 14px 20px;
@@ -613,10 +898,11 @@
       font-weight: 800;
       letter-spacing: 0.02em;
       cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.2s;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
     }
     .cta-form-submit:hover {
       transform: translateY(-2px);
+      background: var(--maroon-hover);
       box-shadow: 0 10px 28px rgba(0,0,0,0.22);
     }
     .cta-form-note {
@@ -626,11 +912,11 @@
       line-height: 1.4;
     }
 
-    /* ── §9 Footer — 3 column ── */
+    /* ── §9 Footer ── */
     .site-footer {
-      background: #0a0f1a;
+      background: #1a0606;
       padding: clamp(48px, 6vw, 72px) clamp(20px, 5vw, 80px) 32px;
-      border-top: 3px solid #0369a1;
+      border-top: 3px solid var(--maroon);
     }
     .footer-grid {
       display: grid;
@@ -641,17 +927,18 @@
       padding-bottom: 40px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .footer-brand .footer-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.375rem;
-      color: #0369a1;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
+    .footer-brand img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      background: var(--pink-bg);
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin-bottom: 14px;
     }
     .footer-brand .footer-tagline {
       font-size: 0.9375rem;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.55);
       line-height: 1.6;
       max-width: 280px;
     }
@@ -659,22 +946,20 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 0.8125rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.45);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 16px;
     }
-    .footer-col ul {
-      list-style: none;
-    }
+    .footer-col ul { list-style: none; }
     .footer-col li {
       font-size: 0.9375rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.65);
       margin-bottom: 10px;
       line-height: 1.4;
     }
     .footer-col a {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.65);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -691,16 +976,16 @@
     }
     .footer-demo {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.35);
       line-height: 1.6;
     }
     .footer-demo a {
-      color: #0369a1;
+      color: var(--pink-soft);
       text-decoration: none;
     }
     .footer-credit {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.3);
     }
 
     /* ── Mobile Sticky CTA ── */
@@ -711,7 +996,7 @@
       left: 0;
       right: 0;
       z-index: 999;
-      background: #0c4a6e;
+      background: var(--maroon-deep);
       border-top: 1px solid rgba(255,255,255,0.1);
       padding: 12px 20px;
     }
@@ -720,7 +1005,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: #0369a1;
+      background: var(--maroon);
       color: #ffffff;
       padding: 14px;
       border-radius: 10px;
@@ -730,51 +1015,28 @@
       width: 100%;
     }
 
-    /* ── Scroll reveal — disabled for spec sites, content always visible ── */
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal { opacity: 1; transform: none; }
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .bento-featured {
-        grid-column: span 2;
-      }
-      .authority-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .bento-featured { grid-column: span 2; }
+      .authority-grid { grid-template-columns: 1fr; gap: 40px; }
       .authority-visual { order: -1; }
       .authority-img { height: 300px; }
       .fs-1 { right: 8px; top: -12px; }
       .fs-2 { left: 8px; bottom: 24px; }
       .fs-3 { right: 16px; bottom: -12px; }
-      .process-grid {
-        grid-template-columns: 1fr;
-        max-width: 440px;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
+      .process-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .nav-links { display: none; }
+      .social-pitch-grid { grid-template-columns: 1fr; gap: 40px; }
+      .social-mockup-stack { gap: 14px; }
     }
 
     @media (max-width: 768px) {
-      /* Authority section: stack properly, no overlapping floats */
-      .authority-visual {
-        position: relative;
-        order: -1;
-      }
-      .authority-img {
-        height: 180px;
-        border-radius: 12px;
-      }
-      /* Convert floating stat cards to inline row */
+      .authority-visual { position: relative; order: -1; }
+      .authority-img { height: 180px; border-radius: 12px; }
       .floating-stat {
         position: static;
         display: inline-block;
@@ -785,17 +1047,10 @@
       }
       .floating-stat .fs-number { font-size: 1.35rem; }
       .floating-stat .fs-label { font-size: 0.65rem; }
-      .authority-visual {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .authority-stats-row {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+      .authority-visual { display: flex; flex-direction: column; gap: 12px; }
+      .authority-stats-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      .social-mockup-stack { flex-direction: column; align-items: center; gap: 24px; }
+      .mockup { max-width: 320px; width: 100%; }
     }
 
     @media (max-width: 640px) {
@@ -810,21 +1065,26 @@
       .mobile-cta-bar { display: block; }
       body { padding-bottom: 72px; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-logo img { height: 36px; }
+      .social-stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sticky Header (banner + nav) -->
+  <!-- Sticky Header -->
   <div class="sticky-header">
     <div class="demo-banner">
       DEMO SITE — Created for American Septic Tank Services by Iron Tiger Digital
     </div>
     <nav class="site-nav" id="site-nav">
-      <a href="#" class="nav-logo">American Septic Tank Services</a>
+      <a href="#" class="nav-logo">
+        <img src="logo.jpg" alt="American Septic Tank Service">
+      </a>
       <div class="nav-links">
         <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
+        <a href="#social" class="nav-link">Follow Us</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="tel:+13375550100" class="nav-cta">📞 (337) 555-0100</a>
       </div>
@@ -834,13 +1094,12 @@
   <!-- §2 Hero -->
   <section class="hero">
     <div class="hero-content">
-      
-        <div class="review-badge">
-          <div class="review-stars">★★★★☆</div>
-          <div class="review-text">
-            <strong>4.8 stars</strong> &middot; 47 Google Reviews
-          </div>
+      <div class="review-badge">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">
+          <strong>4.8 stars</strong> &middot; 47 Google Reviews
         </div>
+      </div>
       <h1>Lafayette's Trusted Septic Tank Experts</h1>
       <p class="hero-sub">When your home's septic system needs reliable attention, American Septic Tank Services is the local name you can count on in Lafayette.</p>
       <div class="hero-actions">
@@ -855,22 +1114,21 @@
 
   <!-- §3 Trust Strip -->
   <div class="trust-strip">
-    
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <span>Licensed and Insured in Louisiana</span>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <span>Proudly serving Lafayette for over 15 years</span>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-          <span>Emergency services available for urgent needs</span>
-        </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <span>Licensed and Insured in Louisiana</span>
+    </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <span>Proudly serving Lafayette for over 15 years</span>
+    </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+      <span>Emergency services available for urgent needs</span>
+    </div>
   </div>
 
-  <!-- §4 Services — Bento Grid -->
+  <!-- §4 Services -->
   <section class="services-section section-pad" id="services">
     <div class="container">
       <div class="section-header reveal">
@@ -879,7 +1137,6 @@
         <div class="accent-line"></div>
       </div>
       <div class="bento-grid reveal">
-        
         <div class="bento-card bento-featured" role="img" aria-label="Septic Tank Pumping" style="background-image:url('service-1.jpg');">
           <div class="bento-overlay">
             <h3>Septic Tank Pumping</h3>
@@ -920,7 +1177,7 @@
     </div>
   </section>
 
-  <!-- §5 Authority / Why Us — Split Layout -->
+  <!-- §5 Authority / Why Us -->
   <section class="authority-section section-pad" id="about">
     <div class="container">
       <div class="authority-grid">
@@ -928,23 +1185,22 @@
           <h2>Your Local Septic Choice</h2>
           <p>We understand the unique needs of Lafayette homeowners and businesses. Our team offers prompt, honest service with a focus on keeping your septic system running smoothly for years to come.</p>
           <ul class="authority-points">
-            
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Experienced, background-checked technicians</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Prompt and reliable service scheduling</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Clear, upfront pricing – no surprises</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Commitment to local community satisfaction</span>
-              </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Experienced, background-checked technicians</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Prompt and reliable service scheduling</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Clear, upfront pricing – no surprises</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Commitment to local community satisfaction</span>
+            </li>
           </ul>
           <a href="tel:+13375550100" class="authority-cta">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -972,7 +1228,7 @@
     </div>
   </section>
 
-  <!-- §6 Process / How It Works -->
+  <!-- §6 Process -->
   <section class="process-section section-pad">
     <div class="container">
       <div class="section-header section-header--light reveal">
@@ -981,7 +1237,6 @@
         <div class="accent-line"></div>
       </div>
       <div class="process-grid reveal">
-        
         <div class="process-card">
           <div class="process-number">01</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
@@ -1004,7 +1259,125 @@
     </div>
   </section>
 
-  
+  <!-- §SOCIAL — Why social pages matter + previews -->
+  <section class="social-section section-pad" id="social">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Find Us On Social Media</h2>
+        <p>Why a strong Instagram and Facebook presence wins more local septic jobs</p>
+        <div class="accent-line"></div>
+      </div>
+
+      <div class="social-pitch-grid">
+        <div class="social-pitch-copy reveal">
+          <h3>Where Lafayette Homeowners Look Before They Call</h3>
+          <p>When a tank backs up at 9pm, the first thing a homeowner does isn't pick up the phone — they pull out their phone and search. Most won't book a service they can't see, can't read reviews on, and can't tell if the company's still in business. Active social pages quietly close that trust gap before they ever dial.</p>
+
+          <div class="social-stats">
+            <div class="social-stat">
+              <div class="ss-num">76%</div>
+              <div class="ss-label">Check social before hiring local services</div>
+            </div>
+            <div class="social-stat">
+              <div class="ss-num">2.4×</div>
+              <div class="ss-label">More callbacks for businesses with active pages</div>
+            </div>
+            <div class="social-stat">
+              <div class="ss-num">#1</div>
+              <div class="ss-label">Trust signal: recent posts &amp; real photos</div>
+            </div>
+          </div>
+
+          <ul class="social-benefits">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Proof you're active.</strong> A page that posted last week beats a competitor whose last post was 2022.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Reviews + photos in one place.</strong> Customers cross-check Google with FB/IG to make sure you're legit.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Free local reach.</strong> Tagged photos and shares from happy customers put you in front of their entire neighborhood — at no cost.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Direct messages = warm leads.</strong> People who DM are 3× more likely to book than cold callers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="social-mockup-stack reveal">
+          <!-- Instagram mockup -->
+          <div class="mockup mockup-ig">
+            <div class="ig-header">
+              <div class="ig-logo">Instagram</div>
+              <div class="ig-dots">⋯</div>
+            </div>
+            <div class="ig-bio">
+              <div class="ig-avatar-row">
+                <div class="ig-avatar"><img src="logo.jpg" alt=""></div>
+                <div class="ig-stats">
+                  <div><strong>148</strong>posts</div>
+                  <div><strong>1,247</strong>followers</div>
+                  <div><strong>312</strong>following</div>
+                </div>
+              </div>
+              <div class="ig-name">American Septic Tank Service</div>
+              <div class="ig-handle">@americansepticla</div>
+              <div class="ig-tagline">🚛 Lafayette's trusted septic experts<br>📞 (337) 555-0100<br>⭐ 4.8 on Google · Licensed &amp; Insured</div>
+            </div>
+            <div class="ig-grid">
+              <div style="background-image:url('service-1.jpg');"></div>
+              <div style="background-image:url('service-2.jpg');"></div>
+              <div style="background-image:url('service-3.jpg');"></div>
+              <div style="background-image:url('service-4.jpg');"></div>
+              <div style="background-image:url('service-1.jpg');"></div>
+              <div style="background-image:url('service-2.jpg');"></div>
+              <div style="background-image:url('service-3.jpg');"></div>
+              <div style="background-image:url('service-4.jpg');"></div>
+              <div style="background-image:url('service-1.jpg');"></div>
+            </div>
+          </div>
+
+          <!-- Facebook mockup -->
+          <div class="mockup mockup-fb">
+            <div class="fb-header">
+              <div class="fb-logo">facebook</div>
+              <div class="fb-search">🔍</div>
+            </div>
+            <div class="fb-cover" style="background-image:url('hero.jpg');"></div>
+            <div class="fb-page-info">
+              <div class="fb-page-avatar"><img src="logo.jpg" alt=""></div>
+              <div class="fb-page-name">American Septic Tank Service</div>
+              <div class="fb-page-meta">Septic Service · Lafayette, LA · 4.9 ★ (38 reviews)</div>
+              <div class="fb-actions">
+                <div class="fb-btn fb-btn-primary">Like</div>
+                <div class="fb-btn fb-btn-secondary">Message</div>
+                <div class="fb-btn fb-btn-secondary">Call</div>
+              </div>
+            </div>
+            <div class="fb-post">
+              <div class="fb-post-head">
+                <div class="fb-post-avatar"><img src="logo.jpg" alt=""></div>
+                <div>
+                  <div class="fb-post-name">American Septic Tank Service</div>
+                  <div class="fb-post-time">2 days ago · 🌎</div>
+                </div>
+              </div>
+              <div class="fb-post-text">Pumped a 1,500 gal tank in Youngsville this morning — 7 years overdue. Don't wait til it backs up. Call us for a free quote 👇</div>
+              <div class="fb-post-img" style="background-image:url('service-2.jpg');"></div>
+              <div class="fb-post-stats">
+                <span>👍 ❤️ 47</span>
+                <span>12 comments · 8 shares</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- §8 CTA -->
   <section class="cta-section" id="contact">
@@ -1026,26 +1399,24 @@
           <p class="cta-form-note">Replies weekdays after 5pm &amp; weekends — 47% of service calls come when the office is closed. We don't miss them.</p>
         </form>
       </div>
-      
     </div>
   </section>
 
-  <!-- §9 Footer — 3 Column -->
+  <!-- §9 Footer -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">American Septic Tank Services</div>
+        <img src="logo.jpg" alt="American Septic Tank Service">
         <p class="footer-tagline">Lafayette's reliable septic care.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
           <li>Septic Tank Pumping</li>
-            <li>Septic Tank Inspections</li>
-            <li>Septic System Repairs</li>
-            <li>New Septic System Installation</li>
-            <li>Drain Field Services</li>
-            
+          <li>Septic Tank Inspections</li>
+          <li>Septic System Repairs</li>
+          <li>New Septic System Installation</li>
+          <li>Drain Field Services</li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1053,7 +1424,6 @@
         <ul>
           <li><a href="tel:+13375550100" style="font-weight:700;color:#fff;">(337) 555-0100</a></li>
           <li>Lafayette, LA</li>
-          
         </ul>
       </div>
     </div>
@@ -1073,9 +1443,7 @@
     </a>
   </div>
 
-  <!-- Scripts -->
   <script>
-  // Nav glassmorphism on scroll
   (function(){
     var nav=document.getElementById('site-nav');
     if(!nav) return;
@@ -1084,9 +1452,6 @@
     },{passive:true});
   })();
 
-  // Nav scroll effect only — no reveal animations on spec sites
-
-  // Tracking beacon
   fetch('https://lead-manager-api.irontigerdigital.workers.dev/spec-view?slug=septic-lafayette-american&ref='+encodeURIComponent(document.referrer),{method:'GET',mode:'no-cors'}).catch(function(){});
   </script>
 
