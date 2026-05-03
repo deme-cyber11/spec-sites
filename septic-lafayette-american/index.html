@@ -84,6 +84,7 @@
       height: 44px;
       width: auto;
       object-fit: contain;
+      filter: hue-rotate(204deg) saturate(1.3);
     }
     .nav-logo-text {
       display: none;
@@ -913,6 +914,55 @@
       line-height: 1.4;
     }
 
+    /* ── §10 Service Area ── */
+    .service-area-section {
+      background: #f8f9fa;
+      padding: 64px 0 56px;
+      border-top: 1px solid #e8edf2;
+    }
+    .service-area-section h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .service-area-section .section-sub {
+      text-align: center;
+      color: #5a6a7a;
+      font-size: 1rem;
+      margin-bottom: 36px;
+    }
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .area-tag {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.92rem;
+      color: #334;
+      padding: 7px 12px;
+      background: #fff;
+      border: 1px solid #dde3ec;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .area-tag svg { color: var(--sky); flex-shrink: 0; }
+    .area-note {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.88rem;
+      color: #6a7a8a;
+    }
+    @media (max-width: 600px) {
+      .area-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     /* ── §9 Footer ── */
     .site-footer {
       background: #1a0606;
@@ -936,6 +986,7 @@
       padding: 6px 10px;
       border-radius: 8px;
       margin-bottom: 14px;
+      filter: hue-rotate(204deg) saturate(1.3);
     }
     .footer-brand .footer-tagline {
       font-size: 0.9375rem;
@@ -1066,7 +1117,7 @@
       .mobile-cta-bar { display: block; }
       body { padding-bottom: 72px; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .nav-logo img { height: 36px; }
+      .nav-logo img { height: 36px; filter: hue-rotate(204deg) saturate(1.3); }
       .social-stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -1085,7 +1136,6 @@
       <div class="nav-links">
         <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#social" class="nav-link">Follow Us</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="tel:+13375550100" class="nav-cta">📞 (337) 555-0100</a>
       </div>
@@ -1096,9 +1146,9 @@
   <section class="hero">
     <div class="hero-content">
       <div class="review-badge">
-        <div class="review-stars">★★★★☆</div>
+        <div class="review-stars">★★★☆☆</div>
         <div class="review-text">
-          <strong>4.8 stars</strong> &middot; 47 Google Reviews
+          <strong>3.3 stars</strong> &middot; 13 Google Reviews
         </div>
       </div>
       <h1>Lafayette's Trusted Septic Tank Experts</h1>
@@ -1260,125 +1310,6 @@
     </div>
   </section>
 
-  <!-- §SOCIAL — Why social pages matter + previews -->
-  <section class="social-section section-pad" id="social">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2>Find Us On Social Media</h2>
-        <p>Why a strong Instagram and Facebook presence wins more local septic jobs</p>
-        <div class="accent-line"></div>
-      </div>
-
-      <div class="social-pitch-grid">
-        <div class="social-pitch-copy reveal">
-          <h3>Where Lafayette Homeowners Look Before They Call</h3>
-          <p>When a tank backs up at 9pm, the first thing a homeowner does isn't pick up the phone — they pull out their phone and search. Most won't book a service they can't see, can't read reviews on, and can't tell if the company's still in business. Active social pages quietly close that trust gap before they ever dial.</p>
-
-          <div class="social-stats">
-            <div class="social-stat">
-              <div class="ss-num">76%</div>
-              <div class="ss-label">Check social before hiring local services</div>
-            </div>
-            <div class="social-stat">
-              <div class="ss-num">2.4×</div>
-              <div class="ss-label">More callbacks for businesses with active pages</div>
-            </div>
-            <div class="social-stat">
-              <div class="ss-num">#1</div>
-              <div class="ss-label">Trust signal: recent posts &amp; real photos</div>
-            </div>
-          </div>
-
-          <ul class="social-benefits">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              <span><strong>Proof you're active.</strong> A page that posted last week beats a competitor whose last post was 2022.</span>
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              <span><strong>Reviews + photos in one place.</strong> Customers cross-check Google with FB/IG to make sure you're legit.</span>
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              <span><strong>Free local reach.</strong> Tagged photos and shares from happy customers put you in front of their entire neighborhood — at no cost.</span>
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              <span><strong>Direct messages = warm leads.</strong> People who DM are 3× more likely to book than cold callers.</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="social-mockup-stack reveal">
-          <!-- Instagram mockup -->
-          <div class="mockup mockup-ig">
-            <div class="ig-header">
-              <div class="ig-logo">Instagram</div>
-              <div class="ig-dots">⋯</div>
-            </div>
-            <div class="ig-bio">
-              <div class="ig-avatar-row">
-                <div class="ig-avatar"><img src="logo.jpg" alt=""></div>
-                <div class="ig-stats">
-                  <div><strong>148</strong>posts</div>
-                  <div><strong>1,247</strong>followers</div>
-                  <div><strong>312</strong>following</div>
-                </div>
-              </div>
-              <div class="ig-name">American Septic Tank Service</div>
-              <div class="ig-handle">@americansepticla</div>
-              <div class="ig-tagline">🚛 Lafayette's trusted septic experts<br>📞 (337) 555-0100<br>⭐ 4.8 on Google · Licensed &amp; Insured</div>
-            </div>
-            <div class="ig-grid">
-              <div style="background-image:url('service-1.jpg');"></div>
-              <div style="background-image:url('service-2.jpg');"></div>
-              <div style="background-image:url('service-3.jpg');"></div>
-              <div style="background-image:url('service-4.jpg');"></div>
-              <div style="background-image:url('service-1.jpg');"></div>
-              <div style="background-image:url('service-2.jpg');"></div>
-              <div style="background-image:url('service-3.jpg');"></div>
-              <div style="background-image:url('service-4.jpg');"></div>
-              <div style="background-image:url('service-1.jpg');"></div>
-            </div>
-          </div>
-
-          <!-- Facebook mockup -->
-          <div class="mockup mockup-fb">
-            <div class="fb-header">
-              <div class="fb-logo">facebook</div>
-              <div class="fb-search">🔍</div>
-            </div>
-            <div class="fb-cover" style="background-image:url('hero.jpg');"></div>
-            <div class="fb-page-info">
-              <div class="fb-page-avatar"><img src="logo.jpg" alt=""></div>
-              <div class="fb-page-name">American Septic Tank Service</div>
-              <div class="fb-page-meta">Septic Service · Lafayette, LA · 4.9 ★ (38 reviews)</div>
-              <div class="fb-actions">
-                <div class="fb-btn fb-btn-primary">Like</div>
-                <div class="fb-btn fb-btn-secondary">Message</div>
-                <div class="fb-btn fb-btn-secondary">Call</div>
-              </div>
-            </div>
-            <div class="fb-post">
-              <div class="fb-post-head">
-                <div class="fb-post-avatar"><img src="logo.jpg" alt=""></div>
-                <div>
-                  <div class="fb-post-name">American Septic Tank Service</div>
-                  <div class="fb-post-time">2 days ago · 🌎</div>
-                </div>
-              </div>
-              <div class="fb-post-text">Pumped a 1,500 gal tank in Youngsville this morning — 7 years overdue. Don't wait til it backs up. Call us for a free quote 👇</div>
-              <div class="fb-post-img" style="background-image:url('service-2.jpg');"></div>
-              <div class="fb-post-stats">
-                <span>👍 ❤️ 47</span>
-                <span>12 comments · 8 shares</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- §8 CTA -->
   <section class="cta-section" id="contact">
@@ -1400,6 +1331,56 @@
           <p class="cta-form-note">Replies weekdays after 5pm &amp; weekends — 47% of service calls come when the office is closed. We don't miss them.</p>
         </form>
       </div>
+    </div>
+  </section>
+
+  <!-- §10 Service Area -->
+  <section class="service-area-section">
+    <div class="container">
+      <h2>Serving South-Central Louisiana</h2>
+      <p class="section-sub">We cover Lafayette and surrounding communities — up to 60 miles out.</p>
+      <div class="area-grid">
+        <!-- Lafayette Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Lafayette</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Youngsville</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Broussard</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Carencro</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Scott</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Duson</div>
+        <!-- St. Martin Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Breaux Bridge</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>St. Martinville</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Henderson</div>
+        <!-- Iberia Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>New Iberia</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jeanerette</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Delcambre</div>
+        <!-- Acadia Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Crowley</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Rayne</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Iota</div>
+        <!-- Vermilion Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Abbeville</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Kaplan</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Erath</div>
+        <!-- St. Landry Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Opelousas</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Eunice</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ville Platte</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Washington</div>
+        <!-- Evangeline Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Mamou</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Basile</div>
+        <!-- Jeff Davis Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jennings</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Welsh</div>
+        <!-- St. Mary Parish -->
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Franklin</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Morgan City</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Patterson</div>
+        <div class="area-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Berwick</div>
+      </div>
+      <p class="area-note">Not sure if you're in our range? Call us — if we can't reach you, we'll refer you to someone who can.</p>
     </div>
   </section>
 
