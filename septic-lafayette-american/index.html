@@ -1091,16 +1091,16 @@
       .authority-img { height: 180px; border-radius: 12px; }
       .floating-stat {
         position: static;
-        display: inline-block;
+        display: block;
         box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         min-width: auto;
-        padding: 12px 16px;
+        padding: 12px 10px;
         text-align: center;
       }
       .floating-stat .fs-number { font-size: 1.35rem; }
       .floating-stat .fs-label { font-size: 0.65rem; }
       .authority-visual { display: flex; flex-direction: column; gap: 12px; }
-      .authority-stats-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      .authority-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .social-mockup-stack { flex-direction: column; align-items: center; gap: 24px; }
       .mockup { max-width: 320px; width: 100%; }
     }
