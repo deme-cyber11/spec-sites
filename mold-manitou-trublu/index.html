@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manitou Springs Mold Removal & Inspection | TruBlu Solutions</title>
-  <meta name="description" content="TruBlu Solutions offers expert mold inspection, remediation, and testing in Manitou Springs, CO. Restore your home's health. Free estimates!">
+  <meta name="description" content="Your trusted local experts for mold inspection, remediation, and air quality testing in Manitou Springs, CO. Breathe easier with TruBlu Solutions.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://demo.irontigerdigital.com/mold-manitou-trublu/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Manitou Springs Mold Removal & Inspection | TruBlu Solutions">
-  <meta property="og:description" content="TruBlu Solutions offers expert mold inspection, remediation, and testing in Manitou Springs, CO. Restore your home's health. Free estimates!">
+  <meta property="og:description" content="Your trusted local experts for mold inspection, remediation, and air quality testing in Manitou Springs, CO. Breathe easier with TruBlu Solutions.">
   <meta property="og:url" content="https://demo.irontigerdigital.com/mold-manitou-trublu/">
   <meta property="og:site_name" content="TruBlu Solutions">
   <meta property="og:image" content="https://demo.irontigerdigital.com/mold-manitou-trublu/hero.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="675"><meta property="og:image:alt" content="Mold in Manitou Springs, CO">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Manitou Springs Mold Removal & Inspection | TruBlu Solutions">
-  <meta name="twitter:description" content="TruBlu Solutions offers expert mold inspection, remediation, and testing in Manitou Springs, CO. Restore your home's health. Free estimates!">
+  <meta name="twitter:description" content="Your trusted local experts for mold inspection, remediation, and air quality testing in Manitou Springs, CO. Breathe easier with TruBlu Solutions.">
   <meta name="twitter:image" content="https://demo.irontigerdigital.com/mold-manitou-trublu/hero.jpg">
   <meta name="theme-color" content="#0369a1">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230369a1'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='system-ui,sans-serif' font-size='38' font-weight='800' fill='white'%3ET%3C/text%3E%3C/svg%3E">
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "TruBlu Solutions",
-    "description": "TruBlu Solutions offers expert mold inspection, remediation, and testing in Manitou Springs, CO. Restore your home's health. Free estimates!",
+    "description": "Your trusted local experts for mold inspection, remediation, and air quality testing in Manitou Springs, CO. Breathe easier with TruBlu Solutions.",
     "telephone": "+17195550182",
     "url": "https://demo.irontigerdigital.com/mold-manitou-trublu/",
     "address": {
@@ -37,7 +37,12 @@
       "@type": "City",
       "name": "Manitou Springs"
     },
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "200"
+    }
   }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -246,17 +251,18 @@
     /* ── §3 Trust Strip ── */
     .trust-strip {
       background: #e0f2fe;
-      padding: 28px clamp(20px, 5vw, 80px);
+      padding: 22px clamp(20px, 5vw, 80px);
       display: flex;
       flex-wrap: wrap;
-      gap: 20px 48px;
+      gap: 16px 40px;
       justify-content: center;
+      border-bottom: 1px solid #0369a122;
     }
     .trust-badge {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 15px;
       color: #0f172a;
     }
@@ -264,6 +270,11 @@
       color: #0369a1;
       display: flex;
       align-items: center;
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .trust-strip { gap: 14px 28px; padding: 18px 20px; }
+      .trust-badge { font-size: 14px; }
     }
 
     /* ── Section shared ── */
@@ -562,88 +573,46 @@
 
     /* ── Before / After Slider ── */
     .ba-section { background: #0c4a6e; }
-    .ba-slider {
+    /* ── Before / After Pair ── */
+    .ba-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .ba-panel {
       position: relative;
-      max-width: 900px;
-      margin: 48px auto 0;
-      aspect-ratio: 16 / 9;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-      user-select: none;
-      touch-action: none;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+      aspect-ratio: 4 / 3;
     }
-    .ba-slider img {
-      position: absolute;
-      inset: 0;
+    .ba-panel img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      pointer-events: none;
+      display: block;
     }
-    .ba-img-after { z-index: 1; }
-    .ba-img-before {
-      z-index: 2;
-      filter: brightness(0.92) contrast(0.95);
-      clip-path: inset(0 50% 0 0);
-      -webkit-clip-path: inset(0 50% 0 0);
-      transition: clip-path 0.05s linear;
-    }
-    .ba-tag {
+    .ba-label {
       position: absolute;
-      top: 14px;
-      padding: 6px 12px;
+      bottom: 14px;
+      left: 14px;
       background: rgba(0,0,0,0.65);
       color: #fff;
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
       border-radius: 20px;
-      z-index: 3;
-      pointer-events: none;
     }
-    .ba-tag-before { left: 14px; }
-    .ba-tag-after { right: 14px; }
-    .ba-handle {
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 50%;
-      width: 3px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transform: translateX(-1.5px);
-      z-index: 3;
-      pointer-events: none;
+    .ba-label-after {
+      background: #0369a1;
+      color: #ffffff;
     }
-    .ba-handle-grip {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 44px; height: 44px;
-      background: #fff;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: #1c1917;
-      font-weight: 700;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    @media (max-width: 600px) {
+      .ba-pair { grid-template-columns: 1fr; gap: 12px; }
     }
-    .ba-range {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      opacity: 0;
-      cursor: ew-resize;
-      z-index: 4;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-    .ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 100%; height: 100%; cursor: ew-resize; }
-    .ba-range::-moz-range-thumb { width: 100%; height: 100%; cursor: ew-resize; border: 0; }
 
     /* ── Service Areas ── */
     .sa-section { background: #ffffff; }
@@ -1354,8 +1323,8 @@
   <!-- Sticky Header (banner + nav) -->
   <div class="sticky-header">
     <div class="demo-banner">
-      <span class="demo-banner-full">DEMO — Iron Tiger Digital</span>
-      <span class="demo-banner-short">DEMO — Iron Tiger Digital</span>
+      <span class="demo-banner-full">DEMO · Created by Iron Tiger Digital</span>
+      <span class="demo-banner-short">DEMO · Iron Tiger Digital</span>
     </div>
     <nav class="site-nav" id="site-nav">
       <a href="#" class="nav-logo">TruBlu Solutions</a>
@@ -1363,8 +1332,8 @@
         <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="tel:17195550182" class="nav-cta" aria-label="Call +17195550182">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+17195550182
+        <a href="tel:+17195550182" class="nav-cta" aria-label="Call (719) 555-0182">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(719) 555-0182
         </a>
       </div>
     </nav>
@@ -1374,37 +1343,42 @@
   <section class="hero">
     <div class="hero-content">
       
-      <h1>Manitou Springs Mold Solutions: Breathe Easy Now.</h1>
-      <p class="hero-sub">TruBlu Solutions is your trusted local expert for safe, effective mold removal and prevention right here in Manitou Springs.</p>
+        <div class="review-badge">
+          <div class="review-stars">★★★★☆</div>
+          <div class="review-text">
+            <strong>4.9 stars</strong> &middot; 200 Google Reviews
+          </div>
+        </div>
+      <h1>Manitou Springs Mold Experts. Breathe Easy Now.</h1>
+      <p class="hero-sub">We're your trusted local specialists for thorough mold inspection and remediation in Manitou Springs.</p>
       <div class="hero-actions">
-        <a href="tel:17195550182" class="btn-primary">
+        <a href="tel:+17195550182" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Call +17195550182
+          Call (719) 555-0182
         </a>
         <a href="#services" class="btn-secondary">See Our Services</a>
       </div>
     </div>
   </section>
 
-  <!-- §3 Trust Strip -->
+  <!-- §3 Trust Strip — Credentials -->
   <div class="trust-strip">
-    
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <span>Locally owned and operated in Manitou Springs</span>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <span>Licensed and insured Colorado mold specialists</span>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-          <span>BBB Accredited Business</span>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <span>Satisfaction guaranteed on all mold services</span>
-        </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <span>Licensed &amp; Insured</span>
+    </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <span>Bonded</span>
+    </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+      <span>Same-Day Service</span>
+    </div>
+    <div class="trust-badge">
+      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+      <span>Satisfaction Guaranteed</span>
+    </div>
   </div>
 
   
@@ -1413,11 +1387,11 @@
     <div class="container">
       <div class="stats-grid reveal">
         <div class="stat-item">
-          <div class="stat-number" data-count="200">200</div>
+          <div class="stat-number" data-count="500">500</div>
           <div class="stat-label">Jobs Completed</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" data-count="100">100</div>
+          <div class="stat-number" data-count="200">200</div>
           <div class="stat-label">Happy Customers</div>
         </div>
         <div class="stat-item">
@@ -1445,25 +1419,25 @@
         <div class="bento-card bento-featured" role="img" aria-label="Mold Inspection" style="background-image:url('service-1.jpg');">
           <div class="bento-overlay">
             <h3>Mold Inspection</h3>
-            <p>Thorough assessment for visible and hidden mold growth.</p>
+            <p>Detect hidden mold issues in your home.</p>
           </div>
         </div>
         <div class="bento-card bento-featured" role="img" aria-label="Mold Remediation" style="background-image:url('service-2.jpg');">
           <div class="bento-overlay">
             <h3>Mold Remediation</h3>
-            <p>Safe, complete removal of mold and contaminated materials.</p>
+            <p>Safely and effectively remove mold.</p>
           </div>
         </div>
-        <div class="bento-card bento-featured" role="img" aria-label="Mold Testing" style="background-image:url('service-3.jpg');">
+        <div class="bento-card bento-featured" role="img" aria-label="Air Quality Testing" style="background-image:url('service-3.jpg');">
           <div class="bento-overlay">
-            <h3>Mold Testing</h3>
-            <p>Air and surface sampling to identify mold types and levels.</p>
+            <h3>Air Quality Testing</h3>
+            <p>Ensure a healthy indoor environment.</p>
           </div>
         </div>
-        <div class="bento-card bento-featured" role="img" aria-label="Moisture Control" style="background-image:url('service-4.jpg');">
+        <div class="bento-card bento-featured" role="img" aria-label="Deodorization" style="background-image:url('service-4.jpg');">
           <div class="bento-overlay">
-            <h3>Moisture Control</h3>
-            <p>Identifying and fixing water sources to prevent mold.</p>
+            <h3>Deodorization</h3>
+            <p>Eliminate stubborn mold odors.</p>
           </div>
         </div>
       </div>
@@ -1471,21 +1445,23 @@
   </section>
 
   
-  <!-- Before / After Slider -->
+  <!-- Before / After -->
   <section class="ba-section section-pad">
     <div class="container">
       <div class="section-header section-header--light reveal">
         <h2>See the Difference</h2>
-        <p>Drag the handle to reveal our work</p>
+        <p>Real results from our work in Manitou Springs</p>
         <div class="accent-line"></div>
       </div>
-      <div class="ba-slider reveal" id="ba-slider">
-        <img src="service-3.jpg" class="ba-img-after" alt="After — finished mold work" loading="lazy">
-        <img src="service-2.jpg" class="ba-img-before" alt="Before — work in progress" loading="lazy">
-        <span class="ba-tag ba-tag-before">BEFORE</span>
-        <span class="ba-tag ba-tag-after">AFTER</span>
-        <div class="ba-handle"><span class="ba-handle-grip">⇆</span></div>
-        <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
+      <div class="ba-pair reveal">
+        <div class="ba-panel">
+          <img src="service-2.jpg" alt="Before our mold work" loading="lazy">
+          <span class="ba-label">BEFORE</span>
+        </div>
+        <div class="ba-panel">
+          <img src="service-3.jpg" alt="After our mold work" loading="lazy">
+          <span class="ba-label ba-label-after">AFTER</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1546,34 +1522,28 @@
     <div class="container">
       <div class="authority-grid">
         <div class="authority-copy reveal">
-          <h2>Your Local Mold Experts</h2>
-          <p>We understand the unique challenges of our mountain environment, from potential moisture intrusion in historic homes to ensuring the health of your family. TruBlu Solutions offers personalized, reliable mold services, treating your home with the same care we'd give our own.</p>
-          <div class="abf-trust-chips">
-            <span class="abf-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed & Insured</span>
-            <span class="abf-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bonded</span>
-            <span class="abf-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Same-Day Service</span>
-            <span class="abf-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Satisfaction Guaranteed</span>
-          </div>
+          <h2>Your Local Mold Solution</h2>
+          <p>In the unique environment of Manitou Springs, mold can thrive due to moisture and historic structures. TruBlu Solutions understands these local challenges. We provide honest, reliable mold services, protecting your home and family's health with expertise you can trust.</p>
           <ul class="authority-points">
             
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Experienced, certified mold technicians</span>
+                <span>Experienced, background-checked technicians</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Transparent pricing, no hidden fees</span>
+                <span>Prompt and reliable service</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Prompt, reliable scheduling</span>
+                <span>Clear, upfront pricing</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Focused on your family's health</span>
+                <span>Commitment to healthy living spaces</span>
               </li>
           </ul>
-          <a href="tel:17195550182" class="authority-cta">
+          <a href="tel:+17195550182" class="authority-cta">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             Call for Free Estimate
           </a>
@@ -1586,7 +1556,7 @@
               <div class="fs-label">Google Rating</div>
             </div>
             <div class="floating-stat fs-2">
-              <div class="fs-number">100+</div>
+              <div class="fs-number">200+</div>
               <div class="fs-label">Happy Customers</div>
             </div>
             <div class="floating-stat fs-3">
@@ -1612,20 +1582,20 @@
         <div class="process-card">
           <div class="process-number">01</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <h3>Schedule Your Assessment</h3>
-          <p>Call us at your convenience to book a thorough inspection of your property.</p>
+          <h3>Contact Us</h3>
+          <p>Reach out for a quick and easy consultation to schedule your service.</p>
         </div>
         <div class="process-card">
           <div class="process-number">02</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 14l2 2 4-4"/></svg></div>
-          <h3>Receive a Free Estimate</h3>
-          <p>We'll provide a detailed, no-obligation quote for our recommended mold services.</p>
+          <h3>Expert Assessment</h3>
+          <p>We'll conduct a thorough, no-obligation inspection to identify mold issues.</p>
         </div>
         <div class="process-card">
           <div class="process-number">03</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
           <h3>Mold-Free Home</h3>
-          <p>Our team works efficiently and cleanly to restore your healthy living environment.</p>
+          <p>Our skilled team efficiently removes mold and restores your healthy environment.</p>
         </div>
       </div>
     </div>
@@ -1640,7 +1610,7 @@
         <div class="accent-line"></div>
       </div>
       <div class="sa-chips reveal">
-        <span class="sa-chip">Manitou Springs</span><span class="sa-chip">Colorado Springs</span><span class="sa-chip">Old Colorado City</span><span class="sa-chip">Cripple Creek</span><span class="sa-chip">Green Mountain Falls</span><span class="sa-chip">Woodland Park</span><span class="sa-chip">Monument</span><span class="sa-chip">Black Forest</span>
+        <span class="sa-chip">Colorado Springs</span><span class="sa-chip">Old Colorado City</span><span class="sa-chip">Cripple Creek</span><span class="sa-chip">Woodland Park</span><span class="sa-chip">Green Mountain Falls</span><span class="sa-chip">Fountain</span><span class="sa-chip">Monument</span><span class="sa-chip">Ute Pass</span>
       </div>
       <p class="sa-note reveal">Don't see your town? Give us a call — chances are we cover your area.</p>
     </div>
@@ -1663,37 +1633,37 @@
             <button class="faq-q" aria-expanded="false">How can I tell if I have mold in my Manitou Springs home?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Look for visible mold growth (often fuzzy or discolored patches), a persistent musty odor, or signs of water damage like staining or peeling paint.</p></div>
+            <div class="faq-a"><p>Common signs include musty odors, visible mold growth (often black, green, or white patches), and peeling paint or wallpaper. Persistent allergy symptoms can also be a clue.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Is mold dangerous to my health in Manitou Springs?
+            <button class="faq-q" aria-expanded="false">Is mold dangerous to my health?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Yes, mold can cause various health issues, especially for those with allergies or respiratory conditions. It's crucial to address mold promptly.</p></div>
+            <div class="faq-a"><p>Yes, mold can cause a range of health issues, from allergic reactions like sneezing and coughing to more severe respiratory problems, especially for those with asthma or compromised immune systems.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How much does mold removal cost in Manitou Springs?
+            <button class="faq-q" aria-expanded="false">What causes mold to grow in houses in this area?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>The cost varies depending on the extent of the mold. We provide free estimates after a thorough inspection so you know exactly what to expect.</p></div>
+            <div class="faq-a"><p>High humidity, water leaks from roofs or plumbing, condensation from fluctuating temperatures, and poor ventilation are common culprits for mold growth in mountain towns like ours.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Can I clean up small amounts of mold myself?
+            <button class="faq-q" aria-expanded="false">Do you offer free mold inspections?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>While small surface spots might be cleaned, extensive or hidden mold requires professional remediation to ensure it's fully removed and doesn't return.</p></div>
+            <div class="faq-a"><p>We offer complimentary initial assessments to identify potential mold issues and provide a clear understanding of the situation and recommended solutions.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What causes mold to grow in mountain homes?
+            <button class="faq-q" aria-expanded="false">How long does mold remediation typically take?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Increased humidity, poor ventilation, leaks from roofs or plumbing, and condensation are common culprits, especially in our area.</p></div>
+            <div class="faq-a"><p>The duration varies depending on the extent of the mold. Simple cases might take a day, while more extensive infestations could require several days of work.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How long does mold remediation take?
+            <button class="faq-q" aria-expanded="false">Will mold come back after you fix it?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>The timeline depends on the size and complexity of the mold issue, but our team prioritizes efficiency and thoroughness.</p></div>
+            <div class="faq-a"><p>Our goal is to completely remove the mold and address the source of moisture. We also provide advice on preventative measures to minimize the chance of recurrence.</p></div>
           </div>
       </div>
     </div>
@@ -1705,9 +1675,9 @@
       <h2>Ready to Get Started?</h2>
       <p class="cta-urgency">Same-day estimates available — call now or send us the details and we'll reach out within the hour.</p>
       <div class="cta-dual">
-        <a href="tel:17195550182" class="cta-phone">
+        <a href="tel:+17195550182" class="cta-phone">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +17195550182
+          (719) 555-0182
         </a>
         <form class="cta-form" action="https://lead-manager-api.irontigerdigital.workers.dev/lead/ingest" method="POST">
           <input type="hidden" name="source" value="spec-site:mold-manitou-trublu">
@@ -1761,7 +1731,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">TruBlu Solutions</div>
-        <p class="footer-tagline">Healthy Homes, Clearly.</p>
+        <p class="footer-tagline">Clean air, healthy home. Guaranteed.</p>
         <div class="footer-creds">
           <span class="footer-cred">Licensed</span>
           <span class="footer-cred">Insured</span>
@@ -1773,16 +1743,16 @@
         <ul>
           <li><a href="#services">Mold Inspection</a></li>
             <li><a href="#services">Mold Remediation</a></li>
-            <li><a href="#services">Mold Testing</a></li>
-            <li><a href="#services">Moisture Control</a></li>
-            <li><a href="#services">Odor Elimination</a></li>
+            <li><a href="#services">Air Quality Testing</a></li>
+            <li><a href="#services">Deodorization</a></li>
+            <li><a href="#services">Water Damage Cleanup</a></li>
             
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:17195550182" style="font-weight:700;color:#fff;">+17195550182</a></li>
+          <li><a href="tel:+17195550182" style="font-weight:700;color:#fff;">(719) 555-0182</a></li>
           <li>Manitou Springs, CO</li>
           
         </ul>
@@ -1803,7 +1773,7 @@
 
   <!-- Floating Circle CTAs (call + quote) — slide in after scroll -->
   <div class="fab-stack" id="fab-stack" aria-hidden="true">
-    <a href="tel:17195550182" class="fab fab-call" data-label="Call +17195550182" aria-label="Call +17195550182">
+    <a href="tel:+17195550182" class="fab fab-call" data-label="Call (719) 555-0182" aria-label="Call (719) 555-0182">
       <span class="fab-pulse" aria-hidden="true"></span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     </a>
@@ -1883,33 +1853,7 @@
       document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeLb(); });
     }
 
-    // Before/After slider
-    var ba=document.getElementById('ba-slider');
-    if(ba){
-      var baBefore=ba.querySelector('.ba-img-before');
-      var baHandle=ba.querySelector('.ba-handle');
-      var baRange=ba.querySelector('.ba-range');
-      function setBA(v){
-        var pct=Math.max(0,Math.min(100,v));
-        baBefore.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
-        baBefore.style.webkitClipPath='inset(0 '+(100-pct)+'% 0 0)';
-        baHandle.style.left=pct+'%';
-      }
-      if(baRange){
-        baRange.addEventListener('input',function(){ setBA(parseFloat(baRange.value)); });
-      }
-      // Pointer drag — works on touch + mouse
-      var dragging=false;
-      function posFromEvent(e){
-        var rect=ba.getBoundingClientRect();
-        var x=(e.touches?e.touches[0].clientX:e.clientX)-rect.left;
-        return (x/rect.width)*100;
-      }
-      ba.addEventListener('pointerdown',function(e){ dragging=true; setBA(posFromEvent(e)); if(baRange)baRange.value=posFromEvent(e); });
-      window.addEventListener('pointerup',function(){ dragging=false; });
-      window.addEventListener('pointermove',function(e){ if(dragging){ var p=posFromEvent(e); setBA(p); if(baRange)baRange.value=p; } });
-      setBA(50);
-    }
+    // Before/After — static pair, no JS needed
 
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(function(btn){
