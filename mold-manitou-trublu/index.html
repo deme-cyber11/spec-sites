@@ -398,34 +398,52 @@
       line-height: 1.5;
     }
 
-    /* ── Section Divider (between gallery and authority) ── */
-    .section-divider {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 12px clamp(20px, 5vw, 80px) 36px;
-      display: flex;
+    /* ── Section Opener (eyebrow tag pattern — replaces ornamental dividers) ── */
+    .section-opener {
+      margin-bottom: 18px;
+      line-height: 1;
+    }
+    .section-opener .opener-tag {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 14px;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #0369a1;
+      padding: 7px 16px 7px 12px;
+      background: #0369a110;
+      border: 1px solid #0369a133;
+      border-radius: 999px;
     }
-    .section-divider .divider-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, #0369a155 50%, transparent 100%);
-    }
-    .section-divider .divider-mark {
-      width: 8px;
-      height: 8px;
+    .section-opener .opener-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
       background: #0369a1;
-      transform: rotate(45deg);
-      border-radius: 1px;
+      border-radius: 999px;
       flex-shrink: 0;
-      box-shadow: 0 0 0 4px #0369a11a;
+      box-shadow: 0 0 0 3px #0369a11f;
     }
 
     /* ── §5 Authority / Why Us — Split Layout ── */
     .authority-section {
       background: #f0f9ff;
+      position: relative;
+      border-top: 1px solid #0369a122;
+    }
+    .authority-section::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88px;
+      height: 3px;
+      background: #0369a1;
+      border-radius: 0 0 3px 3px;
     }
     .authority-grid {
       display: grid;
@@ -1600,18 +1618,12 @@
     <img class="lightbox-img" alt="">
   </div>
 
-  <!-- Divider between gallery and authority -->
-  <div class="section-divider reveal" aria-hidden="true">
-    <div class="divider-line"></div>
-    <div class="divider-mark"></div>
-    <div class="divider-line"></div>
-  </div>
-
-  <!-- §5 Authority / Why Us — Split Layout -->
+  <!-- §5 Authority / Why Us — Split Layout (boundary = bg shift + accent tab + eyebrow) -->
   <section class="authority-section section-pad" id="about">
     <div class="container">
       <div class="authority-grid">
         <div class="authority-copy reveal">
+          <div class="section-opener"><span class="opener-tag">Why Choose Us</span></div>
           <h2>Your Local Mold Experts</h2>
           <p>As your neighbors in Manitou Springs, we understand the unique challenges our mountain climate presents, especially concerning moisture and mold. We're dedicated to providing thorough, honest mold remediation services with a personal touch, ensuring your home is healthy and safe.</p>
           <ul class="authority-points">
