@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colorado Springs Mold Remediation & Removal | TruBlu Solutions</title>
-  <meta name="description" content="TruBlu Solutions offers professional mold inspection and remediation services in Colorado Springs, CO. Breathe easier with our expert mold removal. Free estimates!">
+  <title>Colorado Springs Mold Remediation | TruBlu Solutions</title>
+  <meta name="description" content="TruBlu Solutions: Expert mold inspection and remediation in Colorado Springs, CO. Fast, safe, and reliable services for your home's health.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://demo.irontigerdigital.com/mold-springs-trublu/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Colorado Springs Mold Remediation & Removal | TruBlu Solutions">
-  <meta property="og:description" content="TruBlu Solutions offers professional mold inspection and remediation services in Colorado Springs, CO. Breathe easier with our expert mold removal. Free estimates!">
+  <meta property="og:title" content="Colorado Springs Mold Remediation | TruBlu Solutions">
+  <meta property="og:description" content="TruBlu Solutions: Expert mold inspection and remediation in Colorado Springs, CO. Fast, safe, and reliable services for your home's health.">
   <meta property="og:url" content="https://demo.irontigerdigital.com/mold-springs-trublu/">
   <meta property="og:site_name" content="TruBlu Solutions">
   <meta property="og:image" content="https://demo.irontigerdigital.com/mold-springs-trublu/hero.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="675"><meta property="og:image:alt" content="Mold Remediation in Colorado Springs, CO">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Colorado Springs Mold Remediation & Removal | TruBlu Solutions">
-  <meta name="twitter:description" content="TruBlu Solutions offers professional mold inspection and remediation services in Colorado Springs, CO. Breathe easier with our expert mold removal. Free estimates!">
+  <meta name="twitter:title" content="Colorado Springs Mold Remediation | TruBlu Solutions">
+  <meta name="twitter:description" content="TruBlu Solutions: Expert mold inspection and remediation in Colorado Springs, CO. Fast, safe, and reliable services for your home's health.">
   <meta name="twitter:image" content="https://demo.irontigerdigital.com/mold-springs-trublu/hero.jpg">
   <meta name="theme-color" content="#0369a1">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230369a1'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='system-ui,sans-serif' font-size='38' font-weight='800' fill='white'%3ET%3C/text%3E%3C/svg%3E">
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "TruBlu Solutions",
-    "description": "TruBlu Solutions offers professional mold inspection and remediation services in Colorado Springs, CO. Breathe easier with our expert mold removal. Free estimates!",
+    "description": "TruBlu Solutions: Expert mold inspection and remediation in Colorado Springs, CO. Fast, safe, and reliable services for your home's health.",
     "telephone": "+17195550182",
     "url": "https://demo.irontigerdigital.com/mold-springs-trublu/",
     "address": {
@@ -249,32 +249,64 @@
     .review-text { color: rgba(255,255,255,0.9); font-size: 14px; }
 
     /* ── §3 Trust Strip ── */
-    .trust-strip {
+    .trust-strip-wrap {
       background: #e0f2fe;
-      padding: 22px clamp(20px, 5vw, 80px);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px 40px;
-      justify-content: center;
+      padding: 28px clamp(20px, 5vw, 80px);
       border-bottom: 1px solid #0369a122;
+    }
+    .trust-eyebrow {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #0369a1;
+      margin-bottom: 18px;
+    }
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 0;
     }
     .trust-badge {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      padding: 4px 12px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       color: #0f172a;
+      text-align: center;
+      position: relative;
+    }
+    .trust-badge + .trust-badge::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12%;
+      bottom: 12%;
+      width: 1px;
+      background: #0369a133;
     }
     .trust-icon {
       color: #0369a1;
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #0369a114;
       flex-shrink: 0;
     }
-    @media (max-width: 600px) {
-      .trust-strip { gap: 14px 28px; padding: 18px 20px; }
-      .trust-badge { font-size: 14px; }
+    @media (max-width: 720px) {
+      .trust-strip-wrap { padding: 22px 16px; }
+      .trust-strip { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+      .trust-badge { font-size: 13px; padding: 0 6px; }
+      .trust-badge:nth-child(3)::before { display: none; }
     }
 
     /* ── Section shared ── */
@@ -364,6 +396,31 @@
       font-size: 0.875rem;
       color: rgba(255,255,255,0.8);
       line-height: 1.5;
+    }
+
+    /* ── Section Divider (between gallery and authority) ── */
+    .section-divider {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px clamp(20px, 5vw, 80px) 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .section-divider .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #0369a155 50%, transparent 100%);
+    }
+    .section-divider .divider-mark {
+      width: 8px;
+      height: 8px;
+      background: #0369a1;
+      transform: rotate(45deg);
+      border-radius: 1px;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px #0369a11a;
     }
 
     /* ── §5 Authority / Why Us — Split Layout ── */
@@ -572,20 +629,62 @@
     .lightbox-close:hover { background: rgba(255,255,255,0.24); }
 
     /* ── Before / After Slider ── */
-    /* ── Work Process (4-step) ── */
-    .work-process-section { background: #0c4a6e; }
-    .work-process-grid {
+    /* ── Work Process (4-step compact strip) ── */
+    .work-process-section {
+      background: #0c4a6e;
+      padding: clamp(36px, 5vw, 56px) clamp(20px, 5vw, 80px);
+    }
+    .work-process-section .section-header { margin-bottom: 28px; }
+    .work-process-section .section-header h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    .work-process-section .section-header p { display: none; }
+    .work-process-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1100px;
+      gap: 14px;
+      max-width: 980px;
       margin: 0 auto;
+      align-items: stretch;
     }
-    @media (max-width: 900px) {
-      .work-process-grid { grid-template-columns: repeat(2, 1fr); }
+    .step-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 14px 16px;
+      transition: background 0.2s, border-color 0.2s;
     }
-    @media (max-width: 540px) {
-      .work-process-grid { grid-template-columns: 1fr; max-width: 440px; }
+    .step-pill:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: #0369a166;
+    }
+    .step-pill .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #0369a1;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 1;
+    }
+    .step-pill .step-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #fef9f0;
+      letter-spacing: -0.01em;
+    }
+    @media (max-width: 720px) {
+      .work-process-strip { grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 480px; }
+      .step-pill { padding: 12px 14px; }
+      .step-pill .step-label { font-size: 14px; }
     }
 
     /* ── Service Areas ── */
@@ -1280,8 +1379,7 @@
       .hero h1 { font-size: clamp(1.75rem, 8vw, 2.75rem); }
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
-      .trust-strip { flex-direction: column; align-items: center; gap: 14px; padding: 22px 20px; }
-      .trust-badge { font-size: 14px; }
+      .trust-eyebrow { font-size: 10px; margin-bottom: 14px; }
       .demo-banner { font-size: 11px; padding: 6px 12px; }
       .bento-grid { grid-template-columns: 1fr; }
       .bento-featured { grid-column: span 1; min-height: 240px; }
@@ -1323,8 +1421,8 @@
             <strong>4.9 stars</strong> &middot; 200 Google Reviews
           </div>
         </div>
-      <h1>Breathe Easy: Mold Free Colorado Springs Homes.</h1>
-      <p class="hero-sub">We're your trusted local experts for thorough and safe mold removal in Colorado Springs.</p>
+      <h1>Colorado Springs Mold Removal Experts</h1>
+      <p class="hero-sub">Your trusted local team for safe, effective mold remediation right here in Colorado Springs.</p>
       <div class="hero-actions">
         <a href="tel:+17195550182" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1336,22 +1434,25 @@
   </section>
 
   <!-- §3 Trust Strip — Credentials -->
-  <div class="trust-strip">
-    <div class="trust-badge">
-      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-      <span>Licensed &amp; Insured</span>
-    </div>
-    <div class="trust-badge">
-      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <span>Bonded</span>
-    </div>
-    <div class="trust-badge">
-      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
-      <span>Same-Day Service</span>
-    </div>
-    <div class="trust-badge">
-      <span class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
-      <span>Satisfaction Guaranteed</span>
+  <div class="trust-strip-wrap">
+    <div class="trust-eyebrow">Why Colorado Springs Trusts TruBlu Solutions</div>
+    <div class="trust-strip">
+      <div class="trust-badge">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <span>Licensed &amp; Insured</span>
+      </div>
+      <div class="trust-badge">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span>Bonded</span>
+      </div>
+      <div class="trust-badge">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+        <span>Same-Day Service</span>
+      </div>
+      <div class="trust-badge">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span>Satisfaction Guaranteed</span>
+      </div>
     </div>
   </div>
 
@@ -1393,25 +1494,25 @@
         <div class="bento-card bento-featured" role="img" aria-label="Mold Inspection" style="background-image:url('service-1.jpg');">
           <div class="bento-overlay">
             <h3>Mold Inspection</h3>
-            <p>Comprehensive assessment of your home's mold issues.</p>
+            <p>Thorough visual and environmental testing for mold presence.</p>
           </div>
         </div>
         <div class="bento-card bento-featured" role="img" aria-label="Mold Remediation" style="background-image:url('service-2.jpg');">
           <div class="bento-overlay">
             <h3>Mold Remediation</h3>
-            <p>Safe removal and containment of mold growth.</p>
+            <p>Safe removal and containment of all types of mold.</p>
           </div>
         </div>
-        <div class="bento-card bento-featured" role="img" aria-label="Air Duct Cleaning" style="background-image:url('service-3.jpg');">
+        <div class="bento-card bento-featured" role="img" aria-label="Mold Prevention" style="background-image:url('service-3.jpg');">
           <div class="bento-overlay">
-            <h3>Air Duct Cleaning</h3>
-            <p>Removing mold and allergens from your ventilation.</p>
+            <h3>Mold Prevention</h3>
+            <p>Solutions to stop mold from returning to your home.</p>
           </div>
         </div>
-        <div class="bento-card bento-featured" role="img" aria-label="Deodorization" style="background-image:url('service-4.jpg');">
+        <div class="bento-card bento-featured" role="img" aria-label="Water Damage Restoration" style="background-image:url('service-4.jpg');">
           <div class="bento-overlay">
-            <h3>Deodorization</h3>
-            <p>Eliminating stubborn mold-related odors.</p>
+            <h3>Water Damage Restoration</h3>
+            <p>Repairing damage caused by leaks and flooding.</p>
           </div>
         </div>
       </div>
@@ -1420,38 +1521,29 @@
 
   
   <!-- Work Process -->
-  <section class="work-process-section section-pad">
+  <section class="work-process-section">
     <div class="container">
       <div class="section-header section-header--light reveal">
         <h2>Our Mold Remediation Process</h2>
-        <p>How we get it done right, every time, in Colorado Springs</p>
         <div class="accent-line"></div>
       </div>
-      <div class="work-process-grid reveal">
+      <div class="work-process-strip reveal">
         
-        <div class="process-card">
-          <div class="process-number">01</div>
-          <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
-          <h3>Inspect</h3>
-          <p>Full moisture mapping and air quality assessment to pinpoint contamination scope.</p>
+        <div class="step-pill">
+          <div class="step-num">1</div>
+          <div class="step-label">Inspect</div>
         </div>
-        <div class="process-card">
-          <div class="process-number">02</div>
-          <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"/></svg></div>
-          <h3>Contain</h3>
-          <p>Negative pressure barriers and HEPA filtration to prevent cross-contamination.</p>
+        <div class="step-pill">
+          <div class="step-num">2</div>
+          <div class="step-label">Contain</div>
         </div>
-        <div class="process-card">
-          <div class="process-number">03</div>
-          <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>Remove</h3>
-          <p>Antimicrobial treatment and safe disposal of all affected materials.</p>
+        <div class="step-pill">
+          <div class="step-num">3</div>
+          <div class="step-label">Remove</div>
         </div>
-        <div class="process-card">
-          <div class="process-number">04</div>
-          <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
-          <h3>Verify</h3>
-          <p>Post-clearance air testing confirms your space is safe and mold-free.</p>
+        <div class="step-pill">
+          <div class="step-num">4</div>
+          <div class="step-label">Verify</div>
         </div>
       </div>
     </div>
@@ -1508,30 +1600,37 @@
     <img class="lightbox-img" alt="">
   </div>
 
+  <!-- Divider between gallery and authority -->
+  <div class="section-divider reveal" aria-hidden="true">
+    <div class="divider-line"></div>
+    <div class="divider-mark"></div>
+    <div class="divider-line"></div>
+  </div>
+
   <!-- §5 Authority / Why Us — Split Layout -->
   <section class="authority-section section-pad" id="about">
     <div class="container">
       <div class="authority-grid">
         <div class="authority-copy reveal">
-          <h2>Why Locals Trust TruBlu</h2>
-          <p>We understand the unique challenges mold presents in Colorado Springs' climate. TruBlu Solutions offers personalized service, focusing on identifying the root cause of your mold problem and ensuring a healthy, safe environment for your family. We treat your home like our own, with meticulous attention to detail.</p>
+          <h2>Why Choose TruBlu Solutions?</h2>
+          <p>We understand the unique challenges mold presents in Colorado Springs homes, from attic moisture to basement dampness. Our locally owned and operated team provides honest assessments and meticulous remediation, ensuring your family's health and your home's integrity are restored.</p>
           <ul class="authority-points">
             
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Thorough mold identification and removal</span>
+                <span>Expertly trained technicians</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Fast, reliable service when you need it</span>
+                <span>Thorough mold removal process</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Commitment to your home's health</span>
+                <span>Transparent, upfront pricing</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Transparent pricing, no surprises</span>
+                <span>Commitment to your peace of mind</span>
               </li>
           </ul>
           <a href="tel:+17195550182" class="authority-cta">
@@ -1573,20 +1672,20 @@
         <div class="process-card">
           <div class="process-number">01</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <h3>Schedule Your Assessment</h3>
-          <p>Contact us easily by phone or online to set up a convenient time for your inspection.</p>
+          <h3>Contact Us</h3>
+          <p>Call us today for a quick consultation and to schedule your appointment.</p>
         </div>
         <div class="process-card">
           <div class="process-number">02</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 14l2 2 4-4"/></svg></div>
-          <h3>Receive Your Free Estimate</h3>
-          <p>We'll provide a detailed, no-obligation quote outlining the remediation plan and costs.</p>
+          <h3>Free Inspection</h3>
+          <p>We'll conduct a detailed, no-obligation inspection to assess the mold issue.</p>
         </div>
         <div class="process-card">
           <div class="process-number">03</div>
           <div class="process-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
-          <h3>Mold Gone, Home Healthy</h3>
-          <p>Our certified team will efficiently remove mold and restore your home's air quality.</p>
+          <h3>Complete Remediation</h3>
+          <p>Our team safely removes mold and restores your home with meticulous attention to detail.</p>
         </div>
       </div>
     </div>
@@ -1601,7 +1700,7 @@
         <div class="accent-line"></div>
       </div>
       <div class="sa-chips reveal">
-        <span class="sa-chip">Colorado Springs</span><span class="sa-chip">Pueblo</span><span class="sa-chip">Fountain</span><span class="sa-chip">Manitou Springs</span><span class="sa-chip">Monument</span><span class="sa-chip">Black Forest</span><span class="sa-chip">Woodland Park</span><span class="sa-chip">Larkspur</span>
+        <span class="sa-chip">Colorado Springs</span><span class="sa-chip">Manitou Springs</span><span class="sa-chip">Fountain</span><span class="sa-chip">Monument</span><span class="sa-chip">Woodland Park</span><span class="sa-chip">Black Forest</span><span class="sa-chip">Cimarron Hills</span><span class="sa-chip">Security-Widefield</span>
       </div>
       <p class="sa-note reveal">Don't see your town? Give us a call — chances are we cover your area.</p>
     </div>
@@ -1624,37 +1723,37 @@
             <button class="faq-q" aria-expanded="false">How do I know if I have mold in my Colorado Springs home?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Look for musty odors, visible mold growth on surfaces, or signs of water damage. We offer free inspections to confirm.</p></div>
+            <div class="faq-a"><p>Look for visible signs like discolored patches, musty odors, or peeling paint. If you suspect mold, contact us for a professional inspection.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Is mold dangerous for my family's health?
+            <button class="faq-q" aria-expanded="false">Is mold dangerous for my family?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Yes, mold can cause respiratory issues, allergies, and other health problems. Prompt removal is crucial.</p></div>
+            <div class="faq-a"><p>Yes, certain types of mold can cause allergic reactions, asthma symptoms, and other respiratory issues. Prompt remediation is crucial.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What's the difference between mold inspection and remediation?
+            <button class="faq-q" aria-expanded="false">What is the difference between mold inspection and mold remediation?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Inspection identifies mold and its source, while remediation is the process of safely removing and preventing its return.</p></div>
+            <div class="faq-a"><p>Inspection involves identifying the presence, type, and extent of mold. Remediation is the process of safely removing and cleaning up the mold.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Can I clean mold myself?
+            <button class="faq-q" aria-expanded="false">How long does mold remediation take?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>For extensive mold growth, DIY cleaning is not recommended. Professional remediation ensures complete removal and containment to prevent spreading.</p></div>
+            <div class="faq-a"><p>The duration varies based on the severity and location of the mold, but we work efficiently to minimize disruption.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How long does mold remediation take in Colorado Springs?
+            <button class="faq-q" aria-expanded="false">Can I clean up mold myself?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>The duration depends on the extent of the mold and the size of the affected area, but we aim for efficient service.</p></div>
+            <div class="faq-a"><p>For small areas, surface cleaning might be possible, but extensive mold growth requires professional equipment and containment to ensure complete removal and prevent spreading.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What steps do you take to ensure safety during remediation?
+            <button class="faq-q" aria-expanded="false">What if I have water damage and suspect mold?
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>We use specialized equipment and containment procedures to prevent airborne mold spores from spreading to unaffected areas of your home.</p></div>
+            <div class="faq-a"><p>Water damage is a common cause of mold. We handle both water damage restoration and mold remediation to fully address the problem.</p></div>
           </div>
       </div>
     </div>
@@ -1722,7 +1821,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">TruBlu Solutions</div>
-        <p class="footer-tagline">Your Colorado Springs Mold Experts.</p>
+        <p class="footer-tagline">Your healthy home, our priority.</p>
         <div class="footer-creds">
           <span class="footer-cred">Licensed</span>
           <span class="footer-cred">Insured</span>
@@ -1734,9 +1833,9 @@
         <ul>
           <li><a href="#services">Mold Inspection</a></li>
             <li><a href="#services">Mold Remediation</a></li>
-            <li><a href="#services">Air Duct Cleaning</a></li>
-            <li><a href="#services">Deodorization</a></li>
-            <li><a href="#services">Water Damage Cleanup</a></li>
+            <li><a href="#services">Mold Prevention</a></li>
+            <li><a href="#services">Water Damage Restoration</a></li>
+            <li><a href="#services">Air Quality Testing</a></li>
             
         </ul>
       </div>
