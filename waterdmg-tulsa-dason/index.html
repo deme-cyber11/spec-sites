@@ -219,7 +219,7 @@
       min-height: 600px;
       display: flex;
       align-items: center;
-      background-image: linear-gradient(rgba(15,23,42,0.60), rgba(15,23,42,0.60)), url('hero.jpg');
+      background-image: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.55)), linear-gradient(rgba(15,23,42,0.60), rgba(15,23,42,0.60)), url('hero.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -1291,7 +1291,7 @@
       border-radius: 50%;
       background: #2563eb;
       opacity: 0.45;
-      animation: fabPulse 2s ease-out infinite;
+      animation: fabPulse 2s ease-out 6;
       z-index: -1;
     }
     @keyframes fabPulse {
@@ -1388,31 +1388,66 @@
     /* ── v18: Service Area Map ── */
     .map-section { background: #ffffff; }
     .map-wrapper { max-width: 1100px; margin: 0 auto; }
-
-    /* ── v18: Credentials Strip ── */
+    /* ── v19: Credentials Strip — mirrors §3 trust-strip layout for visual consistency ── */
     .credentials-section {
       background: #0f172a;
-      padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px);
+      padding: 36px clamp(20px, 5vw, 80px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .credentials-eyebrow {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 18px;
     }
     .credentials-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
       margin: 0 auto;
+      gap: 0;
     }
     .cred-badge {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      text-align: center;
-      font-size: 0.9rem;
+      gap: 8px;
+      padding: 4px 12px;
+      font-weight: 700;
+      font-size: 14px;
       color: #ffffff;
-      font-weight: 600;
+      text-align: center;
+      position: relative;
     }
-    .cred-badge svg { color: #2563eb; }
+    .cred-badge + .cred-badge::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12%;
+      bottom: 12%;
+      width: 1px;
+      background: rgba(255,255,255,0.18);
+    }
+    .cred-icon {
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    @media (max-width: 720px) {
+      .credentials-section { padding: 28px 16px; }
+      .credentials-strip { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+      .cred-badge { font-size: 13px; padding: 0 6px; }
+      .cred-badge:nth-child(3)::before { display: none; }
+    }
 
     /* ── v18: Pricing Teaser ── */
     .pricing-teaser { background: #f1f5f9; }
@@ -1460,31 +1495,6 @@
       font-style: italic;
       color: #64748b;
     }
-
-    /* ── v18: Social Proof Toast ── */
-    .social-proof-toast {
-      position: fixed;
-      bottom: 80px;
-      left: 20px;
-      z-index: 800;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 12px 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: #1c1917;
-      transform: translateX(-120%);
-      transition: transform 0.4s ease;
-      max-width: 280px;
-      pointer-events: none;
-    }
-    .social-proof-toast.toast-visible {
-      transform: translateX(0);
-    }
-
     /* ── v18: Reviews Carousel (replaces testimonials-grid) ── */
     .reviews-carousel {
       display: grid;
@@ -1586,8 +1596,254 @@
     @media (max-width: 768px) {
       .pricing-teaser-inner { grid-template-columns: 1fr; }
       .map-wrapper iframe { height: 280px !important; }
-      .social-proof-toast { bottom: 88px; }
     }
+    /* v20-bundle ────────────────────────────────────────────────── */
+    /* Hero proof line */
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      align-items: center;
+      color: rgba(255,255,255,0.92);
+      font-size: 14px;
+      font-weight: 500;
+      margin: -16px 0 28px 0;
+      max-width: 560px;
+    }
+    .hero-proof .hp-dot { color: rgba(255,255,255,0.4); font-weight: 400; }
+
+    /* Above-fold service-area chips */
+    .hero-areas {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      max-width: 720px;
+      letter-spacing: 0.01em;
+    }
+    .hero-areas-label {
+      color: rgba(255,255,255,0.55);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    /* Aggregate review strip */
+    .reviews-aggregate {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.95);
+      color: #1a1a1a;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-size: 15px;
+      margin: 0 auto 36px auto;
+      width: max-content;
+      max-width: 100%;
+    }
+    .reviews-aggregate .agg-stars { color: #f59e0b; font-size: 18px; letter-spacing: 1px; }
+    .reviews-aggregate .agg-rating strong, .reviews-aggregate .agg-count strong { font-weight: 700; }
+    .reviews-aggregate .agg-divider { color: rgba(0,0,0,0.25); }
+    .reviews-aggregate .agg-platform { color: #555; font-size: 13px; display: inline-flex; align-items: center; }
+    .testimonials-section .container { text-align: center; }
+    .testimonials-section .reviews-carousel { text-align: left; }
+    @media (max-width: 600px) {
+      .reviews-aggregate { font-size: 13px; padding: 12px 16px; gap: 6px; }
+      .reviews-aggregate .agg-platform { display: none; }
+    }
+
+    /* Affiliation / Press strip */
+    .affiliations-strip {
+      background: #e2e8f0;
+      padding: 32px clamp(20px, 5vw, 80px);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .aff-eyebrow {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+    .aff-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .aff-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #1f2937;
+      font-size: 14px;
+      filter: grayscale(0.15);
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .aff-logo:hover { filter: grayscale(0); transform: translateY(-1px); }
+    .aff-logo .aff-svg { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; }
+    .aff-logo .aff-text strong { font-weight: 700; }
+    @media (max-width: 720px) {
+      .affiliations-strip { padding: 24px 16px; }
+      .aff-row { gap: 18px 24px; }
+      .aff-logo { font-size: 12px; }
+    }
+
+    /* Map card */
+    .map-card {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.14);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .map-card-overlay {
+      position: absolute;
+      top: 18px; left: 18px;
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 12px 18px 12px 14px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      pointer-events: none;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .map-card-pin {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .map-card-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6b7280;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .map-card-city {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1f2937;
+      line-height: 1.1;
+    }
+    @media (max-width: 600px) {
+      .map-card-overlay { top: 12px; left: 12px; padding: 8px 14px 8px 10px; }
+      .map-card-pin { width: 30px; height: 30px; }
+      .map-card-city { font-size: 13px; }
+    }
+
+    /* Footer Activate button */
+    .footer-demo {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-demo .footer-demo-text { color: rgba(255,255,255,0.5); }
+    .activate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2563eb;
+      color: #ffffff !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      text-decoration: none !important;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .activate-btn:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .activate-btn .activate-arrow { display: inline-block; transition: transform 0.2s; }
+    .activate-btn:hover .activate-arrow { transform: translateX(3px); }
+
+    /* Before/After section */
+    .ba-section { background: #e2e8f0; }
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1180px;
+      margin: 48px auto 0;
+    }
+    .ba-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      border: 1px solid rgba(0,0,0,0.06);
+      background: #fff;
+    }
+    .ba-img {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      margin: 0;
+    }
+    .ba-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .ba-img--before img {
+      filter: grayscale(0.55) brightness(0.62) contrast(1.18) sepia(0.18);
+      transform: scale(1.04);
+    }
+    .ba-img--after img { filter: saturate(1.05); }
+    .ba-label {
+      position: absolute;
+      top: 10px; left: 10px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .ba-label--before { background: rgba(40,40,40,0.85); color: #fff; }
+    .ba-label--after { background: #2563eb; color: #ffffff; }
+    @media (max-width: 900px) { .ba-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .ba-grid { grid-template-columns: 1fr; gap: 18px; } }
+    /* end v20-bundle ──────────────────────────────────────────────── */
+
   </style>
 </head>
 <body>
@@ -1623,13 +1879,15 @@
         </div>
       <h1>Tulsa Water Damage Experts. Fast, Reliable Relief.</h1>
       <p class="hero-sub">When water strikes your Tulsa home, DASON is your trusted, local partner for swift and thorough restoration.</p>
+      <p class="hero-proof">4.9★ rated by 47 Tulsa customers <span class="hp-dot">·</span> Licensed &amp; insured <span class="hp-dot">·</span> Same-day response</p>
       <div class="hero-actions">
         <a href="tel:+19182347800" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Call (918) 234-7800
         </a>
-        <a href="#services" class="btn-secondary">See Our Services</a>
+        <a href="#contact" class="btn-secondary">Get a Free Damage Assessment</a>
       </div>
+      <div class="hero-areas"><span class="hero-areas-label">Serving:</span> Broken Arrow · Jenks · Bixby · Owasso · Sand Springs</div>
     </div>
   </section>
 
@@ -1750,6 +2008,49 @@
   </section>
 
   
+
+  <!-- Before / After Section (v20) -->
+  <section class="ba-section section-pad" id="before-after">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Water Damage Restored</h2>
+        <p>Real water damage jobs in Tulsa — before drying, sanitizing, and rebuilding.</p>
+        <div class="accent-line"></div>
+      </div>
+      <div class="ba-grid reveal">
+        <div class="ba-pair">
+          <figure class="ba-img ba-img--before">
+            <img src="service-1.jpg" alt="Before water damage restoration job in Tulsa" loading="lazy">
+            <span class="ba-label ba-label--before">BEFORE</span>
+          </figure>
+          <figure class="ba-img ba-img--after">
+            <img src="service-1.jpg" alt="After water damage restoration job in Tulsa" loading="lazy">
+            <span class="ba-label ba-label--after">AFTER</span>
+          </figure>
+        </div>
+        <div class="ba-pair">
+          <figure class="ba-img ba-img--before">
+            <img src="service-2.jpg" alt="Before water damage restoration job in Tulsa" loading="lazy">
+            <span class="ba-label ba-label--before">BEFORE</span>
+          </figure>
+          <figure class="ba-img ba-img--after">
+            <img src="service-2.jpg" alt="After water damage restoration job in Tulsa" loading="lazy">
+            <span class="ba-label ba-label--after">AFTER</span>
+          </figure>
+        </div>
+        <div class="ba-pair">
+          <figure class="ba-img ba-img--before">
+            <img src="service-3.jpg" alt="Before water damage restoration job in Tulsa" loading="lazy">
+            <span class="ba-label ba-label--before">BEFORE</span>
+          </figure>
+          <figure class="ba-img ba-img--after">
+            <img src="service-3.jpg" alt="After water damage restoration job in Tulsa" loading="lazy">
+            <span class="ba-label ba-label--after">AFTER</span>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Gallery / Recent Work -->
   <section class="gallery-section section-pad" id="gallery">
     <div class="container">
@@ -1909,10 +2210,17 @@
         <p>Proudly serving Tulsa, OK and surrounding communities</p>
         <div class="accent-line"></div>
       </div>
-      <div class="map-wrapper reveal">
+      <div class="map-card reveal">
+        <div class="map-card-overlay">
+          <div class="map-card-pin" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="map-card-text">
+            <div class="map-card-eyebrow">Headquarters</div>
+            <div class="map-card-city">Tulsa, OK</div>
+          </div>
+        </div>
         <iframe
           src="https://maps.google.com/maps?q=Tulsa+OK&output=embed&hl=en"
-          width="100%" height="400" style="border:0;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);"
+          width="100%" height="400" style="border:0;display:block;height:420px;"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Service area map for DASON Fire & Water Restoration in Tulsa, OK">
@@ -1929,6 +2237,14 @@
         <h2>What Customers Say</h2>
         <p>Real reviews from real Tulsa customers</p>
         <div class="accent-line"></div>
+      </div>
+      <div class="reviews-aggregate reveal">
+        <span class="agg-stars">★★★★★</span>
+        <span class="agg-rating"><strong>4.9</strong></span>
+        <span class="agg-divider">·</span>
+        <span class="agg-count"><strong>47</strong> Google reviews</span>
+        <span class="agg-divider">·</span>
+        <span class="agg-platform"><svg width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px;margin-right:4px;"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>verified by Google</span>
       </div>
       <div class="reviews-carousel">
         
@@ -2126,27 +2442,40 @@
   
   <!-- Credentials Strip -->
   <section class="credentials-section" id="credentials">
-    <div class="container">
-      <div class="credentials-strip">
-        <div class="cred-badge">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>Licensed in OK</span>
-        </div>
-        <div class="cred-badge">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-          <span>Fully Insured</span>
-        </div>
-        <div class="cred-badge">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-          <span>Bonded &amp; Certified</span>
-        </div>
-        <div class="cred-badge">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>10-Year Workmanship Warranty</span>
-        </div>
+    <div class="credentials-eyebrow">Credentials &amp; Guarantees</div>
+    <div class="credentials-strip">
+      <div class="cred-badge">
+        <span class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <span>Licensed in OK</span>
+      </div>
+      <div class="cred-badge">
+        <span class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></span>
+        <span>Fully Insured</span>
+      </div>
+      <div class="cred-badge">
+        <span class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+        <span>Bonded &amp; Certified</span>
+      </div>
+      <div class="cred-badge">
+        <span class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span>10-Year Workmanship Warranty</span>
       </div>
     </div>
   </section>
+  <!-- Affiliation / Press Strip (v20) -->
+  <section class="affiliations-strip">
+    <div class="container">
+      <div class="aff-eyebrow">As Trusted By</div>
+      <div class="aff-row">
+        <div class="aff-logo"><span class="aff-svg" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4480" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 9h2v3H9zm4 0h2v3h-2zm-4 5h2v3H9zm4 0h2v3h-2z"/></svg></span><span class="aff-text"><strong>BBB</strong> Accredited</span></div>
+        <div class="aff-logo"><span class="aff-svg" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6900" stroke-width="2"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></span><span class="aff-text"><strong>HomeAdvisor</strong> Top Rated</span></div>
+        <div class="aff-logo"><span class="aff-svg" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="#34A853"><path d="M12 2l2.39 6.96L21 10l-5.5 4.18L17.39 21 12 17.27 6.61 21l1.89-6.82L3 10l6.61-1.04L12 2z"/></svg></span><span class="aff-text"><strong>Google</strong> 5-Star Verified</span></div>
+        <div class="aff-logo"><span class="aff-svg" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D32323" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg></span><span class="aff-text"><strong>Yelp</strong> Verified Pro</span></div>
+        <div class="aff-logo"><span class="aff-svg" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" stroke-width="2"><path d="M3 12h4l2-3 4 6 2-3h6"/><circle cx="12" cy="12" r="9"/></svg></span><span class="aff-text"><strong>Angi</strong> Certified</span></div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- §9 Footer — 3 Column -->
   <footer class="site-footer">
@@ -2187,7 +2516,8 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-demo">
-        Demo site by <a href="https://irontigerdigital.com" target="_blank" rel="noopener">Iron Tiger Digital</a> — contact us to activate with your own domain.
+        <span class="footer-demo-text">This is a demo site by <a href="https://irontigerdigital.com" target="_blank" rel="noopener">Iron Tiger Digital</a>.</span>
+        <a href="https://irontigerdigital.com#contact" target="_blank" rel="noopener" class="activate-btn">Activate This Site <span class="activate-arrow">→</span></a>
       </div>
       <div class="footer-credit">&copy; 2026 DASON Fire & Water Restoration. All rights reserved.</div>
     </div>
@@ -2203,33 +2533,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="13" x2="13" y2="13"/></svg>
     </a>
   </div>
-
-  
-  <!-- Social Proof Toast -->
-  <div id="social-proof-toast" class="social-proof-toast" aria-live="polite" aria-atomic="true">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-    <span id="toast-msg"></span>
-  </div>
-  <script>
-  (function(){
-    var msgs = ["Mike in Tulsa scheduled an estimate 12 min ago", "Jennifer in Tulsa scheduled an estimate 5 min ago", "Robert in Tulsa scheduled an estimate 23 min ago", "Sarah in Tulsa scheduled an estimate 8 min ago", "David in Tulsa scheduled an estimate 41 min ago"];
-    var el = document.getElementById('social-proof-toast');
-    var msgEl = document.getElementById('toast-msg');
-    if (!el || !msgEl) return;
-    var idx = 0;
-    function showToast() {
-      msgEl.textContent = msgs[idx % msgs.length];
-      el.classList.add('toast-visible');
-      idx++;
-      setTimeout(function() { el.classList.remove('toast-visible'); }, 5000);
-    }
-    setTimeout(function() {
-      showToast();
-      setInterval(showToast, 25000);
-    }, 8000);
-  })();
-  </script>
-
   <!-- Scripts -->
   <script>
   (function(){
