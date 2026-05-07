@@ -1,0 +1,33 @@
+{
+  "slug": "pool-phoenix-pool",
+  "built_at": "2026-05-07T13:27:23.842283Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "5e858eaf20d73e3d3fa3bcedb0f95c91",
+      "size": 173133
+    },
+    "service-2.jpg": {
+      "hash": "24ca39a66c22be8d97ff8f067bc4459f",
+      "size": 115153
+    },
+    "service-3.jpg": {
+      "hash": "d28ee5a319e53b3e180d567367591af4",
+      "size": 183400
+    },
+    "service-1.jpg": {
+      "hash": "9d600d88c6454813e75934c0c0cf6f6e",
+      "size": 209246
+    },
+    "service-4.jpg": {
+      "hash": "413ddae90fae403616e8d1781a4d4d99",
+      "size": 139343
+    }
+  }
+}
