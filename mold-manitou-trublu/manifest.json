@@ -1,0 +1,63 @@
+{
+  "slug": "mold-manitou-trublu",
+  "built_at": "2026-05-07T04:52:53.292044Z",
+  "html_image_refs": [
+    "ba1-after.jpg",
+    "ba1-before.jpg",
+    "ba2-after.jpg",
+    "ba2-before.jpg",
+    "ba3-after.jpg",
+    "ba3-before.jpg",
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "ba1-after.jpg": {
+      "hash": "0251681d9f7c831def95ae44e6bf951a",
+      "size": 1506883
+    },
+    "ba2-before.jpg": {
+      "hash": "967a64c10d240fb49ef6d6b90fcf46fb",
+      "size": 1814465
+    },
+    "hero.jpg": {
+      "hash": "6bcb2ce1adbd2b9711f9c14f00a9a653",
+      "size": 99665
+    },
+    "service-2.jpg": {
+      "hash": "a9832adf82c453683314adb3613633a5",
+      "size": 117841
+    },
+    "service-3.jpg": {
+      "hash": "421ce4abc756971a6a6b78a252401915",
+      "size": 119247
+    },
+    "service-1.jpg": {
+      "hash": "46b318c8a5ee30f05e24fc40b14f48d7",
+      "size": 101232
+    },
+    "ba3-after.jpg": {
+      "hash": "5092625318917dd0bf33b4a02e95490c",
+      "size": 1666849
+    },
+    "service-4.jpg": {
+      "hash": "823294bba11d9bea80557416d47b9c00",
+      "size": 133286
+    },
+    "ba3-before.jpg": {
+      "hash": "265be1d7e4576f165706d4694ae6914b",
+      "size": 1932931
+    },
+    "ba2-after.jpg": {
+      "hash": "653231c630400d5cc6ee5c34375bca04",
+      "size": 1917737
+    },
+    "ba1-before.jpg": {
+      "hash": "a8d5a5055f2115c91edac09e48509360",
+      "size": 1401205
+    }
+  }
+}
