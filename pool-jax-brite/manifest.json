@@ -1,0 +1,33 @@
+{
+  "slug": "pool-jax-brite",
+  "built_at": "2026-05-07T13:28:56.192746Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "46747750eea94394b52d8785ab414ccf",
+      "size": 173347
+    },
+    "service-2.jpg": {
+      "hash": "6ef0ceab149be01277724842ace26937",
+      "size": 109257
+    },
+    "service-3.jpg": {
+      "hash": "201b3062d690936d1137585568fbb443",
+      "size": 155465
+    },
+    "service-1.jpg": {
+      "hash": "6b347930440e7773cba01664f91cb170",
+      "size": 136307
+    },
+    "service-4.jpg": {
+      "hash": "273cd00cc0a6d4c1b251c3fa05d20875",
+      "size": 165283
+    }
+  }
+}
