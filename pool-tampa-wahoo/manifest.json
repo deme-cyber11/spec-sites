@@ -1,0 +1,33 @@
+{
+  "slug": "pool-tampa-wahoo",
+  "built_at": "2026-05-07T13:29:33.084003Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "afc03cc11809ca9573914f4edfc69858",
+      "size": 114647
+    },
+    "service-2.jpg": {
+      "hash": "9da4f7b9eef86c16eca1494cf401e014",
+      "size": 133046
+    },
+    "service-3.jpg": {
+      "hash": "34889675b33973693ab949d8f49ad3ed",
+      "size": 213748
+    },
+    "service-1.jpg": {
+      "hash": "68a9dd344d7b9892a42896031c09c658",
+      "size": 164093
+    },
+    "service-4.jpg": {
+      "hash": "36fac5acdf162b476beaf2ad6ebd9cdb",
+      "size": 150254
+    }
+  }
+}
