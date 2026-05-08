@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-orlando-big",
+  "built_at": "2026-05-08T04:34:48.789887Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "794ab5b42bd35375e61c1a33a3a42825",
+      "size": 136559
+    },
+    "service-2.jpg": {
+      "hash": "c45223239a46ff6b29db18d822060b5f",
+      "size": 248264
+    },
+    "service-3.jpg": {
+      "hash": "b5df486ee9fef11f2b38cdec1898749e",
+      "size": 188812
+    },
+    "service-1.jpg": {
+      "hash": "17ebf9c6ef40a8852a7847ae8ae4e510",
+      "size": 119402
+    },
+    "service-4.jpg": {
+      "hash": "0df93560f64aee43da92d670f357ba7d",
+      "size": 204652
+    }
+  }
+}
