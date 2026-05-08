@@ -1,0 +1,33 @@
+{
+  "slug": "pool-jax-blue",
+  "built_at": "2026-05-08T04:27:30.903784Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ef4ea2b54f03047fa66f3a55fb2b8e35",
+      "size": 177894
+    },
+    "service-2.jpg": {
+      "hash": "43a1f718e6380e22db672fedcb9059d3",
+      "size": 124302
+    },
+    "service-3.jpg": {
+      "hash": "052f4d12a8e39dc3ba25f3fc87a16322",
+      "size": 201104
+    },
+    "service-1.jpg": {
+      "hash": "e6ecad3b010a14e7a45691210b5e5c77",
+      "size": 117325
+    },
+    "service-4.jpg": {
+      "hash": "ba9d20ed3c64e3abb8239d5b5638a999",
+      "size": 125807
+    }
+  }
+}
