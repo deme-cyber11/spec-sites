@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-decocrete",
+  "built_at": "2026-05-08T04:37:42.483375Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "16e24b02b59b132e539fa3fa4240bced",
+      "size": 172005
+    },
+    "service-2.jpg": {
+      "hash": "67f80a26c5bee91467cf0fcf5e25f5f3",
+      "size": 201673
+    },
+    "service-3.jpg": {
+      "hash": "934944e6c0a6cbb8d49eab32b5097e8f",
+      "size": 166685
+    },
+    "service-1.jpg": {
+      "hash": "8a05b528a433a86bf4ec7d2613be44ea",
+      "size": 163393
+    },
+    "service-4.jpg": {
+      "hash": "1de321ecb43e6d8f491694bf51564aa6",
+      "size": 178023
+    }
+  }
+}
