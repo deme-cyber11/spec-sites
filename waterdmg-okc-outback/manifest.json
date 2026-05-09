@@ -1,0 +1,33 @@
+{
+  "slug": "waterdmg-okc-outback",
+  "built_at": "2026-05-09T03:14:31.885083Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "17fde142aa15ed882ad9d4b47dc1881c",
+      "size": 133890
+    },
+    "service-2.jpg": {
+      "hash": "4f7b1a2d397a2fca5c971a60a5380fe5",
+      "size": 123474
+    },
+    "service-3.jpg": {
+      "hash": "a3c7ae60d31f7bcc38138587013055bf",
+      "size": 124050
+    },
+    "service-1.jpg": {
+      "hash": "58385da72cb3312cca661d04992f6565",
+      "size": 145997
+    },
+    "service-4.jpg": {
+      "hash": "e0bd7beef089ac38fcdfac1ee104743c",
+      "size": 162766
+    }
+  }
+}
