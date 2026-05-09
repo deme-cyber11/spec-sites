@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-gemstone",
+  "built_at": "2026-05-09T03:12:18.308492Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "c1385b5048fe1249078d38d837a5bc2c",
+      "size": 113050
+    },
+    "service-2.jpg": {
+      "hash": "17419305b05a1f5588fd315f46e3d2a3",
+      "size": 209221
+    },
+    "service-3.jpg": {
+      "hash": "91f8834f91e44c219c7d7c05fc1346c5",
+      "size": 143896
+    },
+    "service-1.jpg": {
+      "hash": "ffe9ab9de65034cea70fc87f14d302e1",
+      "size": 154009
+    },
+    "service-4.jpg": {
+      "hash": "8ebb9851abb1d87a474deaf8d6afc689",
+      "size": 143470
+    }
+  }
+}
