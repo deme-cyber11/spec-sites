@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-benicht",
+  "built_at": "2026-05-09T03:09:26.644168Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "90164a364d08213c53fb25b8898d80eb",
+      "size": 85607
+    },
+    "service-2.jpg": {
+      "hash": "017d9d09f86f05a3c20f00a09777fa10",
+      "size": 211900
+    },
+    "service-3.jpg": {
+      "hash": "a8ed80a16fd6f15c137869b621da5d83",
+      "size": 142353
+    },
+    "service-1.jpg": {
+      "hash": "34a3fac82c1b434d053c095291c7028a",
+      "size": 144974
+    },
+    "service-4.jpg": {
+      "hash": "420529b56d845fa5e767a20e75337bc6",
+      "size": 146771
+    }
+  }
+}
