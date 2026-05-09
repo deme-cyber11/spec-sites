@@ -1,0 +1,33 @@
+{
+  "slug": "pool-sa-brenner",
+  "built_at": "2026-05-09T03:19:12.303187Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "9ad03fe18ed1006777a901266bc55440",
+      "size": 168834
+    },
+    "service-2.jpg": {
+      "hash": "0b1e59af0a7ce007a853db66a70e10fe",
+      "size": 177391
+    },
+    "service-3.jpg": {
+      "hash": "de1077397096c21259204f27c42fa60d",
+      "size": 241375
+    },
+    "service-1.jpg": {
+      "hash": "2ac114559dd015d9d7c0af6782ce19f2",
+      "size": 107436
+    },
+    "service-4.jpg": {
+      "hash": "c7ec1ef290e8cb5a5c2efbd89544915e",
+      "size": 105993
+    }
+  }
+}
