@@ -1,0 +1,33 @@
+{
+  "slug": "hvac-huntsville-white",
+  "built_at": "2026-05-09T03:18:34.282584Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "f983c0ecfb179ec94418942cf8d6df61",
+      "size": 103990
+    },
+    "service-2.jpg": {
+      "hash": "0ffde7513a936a0050b7d113e226c29c",
+      "size": 127627
+    },
+    "service-3.jpg": {
+      "hash": "82140ee7f9dfda37c2d2924a2a37dcc2",
+      "size": 110094
+    },
+    "service-1.jpg": {
+      "hash": "8dc22d3c27dae34432c9e38b1e9ef5a9",
+      "size": 143469
+    },
+    "service-4.jpg": {
+      "hash": "258e8c0f5aeb4aa4ba5779ebb3e2236e",
+      "size": 119743
+    }
+  }
+}
