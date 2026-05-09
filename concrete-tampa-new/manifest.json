@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-new",
+  "built_at": "2026-05-09T03:13:58.967338Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "24947a4025d15d0e55a052afa159e585",
+      "size": 103249
+    },
+    "service-2.jpg": {
+      "hash": "d67e9d919dd1b1edab6df38e675a8938",
+      "size": 177609
+    },
+    "service-3.jpg": {
+      "hash": "c3159d295f7c02010404cd324e45ca27",
+      "size": 142682
+    },
+    "service-1.jpg": {
+      "hash": "7d982eb86b0a9ec43fe0de14d803cca9",
+      "size": 151358
+    },
+    "service-4.jpg": {
+      "hash": "e841a225da8f8bb6e6d4d8a24ed2b7ee",
+      "size": 161977
+    }
+  }
+}
