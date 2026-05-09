@@ -1,0 +1,33 @@
+{
+  "slug": "waterdmg-tulsa-aaa",
+  "built_at": "2026-05-09T03:20:21.103343Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "128f3f6b1d2743536103057456b4c9e7",
+      "size": 127885
+    },
+    "service-2.jpg": {
+      "hash": "eb94678ffdeceed842591252f011037d",
+      "size": 160253
+    },
+    "service-3.jpg": {
+      "hash": "46721c9648aff48056734fcb267e8046",
+      "size": 132979
+    },
+    "service-1.jpg": {
+      "hash": "579cea8355026cf9ab65cd9095b165ab",
+      "size": 139814
+    },
+    "service-4.jpg": {
+      "hash": "ea0a40daafc9b155b4215b2281de4bf7",
+      "size": 106519
+    }
+  }
+}
