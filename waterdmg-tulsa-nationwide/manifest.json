@@ -1,0 +1,33 @@
+{
+  "slug": "waterdmg-tulsa-nationwide",
+  "built_at": "2026-05-09T03:15:06.747839Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "15ed6d40859df3e6a26bd9682c605d50",
+      "size": 92043
+    },
+    "service-2.jpg": {
+      "hash": "ede8ee8de998b4985c1961c7527921e9",
+      "size": 97018
+    },
+    "service-3.jpg": {
+      "hash": "4fd85de1b8f676be6714633659a19b35",
+      "size": 133541
+    },
+    "service-1.jpg": {
+      "hash": "0f596ad8be1f2fcd7ed485b90dd363b6",
+      "size": 110224
+    },
+    "service-4.jpg": {
+      "hash": "11b028a006f2c34138ae86736fe73032",
+      "size": 113757
+    }
+  }
+}
