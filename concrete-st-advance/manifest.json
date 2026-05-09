@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-st-advance",
+  "built_at": "2026-05-09T03:10:36.027843Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "3fb86b3795a87503b15f3fb3d5858d10",
+      "size": 75119
+    },
+    "service-2.jpg": {
+      "hash": "b99daf8fdc0e537a8beffad5fa10bbdb",
+      "size": 153356
+    },
+    "service-3.jpg": {
+      "hash": "65403e2dca5779da47d72626e1e7068b",
+      "size": 177236
+    },
+    "service-1.jpg": {
+      "hash": "2e3a7fec1ebe67e9f6d2c8a0d79953d7",
+      "size": 209363
+    },
+    "service-4.jpg": {
+      "hash": "80df6aa35bf769db285d7548915caf7c",
+      "size": 124388
+    }
+  }
+}
