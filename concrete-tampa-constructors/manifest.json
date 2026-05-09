@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-constructors",
+  "built_at": "2026-05-09T03:13:26.381302Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ad2badd65423f781700d82cc1e4a5d40",
+      "size": 95081
+    },
+    "service-2.jpg": {
+      "hash": "c10b9468e5fefd0e9e7373de267467cc",
+      "size": 143587
+    },
+    "service-3.jpg": {
+      "hash": "edccb243f0e3ab553254960ad7e13c43",
+      "size": 166954
+    },
+    "service-1.jpg": {
+      "hash": "e613fb0b97d57cd2ce2e26fc0141b3ed",
+      "size": 196309
+    },
+    "service-4.jpg": {
+      "hash": "9d4a4e37d621d1b45c5994b5c48f5251",
+      "size": 186110
+    }
+  }
+}
