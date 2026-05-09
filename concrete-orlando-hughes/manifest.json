@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-orlando-hughes",
+  "built_at": "2026-05-09T03:11:45.498077Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "d5c46d1278a0fb531ee0e0f3c92d72b7",
+      "size": 114513
+    },
+    "service-2.jpg": {
+      "hash": "dc421822e2fbba099464f7b36d4e1cb8",
+      "size": 162766
+    },
+    "service-3.jpg": {
+      "hash": "a63d27ade0862609f976874f400ba1df",
+      "size": 203699
+    },
+    "service-1.jpg": {
+      "hash": "ccd4f1071f77d5924533ee82caab29a8",
+      "size": 179344
+    },
+    "service-4.jpg": {
+      "hash": "e91d807a60a4476d6fee1d39de352d1f",
+      "size": 147084
+    }
+  }
+}
