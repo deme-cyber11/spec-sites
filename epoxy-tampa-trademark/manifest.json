@@ -1,0 +1,33 @@
+{
+  "slug": "epoxy-tampa-trademark",
+  "built_at": "2026-05-09T03:12:52.878082Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "717e2861a94b4bb66cdecaa23f322bf1",
+      "size": 144737
+    },
+    "service-2.jpg": {
+      "hash": "76cfcc75da766a663a1ff02b99e9d0d5",
+      "size": 95493
+    },
+    "service-3.jpg": {
+      "hash": "322d0f2395534013cdf7fae286dd042a",
+      "size": 127724
+    },
+    "service-1.jpg": {
+      "hash": "dd4593d33bb90a0cab45caed38528863",
+      "size": 123839
+    },
+    "service-4.jpg": {
+      "hash": "56ca3246686e742c6c8e7fe6febe819f",
+      "size": 110028
+    }
+  }
+}
