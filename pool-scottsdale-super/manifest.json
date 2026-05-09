@@ -1,0 +1,33 @@
+{
+  "slug": "pool-scottsdale-super",
+  "built_at": "2026-05-09T03:25:17.539027Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "92b846818f2a99d9c971ddbd0778d07c",
+      "size": 116580
+    },
+    "service-2.jpg": {
+      "hash": "ff7e64e38f61f8eba513a698e9570e17",
+      "size": 229617
+    },
+    "service-3.jpg": {
+      "hash": "2e6c15baa782592545c4d711013aa818",
+      "size": 123458
+    },
+    "service-1.jpg": {
+      "hash": "acc494cf97c3003c1bcedde7854e2bc2",
+      "size": 106314
+    },
+    "service-4.jpg": {
+      "hash": "a7c52ae904762a2afbcfb531270b373e",
+      "size": 133626
+    }
+  }
+}
