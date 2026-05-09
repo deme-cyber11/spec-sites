@@ -1,0 +1,33 @@
+{
+  "slug": "hardwood-lincoln-next",
+  "built_at": "2026-05-09T03:19:44.804620Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "c7662568d86057509372af3e38d67723",
+      "size": 104932
+    },
+    "service-2.jpg": {
+      "hash": "95a385464ad04fa347501acaee9717db",
+      "size": 103584
+    },
+    "service-3.jpg": {
+      "hash": "a6a1e9adb9fb1835190fbd20b2d56644",
+      "size": 115781
+    },
+    "service-1.jpg": {
+      "hash": "f3a79c99eb36d9bb68a4e3792f7b1408",
+      "size": 151258
+    },
+    "service-4.jpg": {
+      "hash": "7d656ee4aee1277981cb80968d969634",
+      "size": 144468
+    }
+  }
+}
