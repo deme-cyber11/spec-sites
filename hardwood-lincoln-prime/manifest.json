@@ -1,6 +1,6 @@
 {
   "slug": "hardwood-lincoln-prime",
-  "built_at": "2026-05-09T03:15:39.987410Z",
+  "built_at": "2026-05-10T16:39:20.188436Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "602abb17c0bd89e735f91108f14ccece",
-      "size": 109359
+      "hash": "bc06debc0aef8c43ca0a027f383a65dc",
+      "size": 94312
     },
     "service-2.jpg": {
       "hash": "bf39ac5a58c5aa008f753651c687e813",
@@ -22,8 +22,8 @@
       "size": 119552
     },
     "service-1.jpg": {
-      "hash": "b3ff4411b140d5d47a269b8bb078b091",
-      "size": 134731
+      "hash": "27204c85bff8834ea8871e26af3df2be",
+      "size": 130151
     },
     "service-4.jpg": {
       "hash": "b4e1b13ab0ae014c65b7ba54b0cea333",
