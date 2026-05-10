@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-heating",
-  "built_at": "2026-05-09T03:21:59.998848Z",
+  "built_at": "2026-05-10T16:43:29.892914Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "b01fc2ae92615ce92ab26d420c985402",
-      "size": 101245
+      "hash": "504f4908d3db60207f08693de9db868c",
+      "size": 98177
     },
     "service-2.jpg": {
       "hash": "6dad7137fe826e6f806fcce59d75c072",
@@ -22,8 +22,8 @@
       "size": 121569
     },
     "service-1.jpg": {
-      "hash": "cfc6e2f68127a819df4131929154b015",
-      "size": 107374
+      "hash": "17732ae8f5eb196d81bb7fd492e35fd1",
+      "size": 95847
     },
     "service-4.jpg": {
       "hash": "97f54ce59e3e44bc1043bd647a32c255",
