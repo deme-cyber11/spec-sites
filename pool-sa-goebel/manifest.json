@@ -1,6 +1,6 @@
 {
   "slug": "pool-sa-goebel",
-  "built_at": "2026-05-09T03:21:28.061031Z",
+  "built_at": "2026-05-10T16:43:06.987423Z",
   "html_image_refs": [
     "ba1-after.jpg",
     "ba1-before.jpg",
@@ -24,8 +24,8 @@
       "size": 2179592
     },
     "hero.jpg": {
-      "hash": "ab791ed4c5983516a6dd2100241b5d05",
-      "size": 100441
+      "hash": "2b51408791783f55cb9b5d134d12716f",
+      "size": 141370
     },
     "authority.jpg": {
       "hash": "6bd0d6ea8761c5c406433ce5312dfe79",
@@ -40,8 +40,8 @@
       "size": 149624
     },
     "service-1.jpg": {
-      "hash": "8aef7edb80de064d845686995f772b6f",
-      "size": 99064
+      "hash": "e57c7164827eaf70ea6d61180fb70070",
+      "size": 124267
     },
     "ba3-after.jpg": {
       "hash": "ef653972f030d26806b34238bada1cfd",
