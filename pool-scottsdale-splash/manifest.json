@@ -1,6 +1,6 @@
 {
   "slug": "pool-scottsdale-splash",
-  "built_at": "2026-05-09T03:24:13.249698Z",
+  "built_at": "2026-05-10T16:45:13.050714Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "479defaa768c77a9abcdd46fe8f89002",
-      "size": 94313
+      "hash": "a2fa11e2a75e207b10f988ccaf7e3ea3",
+      "size": 95235
     },
     "service-2.jpg": {
       "hash": "b4ac27cfdd08f39a323cd0182aa2d7c4",
@@ -22,8 +22,8 @@
       "size": 117476
     },
     "service-1.jpg": {
-      "hash": "1cc288da176002cc84fc4bdd5709954c",
-      "size": 120380
+      "hash": "8600427740d5c6cba2f21e9b3d5836bf",
+      "size": 129527
     },
     "service-4.jpg": {
       "hash": "666ccb8f79b8ca89cd3aa173cd70e5d2",
