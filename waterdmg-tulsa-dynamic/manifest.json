@@ -1,6 +1,6 @@
 {
   "slug": "waterdmg-tulsa-dynamic",
-  "built_at": "2026-05-09T03:22:35.191498Z",
+  "built_at": "2026-05-10T16:43:55.247844Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "4aabf7a45003555dc6886094e2dfe081",
-      "size": 94357
+      "hash": "4bcd47822a2428ef84fa71e4c80fc5dd",
+      "size": 106055
     },
     "service-2.jpg": {
       "hash": "ca1571add06a8e58874e24fa258fb526",
@@ -22,8 +22,8 @@
       "size": 197379
     },
     "service-1.jpg": {
-      "hash": "81987ffbba3cff90a35b7976682c106c",
-      "size": 116602
+      "hash": "5cb8f0c0fbcef97c9f4306562b2c171f",
+      "size": 173364
     },
     "service-4.jpg": {
       "hash": "8daa5e2cfd35e5141b6c835f2e100e83",
