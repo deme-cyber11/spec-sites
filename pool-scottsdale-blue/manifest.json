@@ -1,6 +1,6 @@
 {
   "slug": "pool-scottsdale-blue",
-  "built_at": "2026-05-09T03:24:45.263631Z",
+  "built_at": "2026-05-10T16:45:35.597038Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "7d5c363ed74de09f2c150f6283eb4827",
-      "size": 118197
+      "hash": "a2fa11e2a75e207b10f988ccaf7e3ea3",
+      "size": 95235
     },
     "service-2.jpg": {
       "hash": "697fb7b85d2a085135147d110f999595",
@@ -22,8 +22,8 @@
       "size": 158724
     },
     "service-1.jpg": {
-      "hash": "f1b78ffa1f5ae64991e4d83ffe3867ce",
-      "size": 124504
+      "hash": "430d3441ed66f15e29dcf5ad4d570365",
+      "size": 115739
     },
     "service-4.jpg": {
       "hash": "7ce3a45cdc81f4786f49b16ba52ca518",
