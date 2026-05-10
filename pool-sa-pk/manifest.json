@@ -1,6 +1,6 @@
 {
   "slug": "pool-sa-pk",
-  "built_at": "2026-05-09T03:23:06.704592Z",
+  "built_at": "2026-05-10T16:44:19.098516Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "4383ac66cd7d66bbb2de70e0b012a9f1",
-      "size": 135396
+      "hash": "2b51408791783f55cb9b5d134d12716f",
+      "size": 141370
     },
     "service-2.jpg": {
       "hash": "7ff94f567cc3610273fb31ed600f5aac",
@@ -22,8 +22,8 @@
       "size": 222947
     },
     "service-1.jpg": {
-      "hash": "0fc58754339d23cfd5efa4072f486050",
-      "size": 144212
+      "hash": "f2c8a5957365d25603c9ca791c482a5d",
+      "size": 106196
     },
     "service-4.jpg": {
       "hash": "278c697e9a5445d58c87f15ec0c7895b",
