@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-north",
-  "built_at": "2026-05-09T03:17:59.476838Z",
+  "built_at": "2026-05-10T16:40:29.697458Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "a8c6cfb1fa2f221c1eb87213f11203d3",
-      "size": 92403
+      "hash": "504f4908d3db60207f08693de9db868c",
+      "size": 98177
     },
     "service-2.jpg": {
       "hash": "562d18f211cf6385f985c638b5c6c164",
@@ -22,8 +22,8 @@
       "size": 112157
     },
     "service-1.jpg": {
-      "hash": "86918ee0421b131323178d6a5312e757",
-      "size": 157889
+      "hash": "1cde48a30b0e0430c9981edf8dccab70",
+      "size": 138806
     },
     "service-4.jpg": {
       "hash": "6d4ac46e4b1d1f3b4d16b223ccf3338d",
