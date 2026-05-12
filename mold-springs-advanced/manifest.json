@@ -1,0 +1,18 @@
+{
+  "slug": "mold-springs-advanced",
+  "built_at": "2026-05-12T03:14:09.173572Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "a294894faac3646d2289c341fb66f76e",
+      "size": 127579
+    },
+    "service-1.jpg": {
+      "hash": "7c7e20668bef9886f6521e75430614ce",
+      "size": 99209
+    }
+  }
+}
