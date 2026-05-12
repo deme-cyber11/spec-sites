@@ -1,0 +1,18 @@
+{
+  "slug": "hvac-huntsville-williams",
+  "built_at": "2026-05-12T03:10:00.999091Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "504f4908d3db60207f08693de9db868c",
+      "size": 98177
+    },
+    "service-1.jpg": {
+      "hash": "e950eeaaa838ae0a8e0a45e7ff1c8f0a",
+      "size": 125844
+    }
+  }
+}
