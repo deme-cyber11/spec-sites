@@ -1,0 +1,18 @@
+{
+  "slug": "hardwood-lincoln-jims",
+  "built_at": "2026-05-12T03:11:58.920892Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "bc06debc0aef8c43ca0a027f383a65dc",
+      "size": 94312
+    },
+    "service-1.jpg": {
+      "hash": "d11d990c7315e78e5b82bcba5b3f9479",
+      "size": 127338
+    }
+  }
+}
