@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-comfort",
-  "built_at": "2026-05-08T07:15:57.647561Z",
+  "built_at": "2026-05-12T00:06:52.311145Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -10,8 +10,8 @@
   ],
   "images": {
     "hero.jpg": {
-      "hash": "5b3768cfb0a6672b3654d8ef6217355a",
-      "size": 135917
+      "hash": "504f4908d3db60207f08693de9db868c",
+      "size": 98177
     },
     "service-2.jpg": {
       "hash": "bde305b0a8bf3e9b7f8da9181aeec7b3",
@@ -22,8 +22,8 @@
       "size": 150736
     },
     "service-1.jpg": {
-      "hash": "b9a3f6f4f8ee839787ed888d8ca54fd1",
-      "size": 134124
+      "hash": "d53fd5f84d37bf10fa71eb7726ff54cb",
+      "size": 134406
     },
     "service-4.jpg": {
       "hash": "3c601c14fd16394a47ebe24f3189992c",
