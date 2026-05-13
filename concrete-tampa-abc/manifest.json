@@ -1,0 +1,18 @@
+{
+  "slug": "concrete-tampa-abc",
+  "built_at": "2026-05-13T00:14:35.151137Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4d8fa4748bebe4262695172ffb24dff1",
+      "size": 104377
+    },
+    "service-1.jpg": {
+      "hash": "56000c5b55894490400dacc7e7f7da56",
+      "size": 169203
+    }
+  }
+}
