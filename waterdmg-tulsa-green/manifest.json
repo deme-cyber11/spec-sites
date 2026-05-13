@@ -1,0 +1,18 @@
+{
+  "slug": "waterdmg-tulsa-green",
+  "built_at": "2026-05-13T01:14:37.728247Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4bcd47822a2428ef84fa71e4c80fc5dd",
+      "size": 106055
+    },
+    "service-1.jpg": {
+      "hash": "373f9f8e39b2451cf1e3a1d1217ff429",
+      "size": 144570
+    }
+  }
+}
