@@ -1,0 +1,18 @@
+{
+  "slug": "waterdmg-okc-roofing",
+  "built_at": "2026-05-13T01:13:14.212810Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "779d11ab85fe18aac6480b97e4a26b77",
+      "size": 117727
+    },
+    "service-1.jpg": {
+      "hash": "3629da1092c971cc611cbc6070c31806",
+      "size": 114934
+    }
+  }
+}
