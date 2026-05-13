@@ -1,0 +1,18 @@
+{
+  "slug": "epoxy-tampa-elite",
+  "built_at": "2026-05-13T00:28:57.983018Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "f0afa3fb1f168ce3be167c21bf9f93fd",
+      "size": 100297
+    },
+    "service-1.jpg": {
+      "hash": "843b5ba5787902cb0bd7737f33e0183d",
+      "size": 145415
+    }
+  }
+}
