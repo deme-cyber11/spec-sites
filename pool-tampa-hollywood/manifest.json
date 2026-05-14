@@ -1,6 +1,6 @@
 {
   "slug": "pool-tampa-hollywood",
-  "built_at": "2026-05-13T00:38:36.537455Z",
+  "built_at": "2026-05-14T00:02:36.448937Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 130535
     },
     "service-1.jpg": {
-      "hash": "d791e68b4e4c78c1c87c67222b724e8b",
-      "size": 117401
+      "hash": "64ded8c86b7de474cfd49f178494b37f",
+      "size": 96640
     }
   }
 }
