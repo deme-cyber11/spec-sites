@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-aplus",
-  "built_at": "2026-05-13T00:57:59.493602Z",
+  "built_at": "2026-05-14T00:04:07.599616Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 98177
     },
     "service-1.jpg": {
-      "hash": "65859a388fe3ea270d7e2b2b2e02f42b",
-      "size": 158230
+      "hash": "33bad6187980ec9ec7845233b05d4ed5",
+      "size": 120398
     }
   }
 }
