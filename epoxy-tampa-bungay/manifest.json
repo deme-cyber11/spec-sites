@@ -1,6 +1,6 @@
 {
   "slug": "epoxy-tampa-bungay",
-  "built_at": "2026-05-13T00:19:23.102381Z",
+  "built_at": "2026-05-14T00:01:26.427569Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 100297
     },
     "service-1.jpg": {
-      "hash": "2606aecd1a0b705aac487486814cc11c",
-      "size": 140361
+      "hash": "dd1db82f10259c3b4edc2a2e4e06f160",
+      "size": 182926
     }
   }
 }
