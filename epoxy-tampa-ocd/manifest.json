@@ -1,6 +1,6 @@
 {
   "slug": "epoxy-tampa-ocd",
-  "built_at": "2026-05-13T00:43:24.569435Z",
+  "built_at": "2026-05-14T00:02:52.538096Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 100297
     },
     "service-1.jpg": {
-      "hash": "3f206e1b0bda7c39980a296b6174fbf5",
-      "size": 103902
+      "hash": "4044e1ee46201a005f385fbefa7fcf10",
+      "size": 154248
     }
   }
 }
