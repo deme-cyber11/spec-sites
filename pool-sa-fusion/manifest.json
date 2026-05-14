@@ -1,6 +1,6 @@
 {
   "slug": "pool-sa-fusion",
-  "built_at": "2026-05-13T01:14:54.932034Z",
+  "built_at": "2026-05-14T00:07:23.281397Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 141370
     },
     "service-1.jpg": {
-      "hash": "5031cfeea4aa3378dad3824c282b5680",
-      "size": 116240
+      "hash": "cbbecc983833032af8ec58ae43eb6664",
+      "size": 100286
     }
   }
 }
