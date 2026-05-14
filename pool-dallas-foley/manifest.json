@@ -1,6 +1,6 @@
 {
   "slug": "pool-dallas-foley",
-  "built_at": "2026-05-13T01:14:22.225277Z",
+  "built_at": "2026-05-14T00:06:43.499459Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 122155
     },
     "service-1.jpg": {
-      "hash": "b8ba6990befa37c92ff0eb308eaf288e",
-      "size": 93241
+      "hash": "3730228ae8e4670ba6219a7fefa62820",
+      "size": 126547
     }
   }
 }
