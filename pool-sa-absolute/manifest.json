@@ -1,6 +1,6 @@
 {
   "slug": "pool-sa-absolute",
-  "built_at": "2026-05-13T01:02:42.412112Z",
+  "built_at": "2026-05-14T00:04:25.319880Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 141370
     },
     "service-1.jpg": {
-      "hash": "2e2569ec99e1ee282b8017db6abe0e37",
-      "size": 150910
+      "hash": "0140b8cf2a7d6e8dd20da75cdefcda30",
+      "size": 127690
     }
   }
 }
