@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-air",
-  "built_at": "2026-05-13T00:48:07.506978Z",
+  "built_at": "2026-05-14T00:03:10.801800Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -22,8 +22,8 @@
       "size": 133256
     },
     "service-1.jpg": {
-      "hash": "8e13cac867bf72615194a9d7636f9b0c",
-      "size": 133407
+      "hash": "dfdacfb773fa3dd19dd4c57c9474753a",
+      "size": 120143
     },
     "service-4.jpg": {
       "hash": "d3a72ab5a459fce93c274f0c84b38e30",
