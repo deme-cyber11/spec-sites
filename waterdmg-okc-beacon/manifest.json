@@ -1,6 +1,6 @@
 {
   "slug": "waterdmg-okc-beacon",
-  "built_at": "2026-05-13T01:07:24.952387Z",
+  "built_at": "2026-05-14T00:04:42.348159Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 117727
     },
     "service-1.jpg": {
-      "hash": "373f9f8e39b2451cf1e3a1d1217ff429",
-      "size": 144570
+      "hash": "bfe46b1ba8da430c011fb43acce4dc78",
+      "size": 105746
     }
   }
 }
