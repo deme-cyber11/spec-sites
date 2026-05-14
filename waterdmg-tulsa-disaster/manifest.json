@@ -1,6 +1,6 @@
 {
   "slug": "waterdmg-tulsa-disaster",
-  "built_at": "2026-05-13T01:08:11.847522Z",
+  "built_at": "2026-05-14T00:05:29.561501Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 106055
     },
     "service-1.jpg": {
-      "hash": "7eb3eae282e98ad331c23a22dac8b72e",
-      "size": 120305
+      "hash": "373f9f8e39b2451cf1e3a1d1217ff429",
+      "size": 144570
     }
   }
 }
