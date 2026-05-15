@@ -1,6 +1,6 @@
 {
   "slug": "pool-dallas-crystal",
-  "built_at": "2026-05-15T00:03:24.620813Z",
+  "built_at": "2026-05-15T02:38:17.238479Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 122155
     },
     "service-1.jpg": {
-      "hash": "0b2c90a895cb622fc8efb7d860719891",
-      "size": 97109
+      "hash": "ca2942cf19d221bc1c6add5a740198c5",
+      "size": 124444
     }
   }
 }
