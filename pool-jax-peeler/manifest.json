@@ -1,6 +1,6 @@
 {
   "slug": "pool-jax-peeler",
-  "built_at": "2026-05-14T00:00:51.976506Z",
+  "built_at": "2026-05-15T00:00:33.098214Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 146419
     },
     "service-1.jpg": {
-      "hash": "a4aee3cdeb0f992d7671a5c4bcb7e8b3",
-      "size": 130064
+      "hash": "7f1e0ae31147ce91692b6391eafabf28",
+      "size": 121918
     }
   }
 }
