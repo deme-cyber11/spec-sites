@@ -1,6 +1,6 @@
 {
   "slug": "mold-denver-triangle",
-  "built_at": "2026-05-15T00:08:31.904763Z",
+  "built_at": "2026-05-15T02:45:28.504329Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 105503
     },
     "service-1.jpg": {
-      "hash": "7e9c0af33b1d8cabf13917ff5d6bc8ac",
-      "size": 113159
+      "hash": "169cbbcb09c6f82b166e0690f47d25c9",
+      "size": 126959
     }
   }
 }
