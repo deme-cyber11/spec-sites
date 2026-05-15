@@ -1,6 +1,6 @@
 {
   "slug": "hardwood-spokane-united",
-  "built_at": "2026-05-14T00:09:10.899731Z",
+  "built_at": "2026-05-15T00:09:12.889373Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 93089
     },
     "service-1.jpg": {
-      "hash": "557113d3ae8bb22e67ad6a11354855ef",
-      "size": 122994
+      "hash": "9fd62bc4a364586b3c6f3e20780b45e2",
+      "size": 159188
     }
   }
 }
