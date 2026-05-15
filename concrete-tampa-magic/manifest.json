@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-magic",
-  "built_at": "2026-05-15T00:01:28.554690Z",
+  "built_at": "2026-05-15T02:33:20.431510Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "9d3e72f53bce766f96259f8bc0abdd28",
-      "size": 184873
+      "hash": "cca1cc377e500feae1a6e1c0fe380e62",
+      "size": 154314
     }
   }
 }
