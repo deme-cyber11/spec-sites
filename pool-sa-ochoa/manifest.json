@@ -1,6 +1,6 @@
 {
   "slug": "pool-sa-ochoa",
-  "built_at": "2026-05-15T00:05:54.834504Z",
+  "built_at": "2026-05-15T02:41:05.990033Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 141370
     },
     "service-1.jpg": {
-      "hash": "1a2dea11f93324173a2c8e618a7dad2c",
-      "size": 100259
+      "hash": "fcd095b44e19371d21c28eae6e934508",
+      "size": 106210
     }
   }
 }
