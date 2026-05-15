@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-building",
-  "built_at": "2026-05-15T00:03:42.458543Z",
+  "built_at": "2026-05-15T02:38:39.143544Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 98177
     },
     "service-1.jpg": {
-      "hash": "f788bba146e5c3b0aca1932065ac34a6",
-      "size": 177116
+      "hash": "f47e7dc0e3b1f5c6f18b8f2b395f05dd",
+      "size": 121080
     }
   }
 }
