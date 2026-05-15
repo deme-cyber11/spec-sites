@@ -1,6 +1,6 @@
 {
   "slug": "mold-springs-cc",
-  "built_at": "2026-05-15T00:08:55.694412Z",
+  "built_at": "2026-05-15T02:45:50.318114Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 127579
     },
     "service-1.jpg": {
-      "hash": "3ff14897e083ea2fe7ec141485b931a5",
-      "size": 139525
+      "hash": "4fb8741e3adc5516df38f05174b89cf8",
+      "size": 172774
     }
   }
 }
