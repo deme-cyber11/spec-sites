@@ -1,6 +1,6 @@
 {
   "slug": "mold-denver-altura",
-  "built_at": "2026-05-15T00:08:15.536745Z",
+  "built_at": "2026-05-15T02:45:08.068753Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 105503
     },
     "service-1.jpg": {
-      "hash": "43fbdf7b0a75f906780d85d224f09ce9",
-      "size": 130964
+      "hash": "0911e033ba92ab7be7bf04b397bb2a89",
+      "size": 118562
     }
   }
 }
