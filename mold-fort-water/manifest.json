@@ -1,0 +1,18 @@
+{
+  "slug": "mold-fort-water",
+  "built_at": "2026-05-15T02:46:36.069447Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ffc86797fbad0fe82b44c6b32c8468cb",
+      "size": 77008
+    },
+    "service-1.jpg": {
+      "hash": "fb94d09e1ae55659cf10a594d5fd1921",
+      "size": 111322
+    }
+  }
+}
