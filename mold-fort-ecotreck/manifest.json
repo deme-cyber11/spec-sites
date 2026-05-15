@@ -1,0 +1,18 @@
+{
+  "slug": "mold-fort-ecotreck",
+  "built_at": "2026-05-15T02:49:54.490473Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ffc86797fbad0fe82b44c6b32c8468cb",
+      "size": 77008
+    },
+    "service-1.jpg": {
+      "hash": "37478b1ebb7af2f43d4d3136caa15547",
+      "size": 119773
+    }
+  }
+}
