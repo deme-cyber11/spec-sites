@@ -1,6 +1,6 @@
 {
   "slug": "hvac-huntsville-superior",
-  "built_at": "2026-05-15T00:06:31.182661Z",
+  "built_at": "2026-05-15T02:41:51.035710Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -22,8 +22,8 @@
       "size": 121727
     },
     "service-1.jpg": {
-      "hash": "7165d7d0ce94f4f508edc5b31a47e406",
-      "size": 131209
+      "hash": "186e053dc5ab687df39e06143ae7e557",
+      "size": 127859
     },
     "service-4.jpg": {
       "hash": "7ce5e22e1ac5c0a696cda18dc975fe45",
