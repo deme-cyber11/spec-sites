@@ -1,0 +1,18 @@
+{
+  "slug": "hardwood-spokane-boss",
+  "built_at": "2026-05-17T14:10:51.611105Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "881b86bd089083eacf350f03167bc8f1",
+      "size": 93089
+    },
+    "service-1.jpg": {
+      "hash": "9563e95ee7173a183f6e6fa8498799b2",
+      "size": 118196
+    }
+  }
+}
