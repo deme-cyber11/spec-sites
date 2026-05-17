@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-madd",
-  "built_at": "2026-05-15T02:35:34.295562Z",
+  "built_at": "2026-05-17T14:01:21.093591Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "bf35a611c2e59a5f717d32cae27b8a93",
-      "size": 148591
+      "hash": "4bcf6ee8da36770d174e6038a08c2361",
+      "size": 171313
     }
   }
 }
