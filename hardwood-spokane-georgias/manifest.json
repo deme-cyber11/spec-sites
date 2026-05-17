@@ -1,6 +1,6 @@
 {
   "slug": "hardwood-spokane-georgias",
-  "built_at": "2026-05-15T02:48:45.484838Z",
+  "built_at": "2026-05-17T14:09:36.902975Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 93089
     },
     "service-1.jpg": {
-      "hash": "c8b7167d4ac377f8b258166ca5a752dc",
-      "size": 151680
+      "hash": "1996cfe3357cbc5debeb81161efb6b82",
+      "size": 151305
     }
   }
 }
