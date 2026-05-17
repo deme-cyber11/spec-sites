@@ -1,0 +1,18 @@
+{
+  "slug": "epoxy-tampa-ab",
+  "built_at": "2026-05-17T14:20:14.905910Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "f0afa3fb1f168ce3be167c21bf9f93fd",
+      "size": 100297
+    },
+    "service-1.jpg": {
+      "hash": "0fb829281d5618029a7a9a05cb28e0c6",
+      "size": 151024
+    }
+  }
+}
