@@ -1,0 +1,18 @@
+{
+  "slug": "mold-springs-ark",
+  "built_at": "2026-05-17T14:14:23.298714Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "a294894faac3646d2289c341fb66f76e",
+      "size": 127579
+    },
+    "service-1.jpg": {
+      "hash": "e1651e4024163745bd0f1095b7d036d4",
+      "size": 142320
+    }
+  }
+}
