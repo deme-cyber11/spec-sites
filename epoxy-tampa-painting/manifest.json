@@ -1,6 +1,6 @@
 {
   "slug": "epoxy-tampa-painting",
-  "built_at": "2026-05-15T02:34:04.566153Z",
+  "built_at": "2026-05-17T14:00:57.910033Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 100297
     },
     "service-1.jpg": {
-      "hash": "53e193f2e9eb6f606b842cab9ce30205",
-      "size": 178652
+      "hash": "2ba6b1dbefaf4e2b50fbd3a3555180cb",
+      "size": 118300
     }
   }
 }
