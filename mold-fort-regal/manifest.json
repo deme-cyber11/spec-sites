@@ -1,0 +1,18 @@
+{
+  "slug": "mold-fort-regal",
+  "built_at": "2026-05-17T14:10:24.944427Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ffc86797fbad0fe82b44c6b32c8468cb",
+      "size": 77008
+    },
+    "service-1.jpg": {
+      "hash": "fafb87ad075b368de053c4504767d20a",
+      "size": 124813
+    }
+  }
+}
