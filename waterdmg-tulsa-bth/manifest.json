@@ -1,6 +1,6 @@
 {
   "slug": "waterdmg-tulsa-bth",
-  "built_at": "2026-05-15T02:40:02.903297Z",
+  "built_at": "2026-05-17T14:07:29.118032Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 106055
     },
     "service-1.jpg": {
-      "hash": "bf5297a747bc39cc71b084abcd5c12c4",
-      "size": 160242
+      "hash": "3629da1092c971cc611cbc6070c31806",
+      "size": 114934
     }
   }
 }
