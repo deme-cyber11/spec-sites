@@ -1,0 +1,18 @@
+{
+  "slug": "concrete-orlando-oc",
+  "built_at": "2026-05-17T14:15:58.186194Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "09a95065d65322eb5a271e12bc05d2f8",
+      "size": 101221
+    },
+    "service-1.jpg": {
+      "hash": "a86af9b8d08d9aae9179d7e1f3e68534",
+      "size": 230568
+    }
+  }
+}
