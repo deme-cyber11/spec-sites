@@ -25,8 +25,7 @@
   --text: #222;
   --caller-bg: #f0f4ff;
   --caller-border: #c7d2fe;
-  --agent-bg: #fff8f0;
-  --agent-border: #fbd38d;
+  --indigo: #4f46e5;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -158,52 +157,96 @@ header h1 {
 }
 .scenario-context strong { color: var(--orange-dark); }
 
-/* ─── SCRIPT LAYOUT ─── */
-.script { padding: 1.25rem 1.5rem; }
-
-.line {
-  display: flex;
-  gap: .85rem;
-  margin-bottom: .75rem;
-  align-items: flex-start;
-}
-.line:last-child { margin-bottom: 0; }
-
-.speaker {
-  flex: 0 0 90px;
+/* ─── CALLER SCRIPT ─── */
+.script-label {
+  padding: .75rem 1.5rem .35rem;
   font-size: .68rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .07em;
-  padding-top: .65rem;
-  text-align: right;
+  letter-spacing: .12em;
+  color: var(--indigo);
+  border-top: 1px solid var(--border);
 }
-.speaker.carolina { color: var(--orange-dark); }
-.speaker.caller { color: #4f46e5; }
-
-.bubble {
-  flex: 1;
-  border-radius: 10px;
-  padding: .55rem .9rem;
-  font-size: .9rem;
+.caller-script {
+  padding: .35rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.caller-line {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+}
+.line-num {
+  width: 24px;
+  height: 24px;
+  background: var(--indigo);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .68rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: .35rem;
+}
+.line-body { flex: 1; }
+.line-text {
+  font-size: .92rem;
   line-height: 1.55;
   color: var(--text);
-}
-.bubble.carolina {
-  background: var(--agent-bg);
-  border: 1px solid var(--agent-border);
-  border-top-left-radius: 2px;
-}
-.bubble.caller {
   background: var(--caller-bg);
   border: 1px solid var(--caller-border);
+  border-radius: 10px;
+  padding: .5rem .85rem;
   border-top-left-radius: 2px;
 }
+.line-hint {
+  font-size: .77rem;
+  color: var(--gray);
+  font-style: italic;
+  margin-top: .2rem;
+  padding-left: .2rem;
+}
 
-.script-divider {
-  border: none;
-  border-top: 1px dashed var(--border);
-  margin: 1.25rem 0;
+/* ─── EVALUATE SECTION ─── */
+.eval-section {
+  background: #fff8f0;
+  border-top: 1px solid var(--border);
+  padding: .9rem 1.5rem 1.1rem;
+}
+.eval-title {
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--orange-dark);
+  margin-bottom: .6rem;
+}
+.eval-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.eval-item {
+  display: flex;
+  gap: .5rem;
+  align-items: flex-start;
+  font-size: .84rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+.eval-item::before {
+  content: "◻";
+  color: var(--orange);
+  font-size: .9rem;
+  flex-shrink: 0;
+  margin-top: .02rem;
 }
 
 /* ─── CAPTURE BOX ─── */
@@ -315,7 +358,7 @@ footer strong { color: var(--orange-dark); }
 
 <div class="hero">
   <h2>Carolina Inbound — Demo Scripts</h2>
-  <p>5 full inbound call scenarios. Practice the caller role — let Carolina run the rest.</p>
+  <p>Read your lines. Let Carolina respond. Evaluate what she does.</p>
 </div>
 
 <!-- ─── HOW TO USE ─── -->
@@ -324,19 +367,19 @@ footer strong { color: var(--orange-dark); }
   <div class="how-grid">
     <div class="how-cell">
       <div class="hc-head">Your role</div>
-      <div class="hc-body">Read the <strong style="color:#4f46e5;">CALLER</strong> lines. Use the context box at the top of each scenario to stay in character. You don't need to hit every line exactly — improvise within the scenario.</div>
+      <div class="hc-body">Read the numbered <strong style="color:var(--indigo);">caller lines</strong> in order. Use the character context at the top of each scenario to stay in character. You can improvise slightly — Carolina adapts in real time.</div>
     </div>
     <div class="how-cell">
-      <div class="hc-head">What to evaluate</div>
-      <div class="hc-body">Does Carolina sound knowledgeable? Does she capture all the fields in the green capture box? Does the post-call email arrive within 60 seconds? Does the call feel faster and friendlier than the old IVR?</div>
+      <div class="hc-head">Evaluating Carolina</div>
+      <div class="hc-body">Use the orange checklist in each scenario. You're listening for product knowledge, the right probing questions, and a clean recap — not a memorized script.</div>
     </div>
     <div class="how-cell">
       <div class="hc-head">For the demo</div>
-      <div class="hc-body">Run the live call, then pull up the Retell dashboard while Source 4 watches — show the transcript, intent classification, and captured lead data populating in real time.</div>
+      <div class="hc-body">After each call, pull up the Retell dashboard while Source 4 watches — show the transcript, intent classification, and captured lead data in real time.</div>
     </div>
     <div class="how-cell">
-      <div class="hc-head">Side-by-side moment</div>
-      <div class="hc-body">Close each scenario with: "On the current IVR, this caller would have pressed 1, 3, or just hung up. With Carolina, they got a quote started in under 3 minutes."</div>
+      <div class="hc-head">The close line</div>
+      <div class="hc-body">"On the current IVR, this caller would have pressed 1, 3, or just hung up. With Carolina, they had a quote started in under 3 minutes."</div>
     </div>
   </div>
 </div>
@@ -355,150 +398,109 @@ footer strong { color: var(--orange-dark); }
   </div>
 
   <div class="scenario-context">
-    <strong>Your character:</strong> Mark Hendricks, facilities manager at Midwest Distribution Partners — a regional distribution center in Indianapolis. A truck clipped two steel bollards at your loading dock last week. You need replacements — same spec, ideally removable so you can pull them when staging trailers. You have 8 dock doors total, want to start with 6, may do all 8 if the price is right. You have a forklift. You need it within 2 weeks — one dock door is currently unprotected.
+    <strong>Your character:</strong> Mark Hendricks, facilities manager at Midwest Distribution Partners — a regional distribution center in Indianapolis. A truck clipped two steel bollards at your loading dock last week. You need replacements — ideally removable so you can pull them when staging trailers. You have 8 dock doors total, want to start with 6. You have a forklift. You need them within 2 weeks — one dock door is currently unprotected.
   </div>
 
-  <div class="script">
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Source 4 Industries — this is Carolina, how can I help you today?</div>
+  <div class="script-label">Your Lines — read these in order</div>
+  <div class="caller-script">
+    <div class="caller-line">
+      <div class="line-num">1</div>
+      <div class="line-body">
+        <div class="line-text">Yeah, hi — I'm looking to order some bollards for a loading dock application. We had a couple get hit by a truck last week and I need replacements.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Yeah, hi — I'm looking to order some bollards for a loading dock application. We had a couple get hit by a truck last week and I need replacements.</div>
+    <div class="caller-line">
+      <div class="line-num">2</div>
+      <div class="line-body">
+        <div class="line-text">Dock doors — I need them to stop a truck from backing into the building if the driver misjudges.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">I can definitely help with that. Are these steel post bollards for dock doors — crash protection — or more along the lines of parking lot guidance bollards?</div>
+    <div class="caller-line">
+      <div class="line-num">3</div>
+      <div class="line-body">
+        <div class="line-text">I'd actually prefer removable. We stage trailers in that lane sometimes and need to pull them out of the way.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Dock doors — I need them to stop a truck from backing into the building if the driver misjudges.</div>
+    <div class="caller-line">
+      <div class="line-num">4</div>
+      <div class="line-body">
+        <div class="line-text">I think they were 4-inch... let me think — yeah, 4.5-inch I'm pretty sure.</div>
+        <div class="line-hint">Hesitate a little here — let her handle the uncertainty.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Got it — crash-rated bollards protecting dock openings. Do you need them to be removable, like a pull-pin or locking system, or are these permanent installations?</div>
+    <div class="caller-line">
+      <div class="line-num">5</div>
+      <div class="line-body">
+        <div class="line-text">Six to start. We actually have eight dock doors total, so I may want to do all eight eventually — but let me start with six.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I'd actually prefer removable. We stage trailers in that lane sometimes and need to pull them out of the way.</div>
+    <div class="caller-line">
+      <div class="line-num">6</div>
+      <div class="line-body">
+        <div class="line-text">Same location. It's our distribution center in Indianapolis.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">That makes sense — pull-pin removable steel bollards for dock lane protection. A few quick questions so I can get you a proper quote. What diameter are the ones that got hit? Standard sizes run 4.5-inch or 6-inch OD.</div>
+    <div class="caller-line">
+      <div class="line-num">7</div>
+      <div class="line-body">
+        <div class="line-text">We have a forklift.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I think they were 4-inch... let me think — yeah, 4.5-inch I'm pretty sure.</div>
+    <div class="caller-line">
+      <div class="line-num">8</div>
+      <div class="line-body">
+        <div class="line-text">I'd like to have them within two weeks if possible. One of my dock doors is currently unprotected.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">4.5-inch works great for dock door protection. How many do you need?</div>
+    <div class="caller-line">
+      <div class="line-num">9</div>
+      <div class="line-body">
+        <div class="line-text">Mark Hendricks, Midwest Distribution Partners.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Six to start. We actually have eight dock doors total, so I may want to do all eight eventually — but let me start with six.</div>
+    <div class="caller-line">
+      <div class="line-num">10</div>
+      <div class="line-body">
+        <div class="line-text">mhendricks@midwestdp.com</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Six now, with a potential order for eight total — noted. Are all six at the same location, or split across multiple facilities?</div>
+    <div class="caller-line">
+      <div class="line-num">11</div>
+      <div class="line-body">
+        <div class="line-text">317-555-0142</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Same location. It's our distribution center in Indianapolis.</div>
+    <div class="caller-line">
+      <div class="line-num">12</div>
+      <div class="line-body">
+        <div class="line-text">46241.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Indianapolis — good. For freight: do you have a forklift or dock equipment to unload, or would you need a truck with a lift gate?</div>
+    <div class="caller-line">
+      <div class="line-num">13</div>
+      <div class="line-body">
+        <div class="line-text">No, that's everything. That was fast.</div>
+      </div>
     </div>
+  </div>
 
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">We have a forklift.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Perfect. And do you have a target timeline? How urgent is this?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I'd like to have them within two weeks if possible. One of my dock doors is currently unprotected.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Two-week urgency — I'll flag that. Let me get your contact info so we can get a quote back to you quickly. Name and company?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Mark Hendricks, Midwest Distribution Partners.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Best email for the quote?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">mhendricks@midwestdp.com</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Phone number in case the rep has a quick follow-up question?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">317-555-0142</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And the zip code at your Indianapolis facility for freight pricing?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">46241.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Mark, I have everything I need. Six 4.5-inch removable steel bollards, dock door protection, Indianapolis 46241, forklift on site, two-week urgency with one door currently unprotected. Your quote will come from our bollards specialist within a few hours — and I'm sending you an email recap right now to confirm everything we captured. Any other questions before I let you go?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">No, that's everything. That was fast.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Happy to help. Keep an eye out for that email — someone will follow up with pricing shortly. Have a great day.</div>
-    </div>
-
+  <div class="eval-section">
+    <div class="eval-title">Evaluate Carolina On</div>
+    <ul class="eval-list">
+      <li class="eval-item">Asks crash-rated vs parking lot bollards — distinguishes the application before quoting</li>
+      <li class="eval-item">Asks removable vs permanent — doesn't assume</li>
+      <li class="eval-item">Knows 4.5" and 6" are standard sizes (mentions this without prompting)</li>
+      <li class="eval-item">Handles the "I'm not sure on diameter" without panic — offers to confirm before shipping</li>
+      <li class="eval-item">Flags the expansion opportunity: 6 now, 8 total doors</li>
+      <li class="eval-item">Responds to "one dock door is currently unprotected" — acknowledges urgency explicitly</li>
+      <li class="eval-item">Asks about forklift vs lift gate for freight — she should ask this, not you</li>
+      <li class="eval-item">Reads back a complete recap (all 10 fields) before ending the call</li>
+      <li class="eval-item">Mentions post-call email confirmation arriving within 60 seconds</li>
+    </ul>
   </div>
 
   <div class="capture-box">
-    <div class="capture-title">What Carolina Captured</div>
+    <div class="capture-title">What Carolina Should Capture</div>
     <div class="capture-grid">
       <div class="capture-item"><span class="c-label">Name</span><span class="c-val">Mark Hendricks</span></div>
       <div class="capture-item"><span class="c-label">Company</span><span class="c-val">Midwest Distribution Partners</span></div>
@@ -511,7 +513,7 @@ footer strong { color: var(--orange-dark); }
       <div class="capture-item"><span class="c-label">Unloading</span><span class="c-val">Forklift on site</span></div>
       <div class="capture-item"><span class="c-label">Urgency</span><span class="c-val">2 weeks, 1 door currently unprotected</span></div>
     </div>
-    <div class="capture-route">Routed to → Bollards specialist (sales@source4industries.com) · Post-call email sent within 60 sec</div>
+    <div class="capture-route">Routes to → Bollards specialist · Post-call email within 60 sec</div>
   </div>
 </div>
 
@@ -529,140 +531,102 @@ footer strong { color: var(--orange-dark); }
   </div>
 
   <div class="scenario-context">
-    <strong>Your character:</strong> Lisa Torrance, safety coordinator at Precision Parts Manufacturing in Charlotte, NC. A forklift clipped a structural column on your production floor three weeks ago. OSHA came through last week and wrote you up. You need Handle-It column guards (or equivalent wrap-around guards) on 8 structural columns — you believe they're 6-inch wide flange but aren't certain. You have a concrete floor. You have forklifts for receiving. OSHA gave you a 30-day window to correct.
+    <strong>Your character:</strong> Lisa Torrance, safety coordinator at Precision Parts Manufacturing in Charlotte, NC. A forklift clipped a structural column on your production floor three weeks ago. OSHA came through last week and wrote you up. You need wrap-around column guards on 8 structural columns — you believe they're 6-inch wide flange but aren't certain. Concrete floor. Forklifts for receiving. OSHA gave you a 30-day window.
   </div>
 
-  <div class="script">
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Source 4 Industries — this is Carolina, how can I help you today?</div>
+  <div class="script-label">Your Lines — read these in order</div>
+  <div class="caller-script">
+    <div class="caller-line">
+      <div class="line-num">1</div>
+      <div class="line-body">
+        <div class="line-text">Hi, I need to order some guardrails or column guards for structural columns on our production floor. We had a forklift incident and OSHA was just in.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Hi, I need to order some guardrails or column guards for structural columns on our production floor. We had a forklift incident and OSHA was just in.</div>
+    <div class="caller-line">
+      <div class="line-num">2</div>
+      <div class="line-body">
+        <div class="line-text">Wrap-around — something that mounts right to the column so we don't lose floor space.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">I can get you taken care of on that. We carry Handle-It column guards along with full modular guardrail systems. Are you looking for wrap-around guards that mount directly on the column, or standalone guardrail runs protecting the column from a distance?</div>
+    <div class="caller-line">
+      <div class="line-num">3</div>
+      <div class="line-body">
+        <div class="line-text">I'd have to measure to be sure — I want to say 6-inch.</div>
+        <div class="line-hint">Show uncertainty — see if she handles it professionally.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Wrap-around — something that mounts right to the column so we don't lose floor space.</div>
+    <div class="caller-line">
+      <div class="line-num">4</div>
+      <div class="line-body">
+        <div class="line-text">Eight on the main production floor. That's what OSHA flagged.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Handle-It column guards — that's exactly what they're designed for. They anchor at the base and wrap the column. Do you know your column flange size? Most structural steel runs either 6-inch or 8-inch wide flange.</div>
+    <div class="caller-line">
+      <div class="line-num">5</div>
+      <div class="line-body">
+        <div class="line-text">30-day window to get it corrected.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I'd have to measure to be sure — I want to say 6-inch.</div>
+    <div class="caller-line">
+      <div class="line-num">6</div>
+      <div class="line-body">
+        <div class="line-text">Concrete floor. I think we'd need the hardware — we don't have anything on hand.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">That's fine — we can confirm sizing before it ships. How many columns need protection?</div>
+    <div class="caller-line">
+      <div class="line-num">7</div>
+      <div class="line-body">
+        <div class="line-text">We're a manufacturing facility, so yes, we have forklifts.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Eight on the main production floor. That's what OSHA flagged.</div>
+    <div class="caller-line">
+      <div class="line-num">8</div>
+      <div class="line-body">
+        <div class="line-text">Lisa Torrance, Precision Parts Manufacturing.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Eight columns — and how urgent is this? Did OSHA set a deadline?</div>
+    <div class="caller-line">
+      <div class="line-num">9</div>
+      <div class="line-body">
+        <div class="line-text">ltorrance@precisionparts-manufacturing.com</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">30-day window to get it corrected.</div>
+    <div class="caller-line">
+      <div class="line-num">10</div>
+      <div class="line-body">
+        <div class="line-text">704-555-0288.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Thirty days — noted, we'll flag that on the quote. Are these going on a concrete floor, and do you have anchor bolts, or will you need anchor hardware included?</div>
+    <div class="caller-line">
+      <div class="line-num">11</div>
+      <div class="line-body">
+        <div class="line-text">28269.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Concrete floor. I think we'd need the hardware — we don't have anything on hand.</div>
+    <div class="caller-line">
+      <div class="line-num">12</div>
+      <div class="line-body">
+        <div class="line-text">No, that's great. I really appreciate how easy this was — I've been putting this call off all week.</div>
+      </div>
     </div>
+  </div>
 
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">I'll flag anchor kit pricing to be included. For freight — do you have a forklift or dock equipment to unload, or would you need a lift gate truck?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">We're a manufacturing facility, so yes, we have forklifts.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Perfect. Let me get your contact info for the quote. Name and company?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Lisa Torrance, Precision Parts Manufacturing.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Best email?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">ltorrance@precisionparts-manufacturing.com</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And a phone number?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">704-555-0288.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And your Charlotte zip code for freight?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">28269.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Lisa, I have everything. Eight Handle-It column guards — 6-inch flange to confirm — concrete floor, anchor hardware required, Charlotte NC 28269, forklift available for receiving, 30-day OSHA deadline. Your quote will come from our guardrail specialist within a few hours. I'm sending you an email recap right now. Anything else?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">No, that's great. I really appreciate how easy this was — I've been putting this call off all week.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Happy to help get you compliant. Someone will be in touch shortly — have a great day.</div>
-    </div>
-
+  <div class="eval-section">
+    <div class="eval-title">Evaluate Carolina On</div>
+    <ul class="eval-list">
+      <li class="eval-item">Names Handle-It as the brand for column guards — brand-level product knowledge</li>
+      <li class="eval-item">Distinguishes wrap-around column guards from standalone guardrail runs — knows the difference</li>
+      <li class="eval-item">Offers to confirm flange size before shipping — doesn't block the quote on an uncertain spec</li>
+      <li class="eval-item">Asks about concrete floor and anchor hardware — proactive, not waiting for you to mention it</li>
+      <li class="eval-item">Reacts to the 30-day OSHA window — flags it as urgent explicitly</li>
+      <li class="eval-item">Asks forklift vs lift gate for freight — she should ask, not you</li>
+      <li class="eval-item">Full recap before close with all captured fields confirmed</li>
+      <li class="eval-item">Post-call email mentioned within 60 seconds</li>
+    </ul>
   </div>
 
   <div class="capture-box">
-    <div class="capture-title">What Carolina Captured</div>
+    <div class="capture-title">What Carolina Should Capture</div>
     <div class="capture-grid">
       <div class="capture-item"><span class="c-label">Name</span><span class="c-val">Lisa Torrance</span></div>
       <div class="capture-item"><span class="c-label">Company</span><span class="c-val">Precision Parts Manufacturing</span></div>
@@ -675,7 +639,7 @@ footer strong { color: var(--orange-dark); }
       <div class="capture-item"><span class="c-label">Unloading</span><span class="c-val">Forklift available</span></div>
       <div class="capture-item"><span class="c-label">Urgency</span><span class="c-val">30-day OSHA compliance window</span></div>
     </div>
-    <div class="capture-route">Routed to → Guardrail/Handle-It specialist (sales@source4industries.com) · Post-call email sent within 60 sec</div>
+    <div class="capture-route">Routes to → Guardrail/Handle-It specialist · Post-call email within 60 sec</div>
   </div>
 </div>
 
@@ -693,130 +657,96 @@ footer strong { color: var(--orange-dark); }
   </div>
 
   <div class="scenario-context">
-    <strong>Your character:</strong> Dave Kowalski, fleet maintenance manager at Blackridge Aggregate in Bismarck, ND. You have a Cat 966 wheel loader (~6 years old) where the Lincoln auto-lube pump stopped building pressure. The pump runs — you can hear it cycle — but none of the injectors are firing. You believe it's 12-volt, roughly 14 grease points. You have 4 loaders total and would consider a fleet service quote if the price makes sense. You've dealt with a Lincoln specialist before.
+    <strong>Your character:</strong> Dave Kowalski, fleet maintenance manager at Blackridge Aggregate in Bismarck, ND. Your Cat 966 wheel loader (~6 years old) has a Lincoln auto-lube pump that won't build pressure — the pump runs but the injectors aren't firing. You believe it's 12-volt, ~14 grease points. You have 4 loaders total and would consider a fleet service quote. You've dealt with a Lincoln specialist before.
   </div>
 
-  <div class="script">
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Source 4 Industries — this is Carolina, how can I help you today?</div>
+  <div class="script-label">Your Lines — read these in order</div>
+  <div class="caller-script">
+    <div class="caller-line">
+      <div class="line-num">1</div>
+      <div class="line-body">
+        <div class="line-text">Yeah, I need some help with a Lincoln lubrication system on one of our wheel loaders. The pump quit on me and I'm not sure if it's the pump or something downstream.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Yeah, I need some help with a Lincoln lubrication system on one of our wheel loaders. The pump quit on me and I'm not sure if it's the pump or something downstream.</div>
+    <div class="caller-line">
+      <div class="line-num">2</div>
+      <div class="line-body">
+        <div class="line-text">Cat 966 wheel loader. About six years old. The auto-lube system's been running fine until now.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">I can get you connected with our Lincoln specialist — that's Brad's territory, and pressure issues are right in his wheelhouse. A couple of quick questions so he has everything before he calls you back. What kind of equipment is this on?</div>
+    <div class="caller-line">
+      <div class="line-num">3</div>
+      <div class="line-body">
+        <div class="line-text">Should be 12-volt.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Cat 966 wheel loader. About six years old. The auto-lube system's been running fine until now.</div>
+    <div class="caller-line">
+      <div class="line-num">4</div>
+      <div class="line-body">
+        <div class="line-text">I'd have to pull the spec sheet — I want to say 14.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Cat 966 with a Lincoln auto-lube — got it. What's the system voltage, 12-volt or 24-volt?</div>
+    <div class="caller-line">
+      <div class="line-num">5</div>
+      <div class="line-body">
+        <div class="line-text">The pump runs — I can hear it cycle — but the injectors aren't firing. I checked a few by hand and nothing's moving.</div>
+        <div class="line-hint">This is the key diagnostic detail — watch how she handles it.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Should be 12-volt.</div>
+    <div class="caller-line">
+      <div class="line-num">6</div>
+      <div class="line-body">
+        <div class="line-text">Actually yeah — I've got four loaders total. If the price is right I'd want to do a full service review on all of them.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And roughly how many grease points is it serving?</div>
+    <div class="caller-line">
+      <div class="line-num">7</div>
+      <div class="line-body">
+        <div class="line-text">Dave Kowalski, Blackridge Aggregate.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I'd have to pull the spec sheet — I want to say 14.</div>
+    <div class="caller-line">
+      <div class="line-num">8</div>
+      <div class="line-body">
+        <div class="line-text">d.kowalski@blackridgeaggregate.com</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Fourteen points on a 12-volt system. Now — you mentioned it won't build pressure. Is the pump running but no pressure at the fittings, or is the pump not running at all?</div>
+    <div class="caller-line">
+      <div class="line-num">9</div>
+      <div class="line-body">
+        <div class="line-text">701-555-0394.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">The pump runs — I can hear it cycle — but the injectors aren't firing. I checked a few by hand and nothing's moving.</div>
+    <div class="caller-line">
+      <div class="line-num">10</div>
+      <div class="line-body">
+        <div class="line-text">Bismarck, North Dakota — zip is 58501.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Pump runs but injectors aren't firing — that's a useful symptom. Could be a pressure relief valve stuck open, a cracked line, or the injectors themselves if the system ran dry at some point. Brad will know exactly what to check first. Do you have more than one machine that might need service?</div>
+    <div class="caller-line">
+      <div class="line-num">11</div>
+      <div class="line-body">
+        <div class="line-text">No, that's it. I've been on hold with another distributor for 20 minutes — I appreciate you picking up.</div>
+      </div>
     </div>
+  </div>
 
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Actually yeah — I've got four loaders total. If the price is right I'd want to do a full service review on all of them.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Four loaders — I'll make sure Brad knows there's a potential fleet quote, not just a single repair. What's your name and company?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Dave Kowalski, Blackridge Aggregate.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Best email for the recap and for Brad to follow up?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">d.kowalski@blackridgeaggregate.com</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Phone number?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">701-555-0394.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And your location for parts shipping?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Bismarck, North Dakota — zip is 58501.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Dave, I have it all. Cat 966, Lincoln 12-volt auto-lube, 14 points, pump cycles but no injector pressure, fleet of four loaders. Brad will reach out to you soon — this sounds fixable without a full system replacement, but he'll confirm once he walks through it with you. I'm sending you an email confirmation now. Anything else before I let you go?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">No, that's it. I've been on hold with another distributor for 20 minutes — I appreciate you picking up.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">That's exactly what we're here for. Brad will be in touch — have a good one.</div>
-    </div>
-
+  <div class="eval-section">
+    <div class="eval-title">Evaluate Carolina On</div>
+    <ul class="eval-list">
+      <li class="eval-item">Mentions Brad by name as the Lincoln specialist without you asking — she knows the routing</li>
+      <li class="eval-item">Asks 12V vs 24V — equipment-level knowledge question</li>
+      <li class="eval-item">Asks about grease point count — relevant to diagnosing the system</li>
+      <li class="eval-item">When you say "pump runs but injectors don't fire" — she should interpret the symptom (pressure relief stuck, cracked line, injectors ran dry) rather than just recording it</li>
+      <li class="eval-item">Proactively asks if there are more machines — surfaces the fleet quote opportunity herself</li>
+      <li class="eval-item">Flags to Brad that there's a potential fleet quote (4 loaders), not just a single repair call</li>
+      <li class="eval-item">Full recap before ending — equipment details, symptom, fleet size, routing</li>
+      <li class="eval-item">Post-call email within 60 seconds</li>
+    </ul>
   </div>
 
   <div class="capture-box">
-    <div class="capture-title">What Carolina Captured</div>
+    <div class="capture-title">What Carolina Should Capture</div>
     <div class="capture-grid">
       <div class="capture-item"><span class="c-label">Name</span><span class="c-val">Dave Kowalski</span></div>
       <div class="capture-item"><span class="c-label">Company</span><span class="c-val">Blackridge Aggregate</span></div>
@@ -825,10 +755,10 @@ footer strong { color: var(--orange-dark); }
       <div class="capture-item"><span class="c-label">ZIP</span><span class="c-val">58501 (Bismarck, ND)</span></div>
       <div class="capture-item"><span class="c-label">Equipment</span><span class="c-val">Cat 966 wheel loader, ~6 years old</span></div>
       <div class="capture-item"><span class="c-label">System</span><span class="c-val">Lincoln auto-lube, 12V, ~14 grease points</span></div>
-      <div class="capture-item"><span class="c-label">Symptom</span><span class="c-val">Pump runs, no injector pressure (not a dead pump)</span></div>
-      <div class="capture-item"><span class="c-label">Fleet</span><span class="c-val">4 loaders total — fleet quote opportunity flagged</span></div>
+      <div class="capture-item"><span class="c-label">Symptom</span><span class="c-val">Pump runs, injectors not firing (not a dead pump)</span></div>
+      <div class="capture-item"><span class="c-label">Fleet</span><span class="c-val">4 loaders total — fleet quote opp flagged</span></div>
     </div>
-    <div class="capture-route">Routed to → Brad (Lincoln specialist) — direct callback queued · Post-call email sent within 60 sec</div>
+    <div class="capture-route">Routes to → Brad (Lincoln specialist) direct callback · Post-call email within 60 sec</div>
   </div>
 </div>
 
@@ -846,140 +776,100 @@ footer strong { color: var(--orange-dark); }
   </div>
 
   <div class="scenario-context">
-    <strong>Your character:</strong> Patricia Nguyen, purchasing manager at Coastal Foods Processing in Tampa, FL. You need to replace casters on 60 stainless steel work tables — 2 swivels and 2 rigids per table, so 240 total. Tables run 600–800 lbs loaded. You want 5-inch wheels based on what you've used before. It's a wet washdown facility so you need sealed bearings and NSF-compliant materials. Full stainless housing, polyurethane wheel is fine as long as it's non-marking and food-safe. Tables have 1.5-inch square tube legs. You have a dock but only a pallet jack (no forklift).
+    <strong>Your character:</strong> Patricia Nguyen, purchasing manager at Coastal Foods Processing in Tampa, FL. You need to replace casters on 60 stainless steel work tables — 2 swivels and 2 rigids per table (240 total). Tables run 600–800 lbs loaded. You want 5-inch wheels. Wet washdown facility — sealed bearings and NSF compliance required. Full stainless housing, polyurethane wheel OK as long as it's non-marking and food-safe. 1.5-inch square tube legs. Dock available, pallet jack only (no forklift).
   </div>
 
-  <div class="script">
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Source 4 Industries — this is Carolina, how can I help you today?</div>
+  <div class="script-label">Your Lines — read these in order</div>
+  <div class="caller-script">
+    <div class="caller-line">
+      <div class="line-num">1</div>
+      <div class="line-body">
+        <div class="line-text">Hi, I'm looking for stainless steel casters for some food processing equipment. I need to replace the casters on about 60 stainless work tables.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Hi, I'm looking for stainless steel casters for some food processing equipment. I need to replace the casters on about 60 stainless work tables.</div>
+    <div class="caller-line">
+      <div class="line-num">2</div>
+      <div class="line-body">
+        <div class="line-text">Yeah, two swivel and two rigid per table — 60 tables, so 240 casters total.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Stainless casters for food processing — we can definitely help with that. Are these rigids, swivels, or a mix? Standard setup for work tables is typically two swivels up front, two rigids in back.</div>
+    <div class="caller-line">
+      <div class="line-num">3</div>
+      <div class="line-body">
+        <div class="line-text">Loaded with product they can run 600 to 800 pounds total per table.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Yeah, two swivel and two rigid per table — 60 tables, so 240 casters total.</div>
+    <div class="caller-line">
+      <div class="line-num">4</div>
+      <div class="line-body">
+        <div class="line-text">I've been spec'd 5-inch in the past at another facility, and it worked well.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">240 casters — 120 swivel, 120 rigid. What's the load capacity per table? We need that to size the caster correctly.</div>
+    <div class="caller-line">
+      <div class="line-num">5</div>
+      <div class="line-body">
+        <div class="line-text">Yes, exactly. We do wet washdown daily — they have to hold up to that.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Loaded with product they can run 600 to 800 pounds total per table.</div>
+    <div class="caller-line">
+      <div class="line-num">6</div>
+      <div class="line-body">
+        <div class="line-text">Full stainless housing — the wheel can be polyurethane as long as it's non-marking and food-safe.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">At 800 pounds across four casters, you're looking at 200 pounds per wheel minimum — I'd recommend sizing to at least 250 to give yourself margin. What wheel diameter are you thinking? 4-inch or 5-inch?</div>
+    <div class="caller-line">
+      <div class="line-num">7</div>
+      <div class="line-body">
+        <div class="line-text">Standard 1.5-inch square tube.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I've been spec'd 5-inch in the past at another facility, and it worked well.</div>
+    <div class="caller-line">
+      <div class="line-num">8</div>
+      <div class="line-body">
+        <div class="line-text">We have a dock — no forklift, just a pallet jack.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">5-inch, 250-pound capacity. Now — food processing environment, so I'm guessing you need NSF or FDA compliant wheels and sealed bearings to handle washdown?</div>
+    <div class="caller-line">
+      <div class="line-num">9</div>
+      <div class="line-body">
+        <div class="line-text">Patricia Nguyen, Coastal Foods Processing. Email is p.nguyen@coastalfoods.com.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Yes, exactly. We do wet washdown daily — they have to hold up to that.</div>
+    <div class="caller-line">
+      <div class="line-num">10</div>
+      <div class="line-body">
+        <div class="line-text">813-555-0174.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Got it — washdown-rated, sealed bearings, food-grade. One more question on spec: do you want fully stainless — housing and wheel — or is a non-marking polyurethane wheel acceptable as long as the housing is stainless?</div>
+    <div class="caller-line">
+      <div class="line-num">11</div>
+      <div class="line-body">
+        <div class="line-text">33610.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Full stainless housing — the wheel can be polyurethane as long as it's non-marking and food-safe.</div>
+    <div class="caller-line">
+      <div class="line-num">12</div>
+      <div class="line-body">
+        <div class="line-text">No, that's perfect. Thank you — that was much easier than I expected.</div>
+      </div>
     </div>
+  </div>
 
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Stainless housing, non-marking polyurethane wheel, washdown-rated. What's the mounting configuration on the table legs — standard 1.5-inch square tube, or something different?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Standard 1.5-inch square tube.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Perfect. For freight: do you have a forklift for receiving, or dock and pallet jack?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">We have a dock — no forklift, just a pallet jack.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Dock with pallet jack — noted, no lift gate needed. Your contact info for the quote?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Patricia Nguyen, Coastal Foods Processing. Email is p.nguyen@coastalfoods.com.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Phone number?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">813-555-0174.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And your Tampa zip code?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">33610.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Patricia, I have everything. 240 total casters — 120 swivel, 120 rigid — 5-inch, 250-pound capacity, full stainless housing, non-marking polyurethane wheel, washdown/NSF rated, sealed bearings, 1.5-inch square tube mount, shipping to Tampa 33610. Quote will come from our casters specialist within a few hours. I'm sending you a recap email right now. Anything else?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">No, that's perfect. Thank you — that was much easier than I expected.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">We'll get you taken care of. Have a great day.</div>
-    </div>
-
+  <div class="eval-section">
+    <div class="eval-title">Evaluate Carolina On</div>
+    <ul class="eval-list">
+      <li class="eval-item">Calculates load per caster from the table load (800 lbs ÷ 4 = 200 lbs; recommends 250 lb rated for margin) — does the math, doesn't just record your number</li>
+      <li class="eval-item">Asks about NSF/washdown/sealed bearings proactively when you mention food processing — doesn't wait for you to specify</li>
+      <li class="eval-item">Asks whether you want full stainless wheel vs stainless housing with polyurethane — knows the distinction</li>
+      <li class="eval-item">Asks about square tube mounting size — relevant to fit</li>
+      <li class="eval-item">Correctly notes "dock + pallet jack only, no lift gate needed" in the freight notes</li>
+      <li class="eval-item">Full recap — 10 spec fields confirmed before close</li>
+      <li class="eval-item">Post-call email within 60 seconds</li>
+    </ul>
   </div>
 
   <div class="capture-box">
-    <div class="capture-title">What Carolina Captured</div>
+    <div class="capture-title">What Carolina Should Capture</div>
     <div class="capture-grid">
       <div class="capture-item"><span class="c-label">Name</span><span class="c-val">Patricia Nguyen</span></div>
       <div class="capture-item"><span class="c-label">Company</span><span class="c-val">Coastal Foods Processing</span></div>
@@ -992,7 +882,7 @@ footer strong { color: var(--orange-dark); }
       <div class="capture-item"><span class="c-label">Mount</span><span class="c-val">1.5" square tube</span></div>
       <div class="capture-item"><span class="c-label">Receiving</span><span class="c-val">Dock + pallet jack (no lift gate needed)</span></div>
     </div>
-    <div class="capture-route">Routed to → Casters specialist (sales@source4industries.com) · Post-call email sent within 60 sec</div>
+    <div class="capture-route">Routes to → Casters specialist · Post-call email within 60 sec</div>
   </div>
 </div>
 
@@ -1010,150 +900,109 @@ footer strong { color: var(--orange-dark); }
   </div>
 
   <div class="scenario-context">
-    <strong>Your character:</strong> Greg Sanchez, operations manager at Albuquerque Tile &amp; Stone. You move heavy tile and stone pallets — up to 4,000 lbs — and need to stack to about 16 feet. Your aisles are 12 feet wide. Primarily indoor use with occasional trips to a covered concrete dock apron. You have 240V power in the shop. You've been renting and the cost is killing you — you want to purchase outright. You have a dock with a dock leveler. You heard Source 4 carries Apollo and want to ask about it.
+    <strong>Your character:</strong> Greg Sanchez, operations manager at Albuquerque Tile &amp; Stone. You move heavy tile and stone pallets — up to 4,000 lbs — and need to stack to about 16 feet. Aisles are 12 feet wide. Primarily indoor, with occasional trips to a covered concrete dock apron. 240V power in the shop. You've been renting and the cost is out of hand — you want to purchase outright. Dock with dock leveler. You heard Source 4 carries Apollo.
   </div>
 
-  <div class="script">
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Source 4 Industries — this is Carolina, how can I help you today?</div>
+  <div class="script-label">Your Lines — read these in order</div>
+  <div class="caller-script">
+    <div class="caller-line">
+      <div class="line-num">1</div>
+      <div class="line-body">
+        <div class="line-text">Hey, I'm looking to buy an electric forklift — or maybe an electric pallet jack, I'm not totally sure which is right for my application. I was told you guys carry Apollo?</div>
+        <div class="line-hint">Act genuinely uncertain — see if she sizes it correctly.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Hey, I'm looking to buy an electric forklift — or maybe an electric pallet jack, I'm not totally sure which is right for my application. I was told you guys carry Apollo?</div>
+    <div class="caller-line">
+      <div class="line-num">2</div>
+      <div class="line-body">
+        <div class="line-text">Heavy tile and stone pallets — some up to 4,000 pounds. We need to stack them in a warehouse to about 16 feet.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">We do carry Apollo electric material handling equipment. Happy to help you figure out which one makes sense. What are you moving — how heavy, and at what stacking height?</div>
+    <div class="caller-line">
+      <div class="line-num">3</div>
+      <div class="line-body">
+        <div class="line-text">My aisles are about 12 feet wide.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Heavy tile and stone pallets — some up to 4,000 pounds. We need to stack them in a warehouse to about 16 feet.</div>
+    <div class="caller-line">
+      <div class="line-num">4</div>
+      <div class="line-body">
+        <div class="line-text">Primarily indoor, but there's a covered dock area where I sometimes need to go outside briefly.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">At 4,000 pounds and 16-foot stacking height, you're looking at a counterbalance electric forklift — a pallet jack won't get you to 16 feet. What's your aisle width? That determines whether we go narrow-aisle or standard counterbalance.</div>
+    <div class="caller-line">
+      <div class="line-num">5</div>
+      <div class="line-body">
+        <div class="line-text">Yes, concrete apron.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">My aisles are about 12 feet wide.</div>
+    <div class="caller-line">
+      <div class="line-num">6</div>
+      <div class="line-body">
+        <div class="line-text">We have 240 in the shop area.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">12-foot aisles — standard counterbalance works fine there. You'd be looking at a 4,000-pound capacity 3-wheel or 4-wheel electric sit-down. Is this indoor-only, or do you sometimes need to go outside?</div>
+    <div class="caller-line">
+      <div class="line-num">7</div>
+      <div class="line-body">
+        <div class="line-text">First one. We've been renting and the rental cost is just getting out of hand.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Primarily indoor, but there's a covered dock area where I sometimes need to go outside briefly.</div>
+    <div class="caller-line">
+      <div class="line-num">8</div>
+      <div class="line-body">
+        <div class="line-text">I'd prefer to purchase outright if the pricing is reasonable.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Light outdoor use at a covered dock — is that a concrete surface?</div>
+    <div class="caller-line">
+      <div class="line-num">9</div>
+      <div class="line-body">
+        <div class="line-text">We have a dock with a dock leveler.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Yes, concrete apron.</div>
+    <div class="caller-line">
+      <div class="line-num">10</div>
+      <div class="line-body">
+        <div class="line-text">Greg Sanchez, Albuquerque Tile and Stone. Email is gsanchez@abqtilestone.com.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">That's fine for a standard electric — no all-terrain requirements. For charging: do you currently have a 240-volt outlet available, or are you working with 110?</div>
+    <div class="caller-line">
+      <div class="line-num">11</div>
+      <div class="line-body">
+        <div class="line-text">505-555-0263.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">We have 240 in the shop area.</div>
+    <div class="caller-line">
+      <div class="line-num">12</div>
+      <div class="line-body">
+        <div class="line-text">87102.</div>
+      </div>
     </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">240 is great — that opens up faster charge options. Are you replacing an existing machine, or is this the first forklift at this location?</div>
+    <div class="caller-line">
+      <div class="line-num">13</div>
+      <div class="line-body">
+        <div class="line-text">No, that covers everything. That was really smooth — I half expected to hit a voicemail.</div>
+      </div>
     </div>
+  </div>
 
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">First one. We've been renting and the rental cost is just getting out of hand.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Rental-to-ownership — that's exactly the ROI conversation to have. Apollo is a solid choice for a first-time owner: straightforward to maintain, well-supported. Are you looking to purchase outright, or would you consider a lease structure?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">I'd prefer to purchase outright if the pricing is reasonable.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Outright purchase — noted. One last thing: do you have a dock with a leveler, or will this forklift be receiving product at ground level?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">We have a dock with a dock leveler.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Perfect — standard fork dimensions will work. Let me get your contact info so our material handling specialist can put together a proper quote. This is a configuration worth doing right.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">Greg Sanchez, Albuquerque Tile and Stone. Email is gsanchez@abqtilestone.com.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Phone?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">505-555-0263.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">And your zip code in Albuquerque?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">87102.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Greg, I've got it all. Apollo electric counterbalance forklift, 4,000-pound capacity, 16-foot stacking height, 12-foot aisles, primarily indoor with concrete dock apron, 240-volt charging available, outright purchase, dock leveler on site, Albuquerque 87102. Our electric material handling specialist will follow up with a full quote — they may have a couple of follow-up questions about your dock configuration. I'm sending you an email recap right now. Anything else?</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker caller">Caller</span>
-      <div class="bubble caller">No, that covers everything. That was really smooth — I half expected to hit a voicemail.</div>
-    </div>
-
-    <div class="line">
-      <span class="speaker carolina">Carolina</span>
-      <div class="bubble carolina">Happy we could answer. Someone will be in touch today — take care.</div>
-    </div>
-
+  <div class="eval-section">
+    <div class="eval-title">Evaluate Carolina On</div>
+    <ul class="eval-list">
+      <li class="eval-item">Rules out a pallet jack immediately based on the 16-foot stacking height — correct answer, no hedging</li>
+      <li class="eval-item">Asks aisle width to determine narrow-aisle vs standard counterbalance — the right follow-up question</li>
+      <li class="eval-item">Asks indoor vs outdoor use — not all electrics are rated for outdoor surface conditions</li>
+      <li class="eval-item">Confirms 240V availability and notes that opens faster charge options — shows she understands the spec</li>
+      <li class="eval-item">Engages the rental-to-ownership ROI naturally ("that's exactly the conversation to have") — not just data capture</li>
+      <li class="eval-item">Asks about the dock leveler configuration — relevant to fork height/entry specs</li>
+      <li class="eval-item">Routes to Electric Material Handling specialist specifically (not generic sales)</li>
+      <li class="eval-item">Full recap — 11 fields confirmed before close</li>
+      <li class="eval-item">Post-call email within 60 seconds</li>
+    </ul>
   </div>
 
   <div class="capture-box">
-    <div class="capture-title">What Carolina Captured</div>
+    <div class="capture-title">What Carolina Should Capture</div>
     <div class="capture-grid">
       <div class="capture-item"><span class="c-label">Name</span><span class="c-val">Greg Sanchez</span></div>
       <div class="capture-item"><span class="c-label">Company</span><span class="c-val">Albuquerque Tile &amp; Stone</span></div>
@@ -1163,11 +1012,11 @@ footer strong { color: var(--orange-dark); }
       <div class="capture-item"><span class="c-label">Product</span><span class="c-val">Apollo electric counterbalance forklift</span></div>
       <div class="capture-item"><span class="c-label">Capacity</span><span class="c-val">4,000 lbs, 16-ft stack height</span></div>
       <div class="capture-item"><span class="c-label">Aisles</span><span class="c-val">12 ft wide — standard counterbalance OK</span></div>
-      <div class="capture-item"><span class="c-label">Power</span><span class="c-val">240V available on site</span></div>
+      <div class="capture-item"><span class="c-label">Power</span><span class="c-val">240V on site</span></div>
       <div class="capture-item"><span class="c-label">Intent</span><span class="c-val">Outright purchase (coming from rental)</span></div>
       <div class="capture-item"><span class="c-label">Site</span><span class="c-val">Dock leveler present, concrete apron, commercial</span></div>
     </div>
-    <div class="capture-route">Routed to → Electric Material Handling specialist (sales@source4industries.com) · Post-call email sent within 60 sec</div>
+    <div class="capture-route">Routes to → Electric Material Handling specialist · Post-call email within 60 sec</div>
   </div>
 </div>
 
