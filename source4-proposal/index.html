@@ -1,422 +1,1000 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Source 4 Industries — Voice Agent Proposal | Iron Tiger Digital</title>
+<meta name="theme-color" content="#d4801a">
+<title>Source 4 Industries — AI Voice Agent Proposal | Iron Tiger Digital</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23d4801a'/%3E%3Ctext x='32' y='44' font-family='system-ui' font-size='32' font-weight='800' text-anchor='middle' fill='%23fff'%3EITD%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:760px;margin:0 auto;padding:48px 24px;color:#1a1a1a;line-height:1.6;background:#fafaf7}
-h1,h2,h3{color:#0f0f0f;margin-top:2em;margin-bottom:0.6em}
-h1{border-bottom:3px solid #d4801a;padding-bottom:12px;font-size:2em}
-h2{border-bottom:1px solid #ddd;padding-bottom:6px}
-table{border-collapse:collapse;width:100%;margin:1em 0;font-size:0.95em}
-th,td{border:1px solid #ddd;padding:10px 12px;text-align:left}
-th{background:#f3f3ee;font-weight:600}
-code{background:#f3f3ee;padding:2px 6px;border-radius:3px;font-size:0.9em}
-strong{color:#0f0f0f}
-em{color:#555}
-hr{border:0;border-top:1px solid #ddd;margin:2em 0}
-blockquote{border-left:4px solid #d4801a;margin:1em 0;padding:0.5em 1em;background:#fff8ee;color:#444}
-.brand{font-size:0.85em;color:#666;text-align:center;margin-top:3em;border-top:1px solid #ddd;padding-top:1em}
-</style></head><body>
-<h1>Source 4 Industries — AI Voice Agent Proposal</h1>
-<p><strong>Replacing the IVR · Inbound Reception · Quote Automation</strong></p>
-<p><em>Prepared by Iron Tiger Digital · 2026-05-10</em>
-<em>For: TG, Source 4 Industries</em></p>
-<hr />
-<h2>Executive Summary</h2>
-<p>Source 4's current phone tree is leaking roughly <strong>40 answered calls a week</strong> — about <strong>half of every call that comes in</strong>. Callers hit the IVR, can't find the right option, hang up. Or they get transferred to a department that doesn't answer and abandon the call before reaching a person. After 5 PM and on weekends, the line is dead.</p>
-<p>Using your own numbers — 60–80 inbound calls per week, ~50% lost, ~$5,000 in revenue per answered call — you are leaving roughly <strong>$200,000 per week / $10M+ per year</strong> of pipeline on the floor. Even if only 10% of recovered calls convert at $5K, that is <strong>$1M+ recovered annually</strong> for the cost of one Phase-1 deployment.</p>
-<p>We propose <strong>Carolina</strong> — a custom AI voice agent built on Retell AI + ElevenLabs that:</p>
-<ol>
-<li>Replaces your current IVR with a single open-ended greeting ("Source 4 Industries — this is Carolina, how can I help?")</li>
-<li>Routes the call in under 8 seconds to one of 5 product specialties (Bollards, Guardrail, Lincoln, Casters, Electric Material Handling) plus Sales / Customer Service / Pallet Racking</li>
-<li>Captures the full quote intake (residential vs commercial, forklift, lift gate) and forwards to <code>sales@source4industries.com</code> / <code>orders@source4industries.com</code></li>
-<li>Sends the caller a post-call email recap with everything captured</li>
-<li>Hooks into your existing <strong>CallRail</strong> instance so source attribution and analytics finally work end-to-end</li>
-<li>Answers calls <strong>24/7/365</strong> — including evenings, weekends, and the gap between 5 PM and tomorrow morning</li>
-</ol>
-<p><strong>Pricing: $999/month all-in.</strong> Replaces ~$300–350/mo CallRail spend bolt-on (which keeps tracking; we plug into it) plus the cost of your current automation stack and after-hours coverage. ROI math at the end of this doc.</p>
-<hr />
-<h2>1. Current State Diagnosis</h2>
-<p>What we know from your call:</p>
-<table>
-<thead>
-<tr>
-<th>Issue</th>
-<th>Impact</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>IVR menu tree confuses callers</strong></td>
-<td>They don't follow all options, hang up. Conservative estimate: ~25% of calls.</td>
-</tr>
-<tr>
-<td><strong>Transfer-then-no-answer</strong></td>
-<td>Once routed to a department, no one picks up. Caller abandons. ~25% additional loss.</td>
-</tr>
-<tr>
-<td><strong>No after-hours coverage past 5 PM CT or weekends</strong></td>
-<td>A material handling buyer comparing vendors gets your voicemail and your competitor's live answer. Industry data shows <strong>80% of voicemail callers never call back</strong>¹.</td>
-</tr>
-<tr>
-<td><strong>No source attribution</strong></td>
-<td>You have CallRail running ($300-350/mo) but no analytics tying inbound revenue back to specific marketing channels.</td>
-</tr>
-<tr>
-<td><strong>No call analytics</strong></td>
-<td>No transcript review, no missed-intent reporting, no demand-signal data per product line.</td>
-</tr>
-<tr>
-<td><strong>Customer service is on the same line as sales</strong></td>
-<td>Returns, billing, and tracking calls compete with revenue calls for the same human bandwidth.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Industry context.</strong> Average IVR abandonment runs ~15% across industries; in IVR-heavy verticals it climbs to 25%+ with consumers reporting <strong>27% of all calls abandoned because of the IVR experience itself</strong>². Source 4's ~50% loss rate is roughly 2x the heavy-IVR average — a clear signal that the menu structure is broken, not just suboptimal.</p>
-<p><strong>Cost of the status quo.</strong> 80 calls/week × 50% loss × $5,000 AOV = <strong>$200K/week of pipeline never reaches a rep</strong>. Even at a conservative 5% close rate on recovered calls, that is <strong>$10K/week / $520K/year of net-new revenue</strong> Source 4 is forfeiting.</p>
-<hr />
-<h2>2. Proposed Solution — Carolina v1 (Inbound)</h2>
-<h3>2.1 The greeting (replaces the menu tree)</h3>
-<blockquote>
-<p>"Source 4 Industries — this is Carolina, how can I help?"</p>
-</blockquote>
-<p>Single open-ended question. No "press 1 for sales." Carolina classifies intent in &lt;8 seconds from natural-language response.</p>
-<h3>2.2 Routing logic — 5 product specialties + 3 service tracks</h3>
-<table>
-<thead>
-<tr>
-<th>Caller said...</th>
-<th>Routed to</th>
-<th>Carolina's behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>"Bollards / barriers / parking protection"</td>
-<td><strong>Bollards specialist agent</strong></td>
-<td>Captures size, qty, install type, application; quote → sales@</td>
-</tr>
-<tr>
-<td>"Guardrail / Handle-It / warehouse safety rails"</td>
-<td><strong>Guardrail specialist agent</strong></td>
-<td>Same intake + measurement assist</td>
-</tr>
-<tr>
-<td>"Lincoln grease / lubrication / FlowMaster"</td>
-<td><strong>Lincoln specialist (routes to Brad)</strong></td>
-<td>Captures fitting type, fluid, system size; warm-transfer to Brad if available, recap email if not</td>
-</tr>
-<tr>
-<td>"Casters / wheels / chair wheels"</td>
-<td><strong>Casters specialist</strong></td>
-<td>Captures load capacity, wheel diameter, mount type</td>
-</tr>
-<tr>
-<td>"Forklifts / electric pallet jacks / Apollo / material handling"</td>
-<td><strong>Electric Material Handling specialist</strong></td>
-<td>Captures voltage, capacity, residential vs commercial dock</td>
-</tr>
-<tr>
-<td>"Pallet racks / shelving / installation"</td>
-<td><strong>Pallet Racking flow</strong></td>
-<td>Books spec call with installer team</td>
-</tr>
-<tr>
-<td>"Where's my order / tracking / PO #"</td>
-<td><strong>Customer Service flow</strong></td>
-<td>Order lookup → status response, escalates exceptions</td>
-</tr>
-<tr>
-<td>"I have a problem / damage / return / billing"</td>
-<td><strong>Service flow</strong></td>
-<td>Captures issue, routes to support@</td>
-</tr>
-</tbody>
-</table>
-<h3>2.3 Quote automation — the universal intake</h3>
-<p>For every quote-intent call, Carolina captures:</p>
-<ol>
-<li>Caller name + company</li>
-<li>Email + phone</li>
-<li>Product + qty</li>
-<li><strong>Application:</strong> residential or commercial delivery location</li>
-<li><strong>Unloading capability:</strong> "Do you have a forklift or anything to unload it on your end?"</li>
-<li><strong>Lift gate trigger:</strong> if no forklift → automatically flag truck-with-lift-gate freight quote</li>
-<li>Ship-to ZIP + target install date</li>
-</ol>
-<p>→ Fired in real time to <strong>sales@source4industries.com</strong> (and <strong>orders@source4industries.com</strong> for follow-on order calls).</p>
-<h3>2.4 Post-call email recap</h3>
-<p>Within 60 seconds of hangup, the caller receives a templated email:</p>
-<blockquote>
-<p>Hi {{name}}, thanks for calling Source 4 Industries.
-Here's what we captured: {{product}}, qty {{qty}}, ship-to {{zip}}, application {{commercial_or_residential}}, unloading {{forklift_yes_no}}.
-Your quote will arrive from one of our reps within 4 business hours.
-Reply to this email or call us back at (866) 734-8848 if anything's off.</p>
-</blockquote>
-<p>This single touch closes the <strong>"did they get my message?"</strong> loop that voicemail cannot.</p>
-<h3>2.5 Full call analytics + source attribution</h3>
-<p>Every call writes to a dashboard:</p>
-<ul>
-<li>Transcript (searchable)</li>
-<li>Intent classification + product category</li>
-<li>Outcome (quote captured / order looked up / abandoned / transfer)</li>
-<li><strong>CallRail source</strong> (Google Ads, organic, direct, referral) attached to revenue when the quote closes</li>
-<li>After-hours flag, hold time, total duration</li>
-</ul>
-<p>This is the analytics layer Source 4 has been paying CallRail for but never fully activating. We close the loop.</p>
-<hr />
-<h2>3. Phase 1 vs Phase 2</h2>
-<table>
-<thead>
-<tr>
-<th>Phase</th>
-<th>Scope</th>
-<th>Timeline</th>
-<th>Price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Phase 1 — Inbound IVR replacement</strong></td>
-<td>5 product agents + sales triage + quote intake + email recap + CallRail hookup + analytics dashboard</td>
-<td>3 weeks build, go-live week 4</td>
-<td>$999/mo</td>
-</tr>
-<tr>
-<td><strong>Phase 2 — Customer Service agent</strong></td>
-<td>Order status lookup, returns intake, billing/AR triage, damage claim capture, escalation rules</td>
-<td>2 weeks add-on after Phase 1 stable</td>
-<td>+$499/mo (bundled)</td>
-</tr>
-</tbody>
-</table>
-<p>Phase 2 unlocks once Phase 1 is running clean for 30 days. We do not stack scope on a system that hasn't proven itself.</p>
-<hr />
-<h2>4. Demo Plan</h2>
-<p>In your demo session, we'll show:</p>
-<ol>
-<li><strong>5 live voice samples</strong> — Carolina handling sample inbound calls for each of: Bollards, Guardrail, Lincoln/Brad routing, Casters, Electric Material Handling. Real transcripts, real captured intake, real post-call email.</li>
-<li><strong>Live call routing</strong> — call a test number, watch the routing logic fire in real time on screen, including the residential/commercial + forklift/lift-gate branching.</li>
-<li><strong>Sample analytics dashboard</strong> — last 7 days of calls (we'll seed test data), source attribution, intent breakdown, after-hours volume, quote-capture rate.</li>
-<li><strong>Post-call email mockup</strong> — actual deliverable sent to a Source 4 inbox during the demo.</li>
-<li><strong>Side-by-side</strong> — current IVR call vs Carolina handling the same intent. Same caller, same problem, two outcomes.</li>
-</ol>
-<p>We'll record the demo so TG can share internally without re-running it.</p>
-<hr />
-<h2>5. Pricing &amp; ROI Math</h2>
-<h3>5.1 Pricing</h3>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Monthly</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Carolina Phase 1 — fully managed</strong></td>
-<td><strong>$999</strong></td>
-</tr>
-<tr>
-<td>Includes: agent build, ElevenLabs voice, Retell platform, CallRail integration, analytics dashboard, monthly tuning + QA review (we already run this for our own Sarah agent — voice-call-judge cron)</td>
-<td></td>
-</tr>
-<tr>
-<td>Phase 2 add-on (customer service agent, when ready)</td>
-<td>+$499</td>
-</tr>
-<tr>
-<td><strong>One-time setup</strong> (build, voice tuning, integration testing, go-live)</td>
-<td><strong>$1,500</strong></td>
-</tr>
-</tbody>
-</table>
-<h3>5.2 What it replaces</h3>
-<ul>
-<li>Current IVR/auto-attendant cost (varies — typically $50-200/mo for a hosted IVR on a PBX)</li>
-<li>After-hours answering service (if any)</li>
-<li>The hidden cost of ~$520K/year in lost pipeline (see below)</li>
-</ul>
-<p>CallRail stays — we plug into it, don't replace it. Your existing $300-350/mo there continues to deliver tracking + recording + the new attribution data Carolina feeds it.</p>
-<h3>5.3 ROI math (conservative)</h3>
-<pre><code>Calls per week:          80
-Currently lost:          ~50% = 40 calls/week lost
-Avg revenue per
-  answered call:         $5,000
+:root {
+  --orange: #d4801a;
+  --orange-dark: #b85c0d;
+  --dark: #1a1a2e;
+  --gray: #5a5a5a;
+  --light: #faf7f2;
+  --border: #e8ddd0;
+  --badge-bg: #fef3e4;
+  --badge-color: #b85c0d;
+  --text: #222;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  margin: 0;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 1.25rem 4rem; }
 
-Recoverable pipeline
-  if Carolina recovers
-  even 50% of lost calls: 20 calls × $5K = $100,000/week of pipeline
-                          recovered
+/* ─── HEADER ─── */
+header {
+  background: var(--dark);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  border-bottom: 4px solid var(--orange);
+}
+header .eyebrow {
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: .3rem;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
 
-At a conservative 10%
-  close rate on
-  recovered pipeline:    $10,000/week of net-new revenue
-                         = $520,000/year
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff;
+  padding: 2rem 1.5rem 1.75rem;
+  border-radius: 0 0 16px 16px;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.4);
+  padding: .25rem .75rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .85rem;
+}
+.hero h2 {
+  margin: 0 0 .4rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+.hero p {
+  margin: 0;
+  opacity: .92;
+  font-size: 1rem;
+}
 
-Annual cost of Carolina
-  Phase 1:               $999 × 12 = $11,988
+/* ─── CARDS ─── */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.card h3 {
+  margin: 0 0 1rem;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 700;
+}
+.card p { margin: 0 0 .75rem; font-size: .95rem; color: var(--text); }
+.card p:last-child { margin-bottom: 0; }
 
-Net ROI Year 1:          ~43x
-Payback period:          ~5 business days
-</code></pre>
-<p>Even if recovery is half what we project (25% of lost calls, 5% close), Carolina pays for herself in under 30 days and delivers ~$130K/year in net-new revenue.</p>
-<h3>5.4 Vendor comparison</h3>
-<table>
-<thead>
-<tr>
-<th>Vendor</th>
-<th>Equivalent monthly cost</th>
-<th>Limitations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CallRail Voice Assist (off-the-shelf)</td>
-<td>Add-on to existing CallRail tier</td>
-<td>Generic intake, no custom routing per product line, no industry-specific personas</td>
-</tr>
-<tr>
-<td>Synthflow (DIY platform)</td>
-<td>$50-450/mo platform + you build/maintain it</td>
-<td>You build, you tune, you babysit — 20+ hr/mo internal cost</td>
-</tr>
-<tr>
-<td>Bland AI (DIY)</td>
-<td>$299/mo + per-min usage</td>
-<td>Same — DIY tuning, no vertical expertise</td>
-</tr>
-<tr>
-<td>Enterprise IVR/IVA replacement (Five9, Genesys)</td>
-<td>$150-300/agent/mo + CCaaS license</td>
-<td>Wrong scale, 6-month deployments</td>
-</tr>
-<tr>
-<td>Replicant / mid-market IVA</td>
-<td>Low-to-mid 6 figures/year</td>
-<td>Wrong scale</td>
-</tr>
-<tr>
-<td><strong>Iron Tiger Carolina (this proposal)</strong></td>
-<td><strong>$999/mo all-in</strong></td>
-<td>Built and tuned by us, your only job is to forward calls</td>
-</tr>
-</tbody>
-</table>
-<p>The platforms above are tools. Iron Tiger delivers the agent <strong>built, tuned, and operated</strong> — same model we run for our own inbound (Sarah) agent.</p>
-<hr />
-<h2>6. Implementation Timeline</h2>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Milestone</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Week 1</strong></td>
-<td>Discovery: shadow 1 day of current calls, transcribe top 20 inbound flows, finalize the 5 product personas and routing tree. Lock voice (ElevenLabs casting). Get sales@ / orders@ webhook permissions.</td>
-</tr>
-<tr>
-<td><strong>Week 2</strong></td>
-<td>Build: Retell agents for all 5 product flows + universal quote intake + customer-service triage. Integrate with CallRail via webhook. Stand up analytics dashboard.</td>
-</tr>
-<tr>
-<td><strong>Week 3</strong></td>
-<td>Internal QA: run 50 simulated calls across all 5 personas, voice-call-judge cron scores them, we tune. Go/no-go gate before pointing the live number.</td>
-</tr>
-<tr>
-<td><strong>Week 4 — Go-live</strong></td>
-<td>Forward (866) 734-8848 to Carolina. Daily QA review for first 14 days. Brad gets the Lincoln-flow alerts wired to him directly. Weekly digest delivered to TG.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>7. Stack Diagram</h2>
-<pre><code>                        Caller dials (866) 734-8848
-                                    |
-                                    v
-                        ┌──────────────────────┐
-                        │  CallRail tracking #  │  ← source attribution
-                        │  (existing, stays)    │     captured here
-                        └──────────┬────────────┘
-                                   │ forwards to
-                                   v
-                        ┌──────────────────────┐
-                        │   Retell AI platform │
-                        │   (Carolina agent)   │
-                        └──────────┬────────────┘
-                                   │
-                  ┌────────────────┼────────────────┐
-                  v                v                v
-         ┌────────────────┐ ┌────────────┐ ┌────────────────┐
-         │  ElevenLabs    │ │  Routing   │ │  Webhook out   │
-         │  voice (Carolina)│ │  logic    │ │  on call end   │
-         └────────────────┘ └─────┬──────┘ └────────┬───────┘
-                                  │                 │
-                ┌─────────────────┼───┐             │
-                v                 v   v             v
-      ┌──────────────┐ ┌──────────────┐ ┌──────────────────────┐
-      │  5 product    │ │ Cust service  │ │  Cloudflare Worker  │
-      │  agents       │ │ flow (Phase 2)│ │  (lead-manager-api) │
-      │  (Bollards,   │ └──────────────┘ └──────────┬───────────┘
-      │  Guardrail,   │                              │
-      │  Lincoln,     │                              v
-      │  Casters,     │                  ┌──────────────────────┐
-      │  Electric MH) │                  │  sales@source4...    │
-      └──────────────┘                  │  orders@source4...   │
-                                         │  Brad (Lincoln only) │
-                                         │  Post-call email     │
-                                         │    recap to caller   │
-                                         │  Analytics dashboard │
-                                         │  CallRail webhook    │
-                                         │    (close the loop)  │
-                                         └──────────────────────┘
-</code></pre>
-<p>Iron Tiger already operates this exact stack for our own inbound agent (Sarah) and a Source 4 outbound prototype (Carolina outbound). The pieces are proven. We are not building from scratch.</p>
-<hr />
-<h2>8. Risk &amp; Objections</h2>
-<p><strong>"AI will sound fake / our customers will hate it."</strong>
-ElevenLabs voices in 2026 are indistinguishable from a human in routine intake calls. We'll cast a voice you approve before go-live. We're also not asking customers to "talk to an AI" — Carolina just answers, captures, routes. The interaction is shorter and clearer than the current menu tree, which customers already hate (50% drop rate is the proof).</p>
-<p><strong>"What if Carolina screws up and books wrong info?"</strong>
-Three guards: (1) every email recap is sent to the customer for confirmation — wrong info gets corrected before it hits sales, (2) we run our voice-call-judge cron weekly to score every call against quality rubrics and flag anomalies, (3) all transcripts are searchable and review-able by your team in real time.</p>
-<p><strong>"What if a caller insists on a human?"</strong>
-Carolina's #1 instruction is: if asked, transfer. We honor "I just want to talk to a person" instantly. The system is a smarter front door, not a wall.</p>
-<p><strong>"We already pay CallRail — isn't this redundant?"</strong>
-No — CallRail tracks calls, Carolina answers them. CallRail's own Voice Assist is generic; it can't run 5 product-specific intake flows or know that Lincoln calls go to Brad. We strengthen CallRail's data instead of replacing it.</p>
-<p><strong>"$999 feels high."</strong>
-Compare to one lost $5,000 quote. Or compare to hiring a part-time receptionist ($2,000-3,000/mo) who can't answer at 9 PM on a Saturday and doesn't speak fluent bollards. Or the Synthflow/Bland DIY route, which costs less in license but burns 20+ internal hours a month.</p>
-<p><strong>"What if the volume changes?"</strong>
-$999 covers up to 500 minutes/mo (well above 80 calls × ~5 min = 400 min). Above that, $0.20/extra minute, billed at month-end. No surprises.</p>
-<hr />
-<h2>9. What We Need From You to Start</h2>
-<ul>
-<li>[ ] <strong>Approval to proceed</strong> + signed SOW</li>
-<li>[ ] <strong>Forwarding access</strong> to (866) 734-8848 (or a parallel number for staged go-live)</li>
-<li>[ ] <strong>CallRail account access</strong> (read + webhook config)</li>
-<li>[ ] <strong>Sample calls</strong> — 10-20 recordings or transcripts of recent inbound calls to train against your real intent distribution</li>
-<li>[ ] <strong>Brad's contact + the Lincoln flow nuances</strong> — what should escalate to him directly vs land in a queue</li>
-<li>[ ] <strong>One 30-min discovery call</strong> with TG + a senior salesperson to walk the 5 product flows</li>
-<li>[ ] <strong>Sign-off on the voice cast</strong> before week 3 QA</li>
-</ul>
-<p>Once those are in, we are 21 days to go-live.</p>
-<hr />
-<h2>10. Why Iron Tiger</h2>
-<p>We already run this exact stack in production: <strong>Sarah</strong> (Iron Tiger's own inbound agent), the <strong>Carolina outbound</strong> prototype already built for Source 4, a daily voice-call-judge cron + weekly voice-digest QA that scores every call, and the lead-manager Worker behind 28 lead-gen sites. We don't pitch what we haven't built ourselves.</p>
-<hr />
-<h2>Appendix — Sources</h2>
-<ol>
-<li>SchedulingKit, <em>30 Missed Call Statistics (2026)</em> — 80% of voicemail callers never call back: https://schedulingkit.com/statistics/missed-call-statistics</li>
-<li>Call Centre Helper / Ringly, <em>Call Abandonment Rate Statistics 2026</em> — IVR abandonment averages, 27% of consumers abandon calls due to IVR: https://www.callcentrehelper.com/question-ivr-abandon-rate-1852.htm and https://www.ringly.io/blog/call-abandonment-rate-statistics-2026</li>
-<li>Klariqo / Retell AI, <em>Voice AI Cost Per Minute &amp; Pricing 2026</em>: https://klariqo.com/blog/voice-ai-cost-per-minute/ and https://www.retellai.com/blog/ai-voice-agent-pricing-full-cost-breakdown-platform-comparison-roi-analysis</li>
-<li>Aloware / Fini Labs, <em>AI Voice Agents Replacing Enterprise IVR — pricing comparison 2026</em>: https://www.usefini.com/guides/replacing-legacy-ivr-ai-voice-agents</li>
-<li>ChannelSoftware, <em>B2B Average Order Value benchmarks</em>: https://www.channelsoftware.com/glossary/average-order-value</li>
-<li>Source 4 Industries — company profile: https://www.source4industries.com/ (founded 1972, Las Vegas HQ, Lincoln Industrial House Distributor 25+ years, 50,000+ SKUs, clients include NASA, SpaceX, Marriott, MGM, Pepsi, DHS)</li>
-<li>CallRail Voice Assist product page: https://www.callrail.com/voice-assist</li>
-</ol>
-<hr />
-<p><em>Iron Tiger Digital · Costa Demetral · costa@irontigerleads.com · (225) 535-4918</em></p>
-<div class="brand">Prepared by Iron Tiger Digital · costa@irontigerleads.com · (225) 535-4918</div>
-</body></html>
+/* ─── SUMMARY LIST ─── */
+.summary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.summary-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .95rem;
+  color: var(--text);
+}
+.summary-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.summary-list li:first-child { padding-top: 0; }
+.summary-list .s-label {
+  flex: 0 0 130px;
+  font-weight: 700;
+  font-size: .82rem;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding-top: .1rem;
+}
+.summary-list .s-val { flex: 1; }
+
+/* ─── ROI GRID ─── */
+.roi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 520px) { .roi-grid { grid-template-columns: 1fr; } }
+.roi-cell {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: .9rem 1rem;
+  text-align: center;
+}
+.roi-cell.highlight {
+  border-color: var(--orange);
+  background: var(--light);
+}
+.roi-cell .roi-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.roi-cell.highlight .roi-val { color: var(--orange-dark); }
+.roi-cell .roi-label {
+  font-size: .75rem;
+  color: var(--gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .3rem;
+}
+.roi-note {
+  background: var(--badge-bg);
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  padding: .8rem 1rem;
+  font-size: .88rem;
+  color: var(--orange-dark);
+  font-weight: 600;
+}
+
+/* ─── STEPS ─── */
+.steps { list-style: none; margin: 0; padding: 0; }
+.steps li {
+  display: flex;
+  gap: .9rem;
+  align-items: flex-start;
+  margin-bottom: .85rem;
+  font-size: .95rem;
+}
+.steps li:last-child { margin-bottom: 0; }
+.step-num {
+  flex: 0 0 28px;
+  height: 28px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+.steps li .step-body { flex: 1; }
+.steps li .step-body > strong { display: block; font-weight: 700; margin-bottom: .15rem; color: var(--dark); }
+.steps li .step-body span { color: var(--gray); font-size: .88rem; }
+
+/* ─── QUALITY / OBJECTION GRID ─── */
+.quality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+@media (max-width: 480px) { .quality-grid { grid-template-columns: 1fr; } }
+.quality-cell {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .85rem 1rem;
+}
+.quality-cell .qc-head {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--orange-dark);
+  margin-bottom: .3rem;
+}
+.quality-cell .qc-body {
+  font-size: .88rem;
+  color: var(--gray);
+  line-height: 1.45;
+}
+
+/* ─── CLAUSE ─── */
+.clause { margin-bottom: 1.25rem; }
+.clause:last-of-type { margin-bottom: 0; }
+.clause .cl-num {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--orange-dark);
+  margin-bottom: .2rem;
+}
+.clause .cl-head {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: .25rem;
+}
+.clause .cl-body {
+  font-size: .88rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+.clause .cl-body strong { color: var(--text); font-weight: 600; }
+
+/* ─── TABLES ─── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .84rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+.data-table thead tr { background: var(--badge-bg); }
+.data-table th {
+  text-align: left;
+  padding: .45rem .6rem;
+  font-weight: 700;
+  color: var(--dark);
+  border-bottom: 2px solid var(--border);
+}
+.data-table td {
+  padding: .4rem .6rem;
+  color: var(--text);
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+.data-table tbody tr:nth-child(even) { background: #f9fafb; }
+.data-table td strong { color: var(--dark); }
+
+/* ─── STACK DIAGRAM ─── */
+pre {
+  background: #1a1a2e;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  font-size: .78rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  margin: 0;
+}
+code {
+  font-family: 'Menlo', 'Consolas', monospace;
+}
+
+/* ─── BLOCKQUOTE ─── */
+.quote-block {
+  border-left: 4px solid var(--orange);
+  background: var(--badge-bg);
+  border-radius: 0 8px 8px 0;
+  padding: .85rem 1.1rem;
+  font-size: .95rem;
+  color: var(--dark);
+  margin: .75rem 0;
+  line-height: 1.6;
+}
+
+/* ─── CALLOUT ─── */
+.callout {
+  background: #fff3e0;
+  border-left: 4px solid var(--orange-dark);
+  border-radius: 8px;
+  padding: .85rem 1rem;
+  font-size: .9rem;
+  color: var(--dark);
+  margin: .75rem 0;
+}
+.callout strong { color: var(--orange-dark); }
+
+/* ─── DATE BADGE ─── */
+.date-badge {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--badge-color);
+  padding: .15rem .55rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center;
+  font-size: .78rem;
+  color: var(--gray);
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+footer strong { color: var(--orange-dark); }
+
+/* ─── PRINT ─── */
+@media print {
+  body { background: #fff; }
+  .wrap { padding-bottom: 1rem; }
+  .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Iron Tiger Digital × Source 4 Industries</div>
+  <h1>AI Voice Agent Proposal — Carolina</h1>
+</header>
+
+<div class="wrap">
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <span class="badge">Prepared May 2026 · Confidential · For: TG</span>
+  <h2>Replace the IVR. Answer Every Call.</h2>
+  <p>Inbound reception + quote automation, live 24/7 — for $999/month all-in.</p>
+</div>
+
+
+<!-- ═══ SECTION 1: EXECUTIVE SUMMARY ═══ -->
+<div class="card">
+  <h3>Executive Summary</h3>
+
+  <div class="roi-grid" style="grid-template-columns: repeat(4,1fr);margin-bottom:1.25rem;">
+    <div class="roi-cell">
+      <div class="roi-val">40</div>
+      <div class="roi-label">Calls lost / week</div>
+    </div>
+    <div class="roi-cell">
+      <div class="roi-val">$200K</div>
+      <div class="roi-label">Pipeline lost / week</div>
+    </div>
+    <div class="roi-cell highlight">
+      <div class="roi-val">$999</div>
+      <div class="roi-label">Monthly cost</div>
+    </div>
+    <div class="roi-cell highlight">
+      <div class="roi-val">43×</div>
+      <div class="roi-label">Year-1 ROI</div>
+    </div>
+  </div>
+
+  <p>Source 4's current phone tree is leaking roughly <strong>40 answered calls a week</strong> — about <strong>half of every call that comes in</strong>. Callers hit the IVR, can't find the right option, hang up. Or they get transferred to a department that doesn't answer and abandon the call before reaching a person. After 5 PM and on weekends, the line is dead.</p>
+
+  <p>Using your own numbers — 60–80 inbound calls per week, ~50% lost, ~$5,000 in revenue per answered call — you are leaving roughly <strong>$200,000 per week / $10M+ per year</strong> of pipeline on the floor. Even if only 10% of recovered calls convert at $5K, that is <strong>$1M+ recovered annually</strong> for the cost of one Phase-1 deployment.</p>
+
+  <p style="margin-bottom:.75rem;">We propose <strong>Carolina</strong> — a custom AI voice agent built on Retell AI + ElevenLabs that:</p>
+
+  <ol class="steps">
+    <li>
+      <span class="step-num">1</span>
+      <div class="step-body">
+        <strong>Replaces the IVR with a single open-ended greeting</strong>
+        <span>"Source 4 Industries — this is Carolina, how can I help?"</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <div class="step-body">
+        <strong>Routes in under 8 seconds to one of 5 product specialties</strong>
+        <span>Bollards, Guardrail, Lincoln, Casters, Electric Material Handling — plus Sales / Customer Service / Pallet Racking</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <div class="step-body">
+        <strong>Captures the full quote intake and forwards it immediately</strong>
+        <span>Residential vs commercial, forklift, lift gate → fires to <code>sales@source4industries.com</code> / <code>orders@source4industries.com</code></span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">4</span>
+      <div class="step-body">
+        <strong>Sends the caller a post-call email recap</strong>
+        <span>Within 60 seconds of hangup — everything captured, confirmation of next steps.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">5</span>
+      <div class="step-body">
+        <strong>Hooks into your existing CallRail instance</strong>
+        <span>Source attribution and analytics finally work end-to-end.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">6</span>
+      <div class="step-body">
+        <strong>Answers calls 24/7/365</strong>
+        <span>Including evenings, weekends, and the gap between 5 PM and tomorrow morning.</span>
+      </div>
+    </li>
+  </ol>
+
+  <div class="callout" style="margin-top:1rem;margin-bottom:0;">
+    <strong>Pricing: $999/month all-in.</strong> Replaces ~$300–350/mo CallRail spend bolt-on (which keeps tracking; we plug into it) plus the cost of your current automation stack and after-hours coverage. ROI math in Section 6.
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 2: CURRENT STATE DIAGNOSIS ═══ -->
+<div class="card">
+  <h3>Section 1 — Current State Diagnosis</h3>
+  <p style="margin-bottom:.85rem;">What we know from your call:</p>
+
+  <ul class="summary-list">
+    <li>
+      <span class="s-label">IVR confusion</span>
+      <span class="s-val">Callers don't follow all options, hang up. Conservative estimate: ~25% of calls. They don't know which extension covers their product category.</span>
+    </li>
+    <li>
+      <span class="s-label">Transfer → no answer</span>
+      <span class="s-val">Once routed to a department, no one picks up. Caller abandons before reaching a person. ~25% additional loss on top of menu abandonment.</span>
+    </li>
+    <li>
+      <span class="s-label">No after-hours coverage</span>
+      <span class="s-val">No coverage past 5 PM CT or on weekends. A material handling buyer comparing vendors gets your voicemail and your competitor's live answer. Industry data: <strong>80% of voicemail callers never call back</strong>¹.</span>
+    </li>
+    <li>
+      <span class="s-label">No source attribution</span>
+      <span class="s-val">You have CallRail running ($300–350/mo) but no analytics tying inbound revenue back to specific marketing channels. You're paying for tracking without closing the loop.</span>
+    </li>
+    <li>
+      <span class="s-label">No call analytics</span>
+      <span class="s-val">No transcript review, no missed-intent reporting, no demand-signal data per product line.</span>
+    </li>
+    <li>
+      <span class="s-label">Sales vs service conflict</span>
+      <span class="s-val">Returns, billing, and tracking calls compete with revenue calls for the same human bandwidth on the same line.</span>
+    </li>
+  </ul>
+
+  <div class="callout" style="margin-top:1.1rem;margin-bottom:0;">
+    <strong>Industry context.</strong> Average IVR abandonment runs ~15% across industries; in IVR-heavy verticals it climbs to 25%+ — with consumers reporting <strong>27% of all calls abandoned because of the IVR experience itself</strong>². Source 4's ~50% loss rate is roughly 2× the heavy-IVR average — a clear signal that the menu structure is broken, not just suboptimal.
+    <br><br>
+    <strong>Cost of the status quo.</strong> 80 calls/week × 50% loss × $5,000 AOV = <strong>$200K/week of pipeline never reaches a rep</strong>. Even at a conservative 5% close rate on recovered calls, that is <strong>$10K/week / $520K/year</strong> of net-new revenue Source 4 is forfeiting.
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 3: PROPOSED SOLUTION ═══ -->
+<div class="card">
+  <h3>Section 2 — Proposed Solution: Carolina v1 (Inbound)</h3>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">2.1 The greeting — replaces the menu tree</p>
+    <div class="quote-block">"Source 4 Industries — this is Carolina, how can I help?"</div>
+    <p style="font-size:.88rem;color:var(--gray);margin:0;">Single open-ended question. No "press 1 for sales." Carolina classifies intent in &lt;8 seconds from a natural-language response.</p>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">2.2 Routing logic — 5 product specialties + 3 service tracks</p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Caller said...</th>
+            <th>Routed to</th>
+            <th>Carolina's behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"Bollards / barriers / parking protection"</td>
+            <td><strong>Bollards specialist agent</strong></td>
+            <td>Captures size, qty, install type, application; quote → sales@</td>
+          </tr>
+          <tr>
+            <td>"Guardrail / Handle-It / warehouse safety rails"</td>
+            <td><strong>Guardrail specialist agent</strong></td>
+            <td>Same intake + measurement assist</td>
+          </tr>
+          <tr>
+            <td>"Lincoln grease / lubrication / FlowMaster"</td>
+            <td><strong>Lincoln specialist (routes to Brad)</strong></td>
+            <td>Captures fitting type, fluid, system size; warm-transfer to Brad if available, recap email if not</td>
+          </tr>
+          <tr>
+            <td>"Casters / wheels / chair wheels"</td>
+            <td><strong>Casters specialist</strong></td>
+            <td>Captures load capacity, wheel diameter, mount type</td>
+          </tr>
+          <tr>
+            <td>"Forklifts / electric pallet jacks / Apollo / material handling"</td>
+            <td><strong>Electric Material Handling specialist</strong></td>
+            <td>Captures voltage, capacity, residential vs commercial dock</td>
+          </tr>
+          <tr>
+            <td>"Pallet racks / shelving / installation"</td>
+            <td><strong>Pallet Racking flow</strong></td>
+            <td>Books spec call with installer team</td>
+          </tr>
+          <tr>
+            <td>"Where's my order / tracking / PO #"</td>
+            <td><strong>Customer Service flow</strong></td>
+            <td>Order lookup → status response, escalates exceptions</td>
+          </tr>
+          <tr>
+            <td>"I have a problem / damage / return / billing"</td>
+            <td><strong>Service flow</strong></td>
+            <td>Captures issue, routes to support@</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">2.3 Quote automation — the universal intake</p>
+    <p style="font-size:.88rem;color:var(--gray);margin-bottom:.6rem;">For every quote-intent call, Carolina captures:</p>
+    <ol class="steps">
+      <li><span class="step-num">1</span><div class="step-body"><span>Caller name + company</span></div></li>
+      <li><span class="step-num">2</span><div class="step-body"><span>Email + phone</span></div></li>
+      <li><span class="step-num">3</span><div class="step-body"><span>Product + qty</span></div></li>
+      <li><span class="step-num">4</span><div class="step-body"><strong>Application</strong><span>Residential or commercial delivery location</span></div></li>
+      <li><span class="step-num">5</span><div class="step-body"><strong>Unloading capability</strong><span>"Do you have a forklift or anything to unload it on your end?"</span></div></li>
+      <li><span class="step-num">6</span><div class="step-body"><strong>Lift gate trigger</strong><span>If no forklift → automatically flag truck-with-lift-gate freight quote</span></div></li>
+      <li><span class="step-num">7</span><div class="step-body"><span>Ship-to ZIP + target install date</span></div></li>
+    </ol>
+    <p style="font-size:.88rem;color:var(--gray);margin-top:.75rem;margin-bottom:0;">Fired in real time to <strong>sales@source4industries.com</strong> (and <strong>orders@source4industries.com</strong> for follow-on order calls).</p>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">2.4 Post-call email recap</p>
+    <p style="font-size:.88rem;color:var(--gray);margin-bottom:.5rem;">Within 60 seconds of hangup, the caller receives:</p>
+    <div class="quote-block">
+      Hi {{name}}, thanks for calling Source 4 Industries.<br>
+      Here's what we captured: {{product}}, qty {{qty}}, ship-to {{zip}}, application {{commercial_or_residential}}, unloading {{forklift_yes_no}}.<br>
+      Your quote will arrive from one of our reps within 4 business hours.<br>
+      Reply to this email or call us back at (866) 734-8848 if anything's off.
+    </div>
+    <p style="font-size:.88rem;color:var(--gray);margin:0;">This single touch closes the <strong>"did they get my message?"</strong> loop that voicemail cannot.</p>
+  </div>
+
+  <div>
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">2.5 Full call analytics + source attribution</p>
+    <p style="font-size:.88rem;color:var(--gray);margin-bottom:.5rem;">Every call writes to a dashboard:</p>
+    <ul class="summary-list">
+      <li><span class="s-label">Transcript</span><span class="s-val">Searchable, reviewable by your team in real time.</span></li>
+      <li><span class="s-label">Intent + product</span><span class="s-val">Classification + product category for every call.</span></li>
+      <li><span class="s-label">Outcome</span><span class="s-val">Quote captured / order looked up / abandoned / transfer.</span></li>
+      <li><span class="s-label">CallRail source</span><span class="s-val">Google Ads, organic, direct, referral — attached to revenue when the quote closes.</span></li>
+      <li><span class="s-label">After-hours flag</span><span class="s-val">Hold time, total duration, after-hours volume.</span></li>
+    </ul>
+    <p style="font-size:.88rem;color:var(--gray);margin-top:.75rem;margin-bottom:0;">This is the analytics layer Source 4 has been paying CallRail for but never fully activating. We close the loop.</p>
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 4: PHASE 1 VS PHASE 2 ═══ -->
+<div class="card">
+  <h3>Section 3 — Phase 1 vs Phase 2</h3>
+  <div style="overflow-x:auto;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Scope</th>
+          <th>Timeline</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 1 — Inbound IVR replacement</strong></td>
+          <td>5 product agents + sales triage + quote intake + email recap + CallRail hookup + analytics dashboard</td>
+          <td>3 weeks build, go-live week 4</td>
+          <td><strong>$999/mo</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2 — Customer Service agent</strong></td>
+          <td>Order status lookup, returns intake, billing/AR triage, damage claim capture, escalation rules</td>
+          <td>2 weeks add-on after Phase 1 stable</td>
+          <td>+$499/mo bundled</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.88rem;color:var(--gray);margin:0;">Phase 2 unlocks once Phase 1 is running clean for 30 days. We do not stack scope on a system that hasn't proven itself.</p>
+</div>
+
+
+<!-- ═══ SECTION 5: DEMO PLAN ═══ -->
+<div class="card">
+  <h3>Section 4 — Demo Plan</h3>
+  <p style="margin-bottom:.85rem;">In your demo session, we'll show:</p>
+  <ol class="steps">
+    <li>
+      <span class="step-num">1</span>
+      <div class="step-body">
+        <strong>5 live voice samples</strong>
+        <span>Carolina handling sample inbound calls for each of: Bollards, Guardrail, Lincoln/Brad routing, Casters, Electric Material Handling. Real transcripts, real captured intake, real post-call email.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <div class="step-body">
+        <strong>Live call routing</strong>
+        <span>Call a test number, watch the routing logic fire in real time on screen — including the residential/commercial + forklift/lift-gate branching.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <div class="step-body">
+        <strong>Sample analytics dashboard</strong>
+        <span>Last 7 days of calls (seeded test data), source attribution, intent breakdown, after-hours volume, quote-capture rate.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">4</span>
+      <div class="step-body">
+        <strong>Post-call email mockup</strong>
+        <span>Actual deliverable sent to a Source 4 inbox during the demo.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">5</span>
+      <div class="step-body">
+        <strong>Side-by-side comparison</strong>
+        <span>Current IVR call vs Carolina handling the same intent. Same caller, same problem, two outcomes.</span>
+      </div>
+    </li>
+  </ol>
+  <p style="font-size:.88rem;color:var(--gray);margin-top:.85rem;margin-bottom:0;">We'll record the demo so TG can share internally without re-running it.</p>
+</div>
+
+
+<!-- ═══ SECTION 6: PRICING & ROI ═══ -->
+<div class="card">
+  <h3>Section 5 — Pricing &amp; ROI</h3>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">5.1 Pricing</p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Monthly</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Carolina Phase 1 — fully managed</strong><br><span style="font-size:.8rem;color:var(--gray);">Includes: agent build, ElevenLabs voice, Retell platform, CallRail integration, analytics dashboard, monthly tuning + QA review</span></td>
+            <td><strong>$999</strong></td>
+          </tr>
+          <tr>
+            <td>Phase 2 add-on (customer service agent, when ready)</td>
+            <td>+$499</td>
+          </tr>
+          <tr>
+            <td><strong>One-time setup</strong> (build, voice tuning, integration testing, go-live)</td>
+            <td><strong>$1,500</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">5.2 What it replaces</p>
+    <ul class="summary-list">
+      <li><span class="s-label">IVR/PBX cost</span><span class="s-val">Current auto-attendant on hosted PBX — typically $50–200/mo.</span></li>
+      <li><span class="s-label">After-hours service</span><span class="s-val">Any answering service or voicemail-to-email solution currently in use.</span></li>
+      <li><span class="s-label">Lost pipeline</span><span class="s-val">The hidden cost: ~$520K/year in pipeline that never reaches a rep (see below). CallRail stays — we plug into it, not replace it.</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">5.3 ROI math (conservative)</p>
+    <div class="roi-grid" style="grid-template-columns: repeat(4,1fr);margin-bottom:.75rem;">
+      <div class="roi-cell">
+        <div class="roi-val">80</div>
+        <div class="roi-label">Calls / week</div>
+      </div>
+      <div class="roi-cell">
+        <div class="roi-val">40</div>
+        <div class="roi-label">Currently lost</div>
+      </div>
+      <div class="roi-cell highlight">
+        <div class="roi-val">$10K</div>
+        <div class="roi-label">Net-new / week*</div>
+      </div>
+      <div class="roi-cell highlight">
+        <div class="roi-val">43×</div>
+        <div class="roi-label">Year-1 ROI</div>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:var(--gray);margin-bottom:.75rem;">* If Carolina recovers 50% of lost calls (20/week) and 10% close at $5K AOV = $10K/week net-new = $520K/year. Annual cost: $11,988. Net ROI: ~43×. Payback period: ~5 business days.</p>
+    <div class="roi-note">
+      Even if recovery is half what we project (25% of lost calls, 5% close), Carolina pays for herself in under 30 days and delivers ~$130K/year in net-new revenue.
+    </div>
+  </div>
+
+  <div>
+    <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:.5rem;">5.4 Vendor comparison</p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Equivalent monthly cost</th>
+            <th>Limitations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CallRail Voice Assist (off-the-shelf)</td>
+            <td>Add-on to existing CallRail tier</td>
+            <td>Generic intake, no custom routing per product line, no industry-specific personas</td>
+          </tr>
+          <tr>
+            <td>Synthflow (DIY platform)</td>
+            <td>$50–450/mo platform + you build/maintain it</td>
+            <td>You build, you tune, you babysit — 20+ hr/mo internal cost</td>
+          </tr>
+          <tr>
+            <td>Bland AI (DIY)</td>
+            <td>$299/mo + per-min usage</td>
+            <td>Same — DIY tuning, no vertical expertise</td>
+          </tr>
+          <tr>
+            <td>Enterprise IVR/IVA (Five9, Genesys)</td>
+            <td>$150–300/agent/mo + CCaaS license</td>
+            <td>Wrong scale, 6-month deployments</td>
+          </tr>
+          <tr>
+            <td>Replicant / mid-market IVA</td>
+            <td>Low-to-mid 6 figures/year</td>
+            <td>Wrong scale</td>
+          </tr>
+          <tr style="background:#fef3e4;">
+            <td><strong>Iron Tiger Carolina (this proposal)</strong></td>
+            <td><strong>$999/mo all-in</strong></td>
+            <td style="color:var(--orange-dark);font-weight:600;">Built and tuned by us — your only job is to forward calls</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.82rem;color:var(--gray);margin:0;">The platforms above are tools. Iron Tiger delivers the agent <strong>built, tuned, and operated</strong> — same model we run for our own inbound (Sarah) agent.</p>
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 7: IMPLEMENTATION TIMELINE ═══ -->
+<div class="card">
+  <h3>Section 6 — Implementation Timeline</h3>
+  <ol class="steps">
+    <li>
+      <span class="step-num" style="width:auto;border-radius:6px;padding:.1rem .5rem;font-size:.68rem;">W1</span>
+      <div class="step-body">
+        <strong>Discovery</strong>
+        <span>Shadow 1 day of current calls, transcribe top 20 inbound flows, finalize the 5 product personas and routing tree. Lock voice (ElevenLabs casting). Get sales@ / orders@ webhook permissions.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num" style="width:auto;border-radius:6px;padding:.1rem .5rem;font-size:.68rem;">W2</span>
+      <div class="step-body">
+        <strong>Build</strong>
+        <span>Retell agents for all 5 product flows + universal quote intake + customer-service triage. Integrate with CallRail via webhook. Stand up analytics dashboard.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num" style="width:auto;border-radius:6px;padding:.1rem .5rem;font-size:.68rem;">W3</span>
+      <div class="step-body">
+        <strong>Internal QA</strong>
+        <span>Run 50 simulated calls across all 5 personas, voice-call-judge cron scores them, we tune. Go/no-go gate before pointing the live number.</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-num" style="width:auto;border-radius:6px;padding:.1rem .5rem;font-size:.68rem;">W4</span>
+      <div class="step-body">
+        <strong>Go-live</strong>
+        <span>Forward (866) 734-8848 to Carolina. Daily QA review for first 14 days. Brad gets the Lincoln-flow alerts wired to him directly. Weekly digest delivered to TG.</span>
+      </div>
+    </li>
+  </ol>
+</div>
+
+
+<!-- ═══ SECTION 8: STACK DIAGRAM ═══ -->
+<div class="card">
+  <h3>Section 7 — Stack Diagram</h3>
+<pre><code>                Caller dials (866) 734-8848
+                            |
+                            v
+                ┌──────────────────────┐
+                │  CallRail tracking # │  ← source attribution captured here
+                │  (existing, stays)   │
+                └──────────┬───────────┘
+                           │ forwards to
+                           v
+                ┌──────────────────────┐
+                │   Retell AI platform │
+                │   (Carolina agent)   │
+                └──────────┬───────────┘
+                           │
+          ┌────────────────┼────────────────┐
+          v                v                v
+   ┌────────────┐  ┌──────────────┐  ┌──────────────────────┐
+   │ ElevenLabs │  │   Routing    │  │   Webhook out        │
+   │  (Carolina)│  │    logic     │  │   on call end        │
+   └────────────┘  └──────┬───────┘  └──────────┬───────────┘
+                          │                      │
+           ┌──────────────┼────┐                 v
+           v              v    v     ┌──────────────────────┐
+  ┌──────────────┐  ┌──────────────┐ │  Cloudflare Worker  │
+  │  5 product   │  │ Cust service │ │  (lead-manager-api) │
+  │  agents      │  │ flow (Ph. 2) │ └──────────┬───────────┘
+  │  (Bollards,  │  └──────────────┘            │
+  │  Guardrail,  │                              v
+  │  Lincoln,    │               ┌──────────────────────────┐
+  │  Casters,    │               │  sales@source4...        │
+  │  Electric MH)│               │  orders@source4...       │
+  └──────────────┘               │  Brad (Lincoln only)     │
+                                 │  Post-call email recap   │
+                                 │  Analytics dashboard     │
+                                 │  CallRail webhook        │
+                                 └──────────────────────────┘</code></pre>
+  <p style="font-size:.88rem;color:var(--gray);margin-top:.85rem;margin-bottom:0;">Iron Tiger already operates this exact stack for our own inbound agent (Sarah) and a Source 4 outbound prototype (Carolina outbound). The pieces are proven — we are not building from scratch.</p>
+</div>
+
+
+<!-- ═══ SECTION 9: RISK & OBJECTIONS ═══ -->
+<div class="card">
+  <h3>Section 8 — Risk &amp; Objections</h3>
+
+  <div class="clause">
+    <div class="cl-num">Objection 1</div>
+    <div class="cl-head">"AI will sound fake / our customers will hate it."</div>
+    <div class="cl-body">ElevenLabs voices in 2026 are indistinguishable from a human in routine intake calls. We'll cast a voice you approve before go-live. We're also not asking customers to "talk to an AI" — Carolina just answers, captures, routes. The interaction is shorter and clearer than the current menu tree, which customers already hate (50% drop rate is the proof).</div>
+  </div>
+
+  <div class="clause">
+    <div class="cl-num">Objection 2</div>
+    <div class="cl-head">"What if Carolina screws up and books wrong info?"</div>
+    <div class="cl-body">Three guards: <strong>(1)</strong> every email recap is sent to the customer for confirmation — wrong info gets corrected before it hits sales; <strong>(2)</strong> we run our voice-call-judge cron weekly to score every call against quality rubrics and flag anomalies; <strong>(3)</strong> all transcripts are searchable and review-able by your team in real time.</div>
+  </div>
+
+  <div class="clause">
+    <div class="cl-num">Objection 3</div>
+    <div class="cl-head">"What if a caller insists on a human?"</div>
+    <div class="cl-body">Carolina's #1 instruction is: if asked, transfer. We honor "I just want to talk to a person" instantly. The system is a smarter front door, not a wall.</div>
+  </div>
+
+  <div class="clause">
+    <div class="cl-num">Objection 4</div>
+    <div class="cl-head">"We already pay CallRail — isn't this redundant?"</div>
+    <div class="cl-body">No — CallRail tracks calls, Carolina answers them. CallRail's own Voice Assist is generic; it can't run 5 product-specific intake flows or know that Lincoln calls go to Brad. We strengthen CallRail's data instead of replacing it.</div>
+  </div>
+
+  <div class="clause">
+    <div class="cl-num">Objection 5</div>
+    <div class="cl-head">"$999 feels high."</div>
+    <div class="cl-body">Compare to one lost $5,000 quote. Or compare to hiring a part-time receptionist ($2,000–3,000/mo) who can't answer at 9 PM on a Saturday and doesn't speak fluent bollards. Or the Synthflow/Bland DIY route, which costs less in license but burns 20+ internal hours a month.</div>
+  </div>
+
+  <div class="clause">
+    <div class="cl-num">Objection 6</div>
+    <div class="cl-head">"What if the volume changes?"</div>
+    <div class="cl-body">$999 covers up to 500 minutes/mo (well above 80 calls × ~5 min = 400 min). Above that, $0.20/extra minute, billed at month-end. No surprises.</div>
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 10: WHAT WE NEED ═══ -->
+<div class="card">
+  <h3>Section 9 — What We Need From You to Start</h3>
+  <ul class="summary-list">
+    <li>
+      <span class="s-label">Approval</span>
+      <span class="s-val">Sign-off to proceed + signed SOW.</span>
+    </li>
+    <li>
+      <span class="s-label">Forwarding access</span>
+      <span class="s-val">Access to forward (866) 734-8848 — or a parallel number for staged go-live.</span>
+    </li>
+    <li>
+      <span class="s-label">CallRail access</span>
+      <span class="s-val">Read + webhook config on your CallRail account.</span>
+    </li>
+    <li>
+      <span class="s-label">Sample calls</span>
+      <span class="s-val">10–20 recordings or transcripts of recent inbound calls to train against your real intent distribution.</span>
+    </li>
+    <li>
+      <span class="s-label">Brad + Lincoln flow</span>
+      <span class="s-val">Brad's contact + nuances on the Lincoln flow — what escalates to him directly vs lands in a queue.</span>
+    </li>
+    <li>
+      <span class="s-label">Discovery call</span>
+      <span class="s-val">One 30-min call with TG + a senior salesperson to walk the 5 product flows.</span>
+    </li>
+    <li>
+      <span class="s-label">Voice sign-off</span>
+      <span class="s-val">Approval on the ElevenLabs voice cast before week 3 QA.</span>
+    </li>
+  </ul>
+  <div class="callout" style="margin-top:1rem;margin-bottom:0;">
+    Once those are in, <strong>we are 21 days to go-live.</strong>
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 11: WHY IRON TIGER ═══ -->
+<div class="card" style="border:2px solid var(--orange-dark);">
+  <h3 style="color:var(--orange-dark);">Section 10 — Why Iron Tiger</h3>
+  <p>We already run this exact stack in production: <strong>Sarah</strong> (Iron Tiger's own inbound agent), the <strong>Carolina outbound</strong> prototype already built for Source 4, a daily voice-call-judge cron + weekly voice-digest QA that scores every call, and the lead-manager Worker behind 28 lead-gen sites.</p>
+  <p style="margin:0;">We don't pitch what we haven't built ourselves.</p>
+</div>
+
+
+<!-- ═══ APPENDIX ═══ -->
+<div class="card">
+  <h3>Appendix — Sources</h3>
+  <ol style="margin:0;padding-left:1.25rem;font-size:.83rem;color:var(--gray);line-height:1.8;">
+    <li>SchedulingKit, <em>30 Missed Call Statistics (2026)</em> — 80% of voicemail callers never call back</li>
+    <li>Call Centre Helper / Ringly, <em>Call Abandonment Rate Statistics 2026</em> — IVR abandonment averages; 27% of consumers abandon calls due to IVR</li>
+    <li>Klariqo / Retell AI, <em>Voice AI Cost Per Minute &amp; Pricing 2026</em></li>
+    <li>Aloware / Fini Labs, <em>AI Voice Agents Replacing Enterprise IVR — pricing comparison 2026</em></li>
+    <li>ChannelSoftware, <em>B2B Average Order Value benchmarks</em></li>
+    <li>Source 4 Industries — company profile (founded 1972, Las Vegas HQ, Lincoln Industrial House Distributor 25+ years, 50,000+ SKUs, clients include NASA, SpaceX, Marriott, MGM, Pepsi, DHS)</li>
+    <li>CallRail Voice Assist product page</li>
+  </ol>
+</div>
+
+
+<!-- ═══ CTA ═══ -->
+<div style="text-align:center;padding:1.75rem 2rem;background:var(--badge-bg);border:1px solid var(--orange);border-radius:12px;margin-bottom:1.5rem;">
+  <p style="font-size:1.1rem;font-weight:700;color:var(--dark);margin:0 0 .9rem;">Ready to move forward?</p>
+  <p style="font-size:.97rem;color:var(--text);margin:0 0 .85rem;line-height:1.7;">
+    Email <strong style="color:var(--orange-dark);">costa@irontigerleads.com</strong> or call <strong style="color:var(--orange-dark);">(225) 535-4918</strong>
+  </p>
+  <p style="font-size:.85rem;color:var(--gray);margin:0;font-weight:500;">We'll get you set up same day.</p>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  Costa Demetral &nbsp;·&nbsp; <strong>costa@irontigerleads.com</strong> &nbsp;·&nbsp; (225) 535-4918 &nbsp;·&nbsp; Iron Tiger Digital
+  <br><span class="date-badge">May 2026 · Confidential · Not for distribution</span>
+</footer>
+
+</body>
+</html>
