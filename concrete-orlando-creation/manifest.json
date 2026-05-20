@@ -1,6 +1,6 @@
 {
   "slug": "concrete-orlando-creation",
-  "built_at": "2026-05-17T14:20:38.239762Z",
+  "built_at": "2026-05-20T00:06:36.306414Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 101221
     },
     "service-1.jpg": {
-      "hash": "1c8218fad69e9b68dc4a112059d52712",
-      "size": 150043
+      "hash": "aa2b44cd7a23e93e737641cb1a504ef7",
+      "size": 153547
     }
   }
 }
