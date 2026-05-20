@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-jungle",
-  "built_at": "2026-05-17T14:19:25.626295Z",
+  "built_at": "2026-05-20T00:05:44.721507Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "673694d771cb22d07400d2b53be63feb",
-      "size": 210224
+      "hash": "fa99c6fcbba911436955bbda6b0c310d",
+      "size": 182797
     }
   }
 }
