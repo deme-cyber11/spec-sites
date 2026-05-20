@@ -1,6 +1,6 @@
 {
   "slug": "mold-fort-eco",
-  "built_at": "2026-05-17T14:16:18.930815Z",
+  "built_at": "2026-05-20T00:04:17.182407Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 77008
     },
     "service-1.jpg": {
-      "hash": "b94ac66fbc6dabdcaf8915d58757d48c",
-      "size": 100010
+      "hash": "333297b2a67b708f42f574bf2121e00c",
+      "size": 105497
     }
   }
 }
