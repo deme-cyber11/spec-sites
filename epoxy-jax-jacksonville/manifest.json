@@ -1,0 +1,18 @@
+{
+  "slug": "epoxy-jax-jacksonville",
+  "built_at": "2026-05-20T00:06:52.623450Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "d145feb7a3a652f0c3391fd5647660c7",
+      "size": 109771
+    },
+    "service-1.jpg": {
+      "hash": "44ee230c72fdae251f5e78a5fb4a44fd",
+      "size": 117985
+    }
+  }
+}
