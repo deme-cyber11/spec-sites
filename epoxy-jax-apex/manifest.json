@@ -1,6 +1,6 @@
 {
   "slug": "epoxy-jax-apex",
-  "built_at": "2026-05-17T14:14:48.837457Z",
+  "built_at": "2026-05-20T00:01:26.316260Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 109771
     },
     "service-1.jpg": {
-      "hash": "9a63cf00fce05520e3a330dd88462c19",
-      "size": 108686
+      "hash": "12a790277d1b2927394bcc036a20b7fd",
+      "size": 178733
     }
   }
 }
