@@ -1,6 +1,6 @@
 {
   "slug": "mold-fort-venturi",
-  "built_at": "2026-05-17T14:09:14.250247Z",
+  "built_at": "2026-05-20T00:03:09.871921Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 77008
     },
     "service-1.jpg": {
-      "hash": "98dd49db7cea09cc133c7efd5107f9d2",
-      "size": 166659
+      "hash": "94ae51a11d13db26279c00ba56361ae5",
+      "size": 140763
     }
   }
 }
