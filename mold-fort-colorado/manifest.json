@@ -1,6 +1,6 @@
 {
   "slug": "mold-fort-colorado",
-  "built_at": "2026-05-20T00:03:59.760726Z",
+  "built_at": "2026-05-20T00:07:32.688639Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 77008
     },
     "service-1.jpg": {
-      "hash": "3ff14897e083ea2fe7ec141485b931a5",
-      "size": 139525
+      "hash": "252fea7156919f771d326a236041e9a6",
+      "size": 125521
     }
   }
 }
