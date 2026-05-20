@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-durlach",
-  "built_at": "2026-05-17T14:07:05.920363Z",
+  "built_at": "2026-05-20T00:01:07.887567Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "c950cfa2d3b9efad82a140100aec2fba",
-      "size": 145680
+      "hash": "b9e62fb93cb293ccd2f372673a17302b",
+      "size": 166098
     }
   }
 }
