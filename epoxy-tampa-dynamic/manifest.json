@@ -1,6 +1,6 @@
 {
   "slug": "epoxy-tampa-dynamic",
-  "built_at": "2026-05-20T00:00:17.721089Z",
+  "built_at": "2026-05-21T00:00:20.691815Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -22,8 +22,8 @@
       "size": 98940
     },
     "service-1.jpg": {
-      "hash": "fe26d525ab1f45348869c618ae6780d0",
-      "size": 121556
+      "hash": "5a1ae565e81f9928ecc88f067fb3fed6",
+      "size": 193269
     },
     "service-4.jpg": {
       "hash": "b5202b91edb026301b2274ac8c1f6ddf",
