@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-arc",
-  "built_at": "2026-05-20T00:02:00.095739Z",
+  "built_at": "2026-05-21T00:02:05.653649Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "8e8cfea1cbd0f75420283977ad6fc73c",
-      "size": 174165
+      "hash": "46f183b4f5480388fac19a30f4501bdf",
+      "size": 187165
     }
   }
 }
