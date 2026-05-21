@@ -1,6 +1,6 @@
 {
   "slug": "mold-denver-breathe",
-  "built_at": "2026-05-20T00:07:49.151827Z",
+  "built_at": "2026-05-21T00:08:19.928342Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 105503
     },
     "service-1.jpg": {
-      "hash": "fa3ad63fdd65e0969ec43126db8ba463",
-      "size": 142727
+      "hash": "9c36f818db801073ebbaa2265c8bf48f",
+      "size": 131904
     }
   }
 }
