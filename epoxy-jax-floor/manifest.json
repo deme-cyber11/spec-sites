@@ -1,6 +1,6 @@
 {
   "slug": "epoxy-jax-floor",
-  "built_at": "2026-05-20T00:04:35.325270Z",
+  "built_at": "2026-05-21T00:04:59.357824Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 109771
     },
     "service-1.jpg": {
-      "hash": "505296b18d7f2363443c2dbfc448f51b",
-      "size": 148174
+      "hash": "1ece2dc06c21f0eecbfcbe91d996d50f",
+      "size": 129407
     }
   }
 }
