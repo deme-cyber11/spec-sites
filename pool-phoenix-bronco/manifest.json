@@ -1,6 +1,6 @@
 {
   "slug": "pool-phoenix-bronco",
-  "built_at": "2026-05-21T00:03:01.874170Z",
+  "built_at": "2026-05-22T00:03:29.239197Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg",
@@ -22,8 +22,8 @@
       "size": 160465
     },
     "service-1.jpg": {
-      "hash": "58215dc6d666882cd86052096c4fa507",
-      "size": 84296
+      "hash": "caddecc17b339ba0e875f25c5c8f5adb",
+      "size": 136110
     },
     "service-4.jpg": {
       "hash": "6a80c7f9dd325d1389be041f60f8be75",
