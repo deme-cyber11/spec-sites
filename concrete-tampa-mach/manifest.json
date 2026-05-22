@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-mach",
-  "built_at": "2026-05-21T00:09:13.878579Z",
+  "built_at": "2026-05-22T00:10:10.767946Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "46319941b9485e1bb8584fdcca915a52",
-      "size": 185180
+      "hash": "0d4e0c7937dd307a9df4c44c0a582b49",
+      "size": 137582
     }
   }
 }
