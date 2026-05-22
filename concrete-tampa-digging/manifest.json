@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-digging",
-  "built_at": "2026-05-21T00:01:01.248692Z",
+  "built_at": "2026-05-22T00:00:59.038994Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "efa9268e7d1b070948259429a54f92c8",
-      "size": 150873
+      "hash": "c137119d7e4bb5fce78a426318c27b03",
+      "size": 158548
     }
   }
 }
