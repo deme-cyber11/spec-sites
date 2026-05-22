@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-five",
-  "built_at": "2026-05-21T00:02:21.639272Z",
+  "built_at": "2026-05-22T00:02:47.561411Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "3feff7d1360030ff419a30563b504e92",
-      "size": 200801
+      "hash": "916d5d628b877fa8294231b2af0b75b6",
+      "size": 165843
     }
   }
 }
