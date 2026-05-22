@@ -1,6 +1,6 @@
 {
   "slug": "hardwood-spokane-panhandle",
-  "built_at": "2026-05-21T00:08:56.899988Z",
+  "built_at": "2026-05-22T00:09:46.035837Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 93089
     },
     "service-1.jpg": {
-      "hash": "6b046e3ed2ab2e5f746fe2cf0336940a",
-      "size": 183705
+      "hash": "c89b8075f19c8b52801df714d5d03fde",
+      "size": 126624
     }
   }
 }
