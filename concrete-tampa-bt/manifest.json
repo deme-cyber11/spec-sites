@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-bt",
-  "built_at": "2026-05-21T00:05:15.100064Z",
+  "built_at": "2026-05-22T00:05:37.952155Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "b06d4f25bc565e7949b60a4de4f336bf",
-      "size": 130902
+      "hash": "7612027bb24f7548177e549e5a5485ea",
+      "size": 173889
     }
   }
 }
