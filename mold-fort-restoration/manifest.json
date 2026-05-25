@@ -1,6 +1,6 @@
 {
   "slug": "mold-fort-restoration",
-  "built_at": "2026-05-22T00:06:27.006517Z",
+  "built_at": "2026-05-25T00:05:16.557348Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 77008
     },
     "service-1.jpg": {
-      "hash": "5be39030f7327df33d5e0437ad1dfb2c",
-      "size": 129705
+      "hash": "3e7dd9bd401bc2d739e723f8895a6e07",
+      "size": 130923
     }
   }
 }
