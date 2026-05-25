@@ -1,6 +1,6 @@
 {
   "slug": "concrete-tampa-keiths",
-  "built_at": "2026-05-22T00:03:12.413222Z",
+  "built_at": "2026-05-25T00:02:36.027846Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 104377
     },
     "service-1.jpg": {
-      "hash": "2ef3c27180445165a704aec4b219eebd",
-      "size": 168209
+      "hash": "a6807471afda246ba5b6ffa955239bc0",
+      "size": 216878
     }
   }
 }
