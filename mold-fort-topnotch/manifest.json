@@ -1,6 +1,6 @@
 {
   "slug": "mold-fort-topnotch",
-  "built_at": "2026-05-22T00:06:00.164555Z",
+  "built_at": "2026-05-25T00:05:00.361442Z",
   "html_image_refs": [
     "hero.jpg",
     "service-1.jpg"
@@ -11,8 +11,8 @@
       "size": 77008
     },
     "service-1.jpg": {
-      "hash": "4734cf9f33f9545e1adeae42666a03f0",
-      "size": 110461
+      "hash": "04b3b83a2073ad68d8c3595968cc2f08",
+      "size": 106004
     }
   }
 }
