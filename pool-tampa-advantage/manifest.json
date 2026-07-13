@@ -1,0 +1,33 @@
+{
+  "slug": "pool-tampa-advantage",
+  "built_at": "2026-05-07T13:29:57.885392Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "6256a612b616f436160ce9f7d0b4b739",
+      "size": 124934
+    },
+    "service-2.jpg": {
+      "hash": "568e8544a3b40c6688723843a66a2940",
+      "size": 139068
+    },
+    "service-3.jpg": {
+      "hash": "bb05d69a47dba2984a4458af806a64e5",
+      "size": 127740
+    },
+    "service-1.jpg": {
+      "hash": "b638741d01cc5b507165dcc81c59f856",
+      "size": 133372
+    },
+    "service-4.jpg": {
+      "hash": "539c53f4d1f9b069bbb23a80e9bdff8d",
+      "size": 163574
+    }
+  }
+}

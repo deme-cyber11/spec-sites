@@ -1,0 +1,18 @@
+{
+  "slug": "hardwood-spokane-carusos",
+  "built_at": "2026-05-17T14:14:01.342128Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "881b86bd089083eacf350f03167bc8f1",
+      "size": 93089
+    },
+    "service-1.jpg": {
+      "hash": "88f6a89f6307d9e0e10f1ec7ff5090d8",
+      "size": 108959
+    }
+  }
+}

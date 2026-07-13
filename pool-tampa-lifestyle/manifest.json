@@ -1,0 +1,18 @@
+{
+  "slug": "pool-tampa-lifestyle",
+  "built_at": "2026-05-25T00:06:52.305101Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "0838dc1c116000b92c48caf78a2e9455",
+      "size": 130535
+    },
+    "service-1.jpg": {
+      "hash": "6095367f13e383ba8dd63469436c603a",
+      "size": 166549
+    }
+  }
+}

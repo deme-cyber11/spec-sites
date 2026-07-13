@@ -1,0 +1,33 @@
+{
+  "slug": "hardwood-spokane-eds",
+  "built_at": "2026-05-10T16:46:53.252655Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "881b86bd089083eacf350f03167bc8f1",
+      "size": 93089
+    },
+    "service-2.jpg": {
+      "hash": "d11fecbdbe81d93a18d61a1e2d0877e7",
+      "size": 122513
+    },
+    "service-3.jpg": {
+      "hash": "c6bfbce8e16967fd928586f372d0d723",
+      "size": 126764
+    },
+    "service-1.jpg": {
+      "hash": "c2467f18d41c61d91910ffb59e0f3218",
+      "size": 142860
+    },
+    "service-4.jpg": {
+      "hash": "0026218de4f7f91b998ebd73dfb255ff",
+      "size": 108367
+    }
+  }
+}

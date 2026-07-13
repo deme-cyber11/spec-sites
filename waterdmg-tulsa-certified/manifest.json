@@ -1,0 +1,18 @@
+{
+  "slug": "waterdmg-tulsa-certified",
+  "built_at": "2026-05-15T02:40:23.128179Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4bcd47822a2428ef84fa71e4c80fc5dd",
+      "size": 106055
+    },
+    "service-1.jpg": {
+      "hash": "7eb3eae282e98ad331c23a22dac8b72e",
+      "size": 120305
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "mold-fort-ati",
+  "built_at": "2026-05-10T16:46:23.312037Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ffc86797fbad0fe82b44c6b32c8468cb",
+      "size": 77008
+    },
+    "service-2.jpg": {
+      "hash": "c6ba8eb11f9b47e9388d86e2e85807cd",
+      "size": 133389
+    },
+    "service-3.jpg": {
+      "hash": "2f19bc9c36fa6284964d7efb64ef99fd",
+      "size": 128999
+    },
+    "service-1.jpg": {
+      "hash": "f0cd6ceb0b65c4529df93b02f02214d9",
+      "size": 133148
+    },
+    "service-4.jpg": {
+      "hash": "d594ef3d280f96b8e025282a5a78603d",
+      "size": 97967
+    }
+  }
+}

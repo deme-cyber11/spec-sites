@@ -1,0 +1,18 @@
+{
+  "slug": "concrete-tampa-classic",
+  "built_at": "2026-05-12T03:04:43.138249Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4d8fa4748bebe4262695172ffb24dff1",
+      "size": 104377
+    },
+    "service-1.jpg": {
+      "hash": "9866769eb9b51e8626da2add08009d82",
+      "size": 166245
+    }
+  }
+}

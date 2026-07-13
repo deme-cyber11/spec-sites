@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-orlando-palencia",
+  "built_at": "2026-05-08T04:39:09.133155Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "8c1283864c3bb0c24af8e256fb9e7b1c",
+      "size": 151252
+    },
+    "service-2.jpg": {
+      "hash": "b4f126473a79ee8807100bb270231dc5",
+      "size": 146881
+    },
+    "service-3.jpg": {
+      "hash": "3f769bc54a303628b43ab6659d073dd7",
+      "size": 142097
+    },
+    "service-1.jpg": {
+      "hash": "1a5a2dc459f00d29dad2ef12c63aa10b",
+      "size": 177735
+    },
+    "service-4.jpg": {
+      "hash": "ae1be00d676786c258c2f3f365f7f9d6",
+      "size": 224271
+    }
+  }
+}

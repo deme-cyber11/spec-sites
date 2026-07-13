@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-camrock",
+  "built_at": "2026-05-10T16:36:05.123568Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4d8fa4748bebe4262695172ffb24dff1",
+      "size": 104377
+    },
+    "service-2.jpg": {
+      "hash": "5d045df799267003f71c1b3f8256fd56",
+      "size": 165172
+    },
+    "service-3.jpg": {
+      "hash": "47ad3211f459797c2df7816561444de2",
+      "size": 147498
+    },
+    "service-1.jpg": {
+      "hash": "3e43fa847dc56203f0485f1eeeb06509",
+      "size": 221583
+    },
+    "service-4.jpg": {
+      "hash": "62fa26c01b279ae1028dc9266dcc2cf4",
+      "size": 199507
+    }
+  }
+}

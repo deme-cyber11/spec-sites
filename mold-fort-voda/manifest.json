@@ -1,0 +1,18 @@
+{
+  "slug": "mold-fort-voda",
+  "built_at": "2026-05-25T00:03:37.812909Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "ffc86797fbad0fe82b44c6b32c8468cb",
+      "size": 77008
+    },
+    "service-1.jpg": {
+      "hash": "fdbf4e994c5e968798f35c84fc3b7f4a",
+      "size": 85861
+    }
+  }
+}

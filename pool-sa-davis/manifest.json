@@ -1,0 +1,33 @@
+{
+  "slug": "pool-sa-davis",
+  "built_at": "2026-05-07T13:31:51.254819Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "67158cf52a9eedbe98a2b6696245cfb7",
+      "size": 107783
+    },
+    "service-2.jpg": {
+      "hash": "15c7eedac6143462b438ee0820f7bea1",
+      "size": 275203
+    },
+    "service-3.jpg": {
+      "hash": "1a0e92af50e4095d20465097bf1209a8",
+      "size": 172353
+    },
+    "service-1.jpg": {
+      "hash": "4b60d06e0ac49b9bf0379e08f4ab8b91",
+      "size": 93645
+    },
+    "service-4.jpg": {
+      "hash": "7f0a7aeddc2d4c3dd67725cfc93710e8",
+      "size": 160919
+    }
+  }
+}

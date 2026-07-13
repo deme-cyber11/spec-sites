@@ -1,0 +1,18 @@
+{
+  "slug": "pool-jax-waterside",
+  "built_at": "2026-05-12T03:04:17.116027Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "46086d57574895fc75c21a645db4f317",
+      "size": 146419
+    },
+    "service-1.jpg": {
+      "hash": "9b7a51948193ea97762b27ba8e87e678",
+      "size": 98332
+    }
+  }
+}

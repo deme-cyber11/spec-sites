@@ -1,0 +1,18 @@
+{
+  "slug": "pool-tampa-decking",
+  "built_at": "2026-05-17T14:03:59.769785Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "0838dc1c116000b92c48caf78a2e9455",
+      "size": 130535
+    },
+    "service-1.jpg": {
+      "hash": "17e946f84b7d89ff673bd4bbe55b01f9",
+      "size": 146625
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "mold-springs-independent",
+  "built_at": "2026-05-17T14:11:15.668712Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "a294894faac3646d2289c341fb66f76e",
+      "size": 127579
+    },
+    "service-1.jpg": {
+      "hash": "d3576286c349028e5d250e131f185883",
+      "size": 104458
+    }
+  }
+}

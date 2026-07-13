@@ -1,0 +1,18 @@
+{
+  "slug": "mold-springs-mountain",
+  "built_at": "2026-05-25T00:07:37.565955Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "a294894faac3646d2289c341fb66f76e",
+      "size": 127579
+    },
+    "service-1.jpg": {
+      "hash": "f4f50c25593678c6d1b09c753a2a7c72",
+      "size": 135968
+    }
+  }
+}

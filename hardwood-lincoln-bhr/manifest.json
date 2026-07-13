@@ -1,0 +1,33 @@
+{
+  "slug": "hardwood-lincoln-bhr",
+  "built_at": "2026-05-08T07:20:24.108176Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "78c3907a9cb50ac4d5b87d243e0b7c69",
+      "size": 156587
+    },
+    "service-2.jpg": {
+      "hash": "323eea0cb3cc923763ad287f1d316134",
+      "size": 116429
+    },
+    "service-3.jpg": {
+      "hash": "8346a1eb8f92966541504474049ef3ef",
+      "size": 140256
+    },
+    "service-1.jpg": {
+      "hash": "63a6687107e93644d073c5d6a0216b5f",
+      "size": 111920
+    },
+    "service-4.jpg": {
+      "hash": "8d70c8800b1ac985b070e8261e785624",
+      "size": 123924
+    }
+  }
+}

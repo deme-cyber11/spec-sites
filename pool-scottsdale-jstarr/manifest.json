@@ -1,0 +1,33 @@
+{
+  "slug": "pool-scottsdale-jstarr",
+  "built_at": "2026-05-08T07:30:39.501755Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "69ed9576814a51ef65f4c7dbf9d8e531",
+      "size": 222923
+    },
+    "service-2.jpg": {
+      "hash": "0b0f775c49677cc36c07d08619dbc5b0",
+      "size": 155236
+    },
+    "service-3.jpg": {
+      "hash": "b4cb2d114a742bce89cf5db69f2cc68a",
+      "size": 109013
+    },
+    "service-1.jpg": {
+      "hash": "4e08d2d85bb80fba214b8a83682523e1",
+      "size": 115851
+    },
+    "service-4.jpg": {
+      "hash": "62833ba125de84a2be5a443e9a8ee776",
+      "size": 183277
+    }
+  }
+}

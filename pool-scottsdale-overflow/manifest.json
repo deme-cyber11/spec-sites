@@ -1,0 +1,33 @@
+{
+  "slug": "pool-scottsdale-overflow",
+  "built_at": "2026-05-08T07:29:13.297791Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "be0c24ae519c790bb2ce7ec6700d0a35",
+      "size": 237644
+    },
+    "service-2.jpg": {
+      "hash": "61f6586166dab5589d6d941090259820",
+      "size": 97955
+    },
+    "service-3.jpg": {
+      "hash": "4f3ea771714de9da75f1bf39d37d9ded",
+      "size": 252099
+    },
+    "service-1.jpg": {
+      "hash": "717b1fd210daabcf827b102819ce3bc0",
+      "size": 164375
+    },
+    "service-4.jpg": {
+      "hash": "4c3927f6fca7818f929069d799a542ac",
+      "size": 136335
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "concrete-orlando-witty",
+  "built_at": "2026-05-12T03:05:04.762519Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "09a95065d65322eb5a271e12bc05d2f8",
+      "size": 101221
+    },
+    "service-1.jpg": {
+      "hash": "fa99c6fcbba911436955bbda6b0c310d",
+      "size": 182797
+    }
+  }
+}

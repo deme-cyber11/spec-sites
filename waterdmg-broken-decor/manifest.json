@@ -1,0 +1,18 @@
+{
+  "slug": "waterdmg-broken-decor",
+  "built_at": "2026-05-12T03:07:22.809876Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "f9ab48952db6fefac126130c56f3133f",
+      "size": 99546
+    },
+    "service-1.jpg": {
+      "hash": "f44a0bf29b8c13c9156cb90f31339abe",
+      "size": 154764
+    }
+  }
+}

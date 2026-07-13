@@ -1,0 +1,18 @@
+{
+  "slug": "hvac-huntsville-ac",
+  "built_at": "2026-05-12T03:11:14.462282Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "504f4908d3db60207f08693de9db868c",
+      "size": 98177
+    },
+    "service-1.jpg": {
+      "hash": "011e4c3492f2edc11d84f82ca4c8b226",
+      "size": 127311
+    }
+  }
+}

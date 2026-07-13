@@ -1,0 +1,33 @@
+{
+  "slug": "hardwood-lincoln-ct",
+  "built_at": "2026-05-08T04:45:40.204442Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "fb0fffe97297d8ab21d11bbc28dbfd24",
+      "size": 134696
+    },
+    "service-2.jpg": {
+      "hash": "c14eb32b5dc2b8b35d4dc0e5d90f6100",
+      "size": 132046
+    },
+    "service-3.jpg": {
+      "hash": "71d4aeba96d4edce1860a04c4ab6b3c6",
+      "size": 171206
+    },
+    "service-1.jpg": {
+      "hash": "f8cda33ba210a7f15d8cdd5af3d69f25",
+      "size": 147312
+    },
+    "service-4.jpg": {
+      "hash": "3821709059e9c2f1127f20cd713b3cfe",
+      "size": 181211
+    }
+  }
+}

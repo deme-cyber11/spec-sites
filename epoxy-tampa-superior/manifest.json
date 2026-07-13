@@ -1,0 +1,18 @@
+{
+  "slug": "epoxy-tampa-superior",
+  "built_at": "2026-05-25T00:05:47.632443Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "f0afa3fb1f168ce3be167c21bf9f93fd",
+      "size": 100297
+    },
+    "service-1.jpg": {
+      "hash": "c945c0b68ab662579ac56835d64b1144",
+      "size": 122112
+    }
+  }
+}

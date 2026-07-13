@@ -1,0 +1,18 @@
+{
+  "slug": "concrete-tampa-apd",
+  "built_at": "2026-05-12T03:06:39.170192Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4d8fa4748bebe4262695172ffb24dff1",
+      "size": 104377
+    },
+    "service-1.jpg": {
+      "hash": "8cbd98473358a3ddbcd4ad6fd0626f97",
+      "size": 228689
+    }
+  }
+}

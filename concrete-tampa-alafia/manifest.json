@@ -1,0 +1,18 @@
+{
+  "slug": "concrete-tampa-alafia",
+  "built_at": "2026-05-15T02:35:57.428448Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "4d8fa4748bebe4262695172ffb24dff1",
+      "size": 104377
+    },
+    "service-1.jpg": {
+      "hash": "1ce3346c593e49fca003c29b4cf864aa",
+      "size": 104258
+    }
+  }
+}

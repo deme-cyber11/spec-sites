@@ -1,0 +1,33 @@
+{
+  "slug": "concrete-tampa-pinnacle",
+  "built_at": "2026-05-08T04:36:16.037871Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "abbd315e84665c4e19df1a47fcf5f6df",
+      "size": 116032
+    },
+    "service-2.jpg": {
+      "hash": "cf89346f358c0a9d5f8c08ed2527284d",
+      "size": 145055
+    },
+    "service-3.jpg": {
+      "hash": "bf7f169f1125e49a74e1588d29f99c37",
+      "size": 154201
+    },
+    "service-1.jpg": {
+      "hash": "1c066c3cf04e9ee19ba2be8fc8ae5dc8",
+      "size": 109561
+    },
+    "service-4.jpg": {
+      "hash": "675e62e9d8e3a4944a2937456122dbe4",
+      "size": 172892
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "epoxy-jax-opticoat",
+  "built_at": "2026-05-15T02:36:23.260051Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "d145feb7a3a652f0c3391fd5647660c7",
+      "size": 109771
+    },
+    "service-1.jpg": {
+      "hash": "8915e8fa626840ee5e2156bb408d924e",
+      "size": 108532
+    }
+  }
+}

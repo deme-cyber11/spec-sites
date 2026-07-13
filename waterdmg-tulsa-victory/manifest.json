@@ -1,0 +1,33 @@
+{
+  "slug": "waterdmg-tulsa-victory",
+  "built_at": "2026-05-07T13:42:18.368556Z",
+  "html_image_refs": [
+    "hero.jpg",
+    "service-1.jpg",
+    "service-2.jpg",
+    "service-3.jpg",
+    "service-4.jpg"
+  ],
+  "images": {
+    "hero.jpg": {
+      "hash": "2421ec3a3f782793234e68202e2bf0df",
+      "size": 90776
+    },
+    "service-2.jpg": {
+      "hash": "461b1f0dd4bbc4765f11bc2f9b383b32",
+      "size": 107889
+    },
+    "service-3.jpg": {
+      "hash": "faf6b75b8fe5dee8f30dd82b063f328c",
+      "size": 137268
+    },
+    "service-1.jpg": {
+      "hash": "b552406efbbb5d9777e866b62938f256",
+      "size": 161562
+    },
+    "service-4.jpg": {
+      "hash": "bd0be7710edd911cb6344ed320d599a9",
+      "size": 146045
+    }
+  }
+}
