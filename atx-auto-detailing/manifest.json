@@ -1,11 +1,12 @@
 {
   "slug": "atx-auto-detailing",
-  "built_at": "2026-07-13T03:51:21.664029+00:00",
+  "built_at": "2026-07-13T03:56:10.499100+00:00",
   "html_image_refs": [
     "images/cla-rear.webp",
     "images/crv.webp",
     "images/gloss-cla-rear.webp",
     "images/hero-cla-front.webp",
+    "images/hero-cover.jpg",
     "images/logo.png",
     "images/mustang-front.webp",
     "images/mustang-rear.webp",
@@ -30,6 +31,10 @@
     "images/hero-cla-front.webp": {
       "hash": "653a3004700eb13ab25604630ed9a034",
       "size": 160816
+    },
+    "images/hero-cover.jpg": {
+      "hash": "64a6a7d1165a1e1d8d69bc149b512563",
+      "size": 583462
     },
     "images/logo.png": {
       "hash": "5baf7e98b9e4a2e4ffa8acbbb42abbdf",
