@@ -78,21 +78,21 @@
   .nav-mobile .btn{margin-top:14px;justify-content:center}
   @media(max-width:900px){.nav-links,.nav-cta{display:none}.nav-toggle{display:flex}}
 
-  /* HERO — editorial image overlay */
-  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+  /* HERO — one section: image + copy + quote card */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
   .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,14,20,.86) 0%,rgba(10,14,20,.55) 40%,rgba(10,14,20,.08) 78%),linear-gradient(0deg,rgba(10,14,20,.5),transparent 40%),linear-gradient(180deg,rgba(10,14,20,.4),transparent 22%)}
-  .hero-in{position:relative;z-index:2;padding:0 0 78px;max-width:620px}
-  .hero .rating{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);border-radius:50px;padding:7px 15px;font-size:.8rem;font-weight:600;color:#fff;margin-bottom:20px}
-  .hero .eyebrow{color:var(--accent-light);margin-bottom:14px}
-  .hero h1{color:#fff;font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500;line-height:1.02}
+  .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,14,20,.88) 0%,rgba(10,14,20,.62) 44%,rgba(10,14,20,.28) 100%),linear-gradient(180deg,rgba(10,14,20,.45),transparent 20%)}
+  .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .82fr;gap:48px;align-items:center;width:100%;padding:104px 0 64px}
+  .hero-copy{max-width:560px}
+  .hero .rating{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);border-radius:50px;padding:7px 15px;font-size:.8rem;font-weight:600;color:#fff;margin-bottom:18px}
+  .hero .eyebrow{color:var(--accent-light);margin-bottom:13px}
+  .hero h1{color:#fff;font-size:clamp(2.3rem,4.6vw,3.5rem);font-weight:500;line-height:1.03}
   .hero h1 em{color:var(--accent-light);font-weight:500}
-  .hero .lede{color:rgba(255,255,255,.86);font-size:1.14rem;margin:20px 0 28px;max-width:40ch}
-  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-  .hero-trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;color:rgba(255,255,255,.8);font-size:.85rem;font-weight:500}
+  .hero .lede{color:rgba(255,255,255,.86);font-size:1.1rem;margin:18px 0 0;max-width:42ch}
+  .hero-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;color:rgba(255,255,255,.82);font-size:.85rem;font-weight:500}
   .hero-trust span{display:inline-flex;align-items:center;gap:7px}
   .hero-trust svg{width:16px;height:16px;color:var(--accent-light)}
-  @media(max-width:900px){.hero{min-height:88vh}.hero-in{padding-bottom:56px}}
+  @media(max-width:940px){.hero{min-height:auto}.hero-in{grid-template-columns:1fr;gap:28px;padding:100px 0 56px}.hero-copy{max-width:none}.hero .lede{max-width:none}}
 
   /* sections */
   section{position:relative}
@@ -317,34 +317,16 @@
     <img class="hero-bg" src="images/gloss-cla-rear.webp" alt="Freshly detailed red Mercedes-Benz CLA 250 with a deep, glossy finish">
     <div class="hero-scrim"></div>
     <div class="wrap hero-in">
-      <span class="rating"><span class="stars">★★★★★</span> Loved by Austin drivers</span>
-      <span class="eyebrow">Interior &amp; exterior specialists · Austin, TX</span>
-      <h1>Your car, back to <em>showroom gloss.</em></h1>
-      <p class="lede">Mobile detailing to your driveway, or drop it at the shop. Interior deep-cleans and exterior paint work done right — no upsell games, no cutting corners.</p>
-      <div class="hero-cta">
-        <a class="btn btn-accent" href="#quote">Get an instant price <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-glass" href="#work">See our work</a>
-      </div>
-      <div class="hero-trust">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> We come to you</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Licensed &amp; insured</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Satisfaction guaranteed</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="sec" id="quote-sec">
-    <div class="wrap quote-split">
-      <div class="quote-copy">
-        <span class="eyebrow">Instant pricing</span>
-        <h2>Know your price before we start.</h2>
-        <p>No hidden fees, no "we'll call you back." Build your detail below and see a real estimate in seconds — then book with no deposit.</p>
-        <ul class="qpoints">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Transparent, up-front pricing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Mobile — we bring water &amp; power</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Same-day slots often available</li>
-        </ul>
+      <div class="hero-copy">
+        <span class="rating"><span class="stars">★★★★★</span> Loved by Austin drivers</span>
+        <span class="eyebrow">Interior &amp; exterior specialists · Austin, TX</span>
+        <h1>Your car, back to <em>showroom gloss.</em></h1>
+        <p class="lede">Mobile detailing to your driveway, or drop it at the shop — interior deep-cleans and exterior paint work done right.</p>
+        <div class="hero-trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> We come to you</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Licensed &amp; insured</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Satisfaction guaranteed</span>
+        </div>
       </div>
       <div class="quote" id="quote">
         <div class="quote-head"><span class="eyebrow">Instant quote</span><span class="live">Live estimate</span></div>
