@@ -1,0 +1,63 @@
+{
+  "slug": "atx-auto-detailing",
+  "built_at": "2026-07-13T01:49:01.964090Z",
+  "html_image_refs": [
+    "images/cla-rear.webp",
+    "images/crv.webp",
+    "images/gloss-cla-rear.webp",
+    "images/hero-cla-front.webp",
+    "images/logo.png",
+    "images/mustang-front.webp",
+    "images/mustang-rear.webp",
+    "images/mustang-side.webp",
+    "images/owner.jpg",
+    "images/runner-interior.webp",
+    "images/suv-interior.webp"
+  ],
+  "images": {
+    "images/cla-rear.webp": {
+      "hash": "5dd6aab5cdae0936f678dfc8673317d6",
+      "size": 124828
+    },
+    "images/crv.webp": {
+      "hash": "08ad815c7b961e8e9d8d1174d80c6b08",
+      "size": 149998
+    },
+    "images/gloss-cla-rear.webp": {
+      "hash": "e23da02b8b937e15d493e34cde28e8d4",
+      "size": 156022
+    },
+    "images/hero-cla-front.webp": {
+      "hash": "653a3004700eb13ab25604630ed9a034",
+      "size": 160816
+    },
+    "images/logo.png": {
+      "hash": "5baf7e98b9e4a2e4ffa8acbbb42abbdf",
+      "size": 5728
+    },
+    "images/mustang-front.webp": {
+      "hash": "d13b22f7af7af6fa9fd444c4d77001d9",
+      "size": 153658
+    },
+    "images/mustang-rear.webp": {
+      "hash": "f6acee049496e01fd6d0407c249436fb",
+      "size": 93434
+    },
+    "images/mustang-side.webp": {
+      "hash": "38ede47d5a5681e08a0595a8bd3d7d84",
+      "size": 164140
+    },
+    "images/owner.jpg": {
+      "hash": "0637b36c273baafc34dba3f5a2610e7a",
+      "size": 8710
+    },
+    "images/runner-interior.webp": {
+      "hash": "34d1ae92b017384e17fa7a7d787789fe",
+      "size": 130544
+    },
+    "images/suv-interior.webp": {
+      "hash": "d393ff798594e203b1e6bd1ba83b2ffe",
+      "size": 69502
+    }
+  }
+}
