@@ -1,0 +1,1821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Specialty Coatings, Inc. | Epoxy Flooring in Nashville, TN</title>
+<meta name="description" content="Specialty Coatings is an epoxy flooring contractor in Nashville, TN. Epoxy coatings, concrete polishing, shot blasting, and flooring removal.">
+<meta name="theme-color" content="#034073">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/photos/p00-1600.webp" imagesrcset="assets/photos/p00-800.webp 800w, assets/photos/p00-1600.webp 1600w" imagesizes="(min-width: 1024px) 48vw, 100vw" fetchpriority="high"><style>
+:root {
+  --brand: #034073;
+  --on-brand: #ffffff;
+  --brand-ink: #034073;
+  --hero-cta-bg: #ffffff;
+  --hero-cta-fg: #034073;
+  --field-shade: color-mix(in oklab, var(--brand) 78%, #000);
+}
+/* Magic UI effects ported to plain CSS (magicuidesign/magicui, MIT). No React, no Tailwind.
+   Each block names the component it came from. Themes set the custom properties; nothing here
+   picks a colour. Pair with magic.js. Every effect stops under prefers-reduced-motion. */
+
+/* marquee.tsx: repeated groups slide one group width plus the gap, forever. */
+.mu-marquee {
+  --gap: 1rem; --duration: 40s;
+  display: flex; gap: var(--gap); overflow: hidden;
+}
+.mu-marquee__group {
+  display: flex; flex-shrink: 0; align-items: stretch; justify-content: space-around; gap: var(--gap);
+  animation: mu-marquee var(--duration) linear infinite;
+}
+.mu-marquee--reverse .mu-marquee__group { animation-direction: reverse; }
+.mu-marquee:hover .mu-marquee__group,
+.mu-marquee:focus-within .mu-marquee__group,
+.mu-marquee.is-paused .mu-marquee__group,
+.mu-marquee.is-offscreen .mu-marquee__group { animation-play-state: paused; }
+.mu-marquee--fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+@keyframes mu-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-100% - var(--gap))); } }
+
+/* shimmer-button.tsx: a conic spark slides and spins inside a 2px ring cut from the fill. */
+.mu-shimmer {
+  --spread: 90deg; --speed: 3.2s; --cut: 2px;
+  position: relative; z-index: 0; isolation: isolate; overflow: hidden;
+  background: var(--shimmer-bg); color: var(--shimmer-fg);
+}
+.mu-shimmer__spark {
+  position: absolute; inset: 0; z-index: -2; overflow: visible;
+  filter: blur(2px); container-type: size; pointer-events: none;
+}
+.mu-shimmer__spark i {
+  position: absolute; top: 0; left: 0; height: 100cqh; aspect-ratio: 1;
+  animation: mu-shimmer-slide var(--speed) ease-in-out infinite alternate;
+}
+.mu-shimmer__spark i::before {
+  content: ""; position: absolute; inset: -100%;
+  background: conic-gradient(from calc(270deg - (var(--spread) * 0.5)), transparent 0, var(--spark) var(--spread), transparent var(--spread));
+  animation: mu-spin-around calc(var(--speed) * 2) infinite linear;
+}
+.mu-shimmer__fill {
+  position: absolute; inset: var(--cut); z-index: -1; border-radius: inherit;
+  background: var(--shimmer-bg); pointer-events: none;
+}
+.mu-shimmer::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 -8px 10px rgb(255 255 255 / 0.12); transition: box-shadow 300ms ease;
+}
+.mu-shimmer:hover::after { box-shadow: inset 0 -6px 12px rgb(255 255 255 / 0.26); }
+.mu-shimmer:active::after { box-shadow: inset 0 -10px 10px rgb(255 255 255 / 0.26); }
+@keyframes mu-shimmer-slide { to { transform: translate(calc(100cqw - 100%), 0); } }
+@keyframes mu-spin-around {
+  0% { transform: translateZ(0) rotate(0); }
+  15%, 35% { transform: translateZ(0) rotate(90deg); }
+  65%, 85% { transform: translateZ(0) rotate(270deg); }
+  100% { transform: translateZ(0) rotate(360deg); }
+}
+
+/* border-beam.tsx: a short gradient travels the card's edge on an offset path, masked to the border. */
+.mu-beam {
+  position: absolute; inset: 0; border-radius: inherit; padding: var(--beam-w, 2px); pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+@supports (offset-path: rect(0 auto auto 0)) {
+  .mu-beam::after {
+    content: ""; position: absolute; width: var(--beam-size, 110px); aspect-ratio: 1;
+    offset-path: rect(0 auto auto 0 round var(--beam-size, 110px));
+    background: linear-gradient(to left, var(--beam-from), var(--beam-to), transparent);
+    animation: mu-beam var(--beam-dur, 7s) linear infinite;
+  }
+}
+@keyframes mu-beam { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+/* dot-pattern.tsx and grid-pattern.tsx: drawn with gradients instead of SVG, faded by a mask. */
+.mu-dots, .mu-grid { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.mu-dots {
+  background-image: radial-gradient(circle at center, var(--dot, rgb(17 20 26 / 0.2)) 1.1px, transparent 1.7px);
+  background-size: var(--dot-gap, 20px) var(--dot-gap, 20px);
+  -webkit-mask-image: var(--pattern-mask, radial-gradient(ellipse 75% 65% at 50% 45%, #000 15%, transparent 78%));
+  mask-image: var(--pattern-mask, radial-gradient(ellipse 75% 65% at 50% 45%, #000 15%, transparent 78%));
+}
+.mu-grid {
+  background-image:
+    linear-gradient(var(--grid-line, rgb(17 20 26 / 0.08)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line, rgb(17 20 26 / 0.08)) 1px, transparent 1px);
+  background-size: var(--grid-gap, 56px) var(--grid-gap, 56px);
+  background-position: -1px -1px;
+  -webkit-mask-image: var(--pattern-mask, radial-gradient(ellipse 80% 70% at 30% 30%, #000 10%, transparent 75%));
+  mask-image: var(--pattern-mask, radial-gradient(ellipse 80% 70% at 30% 30%, #000 10%, transparent 75%));
+}
+
+/* animated-grid-pattern.tsx: a few grid cells light up and fade on their own clocks. */
+.mu-cell {
+  position: absolute; left: calc(var(--x) * var(--grid-gap, 56px)); top: calc(var(--y) * var(--grid-gap, 56px));
+  width: calc(var(--grid-gap, 56px) - 1px); height: calc(var(--grid-gap, 56px) - 1px);
+  background: var(--cell, rgb(17 20 26 / 0.06)); opacity: 0;
+  animation: mu-cell 7s var(--d, 0s) ease-in-out infinite;
+}
+@keyframes mu-cell { 0%, 70%, 100% { opacity: 0; } 25%, 50% { opacity: 1; } }
+
+/* magic-card.tsx: a soft spotlight follows the pointer across a card (magic.js feeds --mx and --my). */
+.mu-spot { position: relative; isolation: isolate; }
+.mu-spot::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(var(--spot-size, 320px) circle at var(--mx, -999px) var(--my, -999px), var(--spot, rgb(17 20 26 / 0.07)), transparent 70%);
+}
+
+/* blur-fade.tsx, without the opacity: content is always visible; it rises and sharpens into place.
+   magic.js marks below-the-fold blocks is-pending, then is-in when they scroll into view. */
+.js [data-reveal].is-pending { transform: translate3d(0, var(--reveal-y, 26px), 0); }
+.js [data-reveal].is-in {
+  animation: mu-blur-fade var(--reveal-dur, 640ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+/* The blur clears in the first 40% so nothing reads as out of focus at normal scrolling speed. */
+@keyframes mu-blur-fade {
+  0% { transform: translate3d(0, var(--reveal-y, 26px), 0); filter: blur(var(--reveal-blur, 3px)); }
+  40% { filter: blur(0); }
+  100% { transform: none; filter: none; }
+}
+
+/* number-ticker.tsx: the final value is in the HTML; magic.js counts up to it once it is in view. */
+.mu-ticker { display: inline-block; font-variant-numeric: tabular-nums; }
+
+/* pulsating-button.tsx, as a live status dot. */
+.mu-pulse { position: relative; }
+.mu-pulse::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 10px; border-radius: 50%;
+  background: currentColor; vertical-align: 0.08em;
+  animation: mu-pulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+@keyframes mu-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 10px transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mu-marquee__group { animation: none; }
+  .mu-marquee { flex-wrap: wrap; justify-content: center; }
+  .mu-marquee__group[aria-hidden="true"] { display: none; }
+  .mu-marquee__group { flex-wrap: wrap; justify-content: center; flex-shrink: 1; }
+  .mu-shimmer__spark, .mu-beam::after { animation: none; display: none; }
+  .js [data-reveal].is-pending, .js [data-reveal].is-in { transform: none; animation: none; }
+  .mu-pulse::before { animation: none; }
+  .mu-cell { animation: none; opacity: 0.6; }
+}/* Brand template. A bright white page carried by saturated panels in the business's own colour.
+   --brand, --on-brand, --brand-ink, --hero-cta-* and --field-shade are computed per business in
+   index.html.j2 (contrast checked there); everything else derives from them. */
+:root {
+  --brand-deep: color-mix(in oklab, var(--brand-ink) 48%, #07080b);
+  --brand-soft: color-mix(in oklab, var(--brand) 6%, #f2f3f5);
+  --brand-line: color-mix(in oklab, var(--brand) 26%, #e2e5ea);
+
+  --ink: #12151b;
+  --ink-2: #363c47;
+  --muted: #555c69;
+  --bg: #ffffff;
+  --surface: #f3f4f6;
+  --line: #e2e5ea;
+  --star: #f4a51c;
+  --star-off: #d3d7de;
+
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --margin: clamp(20px, 3.4vw, 40px);
+  --inset: clamp(8px, 1.1vw, 16px);
+  --section: clamp(72px, 9vw, 128px);
+  --r-xl: clamp(24px, 2.4vw, 36px);
+  --r-l: 22px;
+  --r-m: 14px;
+  --shadow-1: 0 1px 2px rgb(18 21 27 / 0.06), 0 10px 28px -14px rgb(18 21 27 / 0.2);
+  --shadow-2: 0 2px 6px rgb(18 21 27 / 0.08), 0 28px 56px -24px rgb(18 21 27 / 0.42);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --h2: clamp(2rem, 1.35rem + 2.3vw, 3.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html {
+  -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 92px;
+  scrollbar-color: color-mix(in oklab, var(--brand-ink) 55%, #9aa0aa) var(--surface);
+}
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--font); font-stretch: 100%;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote, fieldset { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+fieldset { border: 0; padding: 0; min-width: 0; }
+button, input, textarea { font: inherit; color: inherit; }
+::selection { background: var(--brand); color: var(--on-brand); }
+:focus-visible { outline: 3px solid var(--brand-ink); outline-offset: 3px; border-radius: 8px; }
+input, textarea { caret-color: var(--brand-ink); accent-color: var(--brand-ink); }
+.icon { width: 20px; height: 20px; flex: none; }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.icon.flip { transform: scaleX(-1); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+html:not(.js) .js-only { display: none; }
+
+.wrap { width: min(100% - 2 * var(--margin), 1280px); margin-inline: auto; position: relative; }
+/* Photos rise into place but never blur. */
+.gal-item, .tile-photo, .hero-media, .about-media { --reveal-blur: 0px; }
+.display { font-stretch: 112%; font-weight: 800; letter-spacing: -0.032em; line-height: 1.02; text-wrap: balance; }
+.h2 { font-size: var(--h2); }
+.section { padding-block: var(--section); position: relative; }
+.sec-head {
+  display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between;
+  gap: 20px 40px; margin-bottom: clamp(32px, 4vw, 56px);
+}
+.sec-head .h2 { max-width: 16ch; }
+.sec-note { color: var(--muted); max-width: 34ch; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 24px; border: 0; border-radius: 999px; cursor: pointer;
+  font-weight: 700; font-size: 1rem; line-height: 1.1; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap;
+  transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out), background-color 200ms ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(1px); }
+.btn-xl { min-height: 60px; padding: 0 30px; font-size: 1.0625rem; }
+.btn-brand {
+  background: var(--brand); color: var(--on-brand);
+  box-shadow: 0 12px 24px -14px rgb(18 21 27 / 0.55);
+}
+.btn-outline { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line), var(--shadow-1); }
+.btn-outline:hover { box-shadow: inset 0 0 0 1.5px var(--brand-line), var(--shadow-1); }
+.btn-ghost-on { color: var(--on-brand); background: transparent; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--on-brand) 55%, transparent); }
+.btn-ghost-on:hover { background: color-mix(in srgb, var(--on-brand) 10%, transparent); }
+.btn-quiet { background: var(--surface); color: var(--ink); }
+.mu-shimmer { box-shadow: 0 14px 30px -14px rgb(0 0 0 / 0.45); }
+
+/* Logo plate: logos arrive on white or coloured grounds, so they always sit on a white card. */
+.plate {
+  display: inline-flex; align-items: center; justify-content: center; background: #fff;
+  border-radius: 12px; padding: 5px 7px;
+  box-shadow: 0 0 0 1px rgb(18 21 27 / 0.08), 0 8px 18px -10px rgb(18 21 27 / 0.35);
+}
+.plate img { height: 52px; width: auto; max-width: 220px; object-fit: contain; border-radius: 7px; }
+.mono {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 12px;
+  background: var(--brand); color: var(--on-brand); font-weight: 800; font-stretch: 115%; font-size: 1.05rem; letter-spacing: -0.02em;
+}
+
+/* Header */
+.site-head {
+  position: sticky; top: 0; z-index: 50;
+  background: rgb(255 255 255 / 0.88); -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px);
+  border-bottom: 1px solid transparent; transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+.site-head.is-scrolled { border-color: var(--line); box-shadow: 0 10px 24px -20px rgb(18 21 27 / 0.5); }
+.head-row { display: flex; align-items: center; gap: 20px; min-height: 80px; }
+.brandmark { display: inline-flex; align-items: center; gap: 12px; margin-right: auto; text-decoration: none; min-width: 0; }
+.wordmark { font-weight: 800; font-stretch: 108%; font-size: 1.15rem; letter-spacing: -0.02em; line-height: 1.1; max-width: 22ch; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.nav { display: flex; gap: 2px; }
+.nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px;
+  font-weight: 600; font-size: 0.95rem; color: var(--ink-2); text-decoration: none; transition: background-color 200ms ease, color 200ms ease;
+}
+.nav a:hover { background: var(--surface); color: var(--ink); }
+.btn-head { min-height: 48px; padding: 0 20px; }
+.head-call-short { display: none; }
+
+/* Hero */
+.hero { padding: var(--inset) var(--inset) 0; }
+.hero-panel {
+  position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-xl);
+  background: radial-gradient(130% 110% at 100% 100%, var(--field-shade), transparent 62%), var(--brand);
+  color: var(--on-brand); padding-block: clamp(44px, 6.4vw, 96px) clamp(56px, 6.4vw, 96px);
+}
+.hero-panel .mu-grid { --grid-line: color-mix(in srgb, var(--on-brand) 11%, transparent); --grid-gap: 64px; --cell: color-mix(in srgb, var(--on-brand) 13%, transparent); }
+.hero-grid {
+  position: relative; z-index: 1; display: grid; align-items: center;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: clamp(40px, 4.4vw, 72px);
+}
+.hero-grid.no-media { grid-template-columns: minmax(0, 1fr); max-width: 860px; }
+.hero-title { font-size: var(--h1); }
+.hl { position: relative; white-space: nowrap; }
+.hl-line {
+  position: absolute; left: -2%; width: 104%; bottom: -0.16em; height: 0.24em; overflow: visible;
+  fill: none; stroke: currentColor; stroke-width: 5; stroke-linecap: round; opacity: 0.55;
+  stroke-dasharray: 1; stroke-dashoffset: 0;
+}
+.js .hl-line { animation: hl-draw 1100ms 450ms var(--ease-out) both; }
+@keyframes hl-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.hero-lede { margin-top: 26px; max-width: 36em; font-size: clamp(1.0625rem, 0.98rem + 0.32vw, 1.25rem); line-height: 1.55; text-wrap: pretty; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; margin-top: 28px; font-weight: 600; font-size: 0.975rem; }
+.hero-where { display: inline-flex; align-items: center; gap: 8px; }
+.open-now:not(.is-open)::before { animation: none; background: transparent; box-shadow: inset 0 0 0 2px currentColor; }
+
+.hero-media { position: relative; padding: 0 0 34px 34px; }
+.hero-frame {
+  position: relative; overflow: hidden; border-radius: 26px; aspect-ratio: 4 / 3.15;
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--on-brand) 16%, transparent), 0 44px 80px -36px rgb(0 0 0 / 0.6);
+}
+.hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+.js .hero-frame img { animation: hero-zoom 1600ms var(--ease-out) both; }
+@keyframes hero-zoom { from { transform: scale(1.1); } to { transform: scale(1); } }
+.hero-sticker { position: absolute; top: -22px; right: -14px; rotate: 3.5deg; padding: 7px 9px; border-radius: 16px; }
+.hero-sticker img { height: 76px; max-width: min(240px, 42vw); border-radius: 9px; }
+.js .hero-sticker { animation: sticker-in 900ms 700ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+@keyframes sticker-in { from { transform: scale(1.35) rotate(-6deg); } to { transform: none; } }
+.rating-card {
+  position: absolute; left: 0; bottom: 0; z-index: 2; display: flex; align-items: center; gap: 16px;
+  padding: 18px 24px 18px 20px; border-radius: 20px; background: #fff; color: var(--ink); box-shadow: var(--shadow-2);
+  --beam-from: var(--brand); --beam-to: color-mix(in oklab, var(--brand) 40%, #fff); --beam-w: 2px; --beam-size: 90px;
+}
+.rating-num { font-size: clamp(2.6rem, 2rem + 1.4vw, 3.4rem); font-weight: 800; font-stretch: 112%; letter-spacing: -0.04em; line-height: 1; min-width: 2.1ch; }
+.rating-side { display: grid; gap: 4px; }
+.rating-of { font-weight: 600; font-size: 0.95rem; color: var(--ink-2); white-space: nowrap; }
+
+/* Stars: grey base with an amber fill clipped for half stars. */
+.stars { display: inline-flex; gap: 2px; }
+.star { position: relative; display: inline-block; width: 20px; height: 20px; }
+.star svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.star-base { color: var(--star-off); }
+.star-fill { color: var(--star); }
+.star.half .star-fill { clip-path: inset(0 50% 0 0); }
+.star.empty .star-fill { display: none; }
+
+/* Services strip */
+.strip { padding-block: clamp(22px, 3vw, 40px); border-bottom: 1px solid var(--line); overflow: hidden; }
+.strip .mu-marquee__group { align-items: center; }
+.strip-item {
+  padding-inline: clamp(16px, 2vw, 28px); white-space: nowrap;
+  font-size: clamp(1.5rem, 1.05rem + 1.9vw, 2.6rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.03em; line-height: 1.1;
+}
+.strip-item:nth-of-type(even) { color: var(--brand-ink); }
+.strip-icon { width: clamp(20px, 2vw, 28px); height: auto; color: var(--brand-ink); flex: none; }
+
+/* Services bento */
+.bento { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.tile {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;
+  min-height: 236px; padding: 28px; border-radius: var(--r-l); background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line), var(--shadow-1);
+  transition: transform 400ms var(--ease-out), box-shadow 400ms var(--ease-out);
+  --spot: color-mix(in srgb, var(--brand) 10%, transparent);
+}
+.tile:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px var(--brand-line), var(--shadow-2); }
+.tile-h { font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.6rem); font-weight: 800; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.12; text-wrap: balance; }
+.tile p { color: var(--ink-2); text-wrap: pretty; }
+.tile-link {
+  margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  font-weight: 700; color: var(--brand-ink); text-decoration: none;
+}
+.tile-link .icon { transition: transform 300ms var(--ease-out); }
+.tile-link:hover .icon, .tile:hover .tile-link .icon { transform: translateX(4px); }
+.tile-feature {
+  grid-column: span 2; min-height: 320px; padding: clamp(28px, 3vw, 44px); background: var(--brand); color: var(--on-brand);
+  box-shadow: var(--shadow-2); justify-content: flex-end;
+}
+.tile-feature .mu-grid { --grid-line: color-mix(in srgb, var(--on-brand) 12%, transparent); --grid-gap: 40px; --pattern-mask: radial-gradient(ellipse 90% 90% at 100% 0%, #000 5%, transparent 70%); }
+.tile-feature > :not(.mu-grid, .tile-mark) { position: relative; z-index: 1; }
+.tile-mark {
+  position: absolute; top: clamp(24px, 3vw, 40px); right: clamp(24px, 3vw, 40px); display: grid; place-items: center;
+  width: clamp(72px, 7vw, 104px); aspect-ratio: 1; border-radius: 28px; z-index: 1;
+  background: color-mix(in srgb, var(--on-brand) 12%, transparent); color: var(--on-brand);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--on-brand) 22%, transparent);
+}
+.tile-mark .icon { width: 46%; height: 46%; }
+.js .tile-feature.is-in .tile-mark .icon { animation: mark-spin 1200ms 300ms var(--ease-out) both; }
+@keyframes mark-spin { from { transform: rotate(-90deg) scale(0.5); } to { transform: none; } }
+.tile-feature .tile-h { font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.9rem); max-width: 14ch; }
+.tile-feature p { color: var(--on-brand); max-width: 40ch; font-size: 1.1rem; }
+.tile-feature .tile-link { color: var(--on-brand); margin-top: 8px; }
+.tile-feature:hover { box-shadow: var(--shadow-2); }
+.tile-photo { padding: 0; min-height: 280px; background: var(--surface); }
+.tile-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-out); }
+.tile-photo:hover img { transform: scale(1.05); }
+.tile-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px;
+  background: rgb(12 13 17 / 0.8); color: #fff; font-size: 0.875rem; font-weight: 600; line-height: 1.35;
+}
+.tile-call { grid-column: span var(--fill-d); background: var(--brand-soft); box-shadow: inset 0 0 0 1px var(--brand-line); justify-content: center; }
+.tile-call .mu-dots { --dot: color-mix(in srgb, var(--brand) 32%, transparent); --pattern-mask: radial-gradient(ellipse 70% 90% at 100% 50%, #000 10%, transparent 70%); }
+.tile-call > :not(.mu-dots) { position: relative; z-index: 1; }
+.tile-call .btn { align-self: flex-start; margin-top: 6px; }
+
+/* Before and after */
+.ba { padding-inline: var(--inset); padding-block: 0; }
+.ba-panel {
+  position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl);
+  background: linear-gradient(160deg, var(--brand-deep), color-mix(in oklab, var(--brand-deep) 70%, #000));
+  color: #fff; padding-block: var(--section) clamp(44px, 5.5vw, 80px);
+}
+.ba-panel .mu-dots { --dot: rgb(255 255 255 / 0.16); --dot-gap: 22px; --pattern-mask: radial-gradient(ellipse 60% 50% at 85% 0%, #000 10%, transparent 75%); }
+.ba-panel .wrap { z-index: 1; }
+.ba-count { font-weight: 700; font-variant-numeric: tabular-nums; color: rgb(255 255 255 / 0.9); }
+.ba-track {
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  border-radius: var(--r-l); overscroll-behavior-x: contain;
+}
+.ba-track::-webkit-scrollbar { display: none; }
+.ba-slide {
+  flex: 0 0 100%; scroll-snap-align: start; position: relative; border-radius: var(--r-l); overflow: hidden;
+  background: color-mix(in oklab, var(--brand-deep) 60%, #000); aspect-ratio: 16 / 9;
+}
+.ba-slide img { width: 100%; height: 100%; object-fit: contain; }
+.ba-slide figcaption {
+  position: absolute; left: 16px; bottom: 16px; max-width: calc(100% - 32px); padding: 9px 14px; border-radius: 10px;
+  background: rgb(10 11 14 / 0.82); color: #fff; font-size: 0.9rem; font-weight: 600;
+}
+.ba-nav { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
+.ba-thumbs { display: flex; gap: 10px; flex: 1; justify-content: center; overflow-x: auto; scrollbar-width: none; padding: 4px; }
+.ba-thumb {
+  flex: none; width: 96px; height: 64px; padding: 0; border: 0; border-radius: 12px; overflow: hidden; cursor: pointer; background: #000;
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 0.18); transition: box-shadow 250ms ease, transform 300ms var(--ease-out);
+}
+.ba-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.ba-thumb[aria-current="true"] { box-shadow: 0 0 0 3px #fff; transform: translateY(-2px); }
+.round-btn {
+  display: inline-grid; place-items: center; flex: none; width: 52px; height: 52px; border: 0; border-radius: 50%; cursor: pointer;
+  background: #fff; color: var(--ink); box-shadow: var(--shadow-1); transition: transform 250ms var(--ease-out);
+}
+.round-btn:hover { transform: scale(1.07); }
+[data-carousel]:not(.is-ready) .ba-nav { display: none; }
+
+/* Gallery bento: the first photo takes a 2 by 2 block, portraits a 1 by 2, the rest 1 by 1;
+   index.html.j2 widens landscapes from the end so the last row always closes. */
+.gal { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(130px, 17vw, 250px); grid-auto-flow: dense; gap: 14px; }
+.gal-item {
+  position: relative; min-width: 0; padding: 0; border: 0; border-radius: var(--r-m); overflow: hidden; cursor: zoom-in;
+  background: var(--surface); box-shadow: var(--shadow-1);
+}
+.gal-lead { grid-column: span 2; grid-row: span 2; border-radius: var(--r-l); }
+.gal-tall { grid-row: span 2; }
+.gal-wd { grid-column: span 2; }
+/* Small sets get fixed layouts: one photo fills the row, two sit side by side, three stack two beside the lead. */
+.gal-n1 .gal-lead { grid-column: 1 / -1; }
+.gal-n2 .gal-item { grid-column: span 2; grid-row: span 2; }
+.gal-n3 .gal-item:not(.gal-lead) { grid-column: span 2; grid-row: span 1; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-out); }
+.gal-item:hover img { transform: scale(1.05); }
+.gal-zoom {
+  position: absolute; right: 12px; top: 12px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: rgb(255 255 255 / 0.94); color: var(--ink); transform: scale(0) rotate(-45deg); transition: transform 350ms var(--ease-out);
+  box-shadow: var(--shadow-1);
+}
+.gal-item:hover .gal-zoom, .gal-item:focus-visible .gal-zoom { transform: none; }
+@media (hover: none) { .gal-zoom { transform: none; } }
+
+/* Reviews */
+.reviews { background: var(--surface); overflow: hidden; }
+.reviews > .mu-dots { --dot: color-mix(in srgb, var(--brand) 26%, transparent); --pattern-mask: radial-gradient(ellipse 50% 60% at 10% 0%, #000 10%, transparent 75%); }
+.rev-summary { display: flex; align-items: center; gap: 16px; }
+.rev-big { font-size: clamp(3rem, 2.2rem + 2.4vw, 4.6rem); font-weight: 800; font-stretch: 112%; letter-spacing: -0.045em; line-height: 0.9; min-width: 2.1ch; }
+.rev-side { display: grid; gap: 6px; font-weight: 600; color: var(--ink-2); }
+.rev-rows { display: grid; gap: 18px; position: relative; }
+.rev-marquee { padding-block: 6px; }
+.rv {
+  position: relative; display: flex; flex-direction: column; gap: 14px; width: 360px; padding: 24px; border-radius: var(--r-l);
+  background: #fff; box-shadow: inset 0 0 0 1px var(--line), var(--shadow-1);
+}
+.rv-top { display: flex; align-items: center; gap: 12px; }
+.rv-stars { width: 108px; height: 20px; overflow: visible; }
+.rv-stars .on { color: var(--star); }
+.rv-stars .off { color: var(--star-off); }
+.rv-avatar {
+  display: grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 50%;
+  background: var(--brand); color: var(--on-brand); font-weight: 800; font-size: 1.1rem;
+}
+.rv figcaption { display: grid; line-height: 1.3; }
+.rv-name { font-weight: 700; }
+.rv-when { font-size: 0.875rem; color: var(--muted); }
+.rv blockquote { font-size: 1rem; line-height: 1.6; color: var(--ink-2); text-wrap: pretty; }
+.rev-tools { display: flex; justify-content: flex-end; margin-top: 6px; }
+.pill-btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; cursor: pointer;
+  background: #fff; color: var(--ink-2); font-weight: 600; font-size: 0.9rem; box-shadow: inset 0 0 0 1px var(--line);
+}
+.pill-btn::before {
+  content: ""; width: 10px; height: 12px; flex: none;
+  background: linear-gradient(90deg, currentColor 0 35%, transparent 35% 65%, currentColor 65%);
+}
+.pill-btn[aria-pressed="true"]::before { background: currentColor; clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.pill-btn:hover { color: var(--ink); box-shadow: inset 0 0 0 1px var(--brand-line); }
+.rev-static { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.rev-static .rv { width: auto; }
+
+/* How a job goes */
+.steps { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 48px); }
+.steps-line {
+  position: absolute; left: 32px; right: 32px; top: 31px; height: 2px; background: var(--line); overflow: hidden; border-radius: 2px;
+}
+.steps-line span { position: absolute; inset: 0; background: var(--brand); transform-origin: left; transform: scaleX(1); }
+.js .steps.is-pending .steps-line span { transform: scaleX(0); }
+.js .steps.is-in .steps-line span { animation: line-grow 1400ms 200ms var(--ease-out) both; }
+@keyframes line-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.step { position: relative; display: grid; gap: 14px; align-content: start; }
+.step-num {
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  background: var(--brand); color: var(--on-brand); font-size: 1.5rem; font-weight: 800; font-stretch: 112%;
+  box-shadow: 0 0 0 8px #fff, 0 14px 26px -14px rgb(18 21 27 / 0.5);
+}
+.js .steps.is-in .step-num { animation: pop 700ms calc(300ms + var(--i) * 260ms) cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+@keyframes pop { from { transform: scale(0.4); } to { transform: none; } }
+.step-h { font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.6rem); font-weight: 800; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.15; margin-top: 8px; }
+.step p { color: var(--ink-2); max-width: 34ch; }
+.steps-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(40px, 5vw, 64px); }
+
+/* About */
+.about { padding-top: 0; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(36px, 6vw, 96px); align-items: center; }
+.about-photo { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; border-radius: var(--r-xl); box-shadow: var(--shadow-2); }
+.about-plate {
+  position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3.4; border-radius: var(--r-xl); overflow: hidden;
+  background: var(--surface); box-shadow: inset 0 0 0 1px var(--line);
+}
+.about-plate .mu-dots { --dot: color-mix(in srgb, var(--brand) 38%, transparent); --dot-gap: 22px; --pattern-mask: radial-gradient(ellipse 70% 70% at 50% 50%, #000 20%, transparent 80%); }
+.plate-xl { position: relative; z-index: 1; padding: 12px 14px; border-radius: 22px; rotate: -3deg; box-shadow: 0 0 0 1px rgb(18 21 27 / 0.06), 0 34px 60px -26px rgb(18 21 27 / 0.45); }
+.plate-xl img { height: auto; width: min(420px, 62vw); max-width: none; max-height: 200px; border-radius: 12px; }
+.mono-xl { position: relative; z-index: 1; width: clamp(140px, 22vw, 220px); height: clamp(140px, 22vw, 220px); border-radius: 40px; font-size: clamp(3.4rem, 2rem + 4vw, 5.6rem); rotate: -3deg; box-shadow: 0 34px 60px -26px rgb(18 21 27 / 0.45); }
+.about-text { margin-top: 24px; font-size: 1.125rem; line-height: 1.65; color: var(--ink-2); max-width: 60ch; text-wrap: pretty; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 36px; border-radius: var(--r-m); overflow: hidden; background: var(--line); box-shadow: inset 0 0 0 1px var(--line); }
+.facts div { background: #fff; padding: 18px 20px; }
+.facts div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.facts dt { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.facts dd { margin-top: 4px; font-weight: 700; line-height: 1.35; }
+.tel-inline { display: inline-flex; align-items: center; min-height: 44px; margin-block: -12px; color: var(--brand-ink); }
+
+/* Contact */
+.contact { padding: 0 var(--inset) var(--inset); }
+.contact-panel {
+  position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl);
+  background: radial-gradient(120% 120% at 0% 100%, var(--field-shade), transparent 60%), var(--brand);
+  color: var(--on-brand); padding-block: var(--section);
+}
+.contact-panel .mu-grid { --grid-line: color-mix(in srgb, var(--on-brand) 10%, transparent); --grid-gap: 64px; --pattern-mask: radial-gradient(ellipse 70% 80% at 0% 0%, #000 10%, transparent 70%); }
+.contact-grid { z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.contact-info .h2 { max-width: 15ch; }
+.contact-lede { margin-top: 20px; font-size: 1.15rem; max-width: 40ch; }
+.phone-big {
+  display: inline-flex; align-items: center; gap: 16px; margin-top: 34px; min-height: 44px;
+  font-size: clamp(2.1rem, 1.3rem + 3vw, 3.6rem); font-weight: 800; font-stretch: 110%; letter-spacing: -0.035em; line-height: 1;
+  text-decoration: none; font-variant-numeric: tabular-nums;
+}
+.phone-icon {
+  display: grid; place-items: center; width: 1.3em; height: 1.3em; border-radius: 50%; flex: none;
+  background: var(--on-brand); color: var(--brand-ink);
+}
+.phone-icon .icon { width: 0.6em; height: 0.6em; }
+.phone-big:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+.contact-rows { display: grid; gap: 18px; margin-top: 40px; }
+.contact-rows li { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; align-items: start; }
+.row-icon {
+  grid-row: span 2; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px;
+  background: color-mix(in srgb, var(--on-brand) 14%, transparent);
+}
+.row-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.01em; }
+.row-value { font-weight: 600; font-size: 1.05rem; }
+a.row-value { display: inline-flex; min-height: 44px; align-items: flex-start; }
+.hours { display: grid; grid-template-columns: max-content max-content; gap: 4px 24px; margin-top: 2px; }
+.hours dd { font-variant-numeric: tabular-nums; }
+.contact .open-now { margin-top: 12px; font-weight: 700; }
+
+.quote-card {
+  position: relative; border-radius: var(--r-xl); background: #fff; color: var(--ink); padding: clamp(24px, 3vw, 40px);
+  box-shadow: 0 40px 80px -40px rgb(0 0 0 / 0.55);
+  --beam-from: var(--brand); --beam-to: color-mix(in oklab, var(--brand) 35%, #fff); --beam-w: 2px; --beam-size: 140px; --beam-dur: 9s;
+}
+.quote-h { font-size: clamp(1.6rem, 1.3rem + 0.9vw, 2.1rem); font-weight: 800; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; }
+.progress { display: flex; height: 6px; margin-top: 20px; border-radius: 6px; background: var(--surface); overflow: hidden; }
+.progress span { flex: 1; background: var(--brand); transform-origin: left; transform: scaleX(var(--p, 0.3333)); transition: transform 500ms var(--ease-out); border-radius: 6px; }
+.step-label { margin-top: 10px; font-size: 0.875rem; font-weight: 600; color: var(--muted); }
+.qstep { display: grid; gap: 16px; margin-top: 22px; }
+.qstep legend { padding: 0; margin-bottom: 14px; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip span {
+  display: inline-flex; align-items: center; min-height: 46px; padding: 10px 16px; border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px var(--line); font-weight: 600; font-size: 0.95rem; line-height: 1.25;
+  transition: box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+}
+.chip:hover span { box-shadow: inset 0 0 0 1.5px var(--brand-line); }
+.chip input:checked + span { background: var(--brand); color: var(--on-brand); box-shadow: none; }
+.chip input:focus-visible + span { outline: 3px solid var(--brand-ink); outline-offset: 3px; }
+.field { display: grid; gap: 7px; }
+.field label { font-weight: 700; font-size: 0.95rem; }
+.field input, .field textarea {
+  width: 100%; min-height: 50px; padding: 12px 14px; border: 0; border-radius: 12px; background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px transparent; transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.field input:focus, .field textarea:focus { outline: none; background: #fff; box-shadow: inset 0 0 0 2px var(--brand-ink); }
+.field ::placeholder { color: var(--muted); }
+.qnav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-top: 6px; }
+.quote-note { margin-top: 22px; padding: 18px; border-radius: 14px; background: var(--brand-soft); box-shadow: inset 0 0 0 1px var(--brand-line); display: grid; gap: 14px; justify-items: start; font-weight: 600; }
+.quote-note:focus { outline: none; }
+
+/* Footer */
+.foot { background: #0f1116; color: #d9dce2; padding-block: clamp(56px, 7vw, 96px) 28px; margin-top: var(--inset); }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+.foot-brand { display: grid; gap: 16px; justify-items: start; }
+.foot-brand p { color: #b7bcc6; }
+.foot-word { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; font-stretch: 108%; font-size: 1.15rem; color: #fff; }
+.foot-call { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 1.4rem; font-weight: 800; font-stretch: 108%; color: #fff; text-decoration: none; }
+.foot-col { display: grid; align-content: start; gap: 6px; }
+.foot-col h2 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.foot-col a, .foot-col p, .foot-col li { color: #c4c8d0; text-decoration: none; }
+.foot-col a { display: inline-flex; align-items: center; min-height: 36px; }
+.foot-col a:hover { color: #fff; text-decoration: underline; }
+.foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 56px; padding-top: 24px; border-top: 1px solid #262a33; font-size: 0.875rem; color: #a9aeb8; }
+.foot-base a { color: #fff; }
+
+/* Sticky call bar on phones */
+.callbar { display: none; }
+
+/* Lightbox */
+.lightbox { width: min(100vw - 24px, 1280px); max-height: calc(100vh - 24px); padding: 0; border: 0; border-radius: 20px; background: #0d0f13; color: #fff; overflow: hidden; }
+.lightbox::backdrop { background: rgb(8 9 12 / 0.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.lb-figure { display: grid; }
+.lb-figure img { width: 100%; max-height: calc(100vh - 110px); object-fit: contain; background: #000; }
+.lb-figure figcaption { padding: 14px 20px; font-weight: 600; font-size: 0.95rem; }
+.lb-prev, .lb-next { position: absolute; top: calc(50% - 46px); }
+.lb-prev { left: 14px; }
+.lb-next { right: 14px; }
+.lb-close { position: absolute; top: 14px; right: 14px; }
+.lightbox[open] { animation: lb-in 380ms var(--ease-out) both; }
+@keyframes lb-in { from { transform: translateY(16px) scale(0.97); } to { transform: none; } }
+
+/* Tablet */
+@media (max-width: 1080px) {
+  .nav { display: none; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-media { max-width: 760px; }
+  .hero-copy { max-width: 720px; }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tile-call { grid-column: span var(--fill-t); }
+  .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-media { max-width: 640px; }
+  .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  body { font-size: 1rem; padding-bottom: 84px; }
+  .display { font-stretch: 106%; letter-spacing: -0.028em; }
+  .head-row { min-height: 66px; gap: 12px; }
+  .plate img { height: 40px; max-width: 160px; }
+  .wordmark { font-size: 1rem; }
+  .btn-head { min-height: 44px; padding: 0 16px; }
+  .head-call-long { display: none; }
+  .head-call-short { display: inline; }
+  .hero-panel { padding-block: 36px 40px; }
+  .hero-grid { gap: 0; }
+  .hero-copy { display: contents; }
+  .hero-title { order: 1; }
+  .hero-media { order: 2; padding: 0 0 30px 0; margin-top: 30px; }
+  .hero-lede { order: 3; margin-top: 10px; }
+  .hero-actions { order: 4; margin-top: 26px; }
+  .hero-meta { order: 5; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .wordmark { font-size: 0.95rem; max-width: 16ch; }
+  .hero-frame { aspect-ratio: 4 / 3.2; border-radius: 20px; box-shadow: 0 0 0 6px color-mix(in srgb, var(--on-brand) 16%, transparent), 0 30px 60px -30px rgb(0 0 0 / 0.6); }
+  .hero-sticker { top: -16px; right: -6px; padding: 5px 6px; border-radius: 12px; }
+  .hero-sticker img { height: 46px; }
+  .rating-card { left: 12px; padding: 12px 16px 12px 14px; gap: 12px; border-radius: 16px; }
+  .star { width: 17px; height: 17px; }
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .tile-feature, .tile-call { grid-column: auto; }
+  .tile { min-height: 0; padding: 24px; }
+  .tile-feature { min-height: 280px; }
+  .tile-photo { min-height: 260px; }
+  .ba-slide { aspect-ratio: 4 / 3; }
+  .ba-thumbs { justify-content: flex-start; }
+  .ba-thumb { width: 72px; height: 52px; }
+  .gal { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; gap: 10px; }
+  .gal-item { border-radius: 12px; }
+  .gal-wd, .gal-n3 .gal-item:not(.gal-lead) { grid-column: auto; }
+  .gal-wm, .gal-n2 .gal-item:not(.gal-lead) { grid-column: span 2; grid-row: span 1; }
+  .gal-n2 .gal-lead { grid-row: span 2; }
+  .rv { width: 300px; padding: 20px; }
+  .rev-tools { justify-content: flex-start; }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .steps-line { left: 31px; right: auto; top: 32px; bottom: 32px; width: 2px; height: auto; }
+  .steps-line span { transform-origin: top; }
+  .js .steps.is-pending .steps-line span { transform: scaleY(0); }
+  .js .steps.is-in .steps-line span { animation-name: line-grow-y; }
+  .step { grid-template-columns: 64px minmax(0, 1fr); column-gap: 18px; }
+  .step-num { grid-row: span 2; }
+  .step-h { margin-top: 14px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .about-plate { aspect-ratio: 16 / 11; }
+  .steps-cta .btn { flex: 1 1 100%; }
+  .phone-big { gap: 12px; }
+  .hours { gap: 2px 16px; }
+  .qnav .btn { flex: 1; }
+  .foot-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .callbar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: flex; gap: 10px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgb(255 255 255 / 0.94);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 -10px 30px -18px rgb(18 21 27 / 0.45);
+  }
+  .callbar .btn { min-height: 52px; }
+  .callbar .mu-shimmer { flex: 1; }
+  .callbar .btn-outline { padding: 0 20px; }
+  .lb-prev, .lb-next { top: auto; bottom: 64px; }
+}
+@keyframes line-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .strip .mu-marquee, .strip .mu-marquee__group { flex-wrap: nowrap; justify-content: flex-start; }
+  .js .hl-line, .js .hero-frame img, .js .hero-sticker, .js .steps.is-in .step-num, .lightbox[open] { animation: none; }
+  .js .steps.is-pending .steps-line span, .js .steps.is-in .steps-line span { transform: none; animation: none; }
+  .btn, .tile, .gal-item img, .tile-photo img { transition: none; }
+}</style>
+</head>
+<body id="top" data-name="Specialty Coatings, Inc.">
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-star" viewBox="0 0 20 20"><svg class="sprite-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd"/>
+</svg>
+</symbol>
+  <symbol id="i-sparkles" viewBox="0 0 20 20"><svg class="sprite-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z"/>
+</svg>
+</symbol>
+</svg>
+<div class="pv-banner" data-preview-banner role="note">
+  <p class="pv-banner-text">Preview built for Specialty Coatings, Inc. by Iron Tiger Digital. Not live yet.</p>
+  <a class="pv-banner-call" href="tel:+15129567133">Questions? Call (512) 956-7133</a>
+</div>
+<style>
+  .pv-banner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 0 24px; padding: 4px 20px; padding-inline: var(--margin, 20px);
+    background: var(--ink, #ece8e1); color: var(--bg, #151618);
+    font: 500 0.875rem/1.35 var(--font, system-ui, sans-serif);
+  }
+  .pv-banner-text { margin: 0; padding: 12px 0; }
+  .pv-banner-call {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px;
+  }
+  .pv-banner-call:hover { text-decoration-thickness: 2px; }
+  @media (max-width: 640px) {
+    .pv-banner { padding-top: 6px; }
+    .pv-banner-text { padding: 4px 0 0; }
+  }
+</style>
+<header class="site-head" data-head>
+  <div class="wrap head-row">
+    <a class="brandmark" href="#top" aria-label="Specialty Coatings, Inc., back to top">
+      <span class="plate"><img src="assets/logo.png" alt="Specialty Coatings, Inc. logo" height="44"></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#services">Services</a>
+<a href="#work">Work</a><a href="#reviews">Reviews</a>      <a href="#process">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-brand btn-head mu-shimmer" href="tel:+16155919491" style="--shimmer-bg: var(--brand); --shimmer-fg: var(--on-brand); --spark: #ffffff">
+      <span class="mu-shimmer__spark" aria-hidden="true"><i></i></span><span class="mu-shimmer__fill" aria-hidden="true"></span>
+      <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+<span class="head-call-long">(615) 591-9491</span><span class="head-call-short">Call</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-panel">
+      <div class="mu-grid" aria-hidden="true">
+<i class="mu-cell" style="--x: 2; --y: 1; --d: 0s"></i><i class="mu-cell" style="--x: 6; --y: 0; --d: 1.4s"></i><i class="mu-cell" style="--x: 9; --y: 2; --d: 2.6s"></i><i class="mu-cell" style="--x: 3; --y: 4; --d: 3.3s"></i><i class="mu-cell" style="--x: 12; --y: 1; --d: 0.7s"></i><i class="mu-cell" style="--x: 7; --y: 5; --d: 4.1s"></i><i class="mu-cell" style="--x: 14; --y: 3; --d: 2.0s"></i><i class="mu-cell" style="--x: 1; --y: 6; --d: 5.0s"></i>      </div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-h" class="display hero-title" style="--h1: clamp(2.2rem, 1.2rem + 3vw, 3.85rem)" data-reveal>Epoxy Flooring Contractor in <span class="hl">Nashville<svg class="hl-line" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13.5C60 5 140 3.5 297 9" pathLength="1"/></svg></span>, Tennessee</h1>
+          <p class="hero-lede" data-reveal style="--i: 1">Specialty Coatings installs epoxy and concrete floor coatings for commercial and industrial spaces in Nashville. The crew also handles shot blasting, surface prep, and flooring removal.</p>
+          <div class="hero-actions" data-reveal style="--i: 2">
+            <a class="btn btn-xl mu-shimmer" href="tel:+16155919491" style="--shimmer-bg: var(--hero-cta-bg); --shimmer-fg: var(--hero-cta-fg); --spark: var(--brand)">
+              <span class="mu-shimmer__spark" aria-hidden="true"><i></i></span><span class="mu-shimmer__fill" aria-hidden="true"></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+<span>Call (615) 591-9491</span>
+            </a>
+            <a class="btn btn-xl btn-ghost-on" href="#quote">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+          </div>
+          <p class="hero-meta" data-reveal style="--i: 3">
+            <span class="hero-where"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" clip-rule="evenodd"/>
+</svg>
+Based in Nashville, TN</span>
+<span class="mu-pulse open-now" data-open-now hidden></span>          </p>
+        </div>
+        <div class="hero-media" data-reveal style="--i: 1; --reveal-y: 40px">
+          <div class="hero-frame">
+            <img src="assets/photos/p00-1600.webp" srcset="assets/photos/p00-800.webp 800w, assets/photos/p00-1600.webp 1600w" sizes="(min-width: 1024px) 48vw, 100vw" width="1600" height="1067" fetchpriority="high" loading="eager" alt="Glossy white epoxy floor in an aircraft hangar">
+          </div>
+          <span class="plate hero-sticker" aria-hidden="true"><img src="assets/logo.png" alt="" height="80"></span>
+          <div class="rating-card">
+            <span class="mu-beam" aria-hidden="true"></span>
+            <span class="rating-num mu-ticker" data-ticker data-value="4.9" data-decimals="1" data-delay="350">4.9</span>
+            <span class="rating-side">
+              <span class="stars " aria-hidden="true"><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span></span>
+              <span class="rating-of"><span class="mu-ticker" data-ticker data-value="25" data-delay="350">25</span> Google reviews</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="mu-marquee mu-marquee--fade" style="--duration: 42s; --gap: 0px">
+      <div class="mu-marquee__group">
+<span class="strip-item">Epoxy and Urethane</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Epoxy Flake Floors</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Troweled Mortars</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Concrete Polishing</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Shot Blasting Prep</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Flooring Removal</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg>      </div>
+      <div class="mu-marquee__group">
+<span class="strip-item">Epoxy and Urethane</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Epoxy Flake Floors</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Troweled Mortars</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Concrete Polishing</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Shot Blasting Prep</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Flooring Removal</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg>      </div>
+      <div class="mu-marquee__group">
+<span class="strip-item">Epoxy and Urethane</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Epoxy Flake Floors</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Troweled Mortars</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Concrete Polishing</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Shot Blasting Prep</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Flooring Removal</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg>      </div>
+      <div class="mu-marquee__group">
+<span class="strip-item">Epoxy and Urethane</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Epoxy Flake Floors</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Troweled Mortars</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Concrete Polishing</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Shot Blasting Prep</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span class="strip-item">Flooring Removal</span><svg class="strip-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg>      </div>
+    </div>
+  </div>
+
+  <section id="services" class="section services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="services-h" class="display h2" data-reveal>Services in Nashville</h2>
+        <a class="btn btn-outline" href="#quote" data-reveal style="--i: 1">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+      </div>
+      <div class="bento" style="--fill-d: 1; --fill-t: 2">
+        <article class="tile tile-feature" data-reveal>
+          <span class="mu-grid" aria-hidden="true"></span>
+          <span class="tile-mark" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z"/>
+</svg>
+</span>
+          <h3 class="tile-h">Epoxy and Urethane</h3>
+          <p>Floor coating systems built on epoxy, suited to both high traffic and low traffic areas.</p>
+          <a class="tile-link" href="#quote" data-pick="Epoxy and Urethane" aria-label="Request a quote for Epoxy and Urethane">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+        </article>
+        <figure class="tile tile-photo" data-reveal style="--i: 1">
+          <img src="assets/photos/p04-800.webp" srcset="assets/photos/p04-800.webp 800w, assets/photos/p04-1600.webp 1170w" sizes="(min-width: 1024px) 30vw, 100vw" width="1170" height="600" loading="lazy" alt="Glossy gray epoxy floor in a classic car showroom">
+          <figcaption>Glossy gray epoxy floor in a classic car showroom</figcaption>
+        </figure>
+        <article class="tile mu-spot" data-reveal style="--i: 0">
+          <h3 class="tile-h">Epoxy Flake Floors</h3>
+          <p>Decorative flake floor coating applied over prepared concrete.</p>
+          <a class="tile-link" href="#quote" data-pick="Epoxy Flake Floors" aria-label="Request a quote for Epoxy Flake Floors">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+        </article>
+        <article class="tile mu-spot" data-reveal style="--i: 1">
+          <h3 class="tile-h">Troweled Mortars</h3>
+          <p>Troweled floor systems known for impact, abrasion, thermal shock, and chemical resistance.</p>
+          <a class="tile-link" href="#quote" data-pick="Troweled Mortars" aria-label="Request a quote for Troweled Mortars">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+        </article>
+        <article class="tile mu-spot" data-reveal style="--i: 2">
+          <h3 class="tile-h">Concrete Polishing</h3>
+          <p>Polished and acid stained concrete floors with decorative design options.</p>
+          <a class="tile-link" href="#quote" data-pick="Concrete Polishing" aria-label="Request a quote for Concrete Polishing">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+        </article>
+        <article class="tile mu-spot" data-reveal style="--i: 0">
+          <h3 class="tile-h">Shot Blasting Prep</h3>
+          <p>Shot blasters and grinders prepare thousands of square feet of concrete per day.</p>
+          <a class="tile-link" href="#quote" data-pick="Shot Blasting Prep" aria-label="Request a quote for Shot Blasting Prep">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+        </article>
+        <article class="tile mu-spot" data-reveal style="--i: 1">
+          <h3 class="tile-h">Flooring Removal</h3>
+          <p>Removal of old flooring, including VCT tile, before new coatings go down.</p>
+          <a class="tile-link" href="#quote" data-pick="Flooring Removal" aria-label="Request a quote for Flooring Removal">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+        </article>
+        <article class="tile tile-call" data-reveal style="--i: 1">
+          <span class="mu-dots" aria-hidden="true"></span>
+          <h3 class="tile-h">Need something else?</h3>
+          <p>Call Specialty Coatings, Inc. to talk through the job.</p>
+          <a class="btn btn-brand" href="tel:+16155919491"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+Call (615) 591-9491</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="work" class="section gallery" aria-labelledby="gal-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="gal-h" class="display h2" data-reveal>See the work</h2>
+        <p class="sec-note" data-reveal style="--i: 1">Select a photo to see it larger.</p>
+      </div>
+      <div class="gal gal-n4">
+        <button class="gal-item gal-lead" type="button" data-lb data-full="assets/photos/p02-1600.webp" data-alt="Polished epoxy floor across a large industrial manufacturing facility" data-w="800" data-h="500" aria-label="Open photo: Polished epoxy floor across a large industrial manufacturing facility" data-reveal style="--i: 0">
+          <img src="assets/photos/p02-1600.webp" srcset="assets/photos/p02-1600.webp 800w" sizes="(min-width: 1024px) 640px, 100vw" width="800" height="500" loading="lazy" alt="Polished epoxy floor across a large industrial manufacturing facility">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item" type="button" data-lb data-full="assets/photos/p10-1600.webp" data-alt="Black epoxy floor with blue and yellow safety striping" data-w="1296" data-h="968" aria-label="Open photo: Black epoxy floor with blue and yellow safety striping" data-reveal style="--i: 1">
+          <img src="assets/photos/p10-800.webp" srcset="assets/photos/p10-800.webp 800w, assets/photos/p10-1600.webp 1296w" sizes="(min-width: 1024px) 320px, 50vw" width="1296" height="968" loading="lazy" alt="Black epoxy floor with blue and yellow safety striping">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item" type="button" data-lb data-full="assets/photos/p13-1600.webp" data-alt="Stained concrete floor with red and black star inlay" data-w="800" data-h="500" aria-label="Open photo: Stained concrete floor with red and black star inlay" data-reveal style="--i: 2">
+          <img src="assets/photos/p13-800.webp" srcset="assets/photos/p13-1600.webp 800w" sizes="(min-width: 1024px) 320px, 50vw" width="800" height="500" loading="lazy" alt="Stained concrete floor with red and black star inlay">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item" type="button" data-lb data-full="assets/photos/p09-1600.webp" data-alt="Stained concrete floor in a modern office reception lobby" data-w="768" data-h="700" aria-label="Open photo: Stained concrete floor in a modern office reception lobby" data-reveal style="--i: 3">
+          <img src="assets/photos/p09-800.webp" srcset="assets/photos/p09-1600.webp 768w" sizes="(min-width: 1024px) 320px, 50vw" width="768" height="700" loading="lazy" alt="Stained concrete floor in a modern office reception lobby">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item" type="button" data-lb data-full="assets/photos/p06-1600.webp" data-alt="Glossy epoxy floor beneath large printing press equipment" data-w="800" data-h="500" aria-label="Open photo: Glossy epoxy floor beneath large printing press equipment" data-reveal style="--i: 0">
+          <img src="assets/photos/p06-800.webp" srcset="assets/photos/p06-1600.webp 800w" sizes="(min-width: 1024px) 320px, 50vw" width="800" height="500" loading="lazy" alt="Glossy epoxy floor beneath large printing press equipment">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item" type="button" data-lb data-full="assets/photos/p11-1600.webp" data-alt="Clean white epoxy floor in a food processing plant" data-w="800" data-h="500" aria-label="Open photo: Clean white epoxy floor in a food processing plant" data-reveal style="--i: 1">
+          <img src="assets/photos/p11-800.webp" srcset="assets/photos/p11-1600.webp 800w" sizes="(min-width: 1024px) 320px, 50vw" width="800" height="500" loading="lazy" alt="Clean white epoxy floor in a food processing plant">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item" type="button" data-lb data-full="assets/photos/p05-1600.webp" data-alt="Glossy epoxy floor in an industrial plant with stairs" data-w="800" data-h="500" aria-label="Open photo: Glossy epoxy floor in an industrial plant with stairs" data-reveal style="--i: 2">
+          <img src="assets/photos/p05-800.webp" srcset="assets/photos/p05-1600.webp 800w" sizes="(min-width: 1024px) 320px, 50vw" width="800" height="500" loading="lazy" alt="Glossy epoxy floor in an industrial plant with stairs">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+        <button class="gal-item gal-wd gal-wm" type="button" data-lb data-full="assets/photos/p07-1600.webp" data-alt="Polished stained concrete floor in a modern cafeteria seating area" data-w="1170" data-h="600" aria-label="Open photo: Polished stained concrete floor in a modern cafeteria seating area" data-reveal style="--i: 3">
+          <img src="assets/photos/p07-800.webp" srcset="assets/photos/p07-800.webp 800w, assets/photos/p07-1600.webp 1170w" sizes="(min-width: 1024px) 320px, 50vw" width="1170" height="600" loading="lazy" alt="Polished stained concrete floor in a modern cafeteria seating area">
+          <span class="gal-zoom" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section reviews" aria-labelledby="rev-h">
+    <span class="mu-dots" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="rev-h" class="display h2" data-reveal>What customers say</h2>
+        <div class="rev-summary" data-reveal style="--i: 1">
+          <span class="rev-big mu-ticker" data-ticker data-value="4.9" data-decimals="1">4.9</span>
+          <span class="rev-side"><span class="stars " aria-hidden="true"><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span><span class="star full"><svg class="star-base" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg><svg class="star-fill" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="#i-star"></use></svg></span></span><span>From <span class="mu-ticker" data-ticker data-value="25">25</span> Google reviews</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="rev-rows">
+      <div class="mu-marquee mu-marquee--fade rev-marquee" style="--duration: 55s; --gap: 18px">
+        <div class="mu-marquee__group">
+<figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">S</span>
+        <figcaption><span class="rv-name">Steven W.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>Specialty Coatings is a very professional outfit with well trained and seasoned crews, well maintained equipment, and top notch project managers. Their work ethic and reputation are outstanding in the industry. I would not hesitate to recommend them.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">C</span>
+        <figcaption><span class="rv-name">Conrad S.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I have worked with Specialty Coatings over the past 10 years on commercial and industrial construction projects installing various complex flooring systems including polished concrete, flake epoxy, and ESD. Their focus on quality is impeccable. They do it right and they stand behind their work. ...</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">G</span>
+        <figcaption><span class="rv-name">Gena S.</span><span class="rv-when">Google review, 9 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I engaged Specialty Coatings to restripe a large warehouse floor for a leading automotive company. They did an outstanding job. The work was extensive and had to be coordinated while the business was still operating over the weekend. Specialty Coatings was professional and the finished product impeccable.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">A</span>
+        <figcaption><span class="rv-name">Austin W.</span><span class="rv-when">Google review, 5 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>We have worked with Specialty Coatings numerous times and have never had an issue. They are great communicators, schedulers, and provide a terrific end product. Great company to work with!</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">M</span>
+        <figcaption><span class="rv-name">Mitchell B.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I am a commercial builder and use Specialty Coatings extensively. I rely on them to deliver high quality beautiful floors and they always do exactly what I need them to do regardless of the projects challenges. I highly recommend them.</p></blockquote>
+    </figure>        </div>
+        <div class="mu-marquee__group" aria-hidden="true">
+<figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">S</span>
+        <figcaption><span class="rv-name">Steven W.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>Specialty Coatings is a very professional outfit with well trained and seasoned crews, well maintained equipment, and top notch project managers. Their work ethic and reputation are outstanding in the industry. I would not hesitate to recommend them.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">C</span>
+        <figcaption><span class="rv-name">Conrad S.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I have worked with Specialty Coatings over the past 10 years on commercial and industrial construction projects installing various complex flooring systems including polished concrete, flake epoxy, and ESD. Their focus on quality is impeccable. They do it right and they stand behind their work. ...</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">G</span>
+        <figcaption><span class="rv-name">Gena S.</span><span class="rv-when">Google review, 9 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I engaged Specialty Coatings to restripe a large warehouse floor for a leading automotive company. They did an outstanding job. The work was extensive and had to be coordinated while the business was still operating over the weekend. Specialty Coatings was professional and the finished product impeccable.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">A</span>
+        <figcaption><span class="rv-name">Austin W.</span><span class="rv-when">Google review, 5 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>We have worked with Specialty Coatings numerous times and have never had an issue. They are great communicators, schedulers, and provide a terrific end product. Great company to work with!</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">M</span>
+        <figcaption><span class="rv-name">Mitchell B.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I am a commercial builder and use Specialty Coatings extensively. I rely on them to deliver high quality beautiful floors and they always do exactly what I need them to do regardless of the projects challenges. I highly recommend them.</p></blockquote>
+    </figure>        </div>
+        <div class="mu-marquee__group" aria-hidden="true">
+<figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">S</span>
+        <figcaption><span class="rv-name">Steven W.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>Specialty Coatings is a very professional outfit with well trained and seasoned crews, well maintained equipment, and top notch project managers. Their work ethic and reputation are outstanding in the industry. I would not hesitate to recommend them.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">C</span>
+        <figcaption><span class="rv-name">Conrad S.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I have worked with Specialty Coatings over the past 10 years on commercial and industrial construction projects installing various complex flooring systems including polished concrete, flake epoxy, and ESD. Their focus on quality is impeccable. They do it right and they stand behind their work. ...</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">G</span>
+        <figcaption><span class="rv-name">Gena S.</span><span class="rv-when">Google review, 9 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I engaged Specialty Coatings to restripe a large warehouse floor for a leading automotive company. They did an outstanding job. The work was extensive and had to be coordinated while the business was still operating over the weekend. Specialty Coatings was professional and the finished product impeccable.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">A</span>
+        <figcaption><span class="rv-name">Austin W.</span><span class="rv-when">Google review, 5 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>We have worked with Specialty Coatings numerous times and have never had an issue. They are great communicators, schedulers, and provide a terrific end product. Great company to work with!</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">M</span>
+        <figcaption><span class="rv-name">Mitchell B.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I am a commercial builder and use Specialty Coatings extensively. I rely on them to deliver high quality beautiful floors and they always do exactly what I need them to do regardless of the projects challenges. I highly recommend them.</p></blockquote>
+    </figure>        </div>
+      </div>
+      <div class="mu-marquee mu-marquee--fade rev-marquee mu-marquee--reverse" style="--duration: 55s; --gap: 18px">
+        <div class="mu-marquee__group" aria-hidden="true">
+<figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">M</span>
+        <figcaption><span class="rv-name">Mitchell B.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I am a commercial builder and use Specialty Coatings extensively. I rely on them to deliver high quality beautiful floors and they always do exactly what I need them to do regardless of the projects challenges. I highly recommend them.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">A</span>
+        <figcaption><span class="rv-name">Austin W.</span><span class="rv-when">Google review, 5 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>We have worked with Specialty Coatings numerous times and have never had an issue. They are great communicators, schedulers, and provide a terrific end product. Great company to work with!</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">G</span>
+        <figcaption><span class="rv-name">Gena S.</span><span class="rv-when">Google review, 9 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I engaged Specialty Coatings to restripe a large warehouse floor for a leading automotive company. They did an outstanding job. The work was extensive and had to be coordinated while the business was still operating over the weekend. Specialty Coatings was professional and the finished product impeccable.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">C</span>
+        <figcaption><span class="rv-name">Conrad S.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I have worked with Specialty Coatings over the past 10 years on commercial and industrial construction projects installing various complex flooring systems including polished concrete, flake epoxy, and ESD. Their focus on quality is impeccable. They do it right and they stand behind their work. ...</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">S</span>
+        <figcaption><span class="rv-name">Steven W.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>Specialty Coatings is a very professional outfit with well trained and seasoned crews, well maintained equipment, and top notch project managers. Their work ethic and reputation are outstanding in the industry. I would not hesitate to recommend them.</p></blockquote>
+    </figure>        </div>
+        <div class="mu-marquee__group" aria-hidden="true">
+<figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">M</span>
+        <figcaption><span class="rv-name">Mitchell B.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I am a commercial builder and use Specialty Coatings extensively. I rely on them to deliver high quality beautiful floors and they always do exactly what I need them to do regardless of the projects challenges. I highly recommend them.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">A</span>
+        <figcaption><span class="rv-name">Austin W.</span><span class="rv-when">Google review, 5 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>We have worked with Specialty Coatings numerous times and have never had an issue. They are great communicators, schedulers, and provide a terrific end product. Great company to work with!</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">G</span>
+        <figcaption><span class="rv-name">Gena S.</span><span class="rv-when">Google review, 9 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I engaged Specialty Coatings to restripe a large warehouse floor for a leading automotive company. They did an outstanding job. The work was extensive and had to be coordinated while the business was still operating over the weekend. Specialty Coatings was professional and the finished product impeccable.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">C</span>
+        <figcaption><span class="rv-name">Conrad S.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I have worked with Specialty Coatings over the past 10 years on commercial and industrial construction projects installing various complex flooring systems including polished concrete, flake epoxy, and ESD. Their focus on quality is impeccable. They do it right and they stand behind their work. ...</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">S</span>
+        <figcaption><span class="rv-name">Steven W.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>Specialty Coatings is a very professional outfit with well trained and seasoned crews, well maintained equipment, and top notch project managers. Their work ethic and reputation are outstanding in the industry. I would not hesitate to recommend them.</p></blockquote>
+    </figure>        </div>
+        <div class="mu-marquee__group" aria-hidden="true">
+<figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">M</span>
+        <figcaption><span class="rv-name">Mitchell B.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I am a commercial builder and use Specialty Coatings extensively. I rely on them to deliver high quality beautiful floors and they always do exactly what I need them to do regardless of the projects challenges. I highly recommend them.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">A</span>
+        <figcaption><span class="rv-name">Austin W.</span><span class="rv-when">Google review, 5 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>We have worked with Specialty Coatings numerous times and have never had an issue. They are great communicators, schedulers, and provide a terrific end product. Great company to work with!</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">G</span>
+        <figcaption><span class="rv-name">Gena S.</span><span class="rv-when">Google review, 9 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I engaged Specialty Coatings to restripe a large warehouse floor for a leading automotive company. They did an outstanding job. The work was extensive and had to be coordinated while the business was still operating over the weekend. Specialty Coatings was professional and the finished product impeccable.</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">C</span>
+        <figcaption><span class="rv-name">Conrad S.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>I have worked with Specialty Coatings over the past 10 years on commercial and industrial construction projects installing various complex flooring systems including polished concrete, flake epoxy, and ESD. Their focus on quality is impeccable. They do it right and they stand behind their work. ...</p></blockquote>
+    </figure><figure class="rv">
+      <div class="rv-top">
+        <span class="rv-avatar" aria-hidden="true">S</span>
+        <figcaption><span class="rv-name">Steven W.</span><span class="rv-when">Google review, 7 years ago</span></figcaption>
+      </div>
+      <svg class="rv-stars" viewBox="0 0 108 20" aria-hidden="true" focusable="false"><use href="#i-star" x="0" width="20" height="20" class="on"></use><use href="#i-star" x="22" width="20" height="20" class="on"></use><use href="#i-star" x="44" width="20" height="20" class="on"></use><use href="#i-star" x="66" width="20" height="20" class="on"></use><use href="#i-star" x="88" width="20" height="20" class="on"></use></svg>
+      <span class="sr-only">Rated 5 out of 5.</span>
+      <blockquote><p>Specialty Coatings is a very professional outfit with well trained and seasoned crews, well maintained equipment, and top notch project managers. Their work ethic and reputation are outstanding in the industry. I would not hesitate to recommend them.</p></blockquote>
+    </figure>        </div>
+      </div>
+      <div class="wrap rev-tools">
+        <button class="pill-btn" type="button" data-marquee-toggle=".rev-marquee" aria-pressed="false"><span data-label>Pause</span><span class="sr-only"> moving reviews</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section process" aria-labelledby="proc-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="proc-h" class="display h2" data-reveal>How a job goes</h2>
+      </div>
+      <ol class="steps" data-reveal>
+        <li class="steps-line" aria-hidden="true"><span></span></li>
+        <li class="step" style="--i: 0">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3 class="step-h"><span class="sr-only">Step 1: </span>Call and Describe</h3>
+          <p>Call the office and tell the team about your floor, the space, and what it needs to handle.</p>
+        </li>
+        <li class="step" style="--i: 1">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3 class="step-h"><span class="sr-only">Step 2: </span>Prep the Concrete</h3>
+          <p>The crew removes old flooring if needed and prepares the surface by shot blasting or grinding.</p>
+        </li>
+        <li class="step" style="--i: 2">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3 class="step-h"><span class="sr-only">Step 3: </span>Coat the Floor</h3>
+          <p>The coating system is installed on a schedule that fits your building.</p>
+        </li>
+      </ol>
+      <div class="steps-cta" data-reveal>
+        <a class="btn btn-brand btn-xl" href="tel:+16155919491"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+Call (615) 591-9491</a>
+        <a class="btn btn-outline btn-xl" href="#quote">Request a quote <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <div class="about-media" data-reveal>
+        <div class="about-plate">
+          <span class="mu-dots" aria-hidden="true"></span>
+          <span class="plate plate-xl"><img src="assets/logo.png" alt="Specialty Coatings, Inc. logo" loading="lazy" height="120"></span>
+        </div>
+      </div>
+      <div class="about-copy">
+        <h2 id="about-h" class="display h2" data-reveal>About Specialty Coatings, Inc.</h2>
+        <p class="about-text" data-reveal style="--i: 1">Specialty Coatings was founded in 1995 and is based in Nashville. The company takes on projects from residential garage floors to jobs of several hundred thousand square feet. Past work includes Nissan Stadium, Bridgestone Arena, and Vanderbilt.</p>
+        <dl class="facts" data-reveal style="--i: 2">
+<div><dt>Google rating</dt><dd>4.9 from 25 Google reviews</dd></div>          <div><dt>Based in</dt><dd>Nashville, TN</dd></div>
+<div><dt>Hours</dt><dd>Monday to Friday, 6 AM to 7 PM</dd></div>          <div><dt>Phone</dt><dd><a class="tel-inline" href="tel:+16155919491">(615) 591-9491</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <div class="contact-panel">
+      <span class="mu-grid" aria-hidden="true"></span>
+      <div class="wrap contact-grid">
+        <div class="contact-info">
+          <h2 id="contact-h" class="display h2" data-reveal>Call Us About Your Floor Today</h2>
+          <p class="contact-lede" data-reveal style="--i: 1">Call Specialty Coatings to talk through your epoxy or concrete flooring project in Nashville.</p>
+          <a class="phone-big" href="tel:+16155919491" data-reveal style="--i: 2"><span class="phone-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+</span>(615) 591-9491</a>
+          <ul class="contact-rows" data-reveal style="--i: 3">
+            <li>
+              <span class="row-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" clip-rule="evenodd"/>
+</svg>
+</span>
+              <span class="row-label">Address</span><a class="row-value" href="https://www.google.com/maps/place/Specialty+Coatings,+Inc./data=!4m7!3m6!1s0x886479f60b96736f:0xeda70f14c2babb0d!8m2!3d36.135534!4d-86.7332487!16s%2Fg%2F1tfvhyr0!19sChIJb3OWC_Z5ZIgRDbu6whQPp-0?authuser=0&amp;hl=en&amp;g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&amp;rclk=1" rel="noopener" target="_blank">249 Blanton Ave, Nashville, TN 37210</a>
+            </li>
+            <li>
+              <span class="row-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"/>
+  <path fill-rule="evenodd" d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z" clip-rule="evenodd"/>
+</svg>
+</span>
+              <span class="row-label">Hours</span>
+              <div class="row-value">
+                <dl class="hours"><dt>Monday to Friday</dt><dd>6 AM to 7 PM</dd><dt>Saturday to Sunday</dt><dd>Closed</dd></dl>
+                <p class="mu-pulse open-now" data-open-now hidden></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quote-card" id="quote" data-reveal style="--i: 1">
+          <span class="mu-beam" aria-hidden="true"></span>
+          <h3 class="quote-h">Request a quote</h3>
+          <form data-quote data-steps novalidate>
+            <div class="progress js-only" aria-hidden="true"><span data-progress></span></div>
+            <p class="step-label js-only" data-step-label aria-live="polite">Step 1 of 3</p>
+            <fieldset class="qstep" data-step>
+              <legend>What do you need?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="service" value="Epoxy and Urethane" checked><span>Epoxy and Urethane</span></label>
+                <label class="chip"><input type="radio" name="service" value="Epoxy Flake Floors"><span>Epoxy Flake Floors</span></label>
+                <label class="chip"><input type="radio" name="service" value="Troweled Mortars"><span>Troweled Mortars</span></label>
+                <label class="chip"><input type="radio" name="service" value="Concrete Polishing"><span>Concrete Polishing</span></label>
+                <label class="chip"><input type="radio" name="service" value="Shot Blasting Prep"><span>Shot Blasting Prep</span></label>
+                <label class="chip"><input type="radio" name="service" value="Flooring Removal"><span>Flooring Removal</span></label>
+                <label class="chip"><input type="radio" name="service" value="Something else"><span>Something else</span></label>
+              </div>
+              <div class="qnav js-only"><button class="btn btn-brand" type="button" data-step-next>Next <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</button></div>
+            </fieldset>
+            <fieldset class="qstep" data-step>
+              <legend>About the job</legend>
+              <div class="field"><label for="q-where">Address or area</label><input id="q-where" name="where" autocomplete="street-address"></div>
+              <div class="field"><label for="q-job">Job details</label><textarea id="q-job" name="details" rows="4" placeholder="What needs doing, how big it is and when"></textarea></div>
+              <div class="qnav js-only"><button class="btn btn-quiet" type="button" data-step-back>Back</button><button class="btn btn-brand" type="button" data-step-next>Next <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</button></div>
+            </fieldset>
+            <fieldset class="qstep" data-step>
+              <legend>Your details</legend>
+              <div class="field"><label for="q-name">Your name</label><input id="q-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="qnav"><button class="btn btn-quiet js-only" type="button" data-step-back>Back</button><button class="btn btn-brand" type="submit">Send request <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</button></div>
+            </fieldset>
+            <div class="quote-note" data-quote-note tabindex="-1" role="status" hidden>
+              <p>This form goes live with the new website. Until then, call (615) 591-9491.</p>
+              <a class="btn btn-brand" href="tel:+16155919491"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+Call (615) 591-9491</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+<span class="plate"><img src="assets/logo.png" alt="Specialty Coatings, Inc. logo" loading="lazy" height="44"></span>
+      <p>Epoxy flooring in Nashville, TN.</p>
+      <a class="foot-call" href="tel:+16155919491"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+(615) 591-9491</a>
+    </div>
+    <nav class="foot-col" aria-label="Footer">
+      <h2>Explore</h2>
+      <a href="#services">Services</a>
+<a href="#work">Work</a><a href="#reviews">Reviews</a>      <a href="#about">About</a>
+      <a href="#quote">Request a quote</a>
+    </nav>
+    <div class="foot-col">
+      <h2>Hours</h2>
+<ul><li>Monday to Friday: 6 AM to 7 PM</li><li>Saturday to Sunday: Closed</li></ul>
+    </div>
+    <div class="foot-col">
+      <h2>Find us</h2>
+<a href="https://www.google.com/maps/place/Specialty+Coatings,+Inc./data=!4m7!3m6!1s0x886479f60b96736f:0xeda70f14c2babb0d!8m2!3d36.135534!4d-86.7332487!16s%2Fg%2F1tfvhyr0!19sChIJb3OWC_Z5ZIgRDbu6whQPp-0?authuser=0&amp;hl=en&amp;g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&amp;rclk=1" rel="noopener" target="_blank">249 Blanton Ave, Nashville, TN 37210</a>    </div>
+  </div>
+  <div class="wrap foot-base">
+    <p>Copyright 2026 Specialty Coatings, Inc.</p>
+    <p>Preview built by <a href="https://irontigerdigital.com" rel="noopener">Iron Tiger Digital</a> on October 27, 2026. It stays up until November 26, 2026.</p>
+  </div>
+</footer>
+
+<div class="callbar" role="region" aria-label="Call or request a quote">
+  <a class="btn btn-brand mu-shimmer" href="tel:+16155919491" style="--shimmer-bg: var(--brand); --shimmer-fg: var(--on-brand); --spark: #ffffff">
+    <span class="mu-shimmer__spark" aria-hidden="true"><i></i></span><span class="mu-shimmer__fill" aria-hidden="true"></span>
+    <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/>
+</svg>
+<span>Call (615) 591-9491</span>
+  </a>
+  <a class="btn btn-outline" href="#quote">Quote</a>
+</div>
+
+<dialog class="lightbox" data-lightbox aria-label="Photo viewer">
+  <figure class="lb-figure">
+    <img data-lb-img src="assets/photos/p02-1600.webp" width="800" height="500" alt="Polished epoxy floor across a large industrial manufacturing facility">
+    <figcaption data-lb-cap>Polished epoxy floor across a large industrial manufacturing facility</figcaption>
+  </figure>
+  <button class="round-btn lb-prev" type="button" data-lb-prev aria-label="Previous photo"><svg class="icon flip" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</button>
+  <button class="round-btn lb-next" type="button" data-lb-next aria-label="Next photo"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+</button>
+  <button class="round-btn lb-close" type="button" data-lb-close aria-label="Close photo viewer" autofocus><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z" clip-rule="evenodd"/>
+</svg>
+</button>
+</dialog>
+
+<script type="application/json" id="hours-data" data-tz="America/Chicago">[{"day": "Monday", "hours": "6 AM to 7 PM"}, {"day": "Tuesday", "hours": "6 AM to 7 PM"}, {"day": "Wednesday", "hours": "6 AM to 7 PM"}, {"day": "Thursday", "hours": "6 AM to 7 PM"}, {"day": "Friday", "hours": "6 AM to 7 PM"}, {"day": "Saturday", "hours": "Closed"}, {"day": "Sunday", "hours": "Closed"}]</script><script>
+// Shared preview behaviour for every niche template. Progressive enhancement only:
+// without this script the page still shows the name, hours and every section.
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // 1. Fit a name to its box: try 1 to data-fit-lines (default 2) balanced lines, keep the largest size that fits
+  //    the width and the box's height budget (data-fit-max = share of the reference height).
+  var probe;
+  function widthAt100(text, el) {
+    if (!probe) {
+      probe = document.createElement('span');
+      probe.style.cssText = 'position:absolute;left:-99999px;top:0;white-space:nowrap;visibility:hidden;';
+      document.body.appendChild(probe);
+    }
+    var cs = getComputedStyle(el);
+    probe.style.fontFamily = cs.fontFamily;
+    probe.style.fontWeight = cs.fontWeight;
+    probe.style.letterSpacing = '-0.04em';
+    probe.style.fontSize = '100px';
+    probe.textContent = text;
+    return probe.getBoundingClientRect().width / 100;
+  }
+  function splits(words, n) {
+    if (n === 1) return [[words.join(' ')]];
+    var out = [];
+    for (var i = 1; i <= words.length - n + 1; i++) {
+      var head = words.slice(0, i).join(' ');
+      splits(words.slice(i), n - 1).forEach(function (rest) { out.push([head].concat(rest)); });
+    }
+    return out;
+  }
+  function fit(el) {
+    var words = (el.getAttribute('data-name') || el.textContent).trim().split(/\s+/);
+    var box = el.clientWidth;
+    var ref = el.closest('[data-fit-ref]') || el.parentElement;
+    var maxH = ref.clientHeight * parseFloat(el.getAttribute('data-fit-max') || '0.32');
+    var lead = parseFloat(el.getAttribute('data-fit-leading') || '0.92');
+    var best = null;
+    var maxLines = parseInt(el.getAttribute('data-fit-lines') || '2', 10);
+    for (var n = 1; n <= Math.min(maxLines, words.length); n++) {
+      var bestSplit = null, bestW = Infinity;
+      splits(words, n).forEach(function (lines) {
+        var w = Math.max.apply(null, lines.map(function (l) { return widthAt100(l, el); }));
+        if (w < bestW) { bestW = w; bestSplit = lines; }
+      });
+      var size = Math.min(box / bestW * 0.985, maxH / (n * lead), window.innerWidth * 0.2);
+      if (!best || size > best.size * 1.08) best = { size: size, lines: bestSplit };
+    }
+    el.style.fontSize = Math.floor(best.size) + 'px';
+    el.innerHTML = '';
+    best.lines.forEach(function (l) {
+      var s = document.createElement('span');
+      s.className = 'line';
+      s.textContent = l;
+      el.appendChild(s);
+    });
+    el.classList.add('is-fitted');
+  }
+  function fitAll() { document.querySelectorAll('[data-fit-name]').forEach(fit); }
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fitAll, 120); });
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(fitAll);
+  fitAll();
+
+  // 2. Open now: one live line from the listing's own hours, shown only when they parse.
+  var data = document.getElementById('hours-data');
+  if (data) {
+    var hours = [];
+    try { hours = JSON.parse(data.textContent); } catch (e) { hours = []; }
+    var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var byDay = {};
+    hours.forEach(function (h) { byDay[h.day] = h.hours; });
+    var toMin = function (s) {
+      var m = /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i.exec(s);
+      if (!m) return null;
+      var h = parseInt(m[1], 10) % 12 + (m[3].toUpperCase() === 'PM' ? 12 : 0);
+      return h * 60 + (m[2] ? parseInt(m[2], 10) : 0);
+    };
+    var span = function (day) {
+      var s = byDay[day];
+      if (!s || /closed/i.test(s)) return null;
+      if (/24 hours/i.test(s)) return [0, 1440, s];
+      var parts = s.split(/\s+to\s+/i);
+      var a = toMin(parts[0]), b = toMin(parts[1] || '');
+      return a === null || b === null ? null : [a, b, s];
+    };
+    var label = function (s) { return s.split(/\s+to\s+/i)[0]; };
+    // The business's own clock (its listing's time zone), else the visitor's.
+    var now = new Date(), dayIdx = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
+    try {
+      var parts = {};
+      new Intl.DateTimeFormat('en-US', { timeZone: data.getAttribute('data-tz') || undefined, weekday: 'long', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+        .formatToParts(now).forEach(function (p) { parts[p.type] = p.value; });
+      if (DAYS.indexOf(parts.weekday) >= 0) {
+        dayIdx = DAYS.indexOf(parts.weekday);
+        mins = (parseInt(parts.hour, 10) % 24) * 60 + parseInt(parts.minute, 10);
+      }
+    } catch (e) { /* unknown zone: keep the visitor's clock */ }
+    var today = DAYS[dayIdx];
+    var text = null;
+    if (Object.keys(byDay).length) {
+      var sp = span(today);
+      if (sp && mins >= sp[0] && mins < sp[1]) {
+        text = sp[1] === 1440 ? 'Open now, all day' : 'Open now until ' + sp[2].split(/\s+to\s+/i)[1];
+      } else {
+        for (var i = 0; i < 7 && !text; i++) {
+          var d = DAYS[(dayIdx + i) % 7];
+          var s2 = span(d);
+          if (s2 && (i > 0 || mins < s2[0])) {
+            text = 'Closed now. Opens ' + (i === 0 ? 'today' : i === 1 ? 'tomorrow' : d) + ' at ' + label(s2[2]);
+          }
+        }
+      }
+    }
+    if (text) {
+      document.querySelectorAll('[data-open-now]').forEach(function (el) {
+        el.textContent = text;
+        el.classList.toggle('is-open', /^Open/.test(text));
+        el.hidden = false;
+      });
+    }
+  }
+
+  // 3. The quote form does not send anywhere yet: say so, and point at the phone.
+  document.querySelectorAll('form[data-quote]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = form.querySelector('[data-quote-note]');
+      if (note) { note.hidden = false; note.focus(); }
+    });
+  });
+
+  // 4. Pause the hero crossfade while the tab is hidden.
+  document.addEventListener('visibilitychange', function () {
+    root.classList.toggle('is-hidden-tab', document.hidden);
+  });
+})();// Magic UI behaviour ported to vanilla JS (magicuidesign/magicui, MIT). Pairs with magic.css.
+// Progressive enhancement: without this script every number, card and review is already final.
+(function () {
+  'use strict';
+  var d = document;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+  var each = function (sel, fn) { Array.prototype.forEach.call(d.querySelectorAll(sel), fn); };
+
+  // blur-fade: what is on screen at load plays its entrance now; the rest waits below the fold.
+  if (!reduce && hasIO) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.remove('is-pending');
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px' });
+    var fold = window.innerHeight * 0.94;
+    each('[data-reveal]', function (el) {
+      if (el.getBoundingClientRect().top < fold) { el.classList.add('is-in'); return; }
+      el.classList.add('is-pending');
+      io.observe(el);
+    });
+  }
+
+  // number-ticker: count from zero to the value already printed, once, when it comes into view.
+  var tick = function (el) {
+    var end = parseFloat(el.getAttribute('data-value'));
+    var dp = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    if (isNaN(end)) return;
+    var t0 = null, dur = parseFloat(el.getAttribute('data-duration') || '1600');
+    var fmt = function (v) { return v.toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp }); };
+    var step = function (t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min(1, (t - t0) / dur);
+      var eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+      el.textContent = fmt(end * eased);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(end);
+    };
+    el.textContent = fmt(0);
+    requestAnimationFrame(step);
+  };
+  if (!reduce && hasIO) {
+    var tio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        tio.unobserve(e.target);
+        setTimeout(function () { tick(e.target); }, parseFloat(e.target.getAttribute('data-delay') || '0'));
+      });
+    }, { threshold: 0.6 });
+    each('[data-ticker]', function (el) { tio.observe(el); });
+  }
+
+  // magic-card: the spotlight follows the pointer.
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    each('.mu-spot', function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.style.removeProperty('--mx');
+        card.style.removeProperty('--my');
+      });
+    });
+  }
+
+  // marquee: a pause control (moving content needs one) and no work while off screen.
+  each('[data-marquee-toggle]', function (btn) {
+    var targets = d.querySelectorAll(btn.getAttribute('data-marquee-toggle'));
+    var label = btn.querySelector('[data-label]') || btn;
+    btn.addEventListener('click', function () {
+      var paused = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      label.textContent = paused ? 'Play' : 'Pause';
+      Array.prototype.forEach.call(targets, function (t) { t.classList.toggle('is-paused', paused); });
+    });
+  });
+  if (hasIO) {
+    var mio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('is-offscreen', !e.isIntersecting); });
+    });
+    each('.mu-marquee', function (m) { mio.observe(m); });
+  }
+})();// Brand template behaviour: header state, before and after carousel, photo lightbox,
+// the three step quote form. preview.js handles the form's submit note and the open-now line.
+(function () {
+  'use strict';
+  var d = document;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var each = function (sel, fn, root) { Array.prototype.forEach.call((root || d).querySelectorAll(sel), fn); };
+
+  // Header: a hairline and shadow once the page moves.
+  var head = d.querySelector('[data-head]');
+  if (head) {
+    var onScroll = function () { head.classList.toggle('is-scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Before and after: a scroll-snap track (swipe works without this), with buttons, a counter and thumbnails.
+  each('[data-carousel]', function (c) {
+    var track = c.querySelector('[data-track]');
+    var slides = Array.prototype.slice.call(track.children);
+    var count = c.querySelector('[data-count]');
+    var thumbs = c.querySelectorAll('[data-go]');
+    var cur = 0;
+    var set = function (i) {
+      cur = i;
+      if (count) count.textContent = (i + 1) + ' of ' + slides.length;
+      Array.prototype.forEach.call(thumbs, function (t, j) { t.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    };
+    var go = function (i) {
+      i = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+      set(i);
+    };
+    var prev = c.querySelector('[data-prev]'), next = c.querySelector('[data-next]');
+    if (prev) prev.addEventListener('click', function () { go(cur - 1); });
+    if (next) next.addEventListener('click', function () { go(cur + 1); });
+    Array.prototype.forEach.call(thumbs, function (t) {
+      t.addEventListener('click', function () { go(parseInt(t.getAttribute('data-go'), 10)); });
+    });
+    var raf = 0;
+    track.addEventListener('scroll', function () {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        var w = slides[0].getBoundingClientRect().width || 1;
+        var i = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / w)));
+        if (i !== cur) set(i);
+      });
+    }, { passive: true });
+    c.classList.add('is-ready');
+    set(0);
+  });
+
+  // Lightbox: every gallery photo opens large in a native dialog; arrows step through them.
+  var box = d.querySelector('[data-lightbox]');
+  var items = d.querySelectorAll('[data-lb]');
+  if (box && typeof box.showModal === 'function' && items.length) {
+    var img = box.querySelector('[data-lb-img]');
+    var cap = box.querySelector('[data-lb-cap]');
+    var idx = 0;
+    var show = function (i) {
+      idx = (i + items.length) % items.length;
+      var it = items[idx];
+      img.src = it.getAttribute('data-full');
+      img.alt = it.getAttribute('data-alt') || '';
+      img.width = parseInt(it.getAttribute('data-w'), 10) || 1600;
+      img.height = parseInt(it.getAttribute('data-h'), 10) || 1067;
+      cap.textContent = (it.getAttribute('data-alt') || 'Photo') + '. Photo ' + (idx + 1) + ' of ' + items.length + '.';
+    };
+    Array.prototype.forEach.call(items, function (it, i) {
+      it.addEventListener('click', function () { show(i); box.showModal(); });
+    });
+    box.addEventListener('click', function (e) {
+      if (e.target === box) box.close();
+      if (e.target.closest('[data-lb-prev]')) show(idx - 1);
+      if (e.target.closest('[data-lb-next]')) show(idx + 1);
+      if (e.target.closest('[data-lb-close]')) box.close();
+    });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  }
+
+  // Quote form: three short steps with a progress bar. Without this script all fields show at once.
+  each('form[data-steps]', function (form) {
+    var steps = form.querySelectorAll('[data-step]');
+    var bar = form.querySelector('[data-progress]');
+    var label = form.querySelector('[data-step-label]');
+    var cur = 0;
+    var show = function (i, focus) {
+      cur = Math.max(0, Math.min(steps.length - 1, i));
+      Array.prototype.forEach.call(steps, function (s, j) { s.hidden = j !== cur; });
+      if (bar) bar.style.setProperty('--p', String((cur + 1) / steps.length));
+      if (label) label.textContent = 'Step ' + (cur + 1) + ' of ' + steps.length;
+      if (focus) {
+        var f = steps[cur].querySelector('input:checked, input, textarea, select');
+        if (f) f.focus({ preventScroll: true });
+      }
+    };
+    form.classList.add('is-stepped');
+    form.addEventListener('click', function (e) {
+      if (e.target.closest('[data-step-next]')) { e.preventDefault(); show(cur + 1, true); }
+      if (e.target.closest('[data-step-back]')) { e.preventDefault(); show(cur - 1, true); }
+    });
+    show(0, false);
+    // A service link elsewhere on the page picks that service and opens the form at step one.
+    each('[data-pick]', function (a) {
+      a.addEventListener('click', function () {
+        var v = a.getAttribute('data-pick');
+        each('input[name="service"]', function (r) { if (r.value === v) r.checked = true; }, form);
+        show(0, false);
+      });
+    });
+  });
+})();</script>
+</body>
+</html>
