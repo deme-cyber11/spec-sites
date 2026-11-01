@@ -1,0 +1,26 @@
+{
+  "slug": "tko-concrete-coatings-v3",
+  "built_at": "2026-11-01T22:00:59.163323+00:00",
+  "html_image_refs": [
+    "./static/logo.QX0d9p2t_20rGsl.webp",
+    "./static/p00.BSCsRQUY_28n7Sh.webp",
+    "./static/p01.C4n5qx4r_ZfuLmx.webp",
+    "./static/p02.HfIsK6-V_Z1WHtXR.webp",
+    "./static/p03.CAgf7-zd_ZBsN5.webp",
+    "./static/p04.Cdr3wx9-_Z2e3Sah.webp",
+    "./static/p05.Duh_epzn_dHrmC.webp",
+    "./static/p07.BkB_fZna_ZlAorh.webp",
+    "./static/p08.DRJkvOms_1hM3Km.webp",
+    "./static/p09.CZr6jayz_Zs4jBX.webp",
+    "./static/p11.CY8mPvIj_Zd9srM.webp",
+    "./static/p13.CCGkKtvu_Z2t6H1E.webp",
+    "favicon.svg",
+    "hero/stage-0.webp"
+  ],
+  "images": {
+    "favicon.svg": {
+      "hash": "c51ba995e1ca079443c2566f0119aa57",
+      "size": 384
+    }
+  }
+}
