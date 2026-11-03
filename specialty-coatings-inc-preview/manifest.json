@@ -1,0 +1,24 @@
+{
+  "slug": "specialty-coatings-inc-preview",
+  "built_at": "2026-11-03T04:59:44.773168+00:00",
+  "html_image_refs": [
+    "./static/logo.B8sDsTGy_Z1ccaej.webp",
+    "./static/p02.DJaIRnyi_szXhy.webp",
+    "./static/p03.CKv9PE6w_Zak2mJ.webp",
+    "./static/p05.YGUvFVlo_Z1AODH5.webp",
+    "./static/p06.DEMHVGy4_Z1pfF5C.webp",
+    "./static/p07.BnEigyL1_1aRCh6.webp",
+    "./static/p09.DOWbhOOH_Q2PgH.webp",
+    "./static/p10.BzUcdFPA_Z16ocXH.webp",
+    "./static/p11.CC9f_aVO_1z5IXt.webp",
+    "./static/p12.dDDwwjnH_Zzau6b.webp",
+    "favicon.svg",
+    "hero/stage-0.webp"
+  ],
+  "images": {
+    "favicon.svg": {
+      "hash": "c51ba995e1ca079443c2566f0119aa57",
+      "size": 384
+    }
+  }
+}
