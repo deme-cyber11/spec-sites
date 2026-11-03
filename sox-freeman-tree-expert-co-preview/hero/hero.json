@@ -1,6 +1,36 @@
 {
   "photo": "photos/p01",
-  "alt": "Red spider lift parked in a courtyard at a commercial property",
+  "alt": "Red spider lift parked on a plaza beside office buildings",
   "mode": "still",
-  "seconds": 0
+  "seconds": 469,
+  "model_width": 1024,
+  "first_try": {
+    "same_place": true,
+    "only_surface_changed": false,
+    "believable": false,
+    "problems": [
+      "The edit puts a large, messy tree with hanging moss in the middle of the scene, where B has a small young tree. This is a change to the trees, not only a surface change.",
+      "The tree is far bigger and more tangled than the tree in B. It grows over the lift arm and blocks the brand lettering on the machine ('TEUPEN' is missing from the boom).",
+      "The lift arm appears to pass through or behind the branches in an inconsistent way, and the branches look smeared and unnaturally merged with the red machine.",
+      "Cut branches and debris were added on the ground and look pasted on. They would not be in a before photo that matches this scene.",
+      "Part of the red boom and the cab area is hidden or covered in foliage, which changes the machine's appearance compared with B.",
+      "The tree looks like a different species, with drooping vines or Spanish moss. B shows a young deciduous tree with a thin trunk.",
+      "The 'before' scene looks like the work is already underway, because the machine is mid-operation and branches are on the ground. That doesn't fit a pre-job photo."
+    ]
+  },
+  "cover": 0.414,
+  "qa": {
+    "same_place": true,
+    "only_surface_changed": false,
+    "believable": false,
+    "problems": [
+      "Image A shows the trees as dead, tangled masses of root-like, hanging branches. That does not look like a real tree and looks AI-generated.",
+      "The branch structure is smeared and warped, with a weeping-root texture that does not match a real tree before pruning.",
+      "The trees in A have a different shape and structure from B. The trunks, canopy and branch layout do not match, so this is a different tree rather than the same tree before the work.",
+      "A adds clutter that B does not have: debris and pine needles scattered on the grass and pavers, and a mass of brush hanging from the lift boom.",
+      "The right tree appears to be a different species or shape in A, with a dead look and a bare crown.",
+      "The extra tangled branches overlap the building, the lift boom and the pergola, which makes the scene look unnatural.",
+      "The shrubs and furniture behind the trees are partly changed or hidden in A."
+    ]
+  }
 }
