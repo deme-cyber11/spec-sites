@@ -1,0 +1,26 @@
+{
+  "slug": "allcon-roofing-preview",
+  "built_at": "2026-11-03T06:49:08.749308+00:00",
+  "html_image_refs": [
+    "./static/logo.DUGDh9J4_Zq78f5.webp",
+    "./static/p00.BZMTnf7C_22aIam.webp",
+    "./static/p01.ZKFetoiD_ZRu09S.webp",
+    "./static/p02.UUvPVrgE_1hofvb.webp",
+    "./static/p03.BM4oklN1_1DqwQs.webp",
+    "./static/p04.DTzz4gv4_Z2qqLgp.webp",
+    "./static/p07.DulAc61X_1wlvHG.webp",
+    "./static/p09.CcK3nuo7_ZGqc3E.webp",
+    "./static/p10.CtiqV69z_1AOoyX.webp",
+    "./static/p11.DlpvkzAn_Z19i0Py.webp",
+    "./static/p12.DFHk2jfX_ZaqdlL.webp",
+    "./static/p13.srSx4D-S_2oP37G.webp",
+    "favicon.svg",
+    "hero/stage-0.webp"
+  ],
+  "images": {
+    "favicon.svg": {
+      "hash": "c51ba995e1ca079443c2566f0119aa57",
+      "size": 384
+    }
+  }
+}
