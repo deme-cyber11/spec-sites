@@ -1,34 +1,439 @@
 {
-  "photo": "photos/p13",
-  "alt": "Cleaned concrete pool patio beside a brick home",
-  "mode": "still",
-  "seconds": 546,
+  "photo": "photos/p01",
+  "alt": "Cleaned concrete sidewalk beside landscaped bed and lawn",
+  "mode": "animated",
+  "seconds": 253,
   "model_width": 1024,
-  "first_try": {
-    "same_place": true,
-    "only_surface_changed": true,
-    "believable": false,
-    "problems": [
-      "The green algae and black dirt on the concrete look painted on. The patches are saturated neon green and the black areas are heavy and uniform.",
-      "The dark streaks look like cast shadows but don't match the lighting in the rest of the scene. The sky is overcast, so there should be no hard shadows.",
-      "The dirt covers the flagstone border strip and the left patio edge in a smeared, inconsistent way. It looks like an overlay, not real grime.",
-      "The dirt pattern doesn't follow the surface texture or seams of the concrete.",
-      "The dirt looks unnaturally severe for the same slab shown clean in B, so a homeowner would likely see it as exaggerated or fake.",
-      "The geometry, objects, hose and furniture match B. The only change is the surface dirt."
-    ]
-  },
-  "cover": 0.382,
+  "cover": 0.432,
   "qa": {
     "same_place": true,
-    "only_surface_changed": false,
-    "believable": false,
+    "only_surface_changed": true,
+    "believable": true,
     "problems": [
-      "The 'dirt' on the patio looks like spilled black soil or tar with neon-green paint-like patches. It doesn't look like real grime, algae or mildew on a pool deck.",
-      "The staining is unrealistically heavy and high-contrast, with sharp, blotchy edges. It looks painted on, not like gradual weathering.",
-      "A has an extra black hose or cable line in the lower middle, running from about (410,460) to (540,688). B doesn't have it, so something was added beyond the surface change.",
-      "A has small puddle or reflection patches near the top of the stained area that B doesn't show.",
-      "Black dirt specks were added on the left deck near the chair and side table. They look scattered, not natural.",
-      "The camera angle and the other objects match B, including the chair, pool, umbrella, stone wall and plants."
+      "The dark stains on the sidewalk look slightly blotchy, like they were painted on.",
+      "The green algae band along the stone edging is a little too smooth and uniform.",
+      "The stones next to the walkway look slightly darker or greener in A, which may be a small change outside the sidewalk surface."
     ]
-  }
+  },
+  "frames": {
+    "drift_outside_surface": [
+      0.0
+    ],
+    "middle_checks": []
+  },
+  "image": {
+    "w": 1024,
+    "h": 688,
+    "back": 46,
+    "floor": [
+      [
+        0,
+        366
+      ],
+      [
+        0,
+        422
+      ],
+      [
+        20,
+        424
+      ],
+      [
+        20,
+        454
+      ],
+      [
+        0,
+        455
+      ],
+      [
+        0,
+        687
+      ],
+      [
+        19,
+        687
+      ],
+      [
+        21,
+        659
+      ],
+      [
+        45,
+        659
+      ],
+      [
+        52,
+        674
+      ],
+      [
+        52,
+        687
+      ],
+      [
+        95,
+        687
+      ],
+      [
+        95,
+        669
+      ],
+      [
+        98,
+        667
+      ],
+      [
+        153,
+        671
+      ],
+      [
+        158,
+        675
+      ],
+      [
+        158,
+        687
+      ],
+      [
+        933,
+        687
+      ],
+      [
+        927,
+        662
+      ],
+      [
+        913,
+        653
+      ],
+      [
+        872,
+        612
+      ],
+      [
+        857,
+        588
+      ],
+      [
+        818,
+        558
+      ],
+      [
+        816,
+        545
+      ],
+      [
+        807,
+        537
+      ],
+      [
+        803,
+        520
+      ],
+      [
+        780,
+        496
+      ],
+      [
+        761,
+        457
+      ],
+      [
+        742,
+        444
+      ],
+      [
+        737,
+        429
+      ],
+      [
+        724,
+        425
+      ],
+      [
+        724,
+        399
+      ],
+      [
+        720,
+        385
+      ],
+      [
+        701,
+        373
+      ],
+      [
+        691,
+        347
+      ],
+      [
+        659,
+        310
+      ],
+      [
+        639,
+        293
+      ],
+      [
+        634,
+        261
+      ],
+      [
+        562,
+        166
+      ],
+      [
+        558,
+        153
+      ],
+      [
+        543,
+        143
+      ],
+      [
+        538,
+        117
+      ],
+      [
+        522,
+        107
+      ],
+      [
+        510,
+        82
+      ],
+      [
+        479,
+        46
+      ],
+      [
+        462,
+        46
+      ],
+      [
+        459,
+        49
+      ],
+      [
+        457,
+        71
+      ],
+      [
+        427,
+        71
+      ],
+      [
+        410,
+        83
+      ],
+      [
+        411,
+        163
+      ],
+      [
+        424,
+        182
+      ],
+      [
+        424,
+        208
+      ],
+      [
+        431,
+        212
+      ],
+      [
+        431,
+        243
+      ],
+      [
+        439,
+        244
+      ],
+      [
+        439,
+        270
+      ],
+      [
+        422,
+        271
+      ],
+      [
+        421,
+        307
+      ],
+      [
+        398,
+        310
+      ],
+      [
+        386,
+        318
+      ],
+      [
+        345,
+        318
+      ],
+      [
+        343,
+        302
+      ],
+      [
+        310,
+        302
+      ],
+      [
+        300,
+        309
+      ],
+      [
+        297,
+        331
+      ],
+      [
+        312,
+        348
+      ],
+      [
+        311,
+        381
+      ],
+      [
+        306,
+        393
+      ],
+      [
+        306,
+        431
+      ],
+      [
+        293,
+        460
+      ],
+      [
+        272,
+        460
+      ],
+      [
+        271,
+        489
+      ],
+      [
+        246,
+        488
+      ],
+      [
+        246,
+        457
+      ],
+      [
+        224,
+        457
+      ],
+      [
+        223,
+        436
+      ],
+      [
+        181,
+        435
+      ],
+      [
+        178,
+        427
+      ],
+      [
+        181,
+        385
+      ],
+      [
+        167,
+        385
+      ],
+      [
+        159,
+        379
+      ],
+      [
+        159,
+        355
+      ],
+      [
+        164,
+        354
+      ],
+      [
+        164,
+        340
+      ],
+      [
+        150,
+        340
+      ],
+      [
+        149,
+        344
+      ],
+      [
+        118,
+        344
+      ],
+      [
+        115,
+        368
+      ],
+      [
+        60,
+        365
+      ],
+      [
+        56,
+        356
+      ],
+      [
+        39,
+        356
+      ],
+      [
+        24,
+        366
+      ]
+    ],
+    "extra": [],
+    "holes": [
+      [
+        [
+          229,
+          564
+        ],
+        [
+          258,
+          565
+        ],
+        [
+          259,
+          604
+        ],
+        [
+          254,
+          616
+        ],
+        [
+          221,
+          615
+        ],
+        [
+          221,
+          590
+        ]
+      ]
+    ],
+    "stages": 2,
+    "wipe": "right",
+    "middle": null
+  },
+  "steps": [
+    "Before",
+    "After washing"
+  ]
 }
