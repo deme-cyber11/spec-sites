@@ -1,37 +1,35 @@
 {
-  "photo": "photos/p03",
-  "alt": "Clean turquoise pool with paver coping beside a large home",
+  "photo": "photos/p02",
+  "alt": "Clean blue freeform pool with a light concrete deck and landscaping",
   "mode": "still",
-  "seconds": 471,
+  "seconds": 489,
   "model_width": 1024,
   "first_try": {
     "same_place": true,
     "only_surface_changed": false,
     "believable": false,
     "problems": [
-      "A adds a foreground pool edge or coping strip along the bottom that does not exist in B. It is stained with rust-colored patches and has a drain or light fixture on it.",
-      "The bottom-left of B shows only water and a small bit of coping, so A's foreground structure is an extra object and changes the scene layout.",
-      "The reflections in A are blocky and pixelated, with hard-edged dark shapes that look like AI artifacts. They are not natural reflections of the house.",
-      "The green algae and leaves in A look painted on. Parts of the algae seem to rise above the water line near the right edge.",
-      "The water in A has an unnatural split. One half is clean turquoise and the other half is murky green, with a sharp boundary and no consistent lighting.",
-      "A shows the pool's tile line and waterline on the right side as clear water over a visible tile edge, but the tile line is partly hidden by algae, so it doesn't match B.",
-      "The foreground tiles in A have blotchy, smeared patches of discoloration that look unrealistic.",
-      "A leaves out the yellow duck toy floating in B. This is minor, but the objects in the scene differ."
+      "The bottom-right pool deck in A has brown rust-like stains. In B the deck is clean, so A changed more than the water.",
+      "The tile line along the right/bottom edge is hidden or altered by stains in A, and the tile near the steps differs from B.",
+      "The green algae water has blocky, pixelated edges where it meets the clear blue water, and the pattern looks like a digital paint-over.",
+      "Half the pool is clear blue and half is dark green. This split looks unnatural, and real algae would be spread across the whole pool.",
+      "The tree-like reflection and the floating leaves and debris look pasted on, and the leaf placement looks artificial.",
+      "The green water has a flat, plastic look with little depth or ripple texture, and it does not match the ripples in B.",
+      "The stained deck and the sharp boundary between clean and dirty water make A look like a staged edit, not a real before photo."
     ]
   },
-  "cover": 0.403,
+  "cover": 0.439,
   "qa": {
     "same_place": true,
-    "only_surface_changed": true,
+    "only_surface_changed": false,
     "believable": false,
     "problems": [
-      "The green algae patch has hard, blocky, pixelated edges. It looks like a pasted mask and not natural algae spreading in water.",
-      "Clear turquoise rectangular blocks sit inside the green area, for example at the lower left, the bottom center and a small square near the bottom right. These look like leftover unedited patches.",
-      "The dark green region has reflections of the house and columns that look like dark silhouettes. They don't match the lighting in B.",
-      "The leaves and sticks on the water look scattered and artificial, with a flat, plastic texture.",
-      "The water ripple and caustic pattern does not blend between the clear and green areas. The transition looks abrupt.",
-      "The yellow rubber duck visible in B is missing from A. This is a minor difference.",
-      "The surrounding scene (deck, fence, lifebuoy, shrubs, pool edge) matches B and has no warping."
+      "The dark green reflection patch looks like a sharp-edged blob. It resembles a pasted overlay more than real algae or a natural reflection of trees or a house.",
+      "The pool edge and tile line are covered or broken in places. There is a dark smudge on the bottom coping near the bottom center, and the tile line at the lower right is partly obscured by the water patch.",
+      "The leaves, twigs and green plants look randomly scattered and a little synthetic. Items such as the plant clumps near the bottom are not in image B, so they are extra objects.",
+      "The edit is not limited to the water surface. The coping at the bottom has a dark stain and chipped-looking damage that image B does not have.",
+      "The water is split into a clean blue area and a murky green area with a hard boundary. Real algae growth would be more gradual.",
+      "The tile line in the lower-left and left areas is hidden by the murky water."
     ]
   }
 }
