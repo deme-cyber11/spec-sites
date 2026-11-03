@@ -1,34 +1,334 @@
 {
-  "photo": "photos/p08",
-  "alt": "Wide concrete driveway leading to a large stone-front house",
-  "mode": "still",
-  "seconds": 485,
+  "photo": "photos/p07",
+  "alt": "Large concrete pool deck around a pool beside lakeside house",
+  "mode": "animated",
+  "seconds": 281,
   "model_width": 1024,
-  "first_try": {
-    "same_place": true,
-    "only_surface_changed": false,
-    "believable": false,
-    "problems": [
-      "The driveway in A has a different joint layout from B. A's slab joints don't line up with B's, and its slab shapes and edges differ.",
-      "The cracks, sinkhole-like holes, dark stains and weeds in A are exaggerated. The driveway looks implausibly ruined for a house this new and well kept, so the damage reads as AI-generated.",
-      "The driveway edge near the lawn is altered. A has weeds and grass growing over the edge, and the curve is less clean than in B.",
-      "The driveway in A looks too uniformly wrecked, with a slightly synthetic, plastic texture on the slabs and stains.",
-      "Small differences in the objects near the garage: the fence or gate on the left looks different, and the planters differ slightly.",
-      "The weeds growing along the cracks look repetitive and pasted on."
-    ]
-  },
-  "cover": 0.419,
+  "cover": 0.411,
   "qa": {
     "same_place": true,
     "only_surface_changed": true,
-    "believable": false,
+    "believable": true,
     "problems": [
-      "The damage looks exaggerated. The cracks, weeds, and oil stains are heavy and uniform, and they look like a texture overlay. They don't look like real wear on a driveway at a house that otherwise appears new.",
-      "The cracked slabs have a plastic, painted look and don't match the slab joints in B. Some crack lines, such as the diagonal ones, curve in ways that don't follow the real joint layout.",
-      "Weeds grow in evenly spaced tufts along the crack lines, which looks artificial.",
-      "The dark burn-like stains look unnatural and smeared.",
-      "The new landscaping, lawn, and house are pristine, so the badly deteriorated driveway looks out of place. A homeowner would likely doubt it as a real before photo.",
-      "The scene is otherwise unchanged: the house, sky, trees, lawn, and perspective all match B."
+      "The cracked slabs, weeds and stains in A look somewhat exaggerated, and the repeated crack pattern looks slightly synthetic.",
+      "The pool coping in A looks a little uneven. Weeds growing through the cracks and into the pool edge look a bit overdone.",
+      "A has an extra dark patch near the pool's right end and a slightly different water edge with weeds, which are small differences from B.",
+      "B has a small white pipe sticking out of the concrete on the left, which isn't in A. The pipe is minor and could be a real item."
     ]
-  }
+  },
+  "image": {
+    "w": 1024,
+    "h": 688,
+    "back": 310,
+    "floor": [
+      [
+        0,
+        334
+      ],
+      [
+        0,
+        687
+      ],
+      [
+        456,
+        687
+      ],
+      [
+        456,
+        674
+      ],
+      [
+        460,
+        668
+      ],
+      [
+        492,
+        668
+      ],
+      [
+        502,
+        675
+      ],
+      [
+        502,
+        687
+      ],
+      [
+        1023,
+        687
+      ],
+      [
+        1023,
+        398
+      ],
+      [
+        929,
+        386
+      ],
+      [
+        816,
+        366
+      ],
+      [
+        733,
+        359
+      ],
+      [
+        683,
+        349
+      ],
+      [
+        635,
+        346
+      ],
+      [
+        578,
+        336
+      ],
+      [
+        541,
+        337
+      ],
+      [
+        541,
+        351
+      ],
+      [
+        553,
+        351
+      ],
+      [
+        573,
+        369
+      ],
+      [
+        640,
+        376
+      ],
+      [
+        656,
+        384
+      ],
+      [
+        689,
+        391
+      ],
+      [
+        698,
+        396
+      ],
+      [
+        698,
+        404
+      ],
+      [
+        735,
+        404
+      ],
+      [
+        775,
+        410
+      ],
+      [
+        776,
+        435
+      ],
+      [
+        739,
+        437
+      ],
+      [
+        702,
+        430
+      ],
+      [
+        701,
+        421
+      ],
+      [
+        656,
+        420
+      ],
+      [
+        650,
+        463
+      ],
+      [
+        629,
+        476
+      ],
+      [
+        556,
+        485
+      ],
+      [
+        539,
+        491
+      ],
+      [
+        516,
+        493
+      ],
+      [
+        500,
+        500
+      ],
+      [
+        439,
+        495
+      ],
+      [
+        428,
+        500
+      ],
+      [
+        359,
+        506
+      ],
+      [
+        349,
+        501
+      ],
+      [
+        337,
+        487
+      ],
+      [
+        285,
+        459
+      ],
+      [
+        272,
+        440
+      ],
+      [
+        256,
+        431
+      ],
+      [
+        235,
+        427
+      ],
+      [
+        231,
+        423
+      ],
+      [
+        231,
+        406
+      ],
+      [
+        213,
+        402
+      ],
+      [
+        196,
+        382
+      ],
+      [
+        190,
+        380
+      ],
+      [
+        190,
+        356
+      ],
+      [
+        198,
+        353
+      ],
+      [
+        270,
+        354
+      ],
+      [
+        367,
+        347
+      ],
+      [
+        414,
+        347
+      ],
+      [
+        427,
+        352
+      ],
+      [
+        445,
+        352
+      ],
+      [
+        447,
+        336
+      ],
+      [
+        424,
+        331
+      ],
+      [
+        390,
+        316
+      ],
+      [
+        272,
+        310
+      ],
+      [
+        163,
+        317
+      ]
+    ],
+    "extra": [],
+    "holes": [
+      [
+        [
+          583,
+          585
+        ],
+        [
+          667,
+          584
+        ],
+        [
+          676,
+          590
+        ],
+        [
+          701,
+          590
+        ],
+        [
+          706,
+          594
+        ],
+        [
+          706,
+          618
+        ],
+        [
+          660,
+          619
+        ],
+        [
+          642,
+          613
+        ],
+        [
+          595,
+          617
+        ],
+        [
+          583,
+          609
+        ]
+      ]
+    ],
+    "stages": 2,
+    "wipe": "up",
+    "middle": null
+  },
+  "steps": [
+    "Before",
+    "After"
+  ]
 }
