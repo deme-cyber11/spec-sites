@@ -1,0 +1,22 @@
+{
+  "slug": "sox-freeman-tree-expert-co-preview",
+  "built_at": "2026-11-03T07:09:51.718652+00:00",
+  "html_image_refs": [
+    "./static/p02.x06cTwLk_ZnebWM.webp",
+    "./static/p03.sRP-wHap_1zshbu.webp",
+    "./static/p07.BAydphXW_Z1DqW6D.webp",
+    "./static/p09.DHOG6prq_1dSNfN.webp",
+    "./static/p10.Byhgz_M5_v3ERC.webp",
+    "./static/p11.ytfSdvNf_18entg.webp",
+    "./static/p13.Bz575Sul_149WSM.webp",
+    "favicon.svg",
+    "hero/stage-0.webp",
+    "hero/stage-final.webp"
+  ],
+  "images": {
+    "favicon.svg": {
+      "hash": "c51ba995e1ca079443c2566f0119aa57",
+      "size": 384
+    }
+  }
+}
