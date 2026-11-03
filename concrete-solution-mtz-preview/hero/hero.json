@@ -1,0 +1,34 @@
+{
+  "photo": "photos/p08",
+  "alt": "Wide concrete driveway leading to a large stone-front house",
+  "mode": "still",
+  "seconds": 485,
+  "model_width": 1024,
+  "first_try": {
+    "same_place": true,
+    "only_surface_changed": false,
+    "believable": false,
+    "problems": [
+      "The driveway in A has a different joint layout from B. A's slab joints don't line up with B's, and its slab shapes and edges differ.",
+      "The cracks, sinkhole-like holes, dark stains and weeds in A are exaggerated. The driveway looks implausibly ruined for a house this new and well kept, so the damage reads as AI-generated.",
+      "The driveway edge near the lawn is altered. A has weeds and grass growing over the edge, and the curve is less clean than in B.",
+      "The driveway in A looks too uniformly wrecked, with a slightly synthetic, plastic texture on the slabs and stains.",
+      "Small differences in the objects near the garage: the fence or gate on the left looks different, and the planters differ slightly.",
+      "The weeds growing along the cracks look repetitive and pasted on."
+    ]
+  },
+  "cover": 0.419,
+  "qa": {
+    "same_place": true,
+    "only_surface_changed": true,
+    "believable": false,
+    "problems": [
+      "The damage looks exaggerated. The cracks, weeds, and oil stains are heavy and uniform, and they look like a texture overlay. They don't look like real wear on a driveway at a house that otherwise appears new.",
+      "The cracked slabs have a plastic, painted look and don't match the slab joints in B. Some crack lines, such as the diagonal ones, curve in ways that don't follow the real joint layout.",
+      "Weeds grow in evenly spaced tufts along the crack lines, which looks artificial.",
+      "The dark burn-like stains look unnatural and smeared.",
+      "The new landscaping, lawn, and house are pristine, so the badly deteriorated driveway looks out of place. A homeowner would likely doubt it as a real before photo.",
+      "The scene is otherwise unchanged: the house, sky, trees, lawn, and perspective all match B."
+    ]
+  }
+}
