@@ -1,6 +1,34 @@
 {
-  "photo": "photos/p01",
-  "alt": "Surface cleaner cleaning a concrete sidewalk beside a grass lawn",
+  "photo": "photos/p13",
+  "alt": "Cleaned concrete pool patio beside a brick home",
   "mode": "still",
-  "seconds": 0
+  "seconds": 546,
+  "model_width": 1024,
+  "first_try": {
+    "same_place": true,
+    "only_surface_changed": true,
+    "believable": false,
+    "problems": [
+      "The green algae and black dirt on the concrete look painted on. The patches are saturated neon green and the black areas are heavy and uniform.",
+      "The dark streaks look like cast shadows but don't match the lighting in the rest of the scene. The sky is overcast, so there should be no hard shadows.",
+      "The dirt covers the flagstone border strip and the left patio edge in a smeared, inconsistent way. It looks like an overlay, not real grime.",
+      "The dirt pattern doesn't follow the surface texture or seams of the concrete.",
+      "The dirt looks unnaturally severe for the same slab shown clean in B, so a homeowner would likely see it as exaggerated or fake.",
+      "The geometry, objects, hose and furniture match B. The only change is the surface dirt."
+    ]
+  },
+  "cover": 0.382,
+  "qa": {
+    "same_place": true,
+    "only_surface_changed": false,
+    "believable": false,
+    "problems": [
+      "The 'dirt' on the patio looks like spilled black soil or tar with neon-green paint-like patches. It doesn't look like real grime, algae or mildew on a pool deck.",
+      "The staining is unrealistically heavy and high-contrast, with sharp, blotchy edges. It looks painted on, not like gradual weathering.",
+      "A has an extra black hose or cable line in the lower middle, running from about (410,460) to (540,688). B doesn't have it, so something was added beyond the surface change.",
+      "A has small puddle or reflection patches near the top of the stained area that B doesn't show.",
+      "Black dirt specks were added on the left deck near the chair and side table. They look scattered, not natural.",
+      "The camera angle and the other objects match B, including the chair, pool, umbrella, stone wall and plants."
+    ]
+  }
 }
