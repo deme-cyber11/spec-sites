@@ -1,0 +1,20 @@
+{
+  "slug": "chinchillin-pool-service-tampa-preview",
+  "built_at": "2026-11-03T05:07:47.433207+00:00",
+  "html_image_refs": [
+    "./static/logo.CKA24t3B_ZiOOz5.webp",
+    "./static/p01.BXjU59V7_LGJFR.webp",
+    "./static/p02.DY4uRH7v_ZENnP9.webp",
+    "./static/p04.C_-B4kBn_1WU13I.webp",
+    "./static/p06.ToQ0ocoK_Z5BUFm.webp",
+    "favicon.svg",
+    "hero/stage-0.webp",
+    "hero/stage-final.webp"
+  ],
+  "images": {
+    "favicon.svg": {
+      "hash": "c51ba995e1ca079443c2566f0119aa57",
+      "size": 384
+    }
+  }
+}
