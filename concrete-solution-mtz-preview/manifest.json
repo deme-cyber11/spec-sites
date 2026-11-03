@@ -1,16 +1,14 @@
 {
   "slug": "concrete-solution-mtz-preview",
-  "built_at": "2026-11-03T21:55:51.954326+00:00",
+  "built_at": "2026-11-03T23:35:10.842359+00:00",
   "html_image_refs": [
     "./static/logo.DS598j2q_2cjOQv.webp",
-    "./static/p01.BIQMwJV-_1n7cc8.webp",
+    "./static/p00.Dn7GSQQZ_ZUl4TS.webp",
     "./static/p05.D6CsbRK5_Zxe50Q.webp",
-    "./static/p06.CHDY2dcq_1iNUcj.webp",
+    "./static/p07.DZaOyPkB_1ryztK.webp",
     "./static/p09.lP9VSkkN_2k1K7g.webp",
-    "./static/p10.CeemGbax_DJTVy.webp",
     "favicon.svg",
-    "hero/stage-0.webp",
-    "hero/stage-final.webp"
+    "hero/stage-0.webp"
   ],
   "images": {
     "favicon.svg": {
